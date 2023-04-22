@@ -1,0 +1,11 @@
+@tailwind utilities;
+
+@layer utilities {
+  .nav-link:is(:hover, .active) {
+    @apply text-palatinate-blue underline underline-offset-8 decoration-palatinate-blue cursor-pointer;
+  }
+
+  .nav-link:hover {
+    @apply transition-all;
+  }
+}
