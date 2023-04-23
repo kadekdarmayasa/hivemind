@@ -1,4 +1,4 @@
-import Brand from "./Brand";
+import Brand from "../Brand";
 import NavigationMenu from "./NavigationMenu";
 export default function Navbar() {
   return (
