@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Button from "../../Button";
 
-export default function Hero() {
+export default function Hero(props) {
+  const showOurValues = () => {
+    window.scrollTo({
+      top: props.refOurValues.current.offsetTop - 50,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section className="flex mt-14">
       <div className="flex-1 flex flex-col justify-center">
@@ -21,7 +28,7 @@ export default function Hero() {
             <Image src='/images/contact.svg' width={30} height={30} alt="chat-box" className="mr-2"></Image>
             <span className="text-lg">Get in Touch</span>
           </Button>
-          <Button classNames='h-[60px] w-[210px] ml-6 group'>
+          <Button classNames='h-[60px] w-[210px] ml-6 group' onClick={showOurValues}>
             <div className="rounded-xl h-10 w-6 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
               <span className="animate-bounce block w-1 h-3 rounded-lg top-2 bg-palatinate-blue absolute"></span>
             </div>

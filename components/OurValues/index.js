@@ -1,8 +1,8 @@
 import Image from "next/image"
 
-export default function OurValues() {
+export default function OurValues(props) {
   return (
-    <section className="mt-36">
+    <section className="mt-36" ref={props.refOurValues}>
       <div className="flex flex-col items-center text-center">
         <small className="label-text">Our Values</small>
         <h2 className="heading-2">What Sets Us Apart</h2>
