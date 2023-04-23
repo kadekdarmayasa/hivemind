@@ -1,0 +1,220 @@
+{
+  "hero": {
+    "imageUrl": "/images/web-design-hero-image.png",
+    "headline": "<span>Web Design</span> Services",
+    "headline-description": "Designing stunning websites that engage your audience. 
+    From concept to launch, we work with you every step of the way 
+    to ensure that your website is perfectly tailored to your brand 
+    and meets all of your business objectives.",
+  },
+
+  "choice": {
+    "title": "Choose Your <span>Website</span>",
+    "description": "When it comes to designing a website, different businesses have different needs and goals. 
+    At our digital agency, we offer a variety of website design services to meet those unique needs. 
+    Here are some of the types of websites we specialize in:",
+    "options": [
+      {
+        "_id": "assjkjjjij23e23",
+        "imageUrl": "/images/chart.svg",
+        "title": "E-commerce websites",
+        "description": "Our expert team can develop a user-friendly, visually-appealing, and SEO-optimized e-commerce website that is essential for businesses looking to sell their products or services online.",
+      },
+      {
+        "_id": "assjkjjjij23e24",
+        "imageUrl": "/images/globe.svg",
+        "title": "Corporate Websites",
+        "description": "Establish a strong online presence with our custom-designed corporate websites that accurately reflect your brand identity and effectively communicate your message to your target audience.",
+      },
+      {
+        "_id": "assjkjjjij23e25",  
+        "imageUrl": "/images/targetted.svg",
+        "title": "Landing Pages",
+        "description": "Our professionally-crafted landing pages are designed to convert website visitors into leads or customers with clear messaging, strong calls-to-action, and optimization for high conversion rates.",
+      },
+    ]
+  },
+
+  "process": {
+    "title": "Our Web Design <span>Process</span>",
+    "description": "At our digital agency, we take a strategic approach to web design, ensuring that every website we create is both 
+    visually stunning and highly functional. Our web design process involves several key stages, each of which is essential 
+    to creating a website that meets the needs of our clients and their customers.",
+    "steps": [
+      {
+        "_id": "112k2jk2iknasdiknsdin",
+        "imageUrl": "/images/discovery.svg",
+        "label": "STEP 01",
+        "step": "Discovery"
+      },
+      {
+        "_id": "112k2jk2iknasdiknsdim",
+        "imageUrl": "/images/planning.svg",
+        "label": "STEP 02",
+        "step": "Planning"
+      },
+      {
+        "_id": "112k2jk2iknasdiknsdio",  
+        "imageUrl": "/images/design.svg",
+        "label": "STEP 03",
+        "step": "Design"
+      },
+      {
+        "_id": "112k2jk2iknasdiknsdip",
+        "imageUrl": "/images/development.svg",
+        "label": "STEP 04",
+        "step": "Development"
+      },
+      {
+        "_id": "112k2jk2iknasdiknsdiq",
+        "imageUrl": "/images/testing.svg",
+        "label": "STEP 05",
+        "step": "Testing"
+      },
+      {
+        "_id": "112k2jk2iknasdiknsdir",
+        "imageUrl": "/images/launch.svg",
+        "label": "STEP 06",
+        "step": "Launch"
+      },
+      {
+        "_id": "112k2jk2iknasdiknsdis",
+        "imageUrl": "/images/maintenance.svg",
+        "label": "STEP 07",
+        "step": "Maintenance"
+      },
+    ]
+  },
+
+  "workSamples": {
+    "title": "Our Work <span>Samples</span>",
+    "description": "Take a look at our work samples below to see what we can do for you.",
+    "samples": [
+      {
+        "_id": "1221212jjjdfjsoikjd",
+        "imageUrl": "/images/company-website-redesign.png",
+        "title": "GREZZ Company Website Redesign"
+      },
+      {
+         "_id": "1221212jjjdfjsoikje",
+        "imageUrl": "/images/landing-page-opt.png",
+        "title": "KLIPPLANET Landing Page Optimization"
+      },
+      {
+        "_id": "1221212jjjdfjsoikjf",
+        "imageUrl": "/images/corporate-website.png",
+        "title": "BIGMOVE Corporate Website"
+      }
+    ]
+  },
+
+  "pricelist": [
+    {
+      "_id": "1221j2jisdfdfihef9a",
+      "package": "Basic",
+      "price": 12,
+      "time": "month",
+      "isPopular": false,
+      "features": [
+        "Ideal for small businesses",
+        "Custom design for up to 5 pages",
+        "Mobile-response design",
+        "Basic SEO",
+        "Contact form integration"
+      ],
+    },
+    {
+      "_id": "1221j2jisdfdfihef9b",
+      "package": "Standard",
+      "price": 24,
+      "time": "month",
+      "isPopular": false,
+      "features": [
+        "Idel for medium-sized businesses",
+        "Custom design for up to 10 pages",
+        "Mobile-responsive design",
+        "Advanced SEO",
+        "Contact form integration"
+      ],
+    },
+    { 
+      "_id": "1221j2jisdfdfihef9c",
+      "package": "Premium",
+      "price": 36,
+      "time": "month",
+      "isPopular": true,
+      "features": [
+        "Idel for large businesses and e-commerce websites",
+        "Custom design for up to 15 pages",
+        "Mobile-responsive design",
+        "Advanced SEO with analytics tracking",
+        "E-commerce integration with payment gateway setup",
+        "Customize blog design and setup",
+      ],
+    },
+  ],
+
+  "clients": [
+    {
+      "_id": "1221j2jisdfdfihef9d",
+      "imageUrl": "/images/client-web-design-1.png",
+      "name": "John Smith",
+      "title": "Marketing Manager",
+      "message": "I'm blown away by the beautiful website that was created for my business. It's easy to navigate and has increased our online presence tremendously. Thank you so much!",
+      "rate": 5
+    },
+    {
+      "_id": "1221j2jisdfdfihef9e",
+      "imageUrl": "/images/client-web-design-2.png",
+      "name": "Max Robinzon",
+      "title": "Entrepreneur",
+      "message": "The team was professional and responsive throughout the entire web design process. I'm thrilled with the end result and would highly recommend their services to anyone looking for a quality website.",
+      "rate": 5
+    },
+    {
+      "_id": "1221j2jisdfdfihef9f",
+      "imageUrl": "/images/client-web-design-3.png",
+      "name": "Olivia Taylor",
+      "title": "Creative Director",
+      "message": "I was hesitant to invest in a new website, but it was the best decision I made for my business. The website is modern, user-friendly, and has helped increase our conversions. Thank you for a great job!",
+      "rate": 5
+    },
+  ],
+
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently Asked Questions",
+    "q&a": [
+      {
+        "_id": "sakakasksq11212k",
+        "question": "Can you help with website hosting and domain registration?",
+        "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting 
+        providers and help you choose the best domain name for your business." ,
+      },
+      {
+        "_id": "sakakasksq11212l",
+        "question": "Do you offer website maintenance and updates?",
+        "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting 
+        providers and help you choose the best domain name for your business." ,
+      },
+      {
+        "_id": "sakakasksq11212m",
+        "question": "Do you provide content for my website?",
+        "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting 
+        providers and help you choose the best domain name for your business.", 
+      },
+      {
+        "_id": "sakakasksq11212n",
+        "question": "Will my website be mobile-friendly?",
+        "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting 
+        providers and help you choose the best domain name for your business.", 
+      },
+      {
+        "_id": "sakakasksq11212o",
+        "question": "What is the typical turnaround time for a website design project?",
+        "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting 
+        providers and help you choose the best domain name for your business.", 
+      },
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "ass122jjjjoj033f",
+    "imagePath": "/images/desktop.svg", 
+    "name": "Web Design",
+    "briefDescription": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
+  },
+  {
+    "_id": "ass122jjjjoj033g",
+    "imagePath": "/images/chart.svg", 
+    "name": "Search Engine Optimization",
+    "briefDescription": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
+  },
+  {
+    "_id": "ass122jjjjoj033h",
+    "imagePath": "/images/megaphone.svg", 
+    "name": "Social Media Marketing",
+    "briefDescription": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
+  },
+  {
+    "_id": "ass122jjjjoj033i",
+    "imagePath": "/images/reader.svg", 
+    "name": "Content Creation",
+    "briefDescription": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
+  },
+  {
+    "_id": "ass122jjjjoj033j",
+    "imagePath": "/images/cart.svg", 
+    "name": "E-commerce Solutions",
+    "briefDescription": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
+  },
+  {
+    "_id": "ass122jjjjoj033k",
+    "imagePath": "/images/phone.svg", 
+    "name": "Mobile App Development",
+    "briefDescription": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
+  }
+]

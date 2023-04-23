@@ -25,7 +25,7 @@ export default function Hero(props) {
         </p>
         <div className="flex mt-7">
           <Button type='link' href='/contact' isPrimary classNames='h-[60px] w-[210px] rounded-lg hover:shadow-purple-md transition-all'>
-            <Image src='/images/contact.svg' width={30} height={30} alt="chat-box" className="mr-2"></Image>
+            <Image src='/images/contact.svg' width={27} height={24} alt="chat-box" className="mr-2"></Image>
             <span className="text-lg">Get in Touch</span>
           </Button>
           <Button classNames='h-[60px] w-[210px] ml-6 group' onClick={showOurValues}>
