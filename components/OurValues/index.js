@@ -26,7 +26,7 @@ export default function OurValues(props) {
           </div>
 
           <p className="text-brave-purple font-normal text-lg leading-9 mt-5">
-            Our focus is on delivering measurable results for our clients. We use data-driven insights to make informed decisions and constantly evaluate and adjust our strategies to ensure maximum ROI.
+            Our focus is on delivering measurable results for our clients. We use data-driven insights to make informed decisions and constantly evaluate and adjust our strategies to ensure maximum <abbr title="Return On Investment">ROI</abbr>.
           </p>
         </div>
         <div className="cursor-default w-[550px] rounded-lg bg-white px-12 py-14 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all ">
