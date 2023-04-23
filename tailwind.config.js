@@ -17,7 +17,9 @@ module.exports = {
       },
       boxShadow: {
         'purple-sm': '0px 2px 10px rgba(43, 59, 229, 0.2)',
-        'purple-md': '0px 10px 30px rgba(43, 59, 229, 0.3)'
+        'purple-md': '0px 10px 30px rgba(43, 59, 229, 0.3)',
+        'black-sm': '0px 2px 30px rgba(0, 0, 0, 0.04)',
+        'black-md': '0px 5px 50px rgba(0, 0, 0, 0.05)'
       },
       dropShadow: {
         'purple-sm': '0px 10px 50px rgba(43, 59, 229, 0.08)'

@@ -3,10 +3,10 @@ import Button from "../../Button";
 
 export default function Hero() {
   return (
-    <section className="flex mt-10">
+    <section className="flex mt-14">
       <div className="flex-1 flex flex-col justify-center">
-        <small className="text-palatinate-blue text-lg font-medium">A innovate digital agency</small>
-        <h1 className="text-4xl text-coarse-wool font-bold leading-snug mt-4">
+        <small className="label-text">A innovate digital agency</small>
+        <h1 className="heading-1">
           Transform Your Online Presence <br />
           with Our Innovate Digital <br />
           Solutions
@@ -16,7 +16,7 @@ export default function Hero() {
           your business goals, using cutting-edge technology <br />
           and industry best practices
         </p>
-        <div className="flex mt-5">
+        <div className="flex mt-7">
           <Button type='link' href='/contact' isPrimary classNames='h-[60px] w-[210px] rounded-lg hover:shadow-purple-md transition-all'>
             <Image src='/images/contact.svg' width={30} height={30} alt="chat-box" className="mr-2"></Image>
             <span className="text-lg">Get in Touch</span>

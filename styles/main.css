@@ -8,6 +8,24 @@
 
 @layer base {
   body {
-    @apply bg-ghost-white
+    @apply bg-ghost-white;
+  }
+}
+
+@layer utilities {
+  .label-text {
+    @apply text-palatinate-blue text-lg font-medium;
+  }
+
+  .heading-1 {
+    @apply text-4xl text-coarse-wool font-bold leading-snug mt-4;
+  }
+
+  .heading-2 {
+    @apply text-3xl text-coarse-wool font-semibold leading-snug mt-4;
+  }
+
+  .heading-3 {
+    @apply text-2xl text-coarse-wool font-medium leading-snug;
   }
 }
