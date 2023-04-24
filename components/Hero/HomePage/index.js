@@ -28,11 +28,12 @@ export default function Hero(props) {
             <Image src='/images/contact.svg' width={27} height={24} alt="chat-box" className="mr-2"></Image>
             <span className="text-lg">Get in Touch</span>
           </Button>
-          <Button classNames='h-[60px] w-[210px] ml-6 group' onClick={showOurValues}>
-            <div className="rounded-xl h-10 w-6 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
-              <span className="animate-bounce block w-1 h-3 rounded-lg top-2 bg-palatinate-blue absolute"></span>
+          <Button classNames='h-[60px] w-[210px] ml-6 group relative' onClick={showOurValues}>
+            <div className="rounded-xl h-8 w-5 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
+              <span className="animate-bounce block w-1 h-2 rounded-lg top-2 bg-palatinate-blue absolute"></span>
             </div>
-            <span className="text-lg group-hover:underline underline-offset-8">Scroll to read more</span>
+            <span className="text-lg underline-offset-8">Scroll to read more</span>
+            <div className="absolute h-[1px] w-0 opacity-0 left-0 group-hover:opacity-100 group-hover:w-full transition-all bg-palatinate-blue bottom-1"></div>
           </Button>
         </div>
       </div>
