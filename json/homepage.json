@@ -1,0 +1,78 @@
+{ 
+  "services": [
+    {
+      "_id": "ass122jjjjoj033f",
+      "imagePath": "/images/desktop.svg", 
+      "name": "Web Design",
+      "briefDescription": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
+    },
+    {
+      "_id": "ass122jjjjoj033g",
+      "imagePath": "/images/chart.svg", 
+      "name": "Search Engine Optimization",
+      "briefDescription": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
+    },
+    {
+      "_id": "ass122jjjjoj033h",
+      "imagePath": "/images/megaphone.svg", 
+      "name": "Social Media Marketing",
+      "briefDescription": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
+    },
+    {
+      "_id": "ass122jjjjoj033i",
+      "imagePath": "/images/reader.svg", 
+      "name": "Content Creation",
+      "briefDescription": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
+    },
+    {
+      "_id": "ass122jjjjoj033j",
+      "imagePath": "/images/cart.svg", 
+      "name": "E-commerce Solutions",
+      "briefDescription": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
+    },
+    {
+      "_id": "ass122jjjjoj033k",
+      "imagePath": "/images/phone.svg", 
+      "name": "Mobile App Development",
+      "briefDescription": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
+    }
+  ],
+  
+  "portfolios": [
+    {
+      "_id": 122893,
+      "imagePath": "/images/e-commerce-web.png",
+      "orientation": "potrait",
+      "projectName": "E-commerce for Fashion",
+      "projectCategory": "Web Design"
+    },
+    {
+      "_id": 122894,
+      "imagePath": "/images/fitness-studio.png",
+      "orientation": "landscape",
+      "projectName": "Fitness Studio",
+      "projectCategory": "Mobile App Development"
+    },
+    {
+      "_id": 122895,
+      "imagePath": "/images/brand-identity.png",
+      "orientation": "landscape",
+      "projectName": "Brand Identity for Tech Startup",
+      "projectCategory": "Graphic Design"
+    },
+    {
+      "_id": 122896,
+      "imagePath": "/images/video-for-travel-agency.png",
+      "orientation": "landscape",
+      "projectName": "Video Production for Travel Agency",
+      "projectCategory": "Video Production"
+    },
+    {
+      "_id": 122897,
+      "imagePath": "/images/seo-optimization.png",
+      "orientation": "landscape",
+      "projectName": "SEO Opimization for E-commerce Website",
+      "projectCategory": "Search Engine Optimization"
+    }
+  ]
+}

@@ -1,17 +1,8 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import useSWR from 'swr';
-import axios from 'axios';
 import Button from '../Button';
 
-const fetcher = (url) => axios.get(url).then(response => response.data);
-
-export default function Service({ limit }) {
-  const { data: services, error, isLoading } = useSWR('/api/services/' + limit, fetcher);
-
-  if (error) return false;
-  if (isLoading) return false;
-
+export default function Service({ services }) {
   return (
     <section className="mt-36">
       <div className="flex flex-col items-center text-center">
@@ -46,5 +37,5 @@ export default function Service({ limit }) {
 }
 
 Service.propTypes = {
-  limit: PropTypes.number
+  services: PropTypes.array
 }

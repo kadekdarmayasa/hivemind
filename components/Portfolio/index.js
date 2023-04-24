@@ -1,17 +1,8 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import useSWR from 'swr';
-import axios from 'axios';
 import Button from '../Button';
 
-const fetcher = (url) => axios.get(url).then(response => response.data);
-
-export default function Portfolio({ limit }) {
-  const { data: portfolios, error, isLoading } = useSWR('/api/portfolios/' + limit, fetcher);
-
-  if (error) return false;
-  if (isLoading) return false;
-
+export default function Portfolio({ portfolios }) {
   return (
     <section className='mt-36'>
       <div className="flex flex-col items-center text-center">
@@ -66,5 +57,5 @@ export default function Portfolio({ limit }) {
 }
 
 Portfolio.propTypes = {
-  limit: PropTypes.number
+  portfolios: PropTypes.array
 }
