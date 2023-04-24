@@ -44,35 +44,62 @@
       "imagePath": "/images/e-commerce-web.png",
       "orientation": "potrait",
       "projectName": "E-commerce for Fashion",
-      "projectCategory": "Web Design"
+      "serviceCategory": "Web Design"
     },
     {
       "_id": 122894,
       "imagePath": "/images/fitness-studio.png",
       "orientation": "landscape",
       "projectName": "Fitness Studio",
-      "projectCategory": "Mobile App Development"
+      "serviceCategory": "Mobile App Development"
     },
     {
       "_id": 122895,
       "imagePath": "/images/brand-identity.png",
       "orientation": "landscape",
       "projectName": "Brand Identity for Tech Startup",
-      "projectCategory": "Graphic Design"
+      "serviceCategory": "Graphic Design"
     },
     {
       "_id": 122896,
       "imagePath": "/images/video-for-travel-agency.png",
       "orientation": "landscape",
       "projectName": "Video Production for Travel Agency",
-      "projectCategory": "Video Production"
+      "serviceCategory": "Video Production"
     },
     {
       "_id": 122897,
       "imagePath": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
-      "projectCategory": "Search Engine Optimization"
+      "serviceCategory": "Search Engine Optimization"
     }
+  ],
+
+  "testimonies": [
+    {
+      "_id": 12334,
+      "imagePath": "/images/testy-1.png",
+      "name": "John Smith",
+      "occupation": "Marketing Manager",
+      "message": "I am very impressed with the quality of service and attention to detail provided by this company. They helped us increase our online presence and attract more customers. Highly recommended!",
+      "rate": 5
+    }, 
+    {
+      "_id": 12335,
+      "imagePath": "/images/testy-2.png",
+      "name": "Max Robinson",
+      "occupation": "Entrepreneur",
+      "message": "The team at this company is truly professional and skilled. They created a beautiful website for my business and helped me improve my SEO ranking. I will definitely work with them again.",
+      "rate": 5
+    }, 
+    {
+      "_id": 12336,
+      "imagePath": "/images/testy-3.png",
+      "name": "Olivia Taylor",
+      "occupation": "Creative Director",
+      "message": "Working with this company was a pleasure. They have a great eye for design and are able to execute projects quickly and efficiently. I would definitely recommend them to anyone looking for high-quality graphic design.",
+      "rate": 5
+    } 
   ]
 }

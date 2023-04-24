@@ -4,7 +4,7 @@ import Button from '../Button';
 
 export default function Service({ services }) {
   return (
-    <section className="mt-36">
+    <section className="mt-32">
       <div className="flex flex-col items-center text-center">
         <small className="label-text">Our Services</small>
         <h2 className="heading-2">Services Provide By Us</h2>

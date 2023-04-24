@@ -1,4 +1,5 @@
 @import '../components/Navbar/index.css';
+@import '../components/Star/index.css';
 
 @tailwind base;
 @tailwind components;
