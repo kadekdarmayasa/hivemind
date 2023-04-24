@@ -18,12 +18,12 @@ export default function Hero(props) {
           with Our Innovate Digital <br />
           Solutions
         </h1>
-        <p className="text-brave-purple font-normal text-xl leading-9 mt-2">
+        <p className="text-brave-purple font-normal text-xl leading-9 mt-3">
           We provide personalized strategies that are tailored to <br />
           your business goals, using cutting-edge technology <br />
           and industry best practices
         </p>
-        <div className="flex mt-7">
+        <div className="flex mt-12">
           <Button type='link' href='/contact' isPrimary classNames='h-[60px] w-[210px] rounded-lg hover:shadow-purple-md transition-all'>
             <Image src='/images/contact.svg' width={27} height={24} alt="chat-box" className="mr-2"></Image>
             <span className="text-lg">Get in Touch</span>
