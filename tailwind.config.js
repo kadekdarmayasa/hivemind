@@ -25,7 +25,7 @@ module.exports = {
         'purple-sm': '0px 10px 50px rgba(43, 59, 229, 0.08)'
       },
       fontFamily: {
-        'outfit': ['Outfit', 'sans-serif'],
+        'outfit': ['var(--font-outfit)', 'sans-serif'],
       },
     },
   },
