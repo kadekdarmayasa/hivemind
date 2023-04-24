@@ -10,8 +10,9 @@ export default function NavigationMenu({ href, name }) {
   }
 
   return (
-    <li className={`text-base font-regular text-brave-purple ml-10 nav-link ${router.asPath == href && 'active'}`}>
+    <li className={`text-base font-regular relative text-brave-purple ml-10 nav-link ${router.asPath == href && 'active'}`}>
       <Link href={href} onClick={handleClick} className="block">{name}</Link>
+      <div className="h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all"></div>
     </li>
   );
 }
