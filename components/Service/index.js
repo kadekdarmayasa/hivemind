@@ -35,7 +35,7 @@ export default function Service({ limit }) {
           </div>
         )
         )}
-        <Button type='link' href='/services' classNames='mt-auto mb-10 ml-auto relative group'>
+        <Button type='link' href='/services' classNames='mt-auto ml-auto relative group'>
           <span className='text-lg'>See all services</span>
           <Image src='/images/arrow-forward.svg' height={22} width={22} alt='Arrow Forward' className='mt-[2px] ml-1 group-hover:ml-2 transition-all' />
           <div className='absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue'></div>

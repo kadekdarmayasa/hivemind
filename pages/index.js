@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero/Homepage";
 import OurValues from "../components/OurValues";
 import Services from "../components/Service";
+import Portfolio from "../components/Portfolio";
 
 export default function HomePage() {
   const refOurValues = useRef(null);
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Hero refOurValues={refOurValues} />
       <OurValues refOurValues={refOurValues} />
       <Services limit={6} />
+      <Portfolio limit={5} />
     </Layout>
   );
 }

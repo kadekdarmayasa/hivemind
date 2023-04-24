@@ -33,7 +33,7 @@ export default function Hero(props) {
               <span className="animate-bounce block w-1 h-2 rounded-lg top-2 bg-palatinate-blue absolute"></span>
             </div>
             <span className="text-lg underline-offset-8">Scroll to read more</span>
-            <div className="absolute h-[1px] w-0 opacity-0 left-0 group-hover:opacity-100 group-hover:w-full transition-all bg-palatinate-blue bottom-1"></div>
+            <div className="absolute h-[2px] w-0 opacity-0 left-0 group-hover:opacity-100 group-hover:w-full transition-all bg-palatinate-blue bottom-1"></div>
           </Button>
         </div>
       </div>
