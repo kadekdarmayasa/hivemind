@@ -27,4 +27,39 @@
   .heading-3 {
     @apply text-2xl text-coarse-wool font-medium leading-snug;
   }
+
+  .heading-4 {
+    @apply text-xl text-coarse-wool font-medium leading-snug;
+  }
+
+  .heading-5 {
+    @apply text-lg text-coarse-wool font-medium leading-snug;
+  }
+
+  .heading-6 {
+    @apply text-base text-coarse-wool font-medium leading-snug;
+  }
 }
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+  height: 100%;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button::before {
+  color: #2B3BE5;
+}
+
+

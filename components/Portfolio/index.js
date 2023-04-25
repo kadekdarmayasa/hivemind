@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Button from '../Button';
-
 export default function Portfolio({ portfolios }) {
   return (
     <section className='mt-32'>
@@ -14,7 +13,7 @@ export default function Portfolio({ portfolios }) {
         <div className='grid grid-cols-12 grid-flow-dense gap-5 mt-14'>
           {portfolios.map(portfolio => {
             return portfolio.orientation === 'potrait' ? (
-              <div className='rounded-lg relative col-span-4  row-span-4 overflow-hidden group'>
+              <div key={portfolio._id} className='rounded-lg relative col-span-4  row-span-4 overflow-hidden group'>
                 <img src={portfolio.imagePath} alt={portfolio.projectName} className='h-full w-full object-cover group-hover:scale-105 transition-all' />
 
                 <div className='absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-slate-950 to-slate-800 opacity-30 backdrop-blur-md'></div>
@@ -29,7 +28,7 @@ export default function Portfolio({ portfolios }) {
                 </div>
               </div>
             ) : (
-              <div className='rounded-lg col-span-4 relative row-span-2 overflow-hidden group'>
+              <div key={portfolio._id} className='rounded-lg col-span-4 relative row-span-2 overflow-hidden group'>
                 <img src={portfolio.imagePath} alt={portfolio.projectName} className='h-full w-full object-cover group-hover:scale-105 transition-all' />
 
                 <div className='absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-slate-950 to-slate-800 opacity-30 backdrop-blur-md'></div>
@@ -40,7 +39,7 @@ export default function Portfolio({ portfolios }) {
                   }}>{portfolio.projectName}</h3>
                   <p className='text-white font-normal text-base delay-100' style={{
                     textShadow: '0 5px 10px rgba(0, 0, 0, .2)',
-                  }}>{portfolio.projectCategory}</p>
+                  }}>{portfolio.serviceCategory}</p>
                 </div>
               </div>
             )

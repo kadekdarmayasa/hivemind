@@ -1,4 +1,6 @@
 import { Outfit } from 'next/font/google';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import '../styles/main.css';
 
 const outfit = Outfit({
