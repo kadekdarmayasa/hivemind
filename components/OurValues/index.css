@@ -1,0 +1,15 @@
+@tailwind utilities;
+
+@layer utilities {
+  .our-values-item {
+    @apply cursor-default w-[550px] rounded-lg bg-white px-12 py-14 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
+  }
+
+  .our-values-item .heading {
+    @apply heading-3 -mt-1 mr-2;
+  }
+
+  .our-values-item .description {
+    @apply text-brave-purple font-normal text-lg leading-9 mt-5;
+  }
+}
