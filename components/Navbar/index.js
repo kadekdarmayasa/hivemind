@@ -5,12 +5,14 @@ export default function Navbar() {
     <nav className="flex h-[80px] justify-between items-center">
       <Brand />
       <ul className="flex items-center">
-        <NavigationMenu href='/' name='Home' />
-        <NavigationMenu href='/about' name='About' />
-        <NavigationMenu href='/services' name='Services' />
-        <NavigationMenu href='/portfolio' name='Portfolio' />
-        <NavigationMenu href='/blog' name='Blog' />
-        <NavigationMenu href='/contact' name='Contact' />
+        {[
+          { href: '/', name: 'Home' },
+          { href: '/about', name: 'About' },
+          { href: '/services', name: 'Services' },
+          { href: '/portfolio', name: 'Portfolio' },
+          { href: '/blog', name: 'Blog' },
+          { href: '/contact', name: 'Contact' },
+        ].map((item, index) => (<NavigationMenu key={index} href={item.href} name={item.name} />))}
       </ul>
     </nav>
   );

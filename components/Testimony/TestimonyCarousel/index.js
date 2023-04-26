@@ -15,7 +15,6 @@ export default function TestimonyCarousel({ testimonies }) {
     slidesToScroll: 1,
     variableWidth: true,
     pauseOnHover: true,
-    rtl: true,
     adaptiveHeight: true
   };
 
