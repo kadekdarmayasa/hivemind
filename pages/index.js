@@ -5,6 +5,7 @@ import OurValues from "components/OurValues";
 import Services from "components/Service";
 import Portfolio from "components/Portfolio";
 import Testimony from "components/Testimony";
+import Blog from "components/Blog";
 import axios from "axios";
 import useSWR from 'swr';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Services services={data.services} />
       <Portfolio portfolios={data.portfolios} />
       <Testimony testimonies={data.testimonies} />
+      <Blog blogs={data.blogs} />
     </Layout>
   );
 }
