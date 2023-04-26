@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Button from '../Button';
+import { IoChevronForwardOutline } from 'react-icons/io5';
+import { IconContext } from 'react-icons';
 
 export default function Service({ services }) {
   return (
@@ -20,18 +22,22 @@ export default function Service({ services }) {
             <p className='text-brave-purple font-normal text-lg leading-9 mb-5'>{service.briefDescription}</p>
             <Button type='link' href={`/services/${service._id}`} classNames='place-self-start mt-auto relative group'>
               <span className='text-lg'>Learn more</span>
-              <Image src='/images/arrow-forward.svg' height={22} width={22} alt='Arrow Forward' className='mt-[2px] ml-1 group-hover:ml-2 transition-all' />
+              <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
+                <IoChevronForwardOutline />
+              </IconContext.Provider>
               <div className='absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue'></div>
             </Button>
           </div>
         )
         )}
-        <Button type='link' href='/services' classNames='mt-auto ml-auto relative group'>
-          <span className='text-lg'>See all services</span>
-          <Image src='/images/arrow-forward.svg' height={22} width={22} alt='Arrow Forward' className='mt-[2px] ml-1 group-hover:ml-2 transition-all' />
-          <div className='absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue'></div>
-        </Button>
       </div>
+      <Button type='link' href='/services' classNames='mt-8 w-[150px] mx-auto relative group'>
+        <span className='text-lg'>See all services</span>
+        <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
+          <IoChevronForwardOutline />
+        </IconContext.Provider>
+        <div className='absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue'></div>
+      </Button>
     </section>
   )
 }

@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Button from "../../Button";
+import { IoChatboxOutline } from "react-icons/io5";
+import { IconContext } from "react-icons";
 
 export default function Hero(props) {
   const showOurValues = () => {
@@ -25,7 +26,9 @@ export default function Hero(props) {
         </p>
         <div className="flex mt-12">
           <Button type='link' href='/contact' isPrimary classNames='h-[60px] w-[210px] rounded-lg hover:shadow-purple-md transition-all'>
-            <Image src='/images/contact.svg' width={27} height={24} alt="chat-box" className="mr-2"></Image>
+            <IconContext.Provider value={{ title: 'Contact', size: '1.6em', className: "mr-2" }}>
+              <IoChatboxOutline className="h-10" />
+            </IconContext.Provider>
             <span className="text-lg">Get in Touch</span>
           </Button>
           <Button classNames='h-[60px] w-[210px] ml-6 group relative' onClick={showOurValues}>
