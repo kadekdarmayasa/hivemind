@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import Image from 'next/image';
 import Button from '../Button';
+import { IoChevronForwardOutline } from 'react-icons/io5';
+import { IconContext } from 'react-icons';
 export default function Portfolio({ portfolios }) {
   return (
     <section className='mt-32'>
@@ -45,9 +46,11 @@ export default function Portfolio({ portfolios }) {
             )
           })}
         </div>
-        <Button type='link' href='/portolio' classNames='mt-6 ml-auto relative group'>
+        <Button type='link' href='/portolio' classNames='mt-8 mx-auto relative group'>
           <span className='text-lg'>See all portfolios</span>
-          <Image src='/images/arrow-forward.svg' height={22} width={22} alt='Arrow Forward' className='mt-[2px] ml-1 group-hover:ml-2 transition-all' />
+          <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
+            <IoChevronForwardOutline />
+          </IconContext.Provider>
           <div className='absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue'></div>
         </Button>
       </div>
