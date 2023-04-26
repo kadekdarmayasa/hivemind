@@ -6,7 +6,6 @@ export default function Portfolio({ portfolios }) {
   return (
     <section className='mt-32'>
       <div className="flex flex-col items-center text-center">
-        <small className="label-text">Our Portfolio</small>
         <h2 className="heading-2">Our Work and Case Study</h2>
       </div>
 

@@ -11,7 +11,6 @@ export default function OurValues(props) {
   return (
     <section className="mt-32" ref={props.refOurValues}>
       <div className="flex flex-col items-center text-center">
-        <small className="label-text">Our Values</small>
         <h2 className="heading-2">What Sets Us Apart</h2>
       </div>
 
