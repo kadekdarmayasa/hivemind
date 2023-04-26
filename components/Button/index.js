@@ -33,7 +33,7 @@ export default function Button(props) {
   }
 
   return (
-    <button onClick={onClick} className={classNames.join(' ')}>
+    <button type={props.type ? props.type : 'button'} onClick={onClick} className={classNames.join(' ')}>
       {props.children}
     </button>
   )
