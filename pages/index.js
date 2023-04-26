@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import Layout from "../components/Layout";
-import Hero from "../components/Hero/Homepage";
-import OurValues from "../components/OurValues";
-import Services from "../components/Service";
-import Portfolio from "../components/Portfolio";
-import Testimony from "../components/Testimony";
+import Layout from "components/Layout";
+import Hero from "components/Hero/Homepage";
+import OurValues from "components/OurValues";
+import Services from "components/Service";
+import Portfolio from "components/Portfolio";
+import Testimony from "components/Testimony";
 import axios from "axios";
 import useSWR from 'swr';
 
