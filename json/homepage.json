@@ -102,28 +102,55 @@
       "rate": 5
     },
     {
-      "_id": 12336,
-      "imagePath": "/images/testy-3.png",
-      "clientName": "Cintya",
-      "occupation": "Creative Director",
-      "message": "Working with this company was a pleasure. They have a great eye for design and are able to execute projects quickly and efficiently. I would definitely recommend them to anyone looking for high-quality graphic design.",
+      "_id": 12337,
+      "imagePath": "/images/testy-4.jpg",
+      "clientName": "Robert Johnson",
+      "occupation": "CEO",
+      "message": "The results speak for themselves. Since partnering with Hivemind, we've seen a significant increase in website traffic and lead generation. Their team's expertise and creativity have been invaluable to our digital marketing efforts.",
       "rate": 5
     },
     {
-      "_id": 12336,
-      "imagePath": "/images/testy-3.png",
-      "clientName": "Swiey Den",
-      "occupation": "Creative Director",
-      "message": "Working with this company was a pleasure. They have a great eye for design and are able to execute projects quickly and efficiently. I would definitely recommend them to anyone looking for high-quality graphic design.",
+      "_id": 12338,
+      "imagePath": "/images/testy-5.png",
+      "clientName": "Sarah Lee",
+      "occupation": "E-commerce Manager",
+      "message": "Working with Hivemind has been a game-changer for our online store. Their e-commerce expertise has helped us streamline our sales process and optimize our website for maximum conversion. We couldn't be happier with the results.",
       "rate": 5
     },
     {
-      "_id": 12336,
-      "imagePath": "/images/testy-3.png",
-      "clientName": "Mundiy",
-      "occupation": "Creative Director",
-      "message": "Working with this company was a pleasure. They have a great eye for design and are able to execute projects quickly and efficiently. I would definitely recommend them to anyone looking for high-quality graphic design.",
+      "_id": 12339,
+      "imagePath": "/images/testy-6.png",
+      "clientName": "Maria Garcia",
+      "occupation": "Real Estate Agent",
+      "message": "I've worked with several web design companies in the past, but none have delivered the same level of expertise and customer service as Hivemind. Their team took the time to understand my business and goals and created a website that truly reflects my brand. I would highly recommend their services.",
       "rate": 5
-    } 
+    }
+  ],
+
+  "blogs": [
+    {
+      "_id": 1234214,
+      "publishedDate": "20-01-2023",
+      "isPublished": "true",
+      "author": "Admin Hivemind",
+      "title": "How to Increase your Website's Conversion Rate",
+      "shortDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
+    },
+    {
+      "_id": 1234215,
+      "publishedDate": "10-02-2023",
+      "isPublished": "true",
+      "author": "Admin Hivemind",
+      "title": "The Importance of SEO for Your Business",
+      "shortDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
+    },
+    {
+      "_id": 1234216,
+      "publishedDate": "20-02-2023",
+      "isPublished": "true",
+      "author": "Admin Hivemind",
+      "title": "Maximizing Your Social Media Presence",
+      "shortDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
+    }
   ]
 }

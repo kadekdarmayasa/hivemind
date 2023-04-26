@@ -6,7 +6,9 @@ export default function TestimonyItem({ testimony }) {
   return (
     <div className="h-auto bg-white w-full px-8 py-10 rounded-lg">
       <div className="flex items-center">
-        <Image src={testimony.imagePath} width={50} height={50} alt={testimony.clientName} className="rounded-full h-auto w-auto" />
+        <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
+          <Image src={testimony.imagePath} width={50} height={50} alt={testimony.clientName} className="rounded-full" />
+        </div>
 
         <div className="ml-4">
           <h4 className="heading-5">{testimony.clientName}</h4>

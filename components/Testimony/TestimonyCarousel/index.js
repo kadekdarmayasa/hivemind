@@ -15,12 +15,11 @@ export default function TestimonyCarousel({ testimonies }) {
     slidesToScroll: 1,
     variableWidth: true,
     pauseOnHover: true,
-    adaptiveHeight: true
   };
 
   return (
     <div className="h-auto my-4 mb-20">
-      <Slider {...settings} className="bg-ghost-white">
+      <Slider {...settings} className="bg-ghost-white h-auto">
         {testimonies.map(testimony => (
           <div key={testimony._id} className="mt-10" style={{ width: 430 }}>
             <TestimonyItem testimony={testimony} />
