@@ -5,7 +5,7 @@ import TestimonyItem from "../TestimonyItem";
 export default function TestimonyCarousel({ testimonies }) {
   const settings = {
     className: "slider variable-width",
-    dots: true,
+    dots: false,
     lazyLoad: true,
     infinite: true,
     autoplay: true,
@@ -15,12 +15,13 @@ export default function TestimonyCarousel({ testimonies }) {
     slidesToScroll: 1,
     variableWidth: true,
     pauseOnHover: true,
-    rtl: true
+    rtl: true,
+    adaptiveHeight: true
   };
 
   return (
     <div className="h-auto my-4 mb-20">
-      <Slider {...settings} className="h-[410px] bg-ghost-white">
+      <Slider {...settings} className="bg-ghost-white">
         {testimonies.map(testimony => (
           <div key={testimony._id} className="mt-10" style={{ width: 430 }}>
             <TestimonyItem testimony={testimony} />
