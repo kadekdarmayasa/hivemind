@@ -8,7 +8,6 @@ export default function Service({ services }) {
   return (
     <section className="mt-32">
       <div className="flex flex-col items-center text-center">
-        <small className="label-text">Our Services</small>
         <h2 className="heading-2">Services Provide By Us</h2>
       </div>
 
@@ -19,7 +18,7 @@ export default function Service({ services }) {
               <Image src={service.imagePath} height={30} width={30} alt={service.name} style={{ width: '40px' }} />
             </div>
             <h3 className='heading-3 mb-3'>{service.name}</h3>
-            <p className='text-brave-purple font-normal text-lg leading-9 mb-5'>{service.briefDescription}</p>
+            <p className='text-brave-purple font-light text-lg leading-9 mb-5'>{service.briefDescription}</p>
             <Button type='link' href={`/services/${service._id}`} classNames='place-self-start mt-auto relative group'>
               <span className='text-lg'>Learn more</span>
               <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
