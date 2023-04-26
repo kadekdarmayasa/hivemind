@@ -12,7 +12,7 @@ export default function TestimonyItem({ testimony }) {
 
         <div className="ml-4">
           <h4 className="heading-5">{testimony.clientName}</h4>
-          <p className="text-brave-purple text-base font-normal">{testimony.occupation}</p>
+          <p className="text-brave-purple text-base font-light">{testimony.occupation}</p>
         </div>
       </div>
 
