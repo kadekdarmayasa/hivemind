@@ -46,6 +46,10 @@
   margin: 0 10px;
 }
 
+.slick-track {
+  display: flex;
+}
+
 .slick-list {
   margin: 0 -10px;
   height: 100%;
