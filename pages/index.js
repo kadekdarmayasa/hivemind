@@ -13,7 +13,7 @@ const fetcher = (url) => axios.get(url).then(response => response.data);
 export default function HomePage() {
   const refOurValues = useRef(null);
   const { data, error, isLoading } = useSWR('api/homepage', fetcher);
-  console.log(data);
+
   if (error) return false;
   if (isLoading) return false;
 
