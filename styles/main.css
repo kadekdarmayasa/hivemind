@@ -22,7 +22,7 @@
   }
 
   .heading-2 {
-    @apply text-3xl text-coarse-wool font-semibold leading-snug mt-4;
+    @apply text-[2rem] text-coarse-wool font-semibold leading-snug mt-4;
   }
 
   .heading-3 {
