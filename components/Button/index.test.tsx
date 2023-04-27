@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Button from './index.js';
+import Button from './index';
 
 test('Button Should has background of palatinate blue when it is primary', () => {
   const { container } = render(<Button isPrimary></Button>);

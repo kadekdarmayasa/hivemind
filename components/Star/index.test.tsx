@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Star from './index.js';
+import Star from './index';
 
 test('Should have these values [width, height, value]', () => {
   const height = 40,

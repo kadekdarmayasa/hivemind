@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import mockRouter from 'next-router-mock';
-import NavigationMenu from "./index.js";
+import NavigationMenu from "./index";
 
 jest.mock('next/router', () => require('next-router-mock'));
 
