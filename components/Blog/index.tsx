@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import BlogCarousel from './BlogCarousel';
+import BlogCarousel from './BlogCarousel/index';
+import { BlogItem } from 'interfaces/BlogItem';
 
-export default function Blog({ blogs }) {
+export default function Blog({ blogs }: { blogs: Array<BlogItem> }) {
   return (
     <section className="mt-32">
       <div className="flex flex-col items-center text-center">
@@ -11,8 +11,4 @@ export default function Blog({ blogs }) {
       <BlogCarousel blogs={blogs} />
     </section>
   )
-}
-
-Blog.propTypes = {
-  blogs: PropTypes.array
 }

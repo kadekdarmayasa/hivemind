@@ -1,8 +1,8 @@
 import Slider from "react-slick";
-import PropTypes from 'prop-types';
 import BlogItem from "../BlogItem";
+import { BlogItem as BlogItemInterface } from "interfaces/BlogItem";
 
-export default function BlogCarousel({ blogs }) {
+export default function BlogCarousel({ blogs }: { blogs: Array<BlogItemInterface> }): JSX.Element {
   const settings = {
     className: "slider variable-width",
     infinite: true,
@@ -25,8 +25,4 @@ export default function BlogCarousel({ blogs }) {
       </Slider>
     </div>
   )
-}
-
-BlogCarousel.propTypes = {
-  blogs: PropTypes.array
 }

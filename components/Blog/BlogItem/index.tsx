@@ -1,9 +1,9 @@
 import Button from 'components/Button';
 import { IconContext } from 'react-icons';
 import { IoChevronForwardOutline } from 'react-icons/io5';
-import PropTypes from 'prop-types';
+import { BlogItem } from 'interfaces/BlogItem';
 
-export default function BlogItem({ blog }) {
+export default function BlogItem({ blog }: { blog: BlogItem }): JSX.Element {
   return (
     <div className='h-[auto] w-[360px] bg-white rounded-xl relative'>
       <div className='h-[170px] w-full overflow-hidden rounded-t-xl'>
@@ -19,7 +19,7 @@ export default function BlogItem({ blog }) {
         <h3 className='heading-3 mt-6'>{blog.title}</h3>
         <p className='text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-14'>{blog.shortDescription}</p>
 
-        <Button type='link' href={`/blog/${blog._id}`} classNames='absolute bottom-5 group'>
+        <Button type='link' href={`/blog/${blog._id}`} classNames={['absolute', 'bottom-5', 'group']}>
           <span className='text-lg'>Read more</span>
           <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
             <IoChevronForwardOutline />
@@ -29,8 +29,4 @@ export default function BlogItem({ blog }) {
       </div>
     </div>
   );
-}
-
-BlogItem.propTypes = {
-  blog: PropTypes.object
 }
