@@ -1,7 +1,8 @@
 import { IoCheckmarkCircleOutline } from 'react-icons/io5';
 import { IconContext } from "react-icons";
+import { LegacyRef } from 'react';
 
-export default function OurValues(props) {
+export default function OurValues({ refOurValues }: { refOurValues: LegacyRef<HTMLElement> }): JSX.Element {
   const checkmarkIcon = (
     <IconContext.Provider value={{ size: '2em', color: '#5BFBD8', className: '-mt-1' }}>
       <IoCheckmarkCircleOutline />
@@ -9,7 +10,7 @@ export default function OurValues(props) {
   )
 
   return (
-    <section className="mt-32" ref={props.refOurValues}>
+    <section className="mt-32" ref={refOurValues}>
       <div className="flex flex-col items-center text-center">
         <h2 className="heading-2">What Sets Us Apart</h2>
       </div>

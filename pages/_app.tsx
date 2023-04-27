@@ -1,4 +1,5 @@
 import { Outfit } from 'next/font/google';
+import type { AppProps } from 'next/app';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/main.css';
@@ -9,7 +10,7 @@ const outfit = Outfit({
   subsets: ['latin'],
 });
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${outfit.variable} font-outfit`}>
       <Component {...pageProps} />

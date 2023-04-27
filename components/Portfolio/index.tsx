@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types';
 import Button from '../Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
-export default function Portfolio({ portfolios }) {
+
+interface PortfolioItem {
+  _id: string | number,
+  imagePath: string,
+  orientation: string,
+  projectName: string,
+  serviceCategory: string
+}
+
+export default function Portfolio({ portfolios }: { portfolios: Array<PortfolioItem> }): JSX.Element {
   return (
     <section className='mt-32'>
       <div className="flex flex-col items-center text-center">
@@ -45,7 +53,7 @@ export default function Portfolio({ portfolios }) {
             )
           })}
         </div>
-        <Button type='link' href='/portolio' classNames='mt-8 mx-auto relative group'>
+        <Button type='link' href='/portolio' classNames={['mt-8', 'mx-auto', 'relative', 'group']}>
           <span className='text-lg'>See all portfolios</span>
           <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
             <IoChevronForwardOutline />
@@ -55,8 +63,4 @@ export default function Portfolio({ portfolios }) {
       </div>
     </section>
   )
-}
-
-Portfolio.propTypes = {
-  portfolios: PropTypes.array
 }

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Navbar from "../Navbar";
-import PropTypes from 'prop-types';
+import { ReactNode } from "react";
 
-export default function Layout({ children, title }) {
+export default function Layout({ children, title }: { children: ReactNode, title: string }): JSX.Element {
   return (
     <>
       <Head>
@@ -23,9 +23,4 @@ export default function Layout({ children, title }) {
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.any.isRequired,
-  title: PropTypes.string.isRequired
 }

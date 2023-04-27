@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import Button from "components/Button";
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialInstagram } from "react-icons/sl";
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className="h-auto mt-32">
       <div className="mb-16 flex justify-between">
@@ -36,7 +36,7 @@ export default function Footer() {
             { href: '/blog', name: 'Blog' },
             { href: '/contact', name: 'Contact' },
           ].map((item, index) => (
-            <Button key={index} type="link" href={item.href} classNames="transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue">
+            <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue"]}>
               {item.name}
             </Button>
           ))}
@@ -52,7 +52,7 @@ export default function Footer() {
             { href: '/service/ec-solutions', name: 'E-commerce Solutions' },
             { href: '/service/mobiledev', name: 'Mobile App Dev' },
           ].map((item, index) => (
-            <Button key={index} type="link" href={item.href} classNames="transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue">
+            <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue"]}>
               {item.name}
             </Button>
           ))}
@@ -65,7 +65,7 @@ export default function Footer() {
             <small className="text-brave-purple font-regular text-base">Subscribe to get latest updates</small>
             <form action="" method="post" className="bg-white h-auto px-4 py-3 flex items-center rounded-lg mt-2">
               <input type="email" name="email" id="email" placeholder="Your email..." className="outline-none text-coarse-wool font-normal" />
-              <Button type="submit" isPrimary classNames="!shadow-none py-2 px-4 rounded-md">Susbcribe</Button>
+              <Button type="submit" isPrimary classNames={["!shadow-none", "py-2", "px-4", "rounded-md"]}>Susbcribe</Button>
             </form>
           </div>
         </div>

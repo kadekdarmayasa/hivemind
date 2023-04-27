@@ -1,8 +1,8 @@
 import Slider from "react-slick";
-import PropTypes from 'prop-types';
 import TestimonyItem from "../TestimonyItem";
+import { TestimonyItem as TestimonyItemInterface } from 'interfaces/TestimonyItem';
 
-export default function TestimonyCarousel({ testimonies }) {
+export default function TestimonyCarousel({ testimonies }: { testimonies: Array<TestimonyItemInterface> }): JSX.Element {
   const settings = {
     className: "slider variable-width",
     infinite: true,
@@ -25,8 +25,4 @@ export default function TestimonyCarousel({ testimonies }) {
       </Slider>
     </div>
   )
-}
-
-TestimonyCarousel.propTyopes = {
-  testimonies: PropTypes.array
 }

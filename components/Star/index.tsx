@@ -1,6 +1,10 @@
-import PropTypes from 'prop-types';
+interface Star {
+  value: number,
+  height: number,
+  width: number
+}
 
-export default function Star({ className, value, height, width }) {
+export default function Star({ value, height, width }: Star): JSX.Element {
   const decimals = Number(value) % 1;
   const star = [];
   let leftPosition = 0;
@@ -19,17 +23,10 @@ export default function Star({ className, value, height, width }) {
 
   return (
     <>
-      <div className={['stars', className].join(' ')} style={{ height: height }}>
+      <div className={'stars'} style={{ height: height }}>
         {starPlaceholder}
         {star}
       </div>
     </>
   )
-}
-
-Star.propTypes = {
-  className: PropTypes.string,
-  value: PropTypes.number,
-  width: PropTypes.number,
-  height: PropTypes.number,
 }

@@ -1,8 +1,18 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 
-export default function Button(props) {
-  const classNames = [props.classNames];
+interface ButtonProps {
+  classNames?: string[],
+  onClick?: () => void,
+  type?: "button" | "submit" | "link",
+  isExternal?: boolean,
+  isPrimary?: boolean,
+  href?: string,
+  children: ReactNode
+}
+
+export default function Button(props: ButtonProps): JSX.Element {
+  const classNames = [...props.classNames];
 
   classNames.push('flex justify-center items-center');
 
@@ -38,12 +48,3 @@ export default function Button(props) {
     </button>
   )
 }
-
-Button.propTypes = {
-  classNames: PropTypes.string,
-  onClick: PropTypes.func,
-  isExternal: PropTypes.bool,
-  isPrimary: PropTypes.bool,
-  type: PropTypes.string,
-  href: PropTypes.string,
-};

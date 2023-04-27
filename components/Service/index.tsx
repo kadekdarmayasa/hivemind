@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Button from '../Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 
-export default function Service({ services }) {
+interface ServiceItem {
+  _id: string | number,
+  imagePath: string,
+  name: string,
+  briefDescription: string,
+}
+
+export default function Service({ services }: { services: Array<ServiceItem> }): JSX.Element {
   return (
     <section className="mt-32">
       <div className="flex flex-col items-center text-center">
@@ -19,7 +25,7 @@ export default function Service({ services }) {
             </div>
             <h3 className='heading-3 mb-3'>{service.name}</h3>
             <p className='text-brave-purple font-light text-lg leading-9 mb-5'>{service.briefDescription}</p>
-            <Button type='link' href={`/services/${service._id}`} classNames='place-self-start mt-auto relative group'>
+            <Button type='link' href={`/services/${service._id}`} classNames={['place-self-start', 'mt-auto', 'relative', 'group']}>
               <span className='text-lg'>Learn more</span>
               <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
                 <IoChevronForwardOutline />
@@ -30,7 +36,7 @@ export default function Service({ services }) {
         )
         )}
       </div>
-      <Button type='link' href='/services' classNames='mt-8 w-[150px] mx-auto relative group'>
+      <Button type='link' href='/services' classNames={['mt-8', 'w-[150px]', 'mx-auto', 'relative', 'group']}>
         <span className='text-lg'>See all services</span>
         <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
           <IoChevronForwardOutline />
@@ -39,8 +45,4 @@ export default function Service({ services }) {
       </Button>
     </section>
   )
-}
-
-Service.propTypes = {
-  services: PropTypes.array
 }

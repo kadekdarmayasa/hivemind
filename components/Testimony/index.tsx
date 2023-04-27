@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
 import TestimonyCarousel from './TestimonyCarousel';
+import { TestimonyItem } from 'interfaces/TestimonyItem';
 
-export default function Testimony({ testimonies }) {
+export default function Testimony({ testimonies }: { testimonies: Array<TestimonyItem> }): JSX.Element {
   return (
     <section className='mt-32'>
       <div className="flex flex-col items-center text-center">
@@ -11,8 +11,4 @@ export default function Testimony({ testimonies }) {
       <TestimonyCarousel testimonies={testimonies} />
     </section>
   )
-}
-
-Testimony.propTyopes = {
-  testimonies: PropTypes.array
 }

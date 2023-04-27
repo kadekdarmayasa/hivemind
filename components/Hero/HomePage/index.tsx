@@ -1,11 +1,12 @@
 import Button from "../../Button";
 import { IoChatboxOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import { MutableRefObject } from 'react';
 
-export default function Hero(props) {
+export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }): JSX.Element {
   const showOurValues = () => {
     window.scrollTo({
-      top: props.refOurValues.current.offsetTop - 50,
+      top: refOurValues.current.offsetTop - 50,
       behavior: 'smooth'
     });
   };
@@ -25,13 +26,13 @@ export default function Hero(props) {
           and industry best practices
         </p>
         <div className="flex mt-12">
-          <Button type='link' href='/contact' isPrimary classNames='h-[60px] w-[210px] rounded-lg hover:shadow-purple-md transition-all'>
-            <IconContext.Provider value={{ title: 'Contact', size: '1.6em', className: "mr-2" }}>
+          <Button type='link' href='/contact' isPrimary classNames={['h-[60px]', 'w-[210px]', 'rounded-lg', 'hover:shadow-purple-md', 'transition-all']}>
+            <IconContext.Provider value={{ size: '1.6em', className: "mr-2", }}>
               <IoChatboxOutline className="h-10" />
             </IconContext.Provider>
             <span className="text-lg">Get in Touch</span>
           </Button>
-          <Button classNames='h-[60px] w-[210px] ml-6 group relative' onClick={showOurValues}>
+          <Button classNames={['h-[60px]', 'w-[210px]', 'ml-6', 'group', 'relative']} onClick={showOurValues}>
             <div className="rounded-xl h-8 w-5 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
               <span className="animate-bounce block w-1 h-2 rounded-lg top-2 bg-palatinate-blue absolute"></span>
             </div>

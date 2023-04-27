@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import PropTypes from 'prop-types';
 
-export default function NavigationMenu({ href, name }) {
+export default function NavigationMenu({ href, name }: { href: string, name: string }): JSX.Element {
   const router = useRouter();
 
   const handleClick = () => {
@@ -15,9 +14,4 @@ export default function NavigationMenu({ href, name }) {
       <div className="h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all"></div>
     </li>
   );
-}
-
-NavigationMenu.propTypes = {
-  href: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
 }

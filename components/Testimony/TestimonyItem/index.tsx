@@ -1,8 +1,8 @@
 import Image from "next/image"
-import PropTypes from 'prop-types';
 import Star from '../../Star';
+import { TestimonyItem } from "interfaces/TestimonyItem";
 
-export default function TestimonyItem({ testimony }) {
+export default function TestimonyItem({ testimony }: { testimony: TestimonyItem }): JSX.Element {
   return (
     <div className="h-auto bg-white  w-[430px] mt-10 px-8 py-10 rounded-lg">
       <div className="flex items-center">
@@ -25,9 +25,4 @@ export default function TestimonyItem({ testimony }) {
       </div>
     </div>
   )
-}
-
-
-TestimonyItem.propTyopes = {
-  testimony: PropTypes.object
 }

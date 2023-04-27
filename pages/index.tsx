@@ -10,10 +10,10 @@ import Footer from "components/Footer";
 import axios from "axios";
 import useSWR from 'swr';
 
-const fetcher = (url) => axios.get(url).then(response => response.data);
+const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
-export default function HomePage() {
-  const refOurValues = useRef(null);
+export default function HomePage(): JSX.Element | false {
+  const refOurValues = useRef<HTMLElement>(null);
   const { data, error, isLoading } = useSWR('api/homepage', fetcher);
 
   if (error) return false;
