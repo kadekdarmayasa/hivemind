@@ -1,0 +1,20 @@
+{
+  "company": {
+    "philosophy": {
+      "text": 
+      "Hivemind philosophy is a concept that emphasizes the collective intelligence and creativity of a group of individuals working towards a common goal. It involves collaboration, communication, and the exchange of ideas in an open and respectful environment. In a work culture that promotes the hivemind philosophy, every member of the team is valued for their unique perspective and contributions, and there is a sense of shared ownership and responsibility for the success of the company.",
+      "imagePath": "/images/philosophy-image.png"
+    },
+
+    "missions": [
+      "To provide customized digital strategies and solutions that are tailored to meet the unique needs and objectives of each of our clients.",
+      "To foster a culture of creativity, collaboration, and innovation that empowers our team members to develop and deliver the best possible results.",
+      "To continuously invest in the latest technologies, tools, and methodologies to stay at the forefront of the digital industry and ensure that our clients are always ahead of their competition."
+    ],
+
+    "visions": [
+      "To become the leading provider of innovative and cutting-edge digital solutions for businesses of all sizes and industries.",
+      "To establish long-lasting relationships with our clients, partners, and stakeholders by consistently exceeding their expectations."
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import BlogItem from "../BlogItem";
-import { BlogItem as BlogItemProps } from "types/BlogItem";
+import { BlogItem as BlogItemProps } from "interfaces/BlogItem";
 
 export default function BlogCarousel({ blogs }: { blogs: Array<BlogItemProps> }): JSX.Element {
   const settings = {

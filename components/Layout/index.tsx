@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "../Navbar";
+import Footer from "components/Footer";
 
 type Layout = {
   children: React.ReactNode,
@@ -24,6 +25,7 @@ export default function Layout({ children, title }: Layout): JSX.Element {
       <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0">
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </div>
     </>
   )

@@ -43,7 +43,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
       </div>
 
       <div className="flex-1 flex justify-end">
-        <img src="/images/hero-image-1.png" alt="Our Team meeting With Client" className="w-[98%] drop-shadow-purple-sm" />
+        <img src="/images/hero-image-1.png" alt="Our Team meeting With Client" className="w-[98%] shadow-black-md" />
       </div>
     </section>
   )
