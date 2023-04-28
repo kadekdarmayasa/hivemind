@@ -1,4 +1,4 @@
-interface Star {
+type Star = {
   value: number,
   height: number,
   width: number

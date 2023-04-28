@@ -1,4 +1,4 @@
-export interface TestimonyItem {
+export type TestimonyItem = {
   _id: string | number,
   imagePath: string,
   clientName: string,

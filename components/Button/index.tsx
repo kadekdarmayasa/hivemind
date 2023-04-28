@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
 
-interface ButtonProps {
+type ButtonProps = {
   classNames?: string[],
   onClick?: () => void,
   type?: "button" | "submit" | "link",
   isExternal?: boolean,
   isPrimary?: boolean,
   href?: string,
-  children?: ReactNode
+  children?: React.ReactNode
 }
 
 export default function Button(props: ButtonProps): JSX.Element {

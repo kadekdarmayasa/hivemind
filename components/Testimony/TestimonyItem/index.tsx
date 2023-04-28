@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Star from '../../Star';
-import { TestimonyItem } from "interfaces/TestimonyItem";
+import { TestimonyItem } from "types/TestimonyItem";
 
 export default function TestimonyItem({ testimony }: { testimony: TestimonyItem }): JSX.Element {
   return (

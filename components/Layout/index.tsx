@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Navbar from "../Navbar";
-import { ReactNode } from "react";
 
-export default function Layout({ children, title }: { children: ReactNode, title: string }): JSX.Element {
+type Layout = {
+  children: React.ReactNode,
+  title: string
+}
+
+export default function Layout({ children, title }: Layout): JSX.Element {
   return (
     <>
       <Head>

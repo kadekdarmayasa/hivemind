@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function NavigationMenu({ href, name }: { href: string, name: string }): JSX.Element {
+type NavigationMenu = {
+  href: string,
+  name: string
+}
+
+export default function NavigationMenu({ href, name }: NavigationMenu): JSX.Element {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push(href);
-  }
+  const handleClick = () => { router.push(href) }
 
   return (
     <li className={`text-base font-regular relative text-brave-purple ml-10 nav-link ${router.asPath == href && 'active'}`}>

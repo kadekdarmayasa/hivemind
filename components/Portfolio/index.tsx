@@ -2,7 +2,7 @@ import Button from '../Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 
-interface PortfolioItem {
+type PortfolioItem = {
   _id: string | number,
   imagePath: string,
   orientation: string,

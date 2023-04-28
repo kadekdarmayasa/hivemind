@@ -1,4 +1,4 @@
-export interface BlogItem {
+export type BlogItem = {
   _id: string | number,
   imagePath: string,
   publishedDate: string,

@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import BlogItem from "../BlogItem";
-import { BlogItem as BlogItemInterface } from "interfaces/BlogItem";
+import { BlogItem as BlogItemProps } from "types/BlogItem";
 
-export default function BlogCarousel({ blogs }: { blogs: Array<BlogItemInterface> }): JSX.Element {
+export default function BlogCarousel({ blogs }: { blogs: Array<BlogItemProps> }): JSX.Element {
   const settings = {
     className: "slider variable-width",
     infinite: true,

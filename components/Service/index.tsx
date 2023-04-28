@@ -3,7 +3,7 @@ import Button from '../Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 
-interface ServiceItem {
+type ServiceItem = {
   _id: string | number,
   imagePath: string,
   name: string,
