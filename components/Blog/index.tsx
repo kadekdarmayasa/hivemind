@@ -1,7 +1,7 @@
 import BlogCarousel from './BlogCarousel/index';
-import { BlogItem } from 'interfaces/BlogItem';
+import { BlogItemProps } from 'types/BlogItem';
 
-export default function Blog({ blogs }: { blogs: Array<BlogItem> }) {
+export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
   return (
     <section className="mt-32">
       <div className="flex flex-col items-center text-center">
