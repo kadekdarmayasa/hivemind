@@ -1,7 +1,7 @@
 import Brand from "../Brand";
 import { IconContext } from "react-icons";
 import Button from "components/Button";
-import { SlSocialLinkedin, SlSocialTwitter, SlSocialInstagram } from "react-icons/sl";
+import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from "react-icons/sl";
 
 export default function Footer(): JSX.Element {
   return (
@@ -14,7 +14,7 @@ export default function Footer(): JSX.Element {
 
             <IconContext.Provider value={{ size: '1.3em', color: '#2B3BE5' }}>
               <a href="https://www.instagram.com" target="_blank" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
-                <SlSocialInstagram />
+                <SlSocialFacebook />
               </a>
               <a href="https://www.twitter.com" target="_blank" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
                 <SlSocialTwitter />

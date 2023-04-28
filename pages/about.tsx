@@ -3,17 +3,6 @@ import Company from "components/Company";
 import axios from "axios";
 import useSWR from 'swr';
 
-type AboutProps = {
-  company: {
-    philosophy: {
-      text: string,
-      imagePath: string
-    },
-    missions: string[],
-    visions: string[]
-  }
-}
-
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function AboutPage(): JSX.Element | false {
@@ -27,4 +16,26 @@ export default function AboutPage(): JSX.Element | false {
       <Company company={data.company} />
     </Layout>
   )
+}
+
+type AboutProps = {
+  company: {
+    philosophy: {
+      text: string,
+      imagePath: string
+    },
+    missions: string[],
+    visions: string[],
+    teams: {
+      _id: number,
+      imagePath: string,
+      name: string,
+      title: string,
+      socials: {
+        facebook: string,
+        twitter: string,
+        linkedin: string
+      }
+    }[]
+  }
 }

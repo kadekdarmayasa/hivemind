@@ -15,6 +15,53 @@
     "visions": [
       "To become the leading provider of innovative and cutting-edge digital solutions for businesses of all sizes and industries.",
       "To establish long-lasting relationships with our clients, partners, and stakeholders by consistently exceeding their expectations."
+    ],
+
+    "teams": [
+      {
+        "_id": 12,
+        "imagePath": "/images/team-1.png",
+        "name": "Amanda Chen",
+        "title": "Digital Marketing Manager",
+        "socials": {
+          "facebook": "https://www.facebook.com/",
+          "twitter": "https://www.twitter.com/",
+          "linkedin": "https://www.linkedin.com/"
+        }
+      },
+      {
+        "_id": 13,
+        "imagePath": "/images/team-2.png",
+        "name": "Daniel Wong",
+        "title": "Web Developer Expert",
+        "socials": {
+          "facebook": "https://www.facebook.com/",
+          "twitter": "https://www.twitter.com/",
+          "linkedin": "https://www.linkedin.com/"
+        }
+      },
+      {
+        "_id": 13,
+        "imagePath": "/images/team-3.png",
+        "name": "Eric Nguyen",
+        "title": "Lead Developer",
+        "socials": {
+          "facebook": "https://www.facebook.com/",
+          "twitter": "https://www.twitter.com/",
+          "linkedin": "https://www.linkedin.com/"
+        }
+      },
+      {
+        "_id": 14,
+        "imagePath": "/images/team-4.png",
+        "name": "Rachel Lee",
+        "title": "Sales Manager",
+        "socials": {
+          "facebook": "https://www.facebook.com/",
+          "twitter": "https://www.twitter.com/",
+          "linkedin": "https://www.linkedin.com/"
+        }
+      }
     ]
   }
 }

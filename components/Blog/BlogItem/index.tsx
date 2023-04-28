@@ -5,7 +5,7 @@ import { BlogItem } from 'interfaces/BlogItem';
 
 export default function BlogItem({ blog }: { blog: BlogItem }): JSX.Element {
   return (
-    <div className='h-[auto] w-[360px] bg-white rounded-xl relative'>
+    <div className='h-[auto] w-[360px] bg-white rounded-xl relative blog-item'>
       <div className='h-[170px] w-full overflow-hidden rounded-t-xl'>
         <img src={blog.imagePath} alt="" className='h-full w-full object-cover' />
       </div>

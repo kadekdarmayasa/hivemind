@@ -42,7 +42,7 @@
   }
 }
 
-.slick-slide > div {
+.slick-slide > div > :is(.testimony-item, .blog-item) {
   margin: 0 10px;
 }
 
