@@ -1,17 +1,6 @@
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from "react-icons/sl";
 import { IconContext } from "react-icons";
-
-type TeamProps = {
-  _id: number,
-  imagePath: string,
-  name: string,
-  title: string,
-  socials: {
-    facebook: string,
-    twitter: string,
-    linkedin: string
-  }
-}
+import { TeamProps } from "types/Team";
 
 export default function TeamItem({ team }: { team: TeamProps }): JSX.Element {
   return (

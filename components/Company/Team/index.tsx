@@ -1,6 +1,7 @@
 import TeamCarousel from "./TeamCarousel"
+import { TeamProps } from "types/Team"
 
-export default function Team({ teams }: { teams: TeamProps }): JSX.Element {
+export default function Team({ teams }: { teams: TeamProps[] }): JSX.Element {
   return (
     <>
       <h2 className="heading-2 text-center">Meet Our Professional Teams</h2>
@@ -9,15 +10,3 @@ export default function Team({ teams }: { teams: TeamProps }): JSX.Element {
     </>
   )
 }
-
-type TeamProps = {
-  _id: number,
-  imagePath: string,
-  name: string,
-  title: string,
-  socials: {
-    facebook: string,
-    twitter: string,
-    linkedin: string
-  }
-}[]

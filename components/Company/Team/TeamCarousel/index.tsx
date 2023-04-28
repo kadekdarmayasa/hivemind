@@ -1,7 +1,8 @@
 import Slider from "react-slick";
 import TeamItem from "../TeamItem";
+import { TeamProps } from "types/Team";
 
-export default function TeamCarousel({ teams }: { teams: TeamProps }): JSX.Element {
+export default function TeamCarousel({ teams }: { teams: TeamProps[] }): JSX.Element {
   const settings = {
     className: "slider variable-width",
     infinite: true,
@@ -25,15 +26,3 @@ export default function TeamCarousel({ teams }: { teams: TeamProps }): JSX.Eleme
     </div>
   )
 }
-
-type TeamProps = {
-  _id: number,
-  imagePath: string,
-  name: string,
-  title: string,
-  socials: {
-    facebook: string,
-    twitter: string,
-    linkedin: string
-  }
-}[]

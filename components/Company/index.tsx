@@ -2,6 +2,8 @@ import Philosophy from "./Philosophy";
 import Mission from "./Mission";
 import Vision from "./Vision";
 import Team from "./Team";
+import { TeamProps } from "types/Team";
+import { PhilosophyProps } from "types/Philosophy";
 
 export default function Company({ company }: { company: CompanyProps }): JSX.Element {
   return (
@@ -23,21 +25,8 @@ export default function Company({ company }: { company: CompanyProps }): JSX.Ele
 }
 
 type CompanyProps = {
-  philosophy: {
-    text: string,
-    imagePath: string
-  },
+  philosophy: PhilosophyProps,
   missions: string[],
   visions: string[],
-  teams: {
-    _id: number,
-    imagePath: string,
-    name: string,
-    title: string,
-    socials: {
-      facebook: string,
-      twitter: string,
-      linkedin: string
-    }
-  }[]
+  teams: TeamProps[]
 };

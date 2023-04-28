@@ -1,7 +1,4 @@
-type PhilosophyProps = {
-  text: string,
-  imagePath: string
-}
+import { PhilosophyProps } from "types/Philosophy";
 
 export default function Philosophy({ philosophy }: { philosophy: PhilosophyProps }): JSX.Element {
   return (
