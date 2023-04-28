@@ -1,7 +1,7 @@
 import TestimonyCarousel from './TestimonyCarousel';
-import { TestimonyItem } from 'interfaces/TestimonyItem';
+import { TestimonyItemProps } from 'types/TestimonyItem';
 
-export default function Testimony({ testimonies }: { testimonies: Array<TestimonyItem> }): JSX.Element {
+export default function Testimony({ testimonies }: { testimonies: TestimonyItemProps[] }): JSX.Element {
   return (
     <section className='mt-32'>
       <div className="flex flex-col items-center text-center">

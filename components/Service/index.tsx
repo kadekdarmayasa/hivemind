@@ -2,15 +2,9 @@ import Image from 'next/image';
 import Button from '../Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
+import { ServiceProps } from 'types/Service';
 
-type ServiceItem = {
-  _id: string | number,
-  imagePath: string,
-  name: string,
-  briefDescription: string,
-}
-
-export default function Service({ services }: { services: Array<ServiceItem> }): JSX.Element {
+export default function Service({ services }: { services: ServiceProps[] }): JSX.Element {
   return (
     <section className="mt-32">
       <div className="flex flex-col items-center text-center">

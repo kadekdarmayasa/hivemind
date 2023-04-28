@@ -8,12 +8,16 @@ import Testimony from "components/Testimony";
 import Blog from "components/Blog";
 import axios from "axios";
 import useSWR from 'swr';
+import { TestimonyItemProps } from "types/TestimonyItem";
+import { BlogItemProps } from "types/BlogItem";
+import { PortfolioProps } from "types/Portfolio";
+import { ServiceProps } from "types/Service";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function HomePage(): JSX.Element | false {
   const refOurValues = useRef<HTMLElement>(null);
-  const { data, error, isLoading } = useSWR('api/homepage', fetcher);
+  const { data, error, isLoading } = useSWR<HomepageProps, Error>('api/homepage', fetcher);
 
   if (error) return false;
   if (isLoading) return false;
@@ -28,4 +32,11 @@ export default function HomePage(): JSX.Element | false {
       <Blog blogs={data.blogs} />
     </Layout>
   );
+}
+
+type HomepageProps = {
+  services: ServiceProps[],
+  portfolios: PortfolioProps[],
+  testimonies: TestimonyItemProps[],
+  blogs: BlogItemProps[],
 }

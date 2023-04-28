@@ -1,9 +1,3 @@
-type Star = {
-  value: number,
-  height: number,
-  width: number
-}
-
 export default function Star({ value, height, width }: Star): JSX.Element {
   const decimals = Number(value) % 1;
   const star = [];
@@ -29,4 +23,10 @@ export default function Star({ value, height, width }: Star): JSX.Element {
       </div>
     </>
   )
+}
+
+type Star = {
+  value: number,
+  height: number,
+  width: number
 }

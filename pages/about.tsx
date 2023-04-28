@@ -2,6 +2,8 @@ import Layout from "components/Layout";
 import Company from "components/Company";
 import axios from "axios";
 import useSWR from 'swr';
+import { TeamProps } from "types/Team";
+import { PhilosophyProps } from "types/Philosophy";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
@@ -20,22 +22,9 @@ export default function AboutPage(): JSX.Element | false {
 
 type AboutProps = {
   company: {
-    philosophy: {
-      text: string,
-      imagePath: string
-    },
+    philosophy: PhilosophyProps,
     missions: string[],
     visions: string[],
-    teams: {
-      _id: number,
-      imagePath: string,
-      name: string,
-      title: string,
-      socials: {
-        facebook: string,
-        twitter: string,
-        linkedin: string
-      }
-    }[]
+    teams: TeamProps[]
   }
 }

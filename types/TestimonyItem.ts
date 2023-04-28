@@ -1,4 +1,4 @@
-export type TestimonyItem = {
+export type TestimonyItemProps = {
   _id: string | number,
   imagePath: string,
   clientName: string,

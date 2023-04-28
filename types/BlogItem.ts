@@ -1,4 +1,4 @@
-export type BlogItem = {
+export type BlogItemProps = {
   _id: string | number,
   imagePath: string,
   publishedDate: string,

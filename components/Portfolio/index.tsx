@@ -1,16 +1,9 @@
 import Button from '../Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
+import { PortfolioProps } from 'types/Portfolio';
 
-type PortfolioItem = {
-  _id: string | number,
-  imagePath: string,
-  orientation: string,
-  projectName: string,
-  serviceCategory: string
-}
-
-export default function Portfolio({ portfolios }: { portfolios: Array<PortfolioItem> }): JSX.Element {
+export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }): JSX.Element {
   return (
     <section className='mt-32'>
       <div className="flex flex-col items-center text-center">
