@@ -17,9 +17,9 @@ export default function BlogItem({ blog }: { blog: BlogItemProps }): JSX.Element
         </div>
 
         <h3 className='heading-3 mt-6'>{blog.title}</h3>
-        <p className='text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-14'>{blog.shortDescription}</p>
+        <p className='text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-16'>{blog.shortDescription}</p>
 
-        <Button type='link' href={`/blog/${blog._id}`} classNames={['absolute', 'bottom-5', 'group']}>
+        <Button type='link' href={`/blog/${blog._id}`} classNames={['absolute', 'bottom-8', 'group']}>
           <span className='text-lg'>Read more</span>
           <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
             <IoChevronForwardOutline />
