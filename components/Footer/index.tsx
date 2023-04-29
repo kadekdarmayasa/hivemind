@@ -63,9 +63,9 @@ export default function Footer(): JSX.Element {
 
           <div>
             <small className="text-brave-purple font-regular text-base">Subscribe to get latest updates</small>
-            <form action="" method="post" className="bg-white h-auto px-4 py-3 flex items-center rounded-lg mt-2">
+            <form action="" method="post" className="bg-white h-auto px-6 py-3 flex items-center rounded-full mt-2">
               <input type="email" name="email" id="email" placeholder="Your email..." className="outline-none text-coarse-wool font-normal" />
-              <Button type="submit" isPrimary classNames={["!shadow-none", "py-2", "px-4", "rounded-md"]}>Susbcribe</Button>
+              <Button type="submit" isPrimary classNames={["!shadow-none", "py-2", "px-4", "rounded-full"]}>Susbcribe</Button>
             </form>
           </div>
         </div>

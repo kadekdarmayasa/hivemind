@@ -10,7 +10,7 @@ export default function Input(props: InputProps): JSX.Element {
   if (type === 'email') pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === 'tel') pattern = /[0-9]*/;
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = {
       target: {
         name: name,
@@ -46,7 +46,7 @@ export default function Input(props: InputProps): JSX.Element {
     <div className={`${outerClassNames.join(' ')}`}>
       <label htmlFor={id} className="heading-4 mb-3">{labelText}</label>
 
-      <input type={type} name={name} id={id} placeholder={placeHolder} value={value} onChange={onChange} onBlur={onBlur} onFocus={onFocus} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none ${hasError ? 'border-red-400' : 'border-none'} transition-all`} autoComplete="off" required />
+      <input type={type} name={name} id={id} placeholder={placeHolder} value={value} onChange={handleChange} onBlur={onBlur} onFocus={onFocus} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none ${hasError ? 'border-red-400' : 'border-none'} transition-all`} autoComplete="off" required />
 
       {hasError && (<small className="mt-2 font-light text-sm text-red-400">
         {errorMessage}

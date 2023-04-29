@@ -15,6 +15,6 @@
   }
 
   .star.placeholder {
-    @apply z-[8] bg-slate-200;
+    @apply bg-gray-200 z-[8];
   }
 }

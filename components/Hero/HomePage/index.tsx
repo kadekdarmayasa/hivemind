@@ -26,7 +26,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
           and industry best practices
         </p>
         <div className="flex mt-12">
-          <Button type='link' href='/contact' isPrimary classNames={['h-[60px]', 'w-[210px]', 'rounded-lg', 'hover:shadow-purple-md', 'transition-all']}>
+          <Button type='link' href='/contact' isPrimary classNames={['h-[60px]', 'w-[210px]', 'rounded-full', 'hover:shadow-purple-md', 'transition-all']}>
             <IconContext.Provider value={{ size: '1.6em', className: "mr-2", }}>
               <IoChatboxOutline className="h-10" />
             </IconContext.Provider>
