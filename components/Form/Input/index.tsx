@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FocusEvent, useState } from "react";
 
 export default function Input(props: InputProps): JSX.Element {
   let { type, labelText, name, id, placeHolder, value, errorMessage, outerClassNames = [] } = props;
@@ -21,11 +21,21 @@ export default function Input(props: InputProps): JSX.Element {
     if (type === 'email') {
       !pattern.test(event.target.value) ? setHasError(true) : setHasError(false);
       props.onChange(target);
-    } else if (type === 'tel') {
-      event.target.validity.valid && props.onChange(target);
     } else {
       event.target.value === '' ? setHasError(true) : setHasError(false);
       props.onChange(target);
+    }
+  }
+
+  const onBlur = () => {
+    setHasError(false);
+  }
+
+  const onFocus = (event: FocusEvent<HTMLInputElement>) => {
+    if (type === 'email') {
+      !pattern.test(event.target.value) ? setHasError(true) : setHasError(false);
+    } else {
+      event.target.value === '' ? setHasError(true) : setHasError(false);
     }
   }
 
@@ -35,8 +45,10 @@ export default function Input(props: InputProps): JSX.Element {
   return (
     <div className={`${outerClassNames.join(' ')}`}>
       <label htmlFor={id} className="heading-4 mb-3">{labelText}</label>
-      <input type={type} name={name} id={id} placeholder={placeHolder} value={value} onChange={onChange} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none ${hasError ? 'border-red-400' : 'border-none'}`} autoComplete="off" />
-      {hasError && (<small className="mt-2 font-light text-sm">
+
+      <input type={type} name={name} id={id} placeholder={placeHolder} value={value} onChange={onChange} onBlur={onBlur} onFocus={onFocus} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none ${hasError ? 'border-red-400' : 'border-none'} transition-all`} autoComplete="off" required />
+
+      {hasError && (<small className="mt-2 font-light text-sm text-red-400">
         {errorMessage}
       </small>)}
     </div>

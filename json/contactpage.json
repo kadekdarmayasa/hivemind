@@ -1,0 +1,28 @@
+{
+  "contactInformations": [
+    {
+      "_id": 12212,
+      "imagePath": "/images/email.svg",
+      "name": "Email",
+      "value": "info@hivemind.com"
+    },
+    {
+      "_id": 12213,
+      "imagePath": "/images/telp.svg",
+      "name": "Telp",
+      "value": "(555) 123-4567"
+    },
+    {
+      "_id": 12214,
+      "imagePath": "/images/business-hours.svg",
+      "name": "Business Hours",
+      "value": "Monday - Friday, 9.00am - 5.00pm WITA"
+    },
+    {
+      "_id": 12215,
+      "imagePath": "/images/address.svg",
+      "name": "Address",
+      "value": "123 Main st, Suite 500, Bali, Indonesia"
+    }
+  ]
+}
