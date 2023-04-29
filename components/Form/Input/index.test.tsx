@@ -1,4 +1,4 @@
-import { fireEvent, render, queries } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import Input from './index';
 import { ChangeEvent, useState } from 'react';
 
