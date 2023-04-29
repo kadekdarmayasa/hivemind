@@ -4,6 +4,7 @@ import axios from "axios";
 import useSWR from 'swr';
 import { TeamProps } from "types/Team";
 import { PhilosophyProps } from "types/Philosophy";
+import { WorkCultureProps } from "types/WorkCulture";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
@@ -25,6 +26,7 @@ type AboutProps = {
     philosophy: PhilosophyProps,
     missions: string[],
     visions: string[],
-    teams: TeamProps[]
+    teams: TeamProps[],
+    workCulture: WorkCultureProps[]
   }
 }

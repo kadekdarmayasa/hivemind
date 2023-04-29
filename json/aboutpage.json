@@ -62,6 +62,39 @@
           "linkedin": "https://www.linkedin.com/"
         }
       }
+    ],
+
+    "workCulture": [
+      {
+        "_id": 2332,
+        "imagePath": "/images/work-culture-1.png",
+        "headline": "Teamwork and Collaboration",
+        "description": "We value teamwork and believe that every team member brings unique strengths and skills to the table. By working together, we can achieve more and create better results for our clients."
+      },
+      {
+        "_id": 2333,
+        "imagePath": "/images/work-culture-2.png",
+        "headline": "Continous Learning and Development",
+        "description": "We're passionate about  staying up-to-date with the latest industry trends and technologies.  To support this, we offer opportunities for continuous learning and development, including training programs and attending conferences."
+      },
+      {
+        "_id": 2334,
+        "imagePath": "/images/work-culture-3.png",
+        "headline": "Work-Life Balance",
+        "description": "We understand that maintaining a healthy work-life balance is important for our team members' wellbeing. We encourage and support our employees to take breaks, recharge, and prioritize their personal lives outside of work."
+      },
+      {
+        "_id": 2335,
+        "imagePath": "/images/work-culture-4.png",
+        "headline": "Open Communication",
+        "description": "We value open communication and believe in creating a safe space for our team members to express their ideas, opinions and concerns. We encourage feedback and strive to create an environment where everyone feels heard and respected."
+      },
+      {
+        "_id": 2336,
+        "imagePath": "/images/work-culture-5.png",
+        "headline": "Fun and Positive Environment",
+        "description": "We believe that having fun and enjoying your work is important. We promote a positive and fun work environment by organizing team-building activities and social events."
+      }
     ]
   }
 }

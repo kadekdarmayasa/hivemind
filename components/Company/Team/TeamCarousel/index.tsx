@@ -17,7 +17,7 @@ export default function TeamCarousel({ teams }: { teams: TeamProps[] }): JSX.Ele
   };
 
   return (
-    <div className="h-auto my-4 mb-20">
+    <div className="h-auto my-4">
       <Slider {...settings} className="h-auto">
         {teams.map((team, index) => (
           <TeamItem team={team} key={index} />
