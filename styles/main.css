@@ -42,8 +42,12 @@
   }
 }
 
-.slick-slide > div > :is(.testimony-item, .blog-item) {
-  margin: 0 10px;
+.slick-slide > div > :is(.testimony-item) {
+  margin: 3.5rem 10px auto;
+}
+
+.slick-slide > div > :is(.blog-item) {
+  margin: 1.5rem 10px auto;
 }
 
 .slick-track {
