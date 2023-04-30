@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -8,24 +8,22 @@ import Icon from "./Icon";
 import { FAQProps } from "types/FAQProps";
 
 export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
-  const [open, setOpen] = useState<number>(1);
   const [multipleOpen, setMultipleOpen] = useState<number[]>([1])
 
-
-  /**
-   * 
-   * TODO: make carousel can open up unlimited
-   */
-  const handleOpen = (value: number): void => {
-    setOpen(open === value ? 0 : value);
-    setMultipleOpen([...new Set([...multipleOpen, open])]);
+  const handleMultipleOpen = (value: number): void => {
+    if (multipleOpen.includes(value)) {
+      let opens = multipleOpen.filter(open => open != value);
+      setMultipleOpen([...new Set([...opens])]);
+    } else {
+      setMultipleOpen([...new Set([...multipleOpen, value])]);
+    }
   }
 
   return (
     <>
       {faqs.map((faq, index) => (
-        <Accordion key={faq._id} open={open === ++index} icon={<Icon id={1} open={open} />} className={`bg-white px-6 py-2 mb-6 ${open === index && 'shadow-black-sm'}`}>
-          <AccordionHeader onClick={() => handleOpen(index)} className={`heading-3 font-outfit !font-medium !border-none ${open === index ? '!text-palatinate-blue' : '!text-coarse-wool'}`}>
+        <Accordion key={faq._id} open={multipleOpen.includes(++index)} icon={<Icon id={index} multipleOpen={multipleOpen} />} className={`bg-white px-6 py-2 mb-6 accordion-item ${multipleOpen.includes(index) ? 'shadow-black-sm' : ''}`}>
+          <AccordionHeader onClick={() => handleMultipleOpen(index)} className={`heading-3 font-outfit !font-medium !border-none ${multipleOpen.includes(index) ? '!text-palatinate-blue' : '!text-coarse-wool'}`}>
             {faq.question}
           </AccordionHeader>
           <AccordionBody className="text-brave-purple !pt-2 pb-6 font-outfit font-light text-lg leading-9">

@@ -1,8 +1,8 @@
-export default function Icon({ id, open }) {
+export default function Icon({ id, multipleOpen }: { id: number, multipleOpen: number[] }): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`${id === open ? "rotate-180" : ""
+      className={`${multipleOpen.includes(id) ? "rotate-180" : ""
         } h-5 w-5 transition-transform`}
       fill="none"
       viewBox="0 0 24 24"
