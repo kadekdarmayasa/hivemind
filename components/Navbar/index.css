@@ -1,11 +1,19 @@
 @tailwind utilities;
 
 @layer utilities {
-  .nav-link:is(:hover, .active) {
+  .nav-link:is(:hover, .active) div > * {
     @apply text-palatinate-blue cursor-pointer;
   }
 
-  .nav-link:is(:hover, .active) div {
+  .nav-link:is(:hover, .active) .text-underline {
     @apply opacity-100 w-full;
+  }
+
+  .nav-link .sub-menu {
+    @apply px-3 py-3 rounded-md transition-all;
+  }
+
+  .nav-link .sub-menu:is(:hover, .active) {
+    @apply px-3 py-3 bg-palatinate-blue/90 text-white rounded-md transition-all;
   }
 }
