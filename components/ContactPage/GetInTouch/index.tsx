@@ -1,4 +1,4 @@
-import ContactInformation from "components/ContactInformation"
+import ContactInformation from "components/ContactPage/ContactInformation"
 import { ContactInformationProps } from "types/ContactInformation";
 import { Input, Textarea } from "components/Form";
 import { ChangeEvent, FormEvent, useState } from "react";

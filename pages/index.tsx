@@ -1,9 +1,6 @@
 import { useRef } from "react";
 import Layout from "components/Layout";
-import { HeroHomePage } from "components/Hero";
-import OurValues from "components/OurValues";
-import Services from "components/Service";
-import Portfolio from "components/Portfolio";
+import { Hero, OurValues, Service, Portfolio } from "components/Homepage";
 import Testimony from "components/Testimony";
 import Blog from "components/Blog";
 import axios from "axios";
@@ -24,9 +21,9 @@ export default function HomePage(): JSX.Element | false {
 
   return (
     <Layout title={'Hivemind - Home'}>
-      <HeroHomePage refOurValues={refOurValues} />
+      <Hero refOurValues={refOurValues} />
       <OurValues refOurValues={refOurValues} />
-      <Services services={data.services} />
+      <Service services={data.services} />
       <Portfolio portfolios={data.portfolios} />
       <Testimony testimonies={data.testimonies} />
       <Blog blogs={data.blogs} />

@@ -1,5 +1,5 @@
 @import '../components/Navbar/index.css';
-@import '../components/OurValues/index.css';
+@import '../components/Homepage/OurValues/index.css';
 @import '../components/Star/index.css';
 
 @tailwind base;

@@ -1,5 +1,5 @@
 import Layout from "components/Layout"
-import GetInTouch from "components/GetInTouch"
+import { GetInTouch } from "components/ContactPage"
 import useSWR from 'swr';
 import axios from "axios";
 import { ContactInformationProps } from "types/ContactInformation";
