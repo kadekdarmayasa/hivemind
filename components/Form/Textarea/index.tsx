@@ -32,7 +32,7 @@ export default function Textarea(props: TextAreaProps) {
     <div className={`${outerClassNames.join(" ")}`}>
       <label htmlFor={id} className="heading-4 mb-3">{labelText}</label>
 
-      <textarea name={name} id={id} onChange={handleChange} onBlur={onBlur} onFocus={onFocus} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-36 px-5 py-3 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none resize-none ${hasError ? 'border-red-400' : 'border-none'} transition-all`} autoComplete="off" required placeholder={placeHolder}>{value}</textarea>
+      <textarea name={name} id={id} onChange={handleChange} onBlur={onBlur} onFocus={onFocus} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-36 px-5 py-3 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none resize-none ${hasError ? 'border-red-400' : 'border-none'} transition-all`} autoComplete="off" required placeholder={placeHolder} value={value}></textarea>
 
       {hasError && (<small className="mt-2 font-light text-sm text-red-400">
         {errorMessage}
