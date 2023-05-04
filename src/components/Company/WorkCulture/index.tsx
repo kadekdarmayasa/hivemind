@@ -1,4 +1,4 @@
-import type { WorkCultureProps } from "types/WorkCulture"
+import type { WorkCultureProps } from "src/types/WorkCulture"
 
 export default function WorkCulture({ workCultures }: { workCultures: WorkCultureProps[] }): JSX.Element {
   return <>

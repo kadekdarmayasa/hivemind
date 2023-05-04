@@ -9,7 +9,7 @@ import type { FAQProps } from "types/FAQProps";
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function Contact(): JSX.Element | false {
-  const { data, isLoading, error } = useSWR<ContactProps, Error>('api/contactpage', fetcher);
+  const { data, isLoading, error } = useSWR<ContactProps, Error>('/api/contactpage', fetcher);
 
   if (isLoading || error) return false;
 

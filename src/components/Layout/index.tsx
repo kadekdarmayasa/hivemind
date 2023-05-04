@@ -4,12 +4,12 @@ import Footer from "components/Footer";
 import useSWR from 'swr';
 import axios from "axios";
 import type { NavigationMenuProps } from "types/NavigationMenu";
-import { useAppSelector, useAppDispatch } from "src/app/hooks";
-import { selectedStatus, toggle } from 'src/features/dropdown/dropdownSlice';
+import { useAppSelector, useAppDispatch } from "redux/hooks";
+import { selectedStatus, toggle } from 'redux/slices/dropdownSlice';
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
-export default function Layout({ children, title }: Layout): JSX.Element | false {
+export default function Layout({ children, title }: Layout): JSX.Element | any {
   const status = useAppSelector(selectedStatus);
   const dispatch = useAppDispatch();
   const { data, error, isLoading } = useSWR('/api/services', fetcher);

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dropdownReducer from "../features/dropdown/dropdownSlice";
+import dropdownReducer from "../slices/dropdownSlice";
 
 export const store = configureStore({
   reducer: {

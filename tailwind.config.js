@@ -1,11 +1,12 @@
 const withMT = require("@material-tailwind/react/utils/withMT");
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withMT({
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './pages/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/pages/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
     './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
@@ -28,7 +29,7 @@ module.exports = withMT({
         'purple-sm': '0px 10px 50px rgba(43, 59, 229, 0.08)'
       },
       fontFamily: {
-        'outfit': ['var(--font-outfit)', 'sans-serif'],
+        'sans': ['var(--font-outfit)', ...fontFamily.sans],
       },
     },
   },

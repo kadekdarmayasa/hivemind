@@ -9,7 +9,7 @@ import type { WorkCultureProps } from "types/WorkCulture";
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function AboutPage(): JSX.Element | false {
-  const { data, error, isLoading } = useSWR<AboutProps, Error>('api/aboutpage', fetcher);
+  const { data, error, isLoading } = useSWR<AboutProps, Error>('/api/aboutpage', fetcher);
 
   if (error) return false;
   if (isLoading) return false;

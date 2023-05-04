@@ -14,7 +14,7 @@ const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function HomePage(): JSX.Element | false {
   const refOurValues = useRef<HTMLElement>(null);
-  const { data, error, isLoading } = useSWR<HomepageProps, Error>('api/homepage', fetcher);
+  const { data, error, isLoading } = useSWR<HomepageProps, Error>('/api/homepage', fetcher);
 
   if (error) return false;
   if (isLoading) return false;

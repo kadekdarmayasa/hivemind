@@ -3,9 +3,9 @@ import Mission from "./Mission";
 import Vision from "./Vision";
 import Team from "./Team";
 import WorkCulture from "./WorkCulture";
-import { TeamProps } from "types/Team";
-import { PhilosophyProps } from "types/Philosophy";
-import { WorkCultureProps } from "types/WorkCulture";
+import { TeamProps } from "src/types/Team";
+import { PhilosophyProps } from "src/types/Philosophy";
+import { WorkCultureProps } from "src/types/WorkCulture";
 
 export default function Company({ company }: { company: CompanyProps }): JSX.Element {
   return (

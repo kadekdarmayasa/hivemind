@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "lib": [
       "dom",
       "dom.iterable",
@@ -26,8 +26,6 @@
     "components/**/*.tsx",
     "pages/**/*.ts",
     "pages/**/*.tsx",
-    "src/**/*.ts",
-    "src/**/*.tsx",
     "**/*.ts",
     "**/*.tsx", 
   ],
