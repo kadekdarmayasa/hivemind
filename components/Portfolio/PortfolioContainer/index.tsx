@@ -1,4 +1,4 @@
-import { PortfolioProps } from 'types/Portfolio';
+import type { PortfolioProps } from 'types/Portfolio';
 import PortfolioItem from '../PortfolioItem';
 
 export default function PortfolioContainer({ portfolios }: { portfolios: PortfolioProps[] }): JSX.Element {

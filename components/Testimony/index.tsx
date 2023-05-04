@@ -1,5 +1,5 @@
 import TestimonyCarousel from './TestimonyCarousel';
-import { TestimonyItemProps } from 'types/TestimonyItem';
+import type { TestimonyItemProps } from 'types/TestimonyItem';
 
 export default function Testimony({ testimonies }: { testimonies: TestimonyItemProps[] }): JSX.Element {
   return (

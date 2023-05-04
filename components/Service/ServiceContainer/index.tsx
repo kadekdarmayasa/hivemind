@@ -1,4 +1,4 @@
-import { ServiceProps } from "types/Service";
+import type { ServiceProps } from "types/Service";
 import ServiceItem from "../ServiceItem";
 
 export default function ServiceContainer({ services }: { services: ServiceProps[] }): JSX.Element {

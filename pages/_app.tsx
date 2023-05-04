@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/main.css';
+import { Provider } from 'react-redux';
+import { store } from 'src/app/store';
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -12,8 +14,10 @@ const outfit = Outfit({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${outfit.variable} font-outfit`}>
-      <Component {...pageProps} />
-    </main>
+    <Provider store={store}>
+      <main className={`${outfit.variable} font-outfit`}>
+        <Component {...pageProps} />
+      </main>
+    </Provider>
   );
 }

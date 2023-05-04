@@ -1,4 +1,4 @@
-import { PortfolioProps } from "types/Portfolio";
+import type { PortfolioProps } from "types/Portfolio";
 
 export default function PortfolioItem({ portfolio }: { portfolio: PortfolioProps }): JSX.Element {
   return portfolio.orientation === 'potrait' ? (

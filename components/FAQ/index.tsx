@@ -1,5 +1,5 @@
 import Accordion from 'components/Accordion';
-import { FAQProps } from 'types/FAQProps';
+import type { FAQProps } from 'types/FAQProps';
 
 export default function FAQ({ faqs }: { faqs: FAQProps[] }) {
   return (

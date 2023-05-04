@@ -10,10 +10,10 @@
   }
 
   .nav-link .sub-menu {
-    @apply px-3 py-3 rounded-md transition-all;
+    @apply rounded-md transition-all;
   }
 
   .nav-link .sub-menu:is(:hover, .active) {
-    @apply px-3 py-3 bg-palatinate-blue/90 text-white rounded-md transition-all;
+    @apply bg-palatinate-blue/90 text-white rounded-md transition-all;
   }
 }

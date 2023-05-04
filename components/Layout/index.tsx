@@ -1,13 +1,43 @@
 import Head from "next/head";
 import Navbar from "../Navbar";
 import Footer from "components/Footer";
+import useSWR from 'swr';
+import axios from "axios";
+import type { NavigationMenuProps } from "types/NavigationMenu";
+import { useAppSelector, useAppDispatch } from "src/app/hooks";
+import { selectedStatus, toggle } from 'src/features/dropdown/dropdownSlice';
 
-type Layout = {
-  children: React.ReactNode,
-  title: string
-}
+const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
-export default function Layout({ children, title }: Layout): JSX.Element {
+export default function Layout({ children, title }: Layout): JSX.Element | false {
+  const status = useAppSelector(selectedStatus);
+  const dispatch = useAppDispatch();
+  const { data, error, isLoading } = useSWR('/api/services', fetcher);
+
+  function handleClick(e) {
+    if (!(e.target.classList.contains('service-menu-name'))) {
+      if (status === 'open') dispatch(toggle('close'))
+    }
+  }
+
+  if (error) return false;
+  if (isLoading) return false;
+
+  const menu: NavigationMenuProps[] = [
+    { href: '/', name: 'Home' },
+    { href: '/about', name: 'About' },
+    {
+      href: '/services',
+      name: 'Services',
+      containSubMenu: true,
+      subMenu: data
+    },
+    { href: '/portfolio', name: 'Portfolio' },
+    { href: '/blog', name: 'Blog' },
+    { href: '/contact', name: 'Contact' },
+  ];
+
+
   return (
     <>
       <Head>
@@ -22,11 +52,16 @@ export default function Layout({ children, title }: Layout): JSX.Element {
         <link rel="manifest" href="/images/favicon_io/site.webmanifest" />
         <title>{title}</title>
       </Head>
-      <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0">
-        <Navbar />
+      <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0" onClick={handleClick}>
+        <Navbar menu={menu} />
         <main>{children}</main>
-        <Footer />
+        <Footer menu={menu} />
       </div>
     </>
   )
+}
+
+type Layout = {
+  children: React.ReactNode,
+  title: string
 }

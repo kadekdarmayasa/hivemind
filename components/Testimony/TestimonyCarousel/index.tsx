@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import TestimonyItem from "../TestimonyItem";
-import { TestimonyItemProps } from 'types/TestimonyItem';
+import type { TestimonyItemProps } from 'types/TestimonyItem';
 
 export default function TestimonyCarousel({ testimonies }: { testimonies: TestimonyItemProps[] }): JSX.Element {
   const settings = {

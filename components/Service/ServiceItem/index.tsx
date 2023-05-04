@@ -1,4 +1,4 @@
-import { ServiceProps } from "types/Service";
+import type { ServiceProps } from "types/Service";
 import Image from "next/image";
 import Button from "components/Button";
 import { IconContext } from "react-icons";

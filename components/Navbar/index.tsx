@@ -1,8 +1,8 @@
 import Brand from "../Brand";
 import NavigationMenu from "./NavigationMenu";
-import { NavigationMenuProps } from "types/NavigationMenu";
+import type { NavigationMenuProps } from "types/NavigationMenu";
 
-export default function Navbar(): JSX.Element {
+export default function Navbar({ menu }: { menu: NavigationMenuProps[] }): JSX.Element {
   return (
     <nav className="flex h-[80px] justify-between items-center">
       <Brand />

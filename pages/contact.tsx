@@ -2,9 +2,9 @@ import Layout from "components/Layout"
 import { GetInTouch } from "components/ContactPage"
 import useSWR from 'swr';
 import axios from "axios";
-import { ContactInformationProps } from "types/ContactInformation";
+import type { ContactInformationProps } from "types/ContactInformation";
 import FAQ from "components/FAQ";
-import { FAQProps } from "types/FAQProps";
+import type { FAQProps } from "types/FAQProps";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 

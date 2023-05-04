@@ -1,7 +1,7 @@
 import Button from 'components/Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
-import { ServiceProps } from 'types/Service';
+import type { ServiceProps } from 'types/Service';
 import { ServiceContainer } from 'components/Service';
 
 export default function Service({ services }: { services: ServiceProps[] }): JSX.Element {

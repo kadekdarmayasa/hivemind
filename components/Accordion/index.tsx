@@ -5,7 +5,7 @@ import {
   AccordionBody
 } from '@material-tailwind/react';
 import Icon from "./Icon";
-import { FAQProps } from "types/FAQProps";
+import type { FAQProps } from "types/FAQProps";
 
 export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
   const [multipleOpen, setMultipleOpen] = useState<number[]>([1])

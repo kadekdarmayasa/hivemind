@@ -2,8 +2,9 @@ import Brand from "../Brand";
 import { IconContext } from "react-icons";
 import Button from "components/Button";
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from "react-icons/sl";
+import type { NavigationMenuProps } from "types/NavigationMenu";
 
-export default function Footer(): JSX.Element {
+export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.Element {
   return (
     <footer className="h-auto mt-32">
       <div className="mb-16 flex justify-between">
@@ -28,13 +29,7 @@ export default function Footer(): JSX.Element {
 
         <div className="flex flex-col justify-start items-start">
           <h4 className="heading-4 mb-4">Browse</h4>
-          {[
-            { href: '/', name: 'Home' },
-            { href: '/about', name: 'About' },
-            { href: '/portfolio', name: 'Portfolio' },
-            { href: '/blog', name: 'Blog' },
-            { href: '/contact', name: 'Contact' },
-          ].map((item, index) => (
+          {menu.map((item, index) => (
             <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue"]}>
               {item.name}
             </Button>

@@ -1,5 +1,5 @@
 import BlogCarousel from './BlogCarousel/index';
-import { BlogItemProps } from 'types/BlogItem';
+import type { BlogItemProps } from 'types/BlogItem';
 
 export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
   return (

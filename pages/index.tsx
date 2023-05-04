@@ -5,10 +5,10 @@ import Testimony from "components/Testimony";
 import Blog from "components/Blog";
 import axios from "axios";
 import useSWR from 'swr';
-import { TestimonyItemProps } from "types/TestimonyItem";
-import { BlogItemProps } from "types/BlogItem";
-import { PortfolioProps } from "types/Portfolio";
-import { ServiceProps } from "types/Service";
+import type { TestimonyItemProps } from "types/TestimonyItem";
+import type { BlogItemProps } from "types/BlogItem";
+import type { PortfolioProps } from "types/Portfolio";
+import type { ServiceProps } from "types/Service";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 

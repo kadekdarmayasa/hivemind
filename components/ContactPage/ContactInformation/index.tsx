@@ -1,4 +1,4 @@
-import { ContactInformationProps } from "types/ContactInformation"
+import type { ContactInformationProps } from "types/ContactInformation"
 import Image from "next/image"
 
 export default function ContactInformation({ contactInformation }: { contactInformation: ContactInformationProps }): JSX.Element {

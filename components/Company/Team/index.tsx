@@ -1,5 +1,5 @@
 import TeamCarousel from "./TeamCarousel"
-import { TeamProps } from "types/Team"
+import type { TeamProps } from "types/Team"
 
 export default function Team({ teams }: { teams: TeamProps[] }): JSX.Element {
   return (

@@ -1,19 +1,26 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { IconContext } from "react-icons";
 import { IoChevronForwardOutline } from "react-icons/io5";
-import { NavigationMenuProps } from "types/NavigationMenu";
+import type { NavigationMenuProps } from "types/NavigationMenu";
+import { useAppSelector, useAppDispatch } from "src/app/hooks";
+import { selectedStatus, toggle } from 'src/features/dropdown/dropdownSlice';
 
 export default function NavigationMenu({ href, name, containSubMenu, subMenu }: NavigationMenuProps): JSX.Element {
+  const status = useAppSelector(selectedStatus);
+  const dispatch = useAppDispatch();
   const router = useRouter();
-  const [showSubMenu, setShowSubMenu] = useState(false);
+
+  function handleClick() {
+    if (status === 'open') dispatch(toggle('close'));
+    if (status === 'close') dispatch(toggle('open'));
+  }
 
   if (containSubMenu) {
     return (
-      <li className={`text-base font-regular relative text-brave-purple ml-10 nav-link ${showSubMenu && 'active'}`} onClick={() => setShowSubMenu(!showSubMenu)}>
+      <li className={`text-base font-regular relative text-brave-purple ml-10 nav-link ${status === 'open' ? 'active' : ''}`} onClick={handleClick}>
         <div className="flex items-center">
-          <span>{name}</span>
+          <span className="service-menu-name">{name}</span>
           <div className="h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all text-underline"></div>
           <IconContext.Provider value={{ size: '1.2em', className: 'ms-1 mt-[2px]' }}>
             <IoChevronForwardOutline className="rotate-90" />
@@ -21,7 +28,7 @@ export default function NavigationMenu({ href, name, containSubMenu, subMenu }: 
         </div>
 
         <ul
-          className={`font-light absolute w-80 bg-white rounded-lg shadow-black-md mt-6 px-4 py-5 right-2/4 translate-x-2/4 transition-all origin-top ${showSubMenu ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
+          className={`font-light absolute w-80 bg-white rounded-lg shadow-black-md mt-6 px-4 py-5 right-2/4 translate-x-2/4 transition-all origin-top ${status === 'open' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}`}
         >
           {subMenu.map((item, index) => {
             const path = `${href}${item.path}`;
@@ -31,7 +38,7 @@ export default function NavigationMenu({ href, name, containSubMenu, subMenu }: 
                 <Link
                   href={path}
                   onClick={() => router.push(path)}
-                  className="block"
+                  className="block px-3 py-3 w-full h-full"
                 >
                   {item.name}
                 </Link>

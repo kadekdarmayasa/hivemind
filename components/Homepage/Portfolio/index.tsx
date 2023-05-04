@@ -1,7 +1,7 @@
 import Button from 'components/Button';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
-import { PortfolioProps } from 'types/Portfolio';
+import type { PortfolioProps } from 'types/Portfolio';
 import { PortfolioContainer } from 'components/Portfolio';
 
 export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }): JSX.Element {

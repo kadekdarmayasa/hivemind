@@ -1,4 +1,4 @@
-import { PhilosophyProps } from "types/Philosophy";
+import type { PhilosophyProps } from "types/Philosophy";
 
 export default function Philosophy({ philosophy }: { philosophy: PhilosophyProps }): JSX.Element {
   return (

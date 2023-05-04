@@ -26,6 +26,8 @@
     "components/**/*.tsx",
     "pages/**/*.ts",
     "pages/**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "**/*.ts",
     "**/*.tsx", 
   ],

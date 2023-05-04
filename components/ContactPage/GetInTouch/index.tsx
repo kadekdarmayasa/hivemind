@@ -1,5 +1,5 @@
 import ContactInformation from "components/ContactPage/ContactInformation"
-import { ContactInformationProps } from "types/ContactInformation";
+import type { ContactInformationProps } from "types/ContactInformation";
 import { Input, Textarea } from "components/Form";
 import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "components/Button";
@@ -7,7 +7,7 @@ import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from "r
 import { IconContext } from "react-icons";
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Alert } from "@material-tailwind/react";
-import { AlertProps } from "types/AlertProps";
+import type { AlertProps } from "types/AlertProps";
 
 export default function GetInTouch({ contactInformations }: { contactInformations: ContactInformationProps[] }): JSX.Element {
   const [inputValue, setInputValue] = useState({ name: '', email: '', message: '' });

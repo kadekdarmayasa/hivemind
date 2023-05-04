@@ -1,6 +1,6 @@
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from "react-icons/sl";
 import { IconContext } from "react-icons";
-import { TeamProps } from "types/Team";
+import type { TeamProps } from "types/Team";
 
 export default function TeamItem({ team }: { team: TeamProps }): JSX.Element {
   return (

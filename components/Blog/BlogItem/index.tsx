@@ -1,7 +1,7 @@
 import Button from 'components/Button';
 import { IconContext } from 'react-icons';
 import { IoChevronForwardOutline } from 'react-icons/io5';
-import { BlogItemProps } from 'types/BlogItem';
+import type { BlogItemProps } from 'types/BlogItem';
 
 export default function BlogItem({ blog }: { blog: BlogItemProps }): JSX.Element {
   return (

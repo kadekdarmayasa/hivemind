@@ -2,9 +2,9 @@ import Layout from "components/Layout";
 import Company from "components/Company";
 import axios from "axios";
 import useSWR from 'swr';
-import { TeamProps } from "types/Team";
-import { PhilosophyProps } from "types/Philosophy";
-import { WorkCultureProps } from "types/WorkCulture";
+import type { TeamProps } from "types/Team";
+import type { PhilosophyProps } from "types/Philosophy";
+import type { WorkCultureProps } from "types/WorkCulture";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 

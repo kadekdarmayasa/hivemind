@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import TeamItem from "../TeamItem";
-import { TeamProps } from "types/Team";
+import type { TeamProps } from "types/Team";
 
 export default function TeamCarousel({ teams }: { teams: TeamProps[] }): JSX.Element {
   const settings = {
