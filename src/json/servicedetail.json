@@ -100,32 +100,35 @@
     ]
   },
 
-  "pricelist": [
-    {
-      "_id": "1221j2jisdfdfihef9a",
-      "package": "Basic",
-      "price": 12,
-      "time": "month",
-      "isPopular": false,
-      "features": ["Ideal for small businesses", "Custom design for up to 5 pages", "Mobile-response design", "Basic SEO", "Contact form integration"]
-    },
-    { 
-      "_id": "1221j2jisdfdfihef9c",
-      "package": "Premium",
-      "price": 36,
-      "time": "month",
-      "isPopular": true,
-      "features": ["Idel for large businesses and e-commerce websites", "Custom design for up to 15 pages", "Mobile-responsive design", "Advanced SEO with analytics tracking", "E-commerce integration with payment gateway setup", "Customize blog design and setup"]
-    },
-    {
-      "_id": "1221j2jisdfdfihef9b",
-      "package": "Standard",
-      "price": 24,
-      "time": "month",
-      "isPopular": false,
-      "features": ["Idel for medium-sized businesses", "Custom design for up to 10 pages", "Mobile-responsive design", "Advanced SEO", "Contact form integration"]
-    }
-  ],
+  "priceList": {
+    "title": "Web Design <span>PriceList</span>",
+    "lists": [
+      {
+        "_id": "1221j2jisdfdfihef9a",
+        "package": "Basic",
+        "price": 12,
+        "time": "month",
+        "isPopular": false,
+        "features": ["Ideal for small businesses", "Custom design for up to 5 pages", "Mobile-response design", "Basic SEO", "Contact form integration"]
+      },
+      { 
+        "_id": "1221j2jisdfdfihef9c",
+        "package": "Premium",
+        "price": 36,
+        "time": "month",
+        "isPopular": true,
+        "features": ["Idel for large businesses and e-commerce websites", "Custom design for up to 15 pages", "Mobile-responsive design", "Advanced SEO with analytics tracking", "E-commerce integration with payment gateway setup", "Customize blog design and setup"]
+      },
+      {
+        "_id": "1221j2jisdfdfihef9b",
+        "package": "Standard",
+        "price": 24,
+        "time": "month",
+        "isPopular": false,
+        "features": ["Idel for medium-sized businesses", "Custom design for up to 10 pages", "Mobile-responsive design", "Advanced SEO", "Contact form integration"]
+      }
+    ]
+  },
 
   "clients": [
     {
