@@ -2,10 +2,18 @@ import parse from 'html-react-parser';
 import Button from 'components/Button';
 import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
+import { MutableRefObject } from 'react';
 
-export default function Hero({ hero }) {
+export default function Hero({ hero, refServiceOffered }: { hero: any, refServiceOffered: MutableRefObject<HTMLElement> }) {
+  const showOfferedServices = () => {
+    window.scrollTo({
+      top: refServiceOffered.current.offsetTop - 50,
+      behavior: 'smooth'
+    })
+  }
+
   return (
-    <section className="mt-14">
+    <section className="mt-24">
       <div className='w-[800px] text-center mx-auto'>
         <h1 className='heading-1'>{parse(hero.headline)}</h1>
         <p className='text-brave-purple font-normal text-xl leading-9 mt-5'>{hero.headlineDescription}</p>
@@ -16,7 +24,7 @@ export default function Hero({ hero }) {
             </IconContext.Provider>
             <span className="text-lg">Get a Consultation</span>
           </Button>
-          <Button classNames={['h-[60px]', 'w-[210px]', 'ml-6', 'group', 'relative']} onClick={() => { }}>
+          <Button classNames={['h-[60px]', 'w-[210px]', 'ml-6', 'group', 'relative']} onClick={showOfferedServices}>
             <div className="rounded-xl h-8 w-5 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
               <span className="animate-bounce block w-1 h-2 rounded-lg top-2 bg-palatinate-blue absolute"></span>
             </div>
