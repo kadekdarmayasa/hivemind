@@ -1,15 +1,21 @@
 import { useRouter } from "next/router";
 import Layout from "components/Layout";
+import useSWR from 'swr';
+import axios from "axios";
+import WebDesign from "components/ServicePage/WebDesign";
 
-export default function Service(): JSX.Element {
+const fetcher = (url: string) => axios.get(url).then(response => response.data);
+
+export default function Service(): JSX.Element | false {
   const router = useRouter();
   const { slug } = router.query;
+  const { data, error, isLoading } = useSWR('/api/servicedetail', fetcher);
 
-  console.log(router.asPath);
+  if (error || isLoading) return false;
 
   return (
     <Layout title="Hivemind - Service">
-      <h1>{slug}</h1>
+      {slug === 'web-design' && <WebDesign data={data} />}
     </Layout>
   )
 }
