@@ -3,10 +3,11 @@ import ServiceOffered from "./ServiceOffered";
 import Process from "./Process";
 import WorkSample from "./WorkSample";
 import PriceList from "./PriceList";
+import Testimony from "./Testimony";
 import { useRef } from "react";
 
 export default function WebDesign({ data }) {
-  const { hero, offeredServices, process, workSample, priceList } = data;
+  const { hero, offeredServices, process, workSample, priceList, clients } = data;
 
   const refServiceOffered = useRef();
 
@@ -17,6 +18,7 @@ export default function WebDesign({ data }) {
       <Process process={process} />
       <WorkSample workSample={workSample} />
       <PriceList priceList={priceList} />
+      <Testimony clients={clients} />
     </>
   )
 }
