@@ -4,10 +4,11 @@ import Process from "./Process";
 import WorkSample from "./WorkSample";
 import PriceList from "./PriceList";
 import Testimony from "./Testimony";
+import FAQ from "components/FAQ";
 import { useRef } from "react";
 
 export default function WebDesign({ data }) {
-  const { hero, offeredServices, process, workSample, priceList, clients } = data;
+  const { hero, offeredServices, process, workSample, priceList, clients, faqs } = data;
 
   const refServiceOffered = useRef();
 
@@ -19,6 +20,7 @@ export default function WebDesign({ data }) {
       <WorkSample workSample={workSample} />
       <PriceList priceList={priceList} />
       <Testimony clients={clients} />
+      <FAQ faqs={faqs}></FAQ>
     </>
   )
 }
