@@ -37,43 +37,43 @@
         "_id": "112k2jk2iknasdiknsdin",
         "imagePath": "/images/discovery.svg",
         "label": "STEP 01",
-        "step": "Discovery"
+        "title": "Discovery"
       },
       {
         "_id": "112k2jk2iknasdiknsdim",
         "imagePath": "/images/planning.svg",
         "label": "STEP 02",
-        "step": "Planning"
+        "title": "Planning"
       },
       {
         "_id": "112k2jk2iknasdiknsdio",  
         "imagePath": "/images/design.svg",
         "label": "STEP 03",
-        "step": "Design"
+        "title": "Design"
       },
       {
         "_id": "112k2jk2iknasdiknsdip",
         "imagePath": "/images/development.svg",
         "label": "STEP 04",
-        "step": "Development"
+        "title": "Development"
       },
       {
         "_id": "112k2jk2iknasdiknsdiq",
         "imagePath": "/images/testing.svg",
         "label": "STEP 05",
-        "step": "Testing"
+        "title": "Testing"
       },
       {
         "_id": "112k2jk2iknasdiknsdir",
         "imagePath": "/images/launch.svg",
         "label": "STEP 06",
-        "step": "Launch"
+        "title": "Launch"
       },
       {
         "_id": "112k2jk2iknasdiknsdis",
         "imagePath": "/images/maintenance.svg",
         "label": "STEP 07",
-        "step": "Maintenance"
+        "title": "Maintenance"
       }
     ]
   },

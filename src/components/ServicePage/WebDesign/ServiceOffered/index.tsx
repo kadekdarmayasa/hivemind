@@ -9,7 +9,7 @@ export default function ServiceOffered({ servicesOffered, refServiceOffered }: {
     <section className="mt-44" ref={refServiceOffered}>
       <div className='text-center'>
         <h2 className='heading-2'>{parse(servicesOffered.title)}</h2>
-        <p className='w-[800px] mx-auto mt-4 text-brave-purple font-normal text-lg leading-9 mb-5'>{servicesOffered.description}</p>
+        <p className='w-[870px] mx-auto mt-4 text-brave-purple font-normal text-lg leading-9 mb-5'>{servicesOffered.description}</p>
       </div>
 
       <div className='flex flex-wrap justify-center gap-8 mt-14'>

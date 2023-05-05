@@ -14,10 +14,10 @@ export default function Hero({ hero, refServiceOffered }: { hero: any, refServic
 
   return (
     <section className="mt-24">
-      <div className='w-[800px] text-center mx-auto'>
+      <div className='w-[870px] text-center mx-auto'>
         <h1 className='heading-1'>{parse(hero.headline)}</h1>
         <p className='text-brave-purple font-normal text-xl leading-9 mt-5'>{hero.headlineDescription}</p>
-        <div className="flex mt-12 mx-auto justify-center">
+        <div className="flex mt-14 mx-auto justify-center">
           <Button type='link' href='/contact' isPrimary classNames={['h-[60px]', 'w-[250px]', 'rounded-full', 'hover:shadow-purple-md', 'transition-all']}>
             <IconContext.Provider value={{ size: '1.6em', className: "mr-2", }}>
               <IoChatboxOutline className="h-10" />
