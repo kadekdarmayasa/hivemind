@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import TestimonyItem from "../TestimonyItem";
 import type { TestimonyItemProps } from 'types/TestimonyItem';
+import Fade from 'react-reveal/Fade';
 
 export default function TestimonyCarousel({ testimonies }: { testimonies: TestimonyItemProps[] }): JSX.Element {
   const settings = {
@@ -17,12 +18,14 @@ export default function TestimonyCarousel({ testimonies }: { testimonies: Testim
   };
 
   return (
-    <div className="h-auto my-4 mb-20">
-      <Slider {...settings} className="bg-ghost-white h-auto">
-        {testimonies.map(testimony => (
-          <TestimonyItem key={testimony._id} testimony={testimony} />
-        ))}
-      </Slider>
-    </div>
+    <Fade>
+      <div className="h-auto my-4 mb-20">
+        <Slider {...settings} className="bg-ghost-white h-auto">
+          {testimonies.map(testimony => (
+            <TestimonyItem key={testimony._id} testimony={testimony} />
+          ))}
+        </Slider>
+      </div>
+    </Fade>
   )
 }

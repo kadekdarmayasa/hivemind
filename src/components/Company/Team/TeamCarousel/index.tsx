@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import TeamItem from "../TeamItem";
 import type { TeamProps } from "types/Team";
+import Fade from 'react-reveal/Fade';
 
 export default function TeamCarousel({ teams }: { teams: TeamProps[] }): JSX.Element {
   const settings = {
@@ -17,12 +18,14 @@ export default function TeamCarousel({ teams }: { teams: TeamProps[] }): JSX.Ele
   };
 
   return (
-    <div className="h-auto my-4">
-      <Slider {...settings} className="h-auto">
-        {teams.map((team, index) => (
-          <TeamItem team={team} key={index} />
-        ))}
-      </Slider>
-    </div>
+    <Fade duration={3000}>
+      <div className="h-auto my-4">
+        <Slider {...settings} className="h-auto">
+          {teams.map((team, index) => (
+            <TeamItem team={team} key={index} />
+          ))}
+        </Slider>
+      </div>
+    </Fade>
   )
 }

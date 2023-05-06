@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Navbar from "../Navbar";
 import Footer from "components/Footer";
+import ScrollToTop from "react-scroll-to-top";
+import { IconContext } from "react-icons";
+import { IoArrowUpCircleOutline, IoArrowUpOutline } from "react-icons/io5";
 import useSWR from 'swr';
 import axios from "axios";
 import type { NavigationMenuProps } from "types/NavigationMenu";
@@ -54,7 +57,18 @@ export default function Layout({ children, title }: Layout): JSX.Element | any {
       </Head>
       <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0" onClick={handleClick}>
         <Navbar menu={menu} />
-        <main>{children}</main>
+        <main className="overflow-x-hidden">
+          {children}
+          <ScrollToTop
+            smooth
+            component={
+              <IconContext.Provider value={{ size: '1.2em' }}>
+                <IoArrowUpOutline />
+              </IconContext.Provider>
+            }
+            className="flex justify-center items-center"
+          />
+        </main>
         <Footer menu={menu} />
       </div>
     </>

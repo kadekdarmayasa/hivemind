@@ -9,6 +9,7 @@ import type { TestimonyItemProps } from "types/TestimonyItem";
 import type { BlogItemProps } from "types/BlogItem";
 import type { PortfolioProps } from "types/Portfolio";
 import type { ServiceProps } from "types/Service";
+import type { OurValuesProps } from "types/OurValues";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
@@ -22,7 +23,7 @@ export default function HomePage(): JSX.Element | false {
   return (
     <Layout title={'Hivemind - Home'}>
       <Hero refOurValues={refOurValues} />
-      <OurValues refOurValues={refOurValues} />
+      <OurValues refOurValues={refOurValues} ourValues={data.companyValues} />
       <Service services={data.services} />
       <Portfolio portfolios={data.portfolios} />
       <Testimony testimonies={data.testimonies} />
@@ -33,6 +34,7 @@ export default function HomePage(): JSX.Element | false {
 
 type HomepageProps = {
   services: ServiceProps[],
+  companyValues: OurValuesProps[],
   portfolios: PortfolioProps[],
   testimonies: TestimonyItemProps[],
   blogs: BlogItemProps[],
