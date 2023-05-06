@@ -5,4 +5,5 @@ export type BlogItemProps = {
   author: string,
   title: string,
   shortDescription: string,
+  isPublished?: boolean,
 }
