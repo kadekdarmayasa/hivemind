@@ -3,8 +3,12 @@ import { IoChatboxOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { MutableRefObject } from 'react';
 import Fade from 'react-reveal/Fade';
+import { useAppSelector } from "redux/hooks";
+import { selectedStatus } from "redux/slices/dropdownSlice";
 
 export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }): JSX.Element {
+  const status = useAppSelector(selectedStatus);
+
   const showOurValues = () => {
     window.scrollTo({
       top: refOurValues.current.offsetTop - 50,
@@ -13,7 +17,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
   };
 
   return (
-    <section className="flex mt-16 2xl:mt-24">
+    <section className={`flex relative ${status === 'open' ? '-z-10' : 'z-0'} mt-16 2xl:mt-24`}>
       <div className="flex-1 flex flex-col justify-center items-start">
         <Fade top>
           <small className="label-text bg-[#E8EAFF] block py-2 px-10 rounded-full">A innovate digital agency</small>
@@ -49,7 +53,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
         </Fade>
       </div>
 
-      <div className="flex-1 flex justify-end">
+      <div className="flex-1 flex justify-end items-center">
         <Fade duration={3000}>
           <img src="/images/hero-image-1.png" alt="Our Team meeting With Client" className="w-[98%] shadow-black-md" />
         </Fade>

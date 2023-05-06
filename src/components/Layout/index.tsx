@@ -57,7 +57,7 @@ export default function Layout({ children, title }: Layout): JSX.Element | any {
       </Head>
       <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0" onClick={handleClick}>
         <Navbar menu={menu} />
-        <main className="overflow-x-hidden">
+        <main>
           {children}
           <ScrollToTop
             smooth

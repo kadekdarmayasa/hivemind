@@ -12,7 +12,7 @@ export default function PriceList({ priceList }): JSX.Element {
         </Fade>
       </div>
 
-      <div className='flex flex-wrap justify-center gap-8 mt-14'>
+      <div className='flex flex-wrap justify-center items-center gap-8 mt-14'>
         {priceList.lists.map((list, index: number) => {
           if (list.isPopular) {
             return (

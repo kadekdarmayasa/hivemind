@@ -6,11 +6,15 @@ import WorkCulture from "./WorkCulture";
 import { TeamProps } from "types/Team";
 import { PhilosophyProps } from "types/Philosophy";
 import { WorkCultureProps } from "types/WorkCulture";
+import { useAppSelector } from "redux/hooks";
+import { selectedStatus } from "redux/slices/dropdownSlice";
 
 export default function Company({ company }: { company: CompanyProps }): JSX.Element {
+  const status = useAppSelector(selectedStatus);
+
   return (
     <>
-      <section className="relative -z-10 mt-14">
+      <section className={`relative ${status === 'open' ? '-z-10' : 'z-0'} mt-14`}>
         <Philosophy philosophy={company.philosophy} />
 
         <div className="flex mt-14 gap-10">

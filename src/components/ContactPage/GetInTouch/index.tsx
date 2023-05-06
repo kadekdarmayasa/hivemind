@@ -9,8 +9,11 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Alert } from "@material-tailwind/react";
 import type { AlertProps } from "types/AlertProps";
 import Fade from 'react-reveal/Fade';
+import { useAppSelector } from "redux/hooks";
+import { selectedStatus } from "redux/slices/dropdownSlice";
 
 export default function GetInTouch({ contactInformations }: { contactInformations: ContactInformationProps[] }): JSX.Element {
+  const status = useAppSelector(selectedStatus);
   const [inputValue, setInputValue] = useState({ name: '', email: '', message: '' });
   const [alert, setAlert] = useState<AlertProps>({ show: false, icon: null, message: '', type: 'success' });
 
@@ -41,7 +44,7 @@ export default function GetInTouch({ contactInformations }: { contactInformation
   }
 
   return (
-    <section className="relative -z-10 mt-14">
+    <section className={`relative ${status === 'open' ? '-z-10' : 'z-0'} mt-14`}>
       <div className="text-center">
         <Fade up>
           <h1 className="heading-1">Get In Touch With Us</h1>
