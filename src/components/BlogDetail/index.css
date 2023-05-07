@@ -1,0 +1,23 @@
+@tailwind components;
+
+@layer components {
+    .blog-detail h2 {
+        @apply text-3xl text-coarse-wool font-semibold leading-snug mt-10;
+    }
+
+    .blog-detail h3 {
+        @apply text-2xl text-coarse-wool font-medium leading-snug;
+    }
+
+    .blog-detail h4 {
+        @apply text-xl text-coarse-wool font-medium leading-snug;
+    }
+
+    .blog-detail h5 {
+        @apply text-lg text-coarse-wool font-medium leading-snug;
+    }
+
+    .blog-detail__main-content p {
+        @apply text-brave-purple font-normal text-lg leading-10 mt-3;
+    }
+}

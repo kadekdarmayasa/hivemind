@@ -1,6 +1,7 @@
 @import '../components/Navbar/index.css';
 @import '../components/Homepage/OurValues/index.css';
 @import '../components/Star/index.css';
+@import '../components/BlogDetail/index.css';
 
 @tailwind base;
 @tailwind components;
