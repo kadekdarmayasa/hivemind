@@ -3,25 +3,15 @@ import Navbar from "../Navbar";
 import Footer from "components/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import { IconContext } from "react-icons";
-import { IoArrowUpCircleOutline, IoArrowUpOutline } from "react-icons/io5";
+import { IoArrowUpOutline } from "react-icons/io5";
 import useSWR from 'swr';
 import axios from "axios";
 import type { NavigationMenuProps } from "types/NavigationMenu";
-import { useAppSelector, useAppDispatch } from "redux/hooks";
-import { selectedStatus, toggle } from 'redux/slices/dropdownSlice';
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function Layout({ children, title }: Layout): JSX.Element | any {
-  const status = useAppSelector(selectedStatus);
-  const dispatch = useAppDispatch();
   const { data, error, isLoading } = useSWR('/api/services', fetcher);
-
-  function handleClick(e) {
-    if (!(e.target.classList.contains('service-menu-name'))) {
-      if (status === 'open') dispatch(toggle('close'))
-    }
-  }
 
   if (error) return false;
   if (isLoading) return false;
@@ -55,7 +45,7 @@ export default function Layout({ children, title }: Layout): JSX.Element | any {
         <link rel="manifest" href="/images/favicon_io/site.webmanifest" />
         <title>{title}</title>
       </Head>
-      <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0" onClick={handleClick}>
+      <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0">
         <Navbar menu={menu} />
         <main>
           {children}
