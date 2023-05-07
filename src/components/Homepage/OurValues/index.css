@@ -1,6 +1,6 @@
-@tailwind utilities;
+@tailwind components;
 
-@layer utilities {
+@layer components {
   .our-values-item {
     @apply cursor-default w-[550px] rounded-lg bg-white px-12 py-14 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
   }

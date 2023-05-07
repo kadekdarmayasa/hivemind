@@ -1,6 +1,6 @@
-@tailwind utilities;
+@tailwind components;
 
-@layer utilities {
+@layer components {
   .stars {
     @apply relative min-w-[200px] inline-flex;
   }
