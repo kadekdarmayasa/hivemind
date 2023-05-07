@@ -41,12 +41,12 @@ export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.E
           <div className="flex flex-col justify-start items-start">
             <h4 className="heading-4 mb-4">Services</h4>
             {[
-              { href: '/services/web-design', name: 'Web Design' },
-              { href: '/services/seo', name: 'SEO' },
-              { href: '/services/smm', name: 'Social Media Marketing' },
-              { href: '/services/content-creation', name: 'Content Creation' },
-              { href: '/services/ec-solutions', name: 'E-commerce Solutions' },
-              { href: '/services/mobiledev', name: 'Mobile App Dev' },
+              { href: '/service/web-design', name: 'Web Design' },
+              { href: '/service/seo', name: 'SEO' },
+              { href: '/service/smm', name: 'Social Media Marketing' },
+              { href: '/service/content-creation', name: 'Content Creation' },
+              { href: '/service/ec-solutions', name: 'E-commerce Solutions' },
+              { href: '/service/mobiledev', name: 'Mobile App Dev' },
             ].map((item, index) => (
               <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue"]}>
                 {item.name}

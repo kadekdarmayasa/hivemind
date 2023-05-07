@@ -13,7 +13,7 @@ export default function NavigationMenu({ href, name, containSubMenu, subMenu }: 
 
   if (containSubMenu) {
     return (
-      <li className={`z-50 text-base font-regular relative text-brave-purple ml-10 nav-link ${status === 'open' || router.asPath.split('/')[1] === 'services' ? 'active' : ''}`} onMouseEnter={() => dispatch(toggle('open'))} onMouseLeave={() => dispatch(toggle('close'))}>
+      <li className={`z-50 text-base font-regular relative text-brave-purple ml-10 nav-link ${status === 'open' || router.asPath.split('/')[1] === 'service' ? 'active' : ''}`} onMouseEnter={() => dispatch(toggle('open'))} onMouseLeave={() => dispatch(toggle('close'))}>
         <div className="flex items-center">
           <span className="service-menu-name">{name}</span>
           <div className="h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all text-underline"></div>

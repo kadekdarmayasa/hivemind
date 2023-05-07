@@ -20,7 +20,7 @@ export default function Layout({ children, title }: Layout): JSX.Element | any {
     { href: '/', name: 'Home' },
     { href: '/about', name: 'About' },
     {
-      href: '/services',
+      href: '/service',
       name: 'Services',
       containSubMenu: true,
       subMenu: data

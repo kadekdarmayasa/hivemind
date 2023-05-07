@@ -3,7 +3,6 @@ import Image from "next/image";
 import Button from "components/Button";
 import { IconContext } from "react-icons";
 import { IoChevronForwardOutline } from "react-icons/io5";
-import Fade from 'react-reveal/Fade';
 
 export default function ServiceItem({ service }: { service: ServiceProps }): JSX.Element {
   return (
@@ -13,7 +12,7 @@ export default function ServiceItem({ service }: { service: ServiceProps }): JSX
       </div>
       <h3 className='heading-3 mb-3'>{service.name}</h3>
       <p className='text-brave-purple font-light text-lg leading-9 mb-5'>{service.briefDescription}</p>
-      <Button type='link' href={`/services/${service.slug}`} classNames={['place-self-start', 'mt-auto', 'relative', 'group']}>
+      <Button type='link' href={`/service/${service.slug}`} classNames={['place-self-start', 'mt-auto', 'relative', 'group']}>
         <span className='text-lg'>Learn more</span>
         <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
           <IoChevronForwardOutline />
