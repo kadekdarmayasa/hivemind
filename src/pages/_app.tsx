@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'styles/main.css';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store';
+import { setupStore } from 'redux/store';
 
 const outfit = Outfit({
   variable: '--font-outfit',
@@ -16,7 +16,7 @@ const outfit = Outfit({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
+    <Provider store={setupStore()}>
       <main className={`${outfit.variable} font-sans`}>
         <Component {...pageProps} />
       </main>

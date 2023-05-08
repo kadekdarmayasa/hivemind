@@ -1,8 +1,6 @@
-import { ReactNode } from "react"
-
 export type AlertProps = {
   show: boolean,
-  icon: ReactNode,
+  icon: React.ReactNode,
   message: string,
   type: 'success' | 'failed',
 }
