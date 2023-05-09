@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'styles/main.css';
 import { Provider } from 'react-redux';
-import { setupStore } from 'redux/store';
+import { setupStore } from 'store';
 
 const outfit = Outfit({
   variable: '--font-outfit',
