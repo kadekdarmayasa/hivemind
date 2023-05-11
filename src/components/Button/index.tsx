@@ -34,7 +34,7 @@ export default function Button(props: ButtonProps): JSX.Element {
       )
     } else {
       return (
-        <Link href={props.href} className={classNames.join(' ')}>
+        <Link tabIndex={0} href={props.href} className={classNames.join(' ')}>
           {props.children}
         </Link>
       )

@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 export default function TestimonyCarousel({ testimonies }: { testimonies: TestimonyItemProps[] }): JSX.Element {
   const settings = {
     className: "slider variable-width",
-    infinite: true,
+    infinite: false,
     speed: 1000,
     autoplaySpeed: 5000,
     slidesToShow: 3,

@@ -201,6 +201,15 @@
       "imagePath": "/images/blog-5.jpg",
       "title": "The Importance of Responsive Web Design for Your Business",
       "shortDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
+    },
+    {
+      "_id": 1234218,
+      "publishedDate": "Tue, 17 Feb 2023",
+      "isPublished": "true",
+      "author": "Admin Hivemind",
+      "imagePath": "/images/blog-5.jpg",
+      "title": "The Importance of Responsive Web Design for Your Business",
+      "shortDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
     }
   ]
 }

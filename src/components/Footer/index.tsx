@@ -6,6 +6,8 @@ import type { NavigationMenuProps } from "types/NavigationMenu";
 import Fade from 'react-reveal/Fade';
 
 export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.Element {
+  const filteredMenu = menu.filter(item => item.name != 'Services');
+
   return (
     <Fade>
       <footer className="h-auto mt-32">
@@ -31,8 +33,8 @@ export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.E
 
           <div className="flex flex-col justify-start items-start">
             <h4 className="heading-4 mb-4">Browse</h4>
-            {menu.map((item, index) => (
-              <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue"]}>
+            {filteredMenu.map((item, index) => (
+              <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue", "focus:!text-palatinate-blue"]}>
                 {item.name}
               </Button>
             ))}
@@ -48,7 +50,7 @@ export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.E
               { href: '/service/ec-solutions', name: 'E-commerce Solutions' },
               { href: '/service/mobiledev', name: 'Mobile App Dev' },
             ].map((item, index) => (
-              <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue"]}>
+              <Button key={index} type="link" href={item.href} classNames={["transition-all", "!text-brave-purple", "!text-lg", "mt-3", "hover:!text-palatinate-blue", "focus:!text-palatinate-blue"]}>
                 {item.name}
               </Button>
             ))}
@@ -59,7 +61,7 @@ export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.E
 
             <div>
               <small className="text-brave-purple font-regular text-base">Subscribe to get latest updates</small>
-              <form action="" method="post" className="bg-white h-auto px-6 py-3 flex items-center rounded-full mt-2">
+              <form action="" method="post" className="focus:outline-1 focus:outline focus:outline-blue-100 bg-white h-auto px-6 py-3 flex items-center rounded-full mt-2">
                 <input type="email" name="email" id="email" placeholder="Your email..." className="outline-none text-coarse-wool font-normal" />
                 <Button type="submit" isPrimary classNames={["!shadow-none", "py-2", "px-4", "rounded-full"]}>Susbcribe</Button>
               </form>

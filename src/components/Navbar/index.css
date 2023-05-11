@@ -5,7 +5,12 @@
     @apply text-palatinate-blue cursor-pointer;
   }
 
-  .nav-link:is(:hover, .active) .text-underline {
+  .nav-link a:focus {
+    @apply text-palatinate-blue cursor-pointer;
+  }
+
+  .nav-link:is(:hover, .active) .text-underline, 
+  .nav-link a:focus ~ .text-underline {
     @apply opacity-100 w-full;
   }
 
@@ -14,6 +19,10 @@
   }
 
   .nav-link .sub-menu:is(:hover, .active) {
+    @apply bg-palatinate-blue/90 text-white rounded-md transition-all;
+  }
+
+  .nav-link .sub-menu a:focus {
     @apply bg-palatinate-blue/90 text-white rounded-md transition-all;
   }
 }
