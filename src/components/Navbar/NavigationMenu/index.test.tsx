@@ -50,4 +50,7 @@ test('Li with service path should has .active class when mouse over and vice ver
 
   fireEvent.mouseEnter(container.querySelector('li'));
   expect(container.querySelector('li')).toHaveClass('active');
+
+  fireEvent.mouseLeave(container.querySelector('li'));
+  expect(container.querySelector('li')).not.toHaveClass('active');
 })

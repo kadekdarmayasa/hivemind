@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683638630387" clover="3.2.0">
-  <project timestamp="1683638630387" name="All files">
-    <metrics statements="37" coveredstatements="36" conditionals="17" coveredconditionals="16" methods="11" coveredmethods="9" elements="65" coveredelements="61" complexity="0" loc="37" ncloc="37" packages="5" files="5" classes="5"/>
+<coverage generated="1683806781044" clover="3.2.0">
+  <project timestamp="1683806781044" name="All files">
+    <metrics statements="37" coveredstatements="36" conditionals="17" coveredconditionals="16" methods="11" coveredmethods="10" elements="65" coveredelements="62" complexity="0" loc="37" ncloc="37" packages="5" files="5" classes="5"/>
     <package name="components.Navbar.NavigationMenu">
-      <metrics statements="16" coveredstatements="15" conditionals="14" coveredconditionals="13" methods="6" coveredmethods="4"/>
+      <metrics statements="16" coveredstatements="15" conditionals="14" coveredconditionals="13" methods="6" coveredmethods="5"/>
       <file name="index.tsx" path="C:\Users\kadek-darmayasa\hivemind\src\components\Navbar\NavigationMenu\index.tsx">
-        <metrics statements="16" coveredstatements="15" conditionals="14" coveredconditionals="13" methods="6" coveredmethods="4"/>
+        <metrics statements="16" coveredstatements="15" conditionals="14" coveredconditionals="13" methods="6" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -13,13 +13,13 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="14" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="16" count="1" type="cond" truecount="4" falsecount="0"/>
-        <line num="29" count="6" type="stmt"/>
-        <line num="31" count="6" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
       </file>
@@ -29,8 +29,8 @@
       <file name="reduxHooks.ts" path="C:\Users\kadek-darmayasa\hivemind\src\hooks\reduxHooks.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
       </file>
     </package>
     <package name="slices">
@@ -40,9 +40,9 @@
         <line num="1" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
       </file>
     </package>
