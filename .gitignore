@@ -3,4 +3,3 @@
 next-env.d.ts
 /hooks/useBookSearch.tsx
 /pages/scrolling.tsx
-/coverage/

@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import mockRouter from 'next-router-mock';
 import NavigationMenu from "./index";
 import { renderWithProviders } from 'utils/test-utils';
