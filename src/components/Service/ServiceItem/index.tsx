@@ -2,7 +2,7 @@ import type { ServiceProps } from "types/Service";
 import Image from "next/image";
 import Button from "components/Button";
 import { IconContext } from "react-icons";
-import { IoChevronForwardOutline } from "react-icons/io5";
+import { IoArrowForwardSharp } from "react-icons/io5";
 
 export default function ServiceItem({ service }: { service: ServiceProps }): JSX.Element {
   return (
@@ -15,7 +15,7 @@ export default function ServiceItem({ service }: { service: ServiceProps }): JSX
       <Button type='link' href={`/service/${service.slug}`} classNames={['place-self-start', 'mt-auto', 'relative', 'group']}>
         <span className='text-lg'>Learn more</span>
         <IconContext.Provider value={{ size: '1.3em', className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all', color: '#2B3BE5' }}>
-          <IoChevronForwardOutline />
+          <IoArrowForwardSharp />
         </IconContext.Provider>
         <div className='absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue'></div>
       </Button>

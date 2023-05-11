@@ -1,7 +1,7 @@
 [
   {
     "_id": 1234214,
-    "publishedDate": "20-01-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-1.jpg",
@@ -10,7 +10,7 @@
   },
   {
     "_id": 1234215,
-    "publishedDate": "10-02-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-2.jpg",
@@ -19,7 +19,7 @@
   },
   {
     "_id": 1234216,
-    "publishedDate": "03-03-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-3.jpg",
@@ -28,7 +28,7 @@
   },
   {
     "_id": 1234217,
-    "publishedDate": "10-03-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-4.jpg",
@@ -37,7 +37,7 @@
   },
   {
     "_id": 1234218,
-    "publishedDate": "28-03-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-5.jpg",
@@ -46,7 +46,7 @@
   },
   {
     "_id": 1234219,
-    "publishedDate": "01-04-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-1.jpg",
@@ -55,7 +55,7 @@
   },
   {
     "_id": 1234220,
-    "publishedDate": "10-04-2023",
+    "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
     "imagePath": "/images/blog-2.jpg",

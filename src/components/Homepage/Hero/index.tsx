@@ -20,7 +20,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
     <section className={`flex relative ${status === 'open' ? '-z-10' : 'z-0'} mt-16 2xl:mt-24`}>
       <div className="flex-1 flex flex-col justify-center items-start">
         <Fade top>
-          <small className="label-text bg-[#E8EAFF] block py-2 px-10 rounded-full">A innovate digital agency</small>
+          <small className="label-text">A innovate digital agency</small>
         </Fade>
         <Fade duration={3000}>
           <h1 className="heading-1 mt-1">
