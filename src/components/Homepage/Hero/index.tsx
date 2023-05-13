@@ -19,10 +19,8 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
   return (
     <section className={`flex relative ${status === 'open' ? '-z-10' : 'z-0'} mt-16 2xl:mt-24`}>
       <div className="flex-1 flex flex-col justify-center items-start">
-        <Fade top>
+        <Fade bottom>
           <small className="label-text">A innovate digital agency</small>
-        </Fade>
-        <Fade duration={3000}>
           <h1 className="heading-1 mt-1">
             Transform Your Online Presence <br />
             with Our Innovate Digital <br />
@@ -33,8 +31,6 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
             your business goals, using cutting-edge technology <br />
             and industry best practices
           </p>
-        </Fade>
-        <Fade bottom>
           <div className="flex mt-12">
             <Button type='link' href='/contact' isPrimary classNames={['h-[60px]', 'w-[210px]', 'rounded-full', 'hover:shadow-purple-md', 'transition-all']}>
               <IconContext.Provider value={{ size: '1.6em', className: "mr-2", }}>
