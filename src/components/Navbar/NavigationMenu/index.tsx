@@ -52,6 +52,5 @@ export default function NavigationMenu({ href, name, containSubMenu, subMenu }: 
         </div>
       </li>
     );
-
   }
 }

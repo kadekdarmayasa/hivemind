@@ -11,7 +11,7 @@ export default function Philosophy({ philosophy }: { philosophy: PhilosophyProps
       <div className="flex gap-5 mt-20 items-center justify-center">
         <div className="flex-1">
           <Fade up>
-            <h2 className="heading-2">Our Philosophy</h2>
+            <h2 className="heading-2">Hivemind's Philosophy</h2>
           </Fade>
           <Fade up delay={300}>
             <p className="text-brave-purple font-normal text-lg leading-9 mt-6">{philosophy.text}</p>

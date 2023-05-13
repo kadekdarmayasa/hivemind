@@ -21,10 +21,10 @@ export default function GetInTouch({ contactInformations }: { contactInformation
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async function (e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const response: EmailJSResponseStatus = await emailjs.sendForm('service_2pnfp18', 'template_ushp53d', e.target, 'lqP46IkwDTQI1otnI');
+    const response: EmailJSResponseStatus = await emailjs.sendForm('service_2pnfp18', 'template_ushp53d', e.currentTarget, 'lqP46IkwDTQI1otnI');
 
     response.status === 200 ? setAlert({
       ...alert,
@@ -50,7 +50,7 @@ export default function GetInTouch({ contactInformations }: { contactInformation
           <h1 className="heading-1">Get In Touch With Us</h1>
         </Fade>
         <Fade up delay={300}>
-          <p className="text-brave-purple font-light text-lg leading-9 mt-3">
+          <p className="text-brave-purple font-normal text-lg leading-9 mt-3">
             Have a question or comment? We're here to help! <br />
             Reach out to us using the contact information below.
           </p>
