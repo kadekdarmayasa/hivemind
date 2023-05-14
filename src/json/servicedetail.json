@@ -130,59 +130,56 @@
     ]
   },
 
-  "clients": {
-    "title": "Our Clients's Success Stories",
-    "testimonies": [
-      {
-        "_id": "1221j2jisdfdfihef9d",
-        "imagePath": "/images/testy-1.png",
-        "name": "John Smith",
-        "title": "Marketing Manager",
-        "message": "I'm blown away by the beautiful website that was created for my business. It's easy to navigate and has increased our online presence tremendously. Thank you so much!",
-        "rate": 5
-      },
-      {
-        "_id": "1221j2jisdfdfihef9e",
-        "imagePath": "/images/testy-2.png",
-        "name": "Max Robinzon",
-        "title": "Entrepreneur",
-        "message": "The team was professional and responsive throughout the entire web design process. I'm thrilled with the end result and would highly recommend their services to anyone looking for a quality website.",
-        "rate": 5
-      },
-      {
-        "_id": "1221j2jisdfdfihef9f",
-        "imagePath": "/images/testy-3.png",
-        "name": "Olivia Taylor",
-        "title": "Creative Director",
-        "message": "I was hesitant to invest in a new website, but it was the best decision I made for my business. The website is modern, user-friendly, and has helped increase our conversions. Thank you for a great job!",
-        "rate": 5
-      },
-      {
-        "_id": 12337,
-        "imagePath": "/images/testy-4.jpg",
-        "clientName": "Robert Johnson",
-        "occupation": "CEO",
-        "message": "The results speak for themselves. Since partnering with Hivemind, we've seen a significant increase in website traffic and lead generation. Their team's expertise and creativity have been invaluable to our digital marketing efforts.",
-        "rate": 5
-      },
-      {
-        "_id": 12338,
-        "imagePath": "/images/testy-5.png",
-        "clientName": "Sarah Lee",
-        "occupation": "E-commerce Manager",
-        "message": "Working with Hivemind has been a game-changer for our online store. Their e-commerce expertise has helped us streamline our sales process and optimize our website for maximum conversion. We couldn't be happier with the results.",
-        "rate": 5
-      },
-      {
-        "_id": 12339,
-        "imagePath": "/images/testy-6.png",
-        "clientName": "Maria Garcia",
-        "occupation": "Real Estate Agent",
-        "message": "I've worked with several web design companies in the past, but none have delivered the same level of expertise and customer service as Hivemind. Their team took the time to understand my business and goals and created a website that truly reflects my brand. I would highly recommend their services.",
-        "rate": 5
-      }
-    ]
-  },
+  "testimonies": [
+    {
+      "_id": "1221j2jisdfdfihef9d",
+      "imagePath": "/images/testy-1.png",
+      "name": "John Smith",
+      "title": "Marketing Manager",
+      "message": "I'm blown away by the beautiful website that was created for my business. It's easy to navigate and has increased our online presence tremendously. Thank you so much!",
+      "rate": 5
+    },
+    {
+      "_id": "1221j2jisdfdfihef9e",
+      "imagePath": "/images/testy-2.png",
+      "name": "Max Robinzon",
+      "title": "Entrepreneur",
+      "message": "The team was professional and responsive throughout the entire web design process. I'm thrilled with the end result and would highly recommend their services to anyone looking for a quality website.",
+      "rate": 5
+    },
+    {
+      "_id": "1221j2jisdfdfihef9f",
+      "imagePath": "/images/testy-3.png",
+      "name": "Olivia Taylor",
+      "title": "Creative Director",
+      "message": "I was hesitant to invest in a new website, but it was the best decision I made for my business. The website is modern, user-friendly, and has helped increase our conversions. Thank you for a great job!",
+      "rate": 5
+    },
+    {
+      "_id": 12337,
+      "imagePath": "/images/testy-4.jpg",
+      "clientName": "Robert Johnson",
+      "occupation": "CEO",
+      "message": "The results speak for themselves. Since partnering with Hivemind, we've seen a significant increase in website traffic and lead generation. Their team's expertise and creativity have been invaluable to our digital marketing efforts.",
+      "rate": 5
+    },
+    {
+      "_id": 12338,
+      "imagePath": "/images/testy-5.png",
+      "clientName": "Sarah Lee",
+      "occupation": "E-commerce Manager",
+      "message": "Working with Hivemind has been a game-changer for our online store. Their e-commerce expertise has helped us streamline our sales process and optimize our website for maximum conversion. We couldn't be happier with the results.",
+      "rate": 5
+    },
+    {
+      "_id": 12339,
+      "imagePath": "/images/testy-6.png",
+      "clientName": "Maria Garcia",
+      "occupation": "Real Estate Agent",
+      "message": "I've worked with several web design companies in the past, but none have delivered the same level of expertise and customer service as Hivemind. Their team took the time to understand my business and goals and created a website that truly reflects my brand. I would highly recommend their services.",
+      "rate": 5
+    }
+  ],
 
   "faqs": [
     {

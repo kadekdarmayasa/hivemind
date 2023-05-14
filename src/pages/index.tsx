@@ -26,7 +26,7 @@ export default function HomePage(): JSX.Element | false {
       <OurValues refOurValues={refOurValues} ourValues={data.companyValues} />
       <Service services={data.services} />
       <Portfolio portfolios={data.portfolios} />
-      <Testimony testimonies={data.testimonies} />
+      <Testimony testimonies={data.testimonies} title="What Client Says" isContainLabel />
       <Blog blogs={data.blogs} />
     </Layout>
   );
