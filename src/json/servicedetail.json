@@ -10,19 +10,19 @@
     "options": [
       {
         "_id": "assjkjjjij23e23",
-        "imagePath": "/images/chart.svg",
+        "imageId": "/images/chart.svg",
         "title": "E-commerce websites",
         "description": "Our expert team can develop a user-friendly, visually-appealing, and SEO-optimized e-commerce website that is essential for businesses looking to sell their products or services online."
       },
       {
         "_id": "assjkjjjij23e24",
-        "imagePath": "/images/globe.svg",
+        "imageId": "/images/globe.svg",
         "title": "Corporate Websites",
         "description": "Establish a strong online presence with our custom-designed corporate websites that accurately reflect your brand identity and effectively communicate your message to your target audience."
       },
       {
         "_id": "assjkjjjij23e25",  
-        "imagePath": "/images/targetted.svg",
+        "imageId": "/images/targetted.svg",
         "title": "Landing Pages",
         "description": "Our professionally-crafted landing pages are designed to convert website visitors into leads or customers with clear messaging, strong calls-to-action, and optimization for high conversion rates."
       }
@@ -35,43 +35,43 @@
     "steps": [
       {
         "_id": "112k2jk2iknasdiknsdin",
-        "imagePath": "/images/discovery.svg",
+        "imageId": "/images/discovery.svg",
         "label": "STEP 01",
         "title": "Discovery"
       },
       {
         "_id": "112k2jk2iknasdiknsdim",
-        "imagePath": "/images/planning.svg",
+        "imageId": "/images/planning.svg",
         "label": "STEP 02",
         "title": "Planning"
       },
       {
         "_id": "112k2jk2iknasdiknsdio",  
-        "imagePath": "/images/design.svg",
+        "imageId": "/images/design.svg",
         "label": "STEP 03",
         "title": "Design"
       },
       {
         "_id": "112k2jk2iknasdiknsdip",
-        "imagePath": "/images/development.svg",
+        "imageId": "/images/development.svg",
         "label": "STEP 04",
         "title": "Development"
       },
       {
         "_id": "112k2jk2iknasdiknsdiq",
-        "imagePath": "/images/testing.svg",
+        "imageId": "/images/testing.svg",
         "label": "STEP 05",
         "title": "Testing"
       },
       {
         "_id": "112k2jk2iknasdiknsdir",
-        "imagePath": "/images/launch.svg",
+        "imageId": "/images/launch.svg",
         "label": "STEP 06",
         "title": "Launch"
       },
       {
         "_id": "112k2jk2iknasdiknsdis",
-        "imagePath": "/images/maintenance.svg",
+        "imageId": "/images/maintenance.svg",
         "label": "STEP 07",
         "title": "Maintenance"
       }
@@ -84,17 +84,17 @@
     "samples": [
       {
         "_id": "1221212jjjdfjsoikjd",
-        "imagePath": "/images/company-website-redesign.png",
+        "imageId": "/images/company-website-redesign.png",
         "title": "GREZZ Company Website Redesign"
       },
       {
          "_id": "1221212jjjdfjsoikje",
-        "imagePath": "/images/landing-page-opt.png",
+        "imageId": "/images/landing-page-opt.png",
         "title": "KLIPPLANET Landing Page Optimization"
       },
       {
         "_id": "1221212jjjdfjsoikjf",
-        "imagePath": "/images/corporate-website.png",
+        "imageId": "/images/corporate-website.png",
         "title": "BIGMOVE Corporate Website"
       }
     ]
@@ -133,7 +133,7 @@
   "testimonies": [
     {
       "_id": "1221j2jisdfdfihef9d",
-      "imagePath": "/images/testy-1.png",
+      "imageId": "/images/testy-1.png",
       "name": "John Smith",
       "title": "Marketing Manager",
       "message": "I'm blown away by the beautiful website that was created for my business. It's easy to navigate and has increased our online presence tremendously. Thank you so much!",
@@ -141,7 +141,7 @@
     },
     {
       "_id": "1221j2jisdfdfihef9e",
-      "imagePath": "/images/testy-2.png",
+      "imageId": "/images/testy-2.png",
       "name": "Max Robinzon",
       "title": "Entrepreneur",
       "message": "The team was professional and responsive throughout the entire web design process. I'm thrilled with the end result and would highly recommend their services to anyone looking for a quality website.",
@@ -149,7 +149,7 @@
     },
     {
       "_id": "1221j2jisdfdfihef9f",
-      "imagePath": "/images/testy-3.png",
+      "imageId": "/images/testy-3.png",
       "name": "Olivia Taylor",
       "title": "Creative Director",
       "message": "I was hesitant to invest in a new website, but it was the best decision I made for my business. The website is modern, user-friendly, and has helped increase our conversions. Thank you for a great job!",
@@ -157,7 +157,7 @@
     },
     {
       "_id": 12337,
-      "imagePath": "/images/testy-4.jpg",
+      "imageId": "/images/testy-4.jpg",
       "clientName": "Robert Johnson",
       "occupation": "CEO",
       "message": "The results speak for themselves. Since partnering with Hivemind, we've seen a significant increase in website traffic and lead generation. Their team's expertise and creativity have been invaluable to our digital marketing efforts.",
@@ -165,7 +165,7 @@
     },
     {
       "_id": 12338,
-      "imagePath": "/images/testy-5.png",
+      "imageId": "/images/testy-5.png",
       "clientName": "Sarah Lee",
       "occupation": "E-commerce Manager",
       "message": "Working with Hivemind has been a game-changer for our online store. Their e-commerce expertise has helped us streamline our sales process and optimize our website for maximum conversion. We couldn't be happier with the results.",
@@ -173,7 +173,7 @@
     },
     {
       "_id": 12339,
-      "imagePath": "/images/testy-6.png",
+      "imageId": "/images/testy-6.png",
       "clientName": "Maria Garcia",
       "occupation": "Real Estate Agent",
       "message": "I've worked with several web design companies in the past, but none have delivered the same level of expertise and customer service as Hivemind. Their team took the time to understand my business and goals and created a website that truly reflects my brand. I would highly recommend their services.",

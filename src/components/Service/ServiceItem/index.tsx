@@ -8,7 +8,7 @@ export default function ServiceItem({ service }: { service: ServiceProps }): JSX
   return (
     <div key={service._id} className='bg-white shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all w-[350px] 2xl:w-[380px] h-[500px] 2xl:h-[520px]  px-10 py-14 flex flex-col items-start rounded-xl'>
       <div className='bg-palatinate-blue w-20 h-20 flex items-center justify-center rounded-lg mb-8'>
-        <Image src={service.imagePath} height={30} width={30} alt={service.name} style={{ width: '40px' }} />
+        <Image src={service.imageId} height={30} width={30} alt={service.name} style={{ width: '40px' }} />
       </div>
       <h3 className='heading-3 mb-3'>{service.name}</h3>
       <p className='text-brave-purple font-light text-lg leading-9 mb-5'>{service.briefDescription}</p>

@@ -17,7 +17,7 @@ export default function BlogDetail(): JSX.Element | any {
     return (
         <Layout title={data.title}>
             <section className="mt-14 blog-detail mx-auto max-w-[1020px]">
-                <Hero publishedDate={data.publishedDate} author={data.author} title={data.title} imagePath={data.imagePath} imageOriginSource={data.imageOriginSource} />
+                <Hero publishedDate={data.publishedDate} author={data.author} title={data.title} imageId={data.imageId} imageOriginSource={data.imageOriginSource} />
                 <MainContent content={data.content} />
                 <RelatedArticle relatedArticles={data.relatedArticles} />
             </section>

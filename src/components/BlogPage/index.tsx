@@ -17,7 +17,7 @@ export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Ele
             <div className="flex gap-10 w-full col-span-12">
               <Fade>
                 <div className="flex flex-1">
-                  <img src={blog.imagePath} alt={blog.title} className="w-full h-full rounded-lg" />
+                  <img src={blog.imageId} alt={blog.title} className="w-full h-full rounded-lg" />
                 </div>
               </Fade>
 
@@ -53,7 +53,7 @@ export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Ele
             <Fade up delay={index <= 3 ? index * 300 : (index % 3) === 0 ? 3 * 300 : (index % 3) * 300}>
               <div className='h-[auto] w-full bg-white shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all rounded-xl relative blog-item col-span-4'>
                 <div className='h-[170px] w-full overflow-hidden rounded-t-xl'>
-                  <img src={blog.imagePath} alt="" className='h-full w-full object-cover' />
+                  <img src={blog.imageId} alt="" className='h-full w-full object-cover' />
                 </div>
 
                 <div className='px-6 py-6'>

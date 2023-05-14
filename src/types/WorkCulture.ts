@@ -1,6 +1,6 @@
 export type WorkCultureProps = {
   _id: string | number,
-  imagePath: string,
+  imageId: string,
   headline: string,
   description: string
 }

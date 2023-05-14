@@ -1,6 +1,6 @@
 export type PortfolioProps = {
   _id: string | number,
-  imagePath: string,
+  imageId: string,
   orientation: "potrait" | "landscape",
   projectName: string,
   serviceCategory: string

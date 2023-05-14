@@ -5,7 +5,7 @@ export default function ContactInformation({ contactInformation }: { contactInfo
   return (
     <div className="flex mt-5">
       <div className="bg-[#E8EAFF] h-16 w-16 flex items-center justify-center rounded-md">
-        <Image src={contactInformation.imagePath} width={32} height={32} alt={contactInformation.name} />
+        <Image src={contactInformation.imageId} width={32} height={32} alt={contactInformation.name} />
       </div>
 
       <div className="ms-5">

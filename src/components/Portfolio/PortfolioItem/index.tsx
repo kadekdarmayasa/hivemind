@@ -5,7 +5,7 @@ export default function PortfolioItem({ portfolio, index }: { portfolio: Portfol
   return portfolio.orientation === 'potrait' ? (
     <Fade bottom delay={index * 300}>
       <div key={portfolio._id} className='rounded-lg relative col-span-4  row-span-4 overflow-hidden group'>
-        <img src={portfolio.imagePath} alt={portfolio.projectName} className='h-full w-full object-cover group-hover:scale-105 transition-all' />
+        <img src={portfolio.imageId} alt={portfolio.projectName} className='h-full w-full object-cover group-hover:scale-105 transition-all' />
 
         <div className='absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-black to-blue-gray-800 opacity-40 backdrop-blur-md'></div>
 
@@ -22,7 +22,7 @@ export default function PortfolioItem({ portfolio, index }: { portfolio: Portfol
   ) : (
     <Fade bottom delay={index * 300}>
       <div key={portfolio._id} className='rounded-lg col-span-4 relative row-span-2 overflow-hidden group'>
-        <img src={portfolio.imagePath} alt={portfolio.projectName} className='h-full w-full object-cover group-hover:scale-105 transition-all' />
+        <img src={portfolio.imageId} alt={portfolio.projectName} className='h-full w-full object-cover group-hover:scale-105 transition-all' />
 
         <div className='absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-black to-blue-gray-800 opacity-40 backdrop-blur-md'></div>
 

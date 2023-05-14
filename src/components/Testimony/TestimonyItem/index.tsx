@@ -7,7 +7,7 @@ export default function TestimonyItem({ testimony }: { testimony: TestimonyItemP
     <div className="h-auto bg-white  w-[430px] mt-10 px-8 py-10 rounded-lg testimony-item">
       <div className="flex items-center">
         <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
-          <Image src={testimony.imagePath} width={50} height={50} alt={testimony.clientName} className="rounded-full" />
+          <Image src={testimony.imageId} width={50} height={50} alt={testimony.clientName} className="rounded-full" />
         </div>
 
         <div className="ml-4">

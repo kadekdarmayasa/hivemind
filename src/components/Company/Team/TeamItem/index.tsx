@@ -6,7 +6,7 @@ export default function TeamItem({ team }: { team: TeamProps }): JSX.Element {
   return (
     <div className="h-auto w-[350px] mt-6 px-8 py-10 group">
       <div className="w-full h-[360px] rounded-lg overflow-hidden grayscale group-hover:grayscale-0 group transition-all">
-        <img src={team.imagePath} className="w-full object-cover group-hover:scale-[1.02] transition-all" alt={team.name} />
+        <img src={team.imageId} className="w-full object-cover group-hover:scale-[1.02] transition-all" alt={team.name} />
       </div>
 
       <h3 className="heading-3 mt-4">{team.name}</h3>

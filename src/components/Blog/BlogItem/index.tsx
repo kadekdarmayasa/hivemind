@@ -7,7 +7,7 @@ export default function BlogItem({ blog }: { blog: BlogItemProps }): JSX.Element
   return (
     <div className='h-[auto] w-[360px] bg-white rounded-xl relative blog-item'>
       <div className='h-[170px] w-full overflow-hidden rounded-t-xl'>
-        <img src={blog.imagePath} alt={blog.title} className='h-full w-full object-cover' />
+        <img src={blog.imageId} alt={blog.title} className='h-full w-full object-cover' />
       </div>
 
       <div className='px-6 py-6'>

@@ -23,7 +23,7 @@ export default function ServiceOffered({ servicesOffered, refServiceOffered }: {
             <Fade up delay={300 * index} key={option._id} >
               <div key={option._id} className='bg-white shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all w-[350px] h-[550px] px-10 py-14 flex flex-col items-start rounded-xl'>
                 <div className='bg-palatinate-blue w-20 h-20 flex items-center justify-center rounded-lg mb-8'>
-                  <Image src={option.imagePath} height={30} width={30} alt={option.name} style={{ width: '40px' }} />
+                  <Image src={option.imageId} height={30} width={30} alt={option.name} style={{ width: '40px' }} />
                 </div>
                 <h3 className='heading-3 mb-3'>{option.title}</h3>
                 <p className='text-brave-purple font-light text-lg leading-9 mb-5'>{option.description}</p>

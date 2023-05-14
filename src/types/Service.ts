@@ -1,6 +1,6 @@
 export type ServiceProps = {
   _id: string | number,
-  imagePath: string,
+  imageId: string,
   slug: string,
   name: string,
   briefDescription: string

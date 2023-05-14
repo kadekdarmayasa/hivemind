@@ -1,6 +1,6 @@
 export type TeamProps = {
   _id: number,
-  imagePath: string,
+  imageId: string,
   name: string,
   title: string,
   socials: {

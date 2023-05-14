@@ -19,7 +19,7 @@ export default function Philosophy({ philosophy }: { philosophy: PhilosophyProps
         </div>
         <div className="flex-1 flex justify-end">
           <Fade duration={3000}>
-            <img src={philosophy.imagePath} alt="Company Philosophy" className="shadow-black-lg w-[98%]" />
+            <img src={philosophy.imageId} alt="Company Philosophy" className="shadow-black-lg w-[98%]" />
           </Fade>
         </div>
       </div>

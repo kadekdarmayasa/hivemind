@@ -6,13 +6,13 @@ export default function Hero({
     publishedDate,
     author,
     title,
-    imagePath,
+    imageId,
     imageOriginSource
 }: {
     publishedDate: string,
     author: string,
     title: string,
-    imagePath: string,
+    imageId: string,
     imageOriginSource?: string
 }): JSX.Element {
     const status = useAppSelector(selectedStatus);
@@ -32,7 +32,7 @@ export default function Hero({
 
             <Fade>
                 <figure className={`mt-10 mb-10 relative ${status === 'open' ? '-z-10' : ''}`}>
-                    <img src={imagePath} alt="" className="w-full h-auto rounded-xl" />
+                    <img src={imageId} alt="" className="w-full h-auto rounded-xl" />
                     <figcaption className="text-center text-brave-purple font-light mt-2">{imageOriginSource}</figcaption>
                 </figure>
             </Fade>
