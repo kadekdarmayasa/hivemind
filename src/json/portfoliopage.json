@@ -4,34 +4,49 @@
     "imageId": "/images/e-commerce-web.png",
     "orientation": "potrait",
     "projectName": "E-commerce for Fashion",
-    "serviceCategory": "Web Design"
+    "service": {
+      "id": 122893,
+      "category": "Web Design"
+    }
   },
   {
     "_id": 122894,
     "imageId": "/images/fitness-studio.png",
     "orientation": "landscape",
     "projectName": "Fitness Studio",
-    "serviceCategory": "Mobile App Development"
+    "service": {
+      "id": 122894,
+      "category": "Mobile App Development"
+    }
   },
   {
-    "_id": 122895,
-    "imageId": "/images/brand-identity.png",
+    "_id": 1228991,
+    "imageId": "/images/seo-optimization.png",
     "orientation": "landscape",
-    "projectName": "Brand Identity for Tech Startup",
-    "serviceCategory": "Graphic Design"
+    "projectName": "SEO Opimization for E-commerce Website",
+    "service": {
+      "id": 1228991,
+      "category": "Search Engine Optimization"
+    }
   },
   {
     "_id": 122896,
     "imageId": "/images/video-for-travel-agency.png",
     "orientation": "landscape",
     "projectName": "Video Production for Travel Agency",
-    "serviceCategory": "Video Production"
+    "service": {
+      "id": 122896,
+      "category": "Content Creation"
+    }
   },
   {
     "_id": 122897,
     "imageId": "/images/seo-optimization.png",
     "orientation": "landscape",
     "projectName": "SEO Opimization for E-commerce Website",
-    "serviceCategory": "Search Engine Optimization"
+    "service": {
+      "id": 1228991,
+      "category": "Search Engine Optimization"
+    }
   }
 ]

@@ -2,43 +2,37 @@
   "services": [
     {
       "_id": "ass122jjjjoj033f",
-      "imageId": "/images/desktop.svg", 
-      "slug": "web-design",
+      "imageId": "/images/desktop.svg",
       "name": "Web Design",
       "briefDescription": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
     },
     {
       "_id": "ass122jjjjoj033g",
-      "imageId": "/images/chart.svg", 
-      "slug": "seo",
+      "imageId": "/images/chart.svg",
       "name": "Search Engine Optimization",
       "briefDescription": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
     },
     {
       "_id": "ass122jjjjoj033h",
-      "imageId": "/images/megaphone.svg", 
-      "slug": "smm",
+      "imageId": "/images/megaphone.svg",
       "name": "Social Media Marketing",
       "briefDescription": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
     },
     {
       "_id": "ass122jjjjoj033i",
-      "imageId": "/images/reader.svg", 
-      "slug": "content-creation",
+      "imageId": "/images/reader.svg",
       "name": "Content Creation",
       "briefDescription": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
     },
     {
       "_id": "ass122jjjjoj033j",
-      "imageId": "/images/cart.svg", 
-      "slug": "ec-solutions",
+      "imageId": "/images/cart.svg",
       "name": "E-commerce Solutions",
       "briefDescription": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
     },
     {
       "_id": "ass122jjjjoj033k",
       "imageId": "/images/phone.svg", 
-      "slug": "mobile-app-dev",
       "name": "Mobile App Development",
       "briefDescription": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
     }
@@ -73,35 +67,50 @@
       "imageId": "/images/e-commerce-web.png",
       "orientation": "potrait",
       "projectName": "E-commerce for Fashion",
-      "serviceCategory": "Web Design"
+      "service": {
+        "id": "ass122jjjjoj033f",
+        "category": "Web Design"
+      }
     },
     {
       "_id": 122894,
       "imageId": "/images/fitness-studio.png",
       "orientation": "landscape",
       "projectName": "Fitness Studio",
-      "serviceCategory": "Mobile App Development"
+      "service": {
+        "id": "ass122jjjjoj033k",
+        "category": "Mobile App Development"
+      }
     },
     {
-      "_id": 122895,
-      "imageId": "/images/brand-identity.png",
+      "_id": 1228991,
+      "imageId": "/images/seo-optimization.png",
       "orientation": "landscape",
-      "projectName": "Brand Identity for Tech Startup",
-      "serviceCategory": "Graphic Design"
+      "projectName": "SEO Opimization for E-commerce Website",
+      "service": {
+        "id": "ass122jjjjoj033g",
+        "category": "Search Engine Optimization"
+      }
     },
     {
       "_id": 122896,
       "imageId": "/images/video-for-travel-agency.png",
       "orientation": "landscape",
       "projectName": "Video Production for Travel Agency",
-      "serviceCategory": "Video Production"
+      "service": {
+        "id": "ass122jjjjoj033i",
+        "category": "Content Creation"
+      }
     },
     {
       "_id": 122897,
       "imageId": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
-      "serviceCategory": "Search Engine Optimization"
+      "service": {
+        "id": "ass122jjjjoj033g",
+        "category": "Seach Engine Optimization"
+      }
     }
   ],
 

@@ -3,5 +3,8 @@ export type PortfolioProps = {
   imageId: string,
   orientation: "potrait" | "landscape",
   projectName: string,
-  serviceCategory: string
+  service: {
+    id: number | string,
+    category: string
+  }
 }

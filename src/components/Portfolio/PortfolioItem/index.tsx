@@ -15,7 +15,7 @@ export default function PortfolioItem({ portfolio, index }: { portfolio: Portfol
           }}>{portfolio.projectName}</h3>
           <p className='text-white font-normal text-lg' style={{
             textShadow: '0 5px 10px rgba(0, 0, 0, .2)',
-          }}>{portfolio.serviceCategory}</p>
+          }}>{portfolio.service.category}</p>
         </div>
       </div>
     </Fade>
@@ -32,7 +32,7 @@ export default function PortfolioItem({ portfolio, index }: { portfolio: Portfol
           }}>{portfolio.projectName}</h3>
           <p className='text-white font-normal text-base delay-100' style={{
             textShadow: '0 5px 10px rgba(0, 0, 0, .2)',
-          }}>{portfolio.serviceCategory}</p>
+          }}>{portfolio.service.category}</p>
         </div>
       </div>
     </Fade>
