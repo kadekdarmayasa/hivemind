@@ -1,5 +1,6 @@
 import type { WorkCultureProps } from "types/WorkCulture"
 import Fade from 'react-reveal/Fade';
+import Image from "next/image";
 
 export default function WorkCulture({ workCultures }: { workCultures: WorkCultureProps[] }): JSX.Element {
   return <>
@@ -12,7 +13,7 @@ export default function WorkCulture({ workCultures }: { workCultures: WorkCultur
         <div key={index} className="flex gap-12 items-center">
           <Fade delay={300 * index}>
             <div className="flex-1 flex justify-end shadow-black-md">
-              <img src={workCulture.imageId} alt={workCulture.headline} className="w-full" />
+              <Image width={400} height={300} src={workCulture.imageId} alt={workCulture.headline} className="w-full" />
             </div>
           </Fade>
 
@@ -38,7 +39,7 @@ export default function WorkCulture({ workCultures }: { workCultures: WorkCultur
 
           <Fade delay={300 * index}>
             <div className="flex-1 flex justify-end shadow-black-md">
-              <img src={workCulture.imageId} alt={workCulture.headline} className="w-full" />
+              <Image width={400} height={300} src={workCulture.imageId} alt={workCulture.headline} className="w-full" />
             </div>
           </Fade>
         </div>

@@ -5,6 +5,7 @@ import Button from "components/Button";
 import Fade from 'react-reveal/Fade';
 import { useAppSelector } from "redux/hooks";
 import { selectedStatus } from "redux/slices/dropdownSlice";
+import Image from "next/image";
 
 export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Element {
   const status = useAppSelector(selectedStatus);
@@ -14,10 +15,10 @@ export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Ele
       {blogs.map((blog, index) => {
         if (index === 0) {
           return (
-            <div className="flex gap-10 w-full col-span-12">
+            <div key={index} className="flex gap-10 w-full col-span-12">
               <Fade>
                 <div className="flex flex-1">
-                  <img src={blog.imageId} alt={blog.title} className="w-full h-full rounded-lg" />
+                  <Image width={500} height={350} src={blog.imageId} alt={blog.title} className="w-full h-full rounded-lg" />
                 </div>
               </Fade>
 
@@ -50,10 +51,10 @@ export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Ele
           );
         } else {
           return (
-            <Fade up delay={index <= 3 ? index * 300 : (index % 3) === 0 ? 3 * 300 : (index % 3) * 300}>
+            <Fade key={index} up delay={index <= 3 ? index * 300 : (index % 3) === 0 ? 3 * 300 : (index % 3) * 300}>
               <div className='h-[auto] w-full bg-white shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all rounded-xl relative blog-item col-span-4'>
-                <div className='h-[170px] w-full overflow-hidden rounded-t-xl'>
-                  <img src={blog.imageId} alt="" className='h-full w-full object-cover' />
+                <div className='h-[200px] w-full overflow-hidden rounded-t-xl'>
+                  <Image width={300} height={200} src={blog.imageId} alt={blog.title} className='h-full w-full object-cover' />
                 </div>
 
                 <div className='px-6 py-6'>

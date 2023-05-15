@@ -2,12 +2,13 @@ import Button from 'components/Button';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import type { BlogItemProps } from 'types/BlogItem';
+import Image from 'next/image';
 
 export default function BlogItem({ blog }: { blog: BlogItemProps }): JSX.Element {
   return (
     <div className='h-[auto] w-[360px] bg-white rounded-xl relative blog-item'>
       <div className='h-[170px] w-full overflow-hidden rounded-t-xl'>
-        <img src={blog.imageId} alt={blog.title} className='h-full w-full object-cover' />
+        <Image src={blog.imageId} alt={blog.title} width={300} height={200} className='h-full w-full object-cover' />
       </div>
 
       <div className='px-6 py-6'>

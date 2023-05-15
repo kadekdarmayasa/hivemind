@@ -17,7 +17,7 @@ export default function TestimonyItem({ testimony }: { testimony: TestimonyItemP
       </div>
 
       <div className="my-6">
-        <p className="text-coarse-wool text-base font-normal leading-7">"{testimony.message}"</p>
+        <p className="text-coarse-wool text-base font-normal leading-7">&quot;{testimony.message}&quot;</p>
       </div>
 
       <div className="mt-2">

@@ -51,7 +51,7 @@ export default function GetInTouch({ contactInformations }: { contactInformation
         </Fade>
         <Fade up delay={300}>
           <p className="text-brave-purple font-normal text-lg leading-9 mt-3">
-            Have a question or comment? We're here to help! <br />
+            Have a question or comment? We&apos;re here to help! <br />
             Reach out to us using the contact information below.
           </p>
         </Fade>

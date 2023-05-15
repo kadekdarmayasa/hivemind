@@ -5,6 +5,7 @@ import { MutableRefObject } from 'react';
 import Fade from 'react-reveal/Fade';
 import { useAppSelector } from "redux/hooks";
 import { selectedStatus } from "redux/slices/dropdownSlice";
+import Image from "next/image";
 
 export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }): JSX.Element {
   const status = useAppSelector(selectedStatus);
@@ -51,7 +52,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
 
       <div className="flex-1 flex justify-end items-center">
         <Fade duration={3000}>
-          <img src="/images/hero-image-1.png" alt="Our Team meeting With Client" className="w-[98%] shadow-black-md" />
+          <Image width={600} height={500} src="/images/hero-image-1.png" alt="Our Team meeting With Client" className="w-[98%] shadow-black-md" />
         </Fade>
       </div>
     </section>

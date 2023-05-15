@@ -1,6 +1,7 @@
 import Fade from 'react-reveal/Fade';
 import { useAppSelector } from 'redux/hooks';
 import { selectedStatus } from 'slices/dropdownSlice';
+import Image from 'next/image';
 
 export default function Hero({
     publishedDate,
@@ -32,7 +33,7 @@ export default function Hero({
 
             <Fade>
                 <figure className={`mt-10 mb-10 relative ${status === 'open' ? '-z-10' : ''}`}>
-                    <img src={imageId} alt="" className="w-full h-auto rounded-xl" />
+                    <Image src={imageId} alt={title} width={500} height={400} className='!w-full !h-auto rounded-xl' />
                     <figcaption className="text-center text-brave-purple font-light mt-2">{imageOriginSource}</figcaption>
                 </figure>
             </Fade>
