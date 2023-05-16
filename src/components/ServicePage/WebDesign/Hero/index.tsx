@@ -4,11 +4,11 @@ import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { MutableRefObject } from 'react';
 import Fade from 'react-reveal/Fade';
-import { useAppSelector } from 'redux/hooks';
-import { selectedStatus } from 'redux/slices/dropdownSlice';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { selectedStatus } from 'slices/dropdownSlice';
 
 export default function Hero({ hero, refServiceOffered }: { hero: any, refServiceOffered: MutableRefObject<HTMLElement> }) {
-  const status = useAppSelector(selectedStatus);
+  const dropdownStatus = useAppSelector(selectedStatus);
 
   const showOfferedServices = () => {
     window.scrollTo({
@@ -18,7 +18,7 @@ export default function Hero({ hero, refServiceOffered }: { hero: any, refServic
   }
 
   return (
-    <section className={`relative ${status === 'open' ? '-z-10' : 'z-0'} mt-24`}>
+    <section className={`relative ${dropdownStatus === 'open' ? '-z-10' : 'z-0'} mt-24`}>
       <div className='w-[870px] text-center mx-auto'>
         <Fade up>
           <h1 className='heading-1'>{parse(hero.headline)}</h1>

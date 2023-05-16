@@ -1,6 +1,5 @@
 import type { PortfolioProps } from 'types/Portfolio';
 import PortfolioItem from '../PortfolioItem';
-import Fade from 'react-reveal/Fade';
 
 export default function PortfolioContainer({ portfolios }: { portfolios: PortfolioProps[] }): JSX.Element {
   return (

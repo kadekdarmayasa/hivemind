@@ -3,12 +3,12 @@ import { IoChatboxOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import { MutableRefObject } from 'react';
 import Fade from 'react-reveal/Fade';
-import { useAppSelector } from "redux/hooks";
-import { selectedStatus } from "redux/slices/dropdownSlice";
+import { useAppSelector } from "hooks/useAppSelector";
+import { selectedStatus } from "slices/dropdownSlice";
 import Image from "next/image";
 
 export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }): JSX.Element {
-  const status = useAppSelector(selectedStatus);
+  const dropdownStatus = useAppSelector(selectedStatus);
 
   const showOurValues = () => {
     window.scrollTo({
@@ -18,7 +18,7 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
   };
 
   return (
-    <section className={`flex relative ${status === 'open' ? '-z-10' : 'z-0'} mt-16 2xl:mt-24`}>
+    <section className={`flex relative ${dropdownStatus === 'open' ? '-z-10' : 'z-0'} mt-16 2xl:mt-24`}>
       <div className="flex-1 flex flex-col justify-center items-start">
         <Fade bottom>
           <small className="label-text">A innovate digital agency</small>

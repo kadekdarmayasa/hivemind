@@ -3,14 +3,14 @@ import useSWR from 'swr';
 import axios from "axios";
 import type { PortfolioProps } from "types/Portfolio";
 import { Header, CategoryList, PortfolioItems } from "components/PortfolioPage";
-import { useAppSelector } from "redux/hooks";
+import { useAppSelector } from "hooks/useAppSelector";
 import { selectedStatus } from "slices/dropdownSlice";
 import { useEffect, useState } from "react";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function PortfolioPage(): JSX.Element | false {
-  let [categoryId, setCategoryId] = useState<string | number>(0);
+  const [categoryId, setCategoryId] = useState<string | number>(0);
   const { data, error, isLoading } = useSWR<PortfolioProps[], Error>('/api/portfoliopage', fetcher);
   const dropdownStatus = useAppSelector(selectedStatus);
 
@@ -22,7 +22,7 @@ export default function PortfolioPage(): JSX.Element | false {
   const categoryList = data.map(portfolio => portfolio.service);
 
   const handleClick = (categoryId: string | number) => {
-    setCategoryId((prevCategoryId) => (prevCategoryId = categoryId));
+    setCategoryId(categoryId);
   }
 
   return (
