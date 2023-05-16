@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 export interface DropdownState {
-  status: 'open' | 'close',
+  state: 'open' | 'close',
 }
 
 const initialState: DropdownState = {
-  status: 'close',
+  state: 'close',
 }
 
 export const dropdownSlice = createSlice({
@@ -14,11 +14,11 @@ export const dropdownSlice = createSlice({
   initialState,
   reducers: {
     toggle: (state, action: PayloadAction<'open' | 'close'>) => {
-      state.status = action.payload;
+      state.state = action.payload;
     }
   }
 })
 
 export const { toggle } = dropdownSlice.actions;
-export const selectedStatus = (state: RootState) => state.dropdown.status;
+export const selectedState = (state: RootState) => state.dropdown.state;
 export default dropdownSlice.reducer;

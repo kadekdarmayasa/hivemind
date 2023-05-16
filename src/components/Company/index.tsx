@@ -7,14 +7,14 @@ import { TeamProps } from "types/Team";
 import { PhilosophyProps } from "types/Philosophy";
 import { WorkCultureProps } from "types/WorkCulture";
 import { useAppSelector } from "hooks/useAppSelector";
-import { selectedStatus } from "slices/dropdownSlice";
+import { selectedState } from "slices/dropdownSlice";
 
 export default function Company({ company }: { company: CompanyProps }): JSX.Element {
-  const dropdownStatus = useAppSelector(selectedStatus);
+  const dropdownState = useAppSelector(selectedState);
 
   return (
     <>
-      <section className={`relative ${dropdownStatus === 'open' ? '-z-10' : 'z-0'} mt-14`}>
+      <section className={`relative ${dropdownState === 'open' ? '-z-10' : 'z-0'} mt-14`}>
         <Philosophy philosophy={company.philosophy} />
 
         <div className="flex mt-14 gap-10">

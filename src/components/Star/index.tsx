@@ -1,4 +1,4 @@
-export default function Star({ value, height, width }: Star): JSX.Element {
+export default function Star({ value, height, width }: StarProps): JSX.Element {
   const decimals = Number(value) % 1;
   const star = [];
   let leftPosition = 0;
@@ -25,7 +25,7 @@ export default function Star({ value, height, width }: Star): JSX.Element {
   )
 }
 
-type Star = {
+type StarProps = {
   value: number,
   height: number,
   width: number

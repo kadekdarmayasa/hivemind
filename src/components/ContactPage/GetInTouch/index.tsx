@@ -10,10 +10,10 @@ import { Alert } from "@material-tailwind/react";
 import type { AlertProps } from "types/AlertProps";
 import Fade from 'react-reveal/Fade';
 import { useAppSelector } from "hooks/useAppSelector";
-import { selectedStatus } from "slices/dropdownSlice";
+import { selectedState } from "slices/dropdownSlice";
 
 export default function GetInTouch({ contactInformations }: { contactInformations: ContactInformationProps[] }): JSX.Element {
-  const dropdownStatus = useAppSelector(selectedStatus);
+  const dropdownState = useAppSelector(selectedState);
   const [inputValue, setInputValue] = useState({ name: '', email: '', message: '' });
   const [alert, setAlert] = useState<AlertProps>({ show: false, icon: null, message: '', type: 'success' });
 
@@ -44,7 +44,7 @@ export default function GetInTouch({ contactInformations }: { contactInformation
   }
 
   return (
-    <section className={`relative ${dropdownStatus === 'open' ? '-z-10' : 'z-0'} mt-14`}>
+    <section className={`relative ${dropdownState === 'open' ? '-z-10' : 'z-0'} mt-14`}>
       <div className="text-center">
         <Fade up>
           <h1 className="heading-1">Get In Touch With Us</h1>

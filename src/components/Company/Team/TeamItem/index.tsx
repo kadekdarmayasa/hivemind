@@ -15,13 +15,13 @@ export default function TeamItem({ team }: { team: TeamProps }): JSX.Element {
 
       <div className="flex mt-6">
         <IconContext.Provider value={{ size: '1em', color: '#2B3BE5' }}>
-          <a href={team.socials.facebook} target="_blank" className="bg-[#E8EAFF] h-[38px] w-[38px] flex items-center justify-center rounded-md mr-4">
+          <a href={team.socials.facebook} target="_blank" rel="noreferrer" className="bg-[#E8EAFF] h-[38px] w-[38px] flex items-center justify-center rounded-md mr-4">
             <SlSocialFacebook />
           </a>
-          <a href={team.socials.twitter} target="_blank" className="bg-[#E8EAFF] h-[38px] w-[38px] flex items-center justify-center rounded-md mr-4">
+          <a href={team.socials.twitter} target="_blank" rel="noreferrer" className="bg-[#E8EAFF] h-[38px] w-[38px] flex items-center justify-center rounded-md mr-4">
             <SlSocialTwitter />
           </a>
-          <a href={team.socials.linkedin} target="_blank" className="bg-[#E8EAFF] h-[38px] w-[38px] flex items-center justify-center rounded-md mr-4">
+          <a href={team.socials.linkedin} target="_blank" rel="noreferrer" className="bg-[#E8EAFF] h-[38px] w-[38px] flex items-center justify-center rounded-md mr-4">
             <SlSocialLinkedin />
           </a>
         </IconContext.Provider>

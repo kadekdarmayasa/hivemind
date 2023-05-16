@@ -3,15 +3,13 @@ import Layout from "components/Layout";
 import { Hero, OurValues, Service, Portfolio } from "components/Homepage";
 import Testimony from "components/Testimony";
 import Blog from "components/Blog";
-import axios from "axios";
-import useSWR from 'swr';
 import type { TestimonyItemProps } from "types/TestimonyItem";
 import type { BlogItemProps } from "types/BlogItem";
 import type { PortfolioProps } from "types/Portfolio";
 import type { ServiceProps } from "types/Service";
 import type { OurValuesProps } from "types/OurValues";
-
-const fetcher = (url: string) => axios.get(url).then(response => response.data);
+import { fetcher } from 'utils/fetcher/get';
+import useSWR from 'swr';
 
 export default function HomePage(): JSX.Element | false {
   const refOurValues = useRef<HTMLElement>(null);

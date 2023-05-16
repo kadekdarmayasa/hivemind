@@ -17,7 +17,7 @@ export default function Mission({ missions }: { missions: string[] }): JSX.Eleme
       <ul>
         {missions.map((mission, index) => (
           <Fade up key={index} delay={index * 300}>
-            <li className={`text-brave-purple font-normal text-lg leading-9 flex items-start ${index != 0 ? 'mt-4' : 'mt-6'}`}>
+            <li className={`text-brave-purple font-normal text-lg leading-9 flex items-start ${index !== 0 ? 'mt-4' : 'mt-6'}`}>
               <div className='mr-2 mt-2'>{checkmarkIcon}</div>
               <span>{mission}</span>
             </li>

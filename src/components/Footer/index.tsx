@@ -6,7 +6,7 @@ import type { NavigationMenuProps } from "types/NavigationMenu";
 import Fade from 'react-reveal/Fade';
 
 export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.Element {
-  const filteredMenu = menu.filter(item => item.name != 'Services');
+  const filteredMenu = menu.filter(item => item.name !== 'Services');
 
   return (
     <Fade>
@@ -18,13 +18,13 @@ export default function Footer({ menu }: { menu: NavigationMenuProps[] }): JSX.E
             <div className="flex mt-5">
 
               <IconContext.Provider value={{ size: '1.3em', color: '#2B3BE5' }}>
-                <a href="https://www.instagram.com" target="_blank" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
                   <SlSocialFacebook />
                 </a>
-                <a href="https://www.twitter.com" target="_blank" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
+                <a href="https://www.twitter.com" target="_blank" rel="noreferrer" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
                   <SlSocialTwitter />
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4">
                   <SlSocialLinkedin />
                 </a>
               </IconContext.Provider>

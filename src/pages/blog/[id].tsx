@@ -9,6 +9,7 @@ const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
 export default function BlogDetail(): JSX.Element | any {
     const router = useRouter();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { id } = router.query; // will use for getting data when work with API
     const { data, error, isLoading } = useSWR<BlogDetailProps, Error>('/api/blogdetail', fetcher);
 

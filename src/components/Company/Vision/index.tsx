@@ -17,7 +17,7 @@ export default function Vision({ visions }: { visions: string[] }): JSX.Element 
       <ul>
         {visions.map((vision, index) => (
           <Fade up key={index} delay={300 * index}>
-            <li className={`text-brave-purple font-normal text-lg leading-9 flex items-start ${index != 0 ? 'mt-4' : 'mt-6'}`}>
+            <li className={`text-brave-purple font-normal text-lg leading-9 flex items-start ${index !== 0 ? 'mt-4' : 'mt-6'}`}>
               <div className='mr-2 mt-2'>{checkmarkIcon}</div>
               <span>{vision}</span>
             </li>

@@ -1,6 +1,6 @@
 import Fade from 'react-reveal/Fade';
-import { useAppSelector } from 'redux/hooks';
-import { selectedStatus } from 'slices/dropdownSlice';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { selectedState } from 'slices/dropdownSlice';
 import Image from 'next/image';
 
 export default function Hero({
@@ -16,7 +16,7 @@ export default function Hero({
     imageId: string,
     imageOriginSource?: string
 }): JSX.Element {
-    const status = useAppSelector(selectedStatus);
+    const status = useAppSelector(selectedState);
 
     return (
         <>

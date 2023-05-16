@@ -9,7 +9,7 @@ export default function WorkCulture({ workCultures }: { workCultures: WorkCultur
     </Fade>
 
     {workCultures.map((workCulture, index) => {
-      return (index % 2 == 0) ? (
+      return (index % 2 === 0) ? (
         <div key={index} className="flex gap-12 items-center">
           <Fade delay={300 * index}>
             <div className="flex-1 flex justify-end shadow-black-md">

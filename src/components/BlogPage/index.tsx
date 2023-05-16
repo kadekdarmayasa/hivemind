@@ -4,14 +4,14 @@ import { IoArrowForwardSharp } from 'react-icons/io5';
 import Button from "components/Button";
 import Fade from 'react-reveal/Fade';
 import { useAppSelector } from "hooks/useAppSelector";
-import { selectedStatus } from "slices/dropdownSlice";
+import { selectedState } from "slices/dropdownSlice";
 import Image from "next/image";
 
 export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Element {
-  const dropdownStatus = useAppSelector(selectedStatus);
+  const dropdownState = useAppSelector(selectedState);
 
   return (
-    <section className={`relative mt-14 grid grid-cols-12 grid-flow-dense gap-x-5 gap-y-10 ${dropdownStatus === 'open' ? '-z-10' : 'z-0'}`}>
+    <section className={`relative mt-14 grid grid-cols-12 grid-flow-dense gap-x-5 gap-y-10 ${dropdownState === 'open' ? '-z-10' : 'z-0'}`}>
       {blogs.map((blog, index) => {
         if (index === 0) {
           return (

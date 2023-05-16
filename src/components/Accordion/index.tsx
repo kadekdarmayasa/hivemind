@@ -13,7 +13,7 @@ export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
 
   const handleMultipleOpen = (value: number): void => {
     if (multipleOpen.includes(value)) {
-      let opens = multipleOpen.filter(open => open != value);
+      let opens = multipleOpen.filter(open => open !== value);
       setMultipleOpen([...new Set([...opens])]);
     } else {
       setMultipleOpen([...new Set([...multipleOpen, value])]);

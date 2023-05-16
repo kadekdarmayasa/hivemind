@@ -28,7 +28,7 @@ export default function Button(props: ButtonProps): JSX.Element {
   if (props.type === 'link') {
     if (props.isExternal) {
       return (
-        <a href={props.href} target='_blank' className={classNames.join(' ')}>
+        <a href={props.href} target='_blank' rel='noreferrer' className={classNames.join(' ')}>
           {props.children}
         </a>
       )

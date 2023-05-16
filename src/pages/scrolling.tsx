@@ -4,7 +4,7 @@ import React, {
   useCallback,
   ChangeEvent
 } from "react";
-import useBookSearch from "src/hooks/useBookSearch";
+import useBookSearch from "hooks/useBookSearch";
 
 export default function Srolling() {
   const [query, setQuery] = useState('');

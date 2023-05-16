@@ -10,7 +10,7 @@ import type { NavigationMenuProps } from "types/NavigationMenu";
 
 const fetcher = (url: string) => axios.get(url).then(response => response.data);
 
-export default function Layout({ children, title }: Layout): JSX.Element | any {
+export default function Layout({ children, title }: LayoutProps): JSX.Element | any {
   const { data, error, isLoading } = useSWR('/api/services', fetcher);
 
   if (error) return false;
@@ -65,7 +65,7 @@ export default function Layout({ children, title }: Layout): JSX.Element | any {
   )
 }
 
-type Layout = {
+type LayoutProps = {
   children: React.ReactNode,
   title: string
 }
