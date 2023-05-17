@@ -1,9 +1,9 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getByRole, screen } from '@testing-library/react';
 import Accordion from './index';
 
 window.scrollTo = jest.fn();
 
-test('Should open the specified accordion items when its first clicked and close on the second click', () => {
+test('Accordion Item should has class .shadow-black-sm when the condition is open, none otherwise.', () => {
   const faqs = [
     {
       _id: 1235,
@@ -17,23 +17,20 @@ test('Should open the specified accordion items when its first clicked and close
     },
   ];
 
-  const { container } = render(<Accordion faqs={faqs} />);
+  render(<Accordion faqs={faqs} />);
 
-  const accordionItems = container.querySelectorAll('.accordion-item');
+  const accordionItems = screen.getAllByTestId('accordion-item');
 
-  expect(accordionItems[0]).toBeInTheDocument();
-  expect(accordionItems[0]).toHaveClass("shadow-black-sm");
-  expect(accordionItems[0].querySelector('button')).toBeInTheDocument();
+  for (const accordionItem of accordionItems) {
+    getByRole(accordionItem, 'button');
+  }
 
-  expect(accordionItems[1]).toBeInTheDocument();
-  expect(accordionItems[1].querySelector("button")).toBeInTheDocument();
+  fireEvent.click(getByRole(accordionItems[1], 'button'));
 
-  fireEvent.click(accordionItems[1].querySelector("button"));
-
-  accordionItems.forEach(accordionItem => {
+  for (const accordionItem of accordionItems) {
     expect(accordionItem).toHaveClass('shadow-black-sm');
-  })
+  }
 
-  fireEvent.click(accordionItems[1].querySelector("button"));
+  fireEvent.click(getByRole(accordionItems[1], 'button'));
   expect(accordionItems[1]).not.toHaveClass('shadow-black-sm');
 })
