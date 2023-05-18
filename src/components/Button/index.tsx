@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 type ButtonProps = {
-  classNames?: string[],
+  className?: string,
   onClick?: () => void,
-  type?: "button" | "submit" | "link",
+  type?: 'button' | 'submit' | 'link',
   isExternal?: boolean,
   isPrimary?: boolean,
   href?: string,
@@ -11,38 +11,37 @@ type ButtonProps = {
 }
 
 export default function Button(props: ButtonProps): JSX.Element {
-  const classNames = props.classNames ? [...props.classNames] : [];
+  const className = props.className ? [...props.className.split(' ')] : [];
 
-  classNames.push('flex', 'justify-center', 'items-center');
+  className.push('flex', 'justify-center', 'items-center');
 
-  if (props.isPrimary) {
-    classNames.push('bg-palatinate-blue shadow-purple-sm text-white');
-  } else {
-    classNames.push('bg-transparent text-palatinate-blue');
-  }
+  props.isPrimary ?
+    className.push('bg-palatinate-blue shadow-purple-sm text-white') :
+    className.push('bg-transparent text-palatinate-blue');
+
 
   const onClick = () => {
-    if (props.onClick) props.onClick();
+    props.onClick && props.onClick();
   }
 
   if (props.type === 'link') {
     if (props.isExternal) {
       return (
-        <a href={props.href} target='_blank' rel='noreferrer' className={classNames.join(' ')}>
+        <a href={props.href} target='_blank' rel='noreferrer' className={className.join(' ')}>
           {props.children}
         </a>
-      )
+      );
     } else {
       return (
-        <Link tabIndex={0} href={props.href} className={classNames.join(' ')}>
+        <Link tabIndex={0} href={props.href} className={className.join(' ')}>
           {props.children}
         </Link>
-      )
+      );
     }
   }
 
   return (
-    <button type={props.type ? props.type : 'button'} onClick={onClick} className={classNames.join(' ')}>
+    <button type={props.type ? props.type : 'button'} onClick={onClick} className={className.join(' ')}>
       {props.children}
     </button>
   )
