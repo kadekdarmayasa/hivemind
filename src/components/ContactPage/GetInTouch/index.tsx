@@ -81,13 +81,13 @@ export default function GetInTouch({ contactInformations }: { contactInformation
               {alert.message}
             </Alert>
 
-            <Input labelText="Name" type="text" name="name" id="name" value={inputValue.name} onChange={handleChange} placeHolder="Enter your name..." outerClassNames={["mb-8"]} />
+            <Input labelText="Name" type="text" name="name" id="name" value={inputValue.name} onChange={handleChange} placeHolder="Enter your name..." parentClassName="mb-8 flex flex-col" className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none transition-all" />
 
             <Input labelText="Email" type="email" name="email" id="email" value={inputValue.email} onChange={handleChange} placeHolder="Enter your email..." />
 
             <Textarea labelText="Message" name="message" id="message" value={inputValue.message} placeHolder="Enter your question..." outerClassNames={['mt-8']} onChange={handleChange} />
 
-            <Button isPrimary type="submit" classNames={['h-14 mt-10 w-[230px] rounded-full group hover:shadow-purple-md focus:shadow-purple-md']}>
+            <Button isPrimary type="submit" className="h-14 mt-10 w-[230px] rounded-full group hover:shadow-purple-md focus:shadow-purple-md">
               <small className="text-lg">Send message</small>
               <IconContext.Provider value={{ size: '1.3em', className: "mt-[2px] ms-2 group-hover:ms-3 transition-all" }}>
                 <IoSendOutline />

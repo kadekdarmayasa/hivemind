@@ -16,7 +16,7 @@ export default function Layout({ children, title }: LayoutProps): JSX.Element | 
   if (error) return false;
   if (isLoading) return false;
 
-  const menu: NavigationMenuProps[] = [
+  const menus: NavigationMenuProps[] = [
     { href: '/', name: 'Home' },
     { href: '/about', name: 'About' },
     {
@@ -46,7 +46,7 @@ export default function Layout({ children, title }: LayoutProps): JSX.Element | 
         <title>{title}</title>
       </Head>
       <div className="xl:container font-outfit mx-auto sm:px-8 xl:px-0">
-        <Navbar menu={menu} />
+        <Navbar menus={menus} />
         <main>
           {children}
           <ScrollToTop
@@ -59,7 +59,7 @@ export default function Layout({ children, title }: LayoutProps): JSX.Element | 
             className="flex justify-center items-center"
           />
         </main>
-        <Footer menu={menu} />
+        <Footer menus={menus} />
       </div>
     </>
   )

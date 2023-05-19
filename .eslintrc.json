@@ -1,5 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "react-app", "react-app/jest"],
+  "extends": [
+    "next/core-web-vitals", 
+    "react-app", 
+    "react-app/jest"
+  ],
   "rules": {
     "testing-library/prefer-screen-queries": 0
   }

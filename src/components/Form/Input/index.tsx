@@ -1,14 +1,15 @@
 import { ChangeEvent, FocusEvent, useState } from "react";
+import { InputHelper } from "utils/input_helper";
 
 export default function Input(props: InputProps): JSX.Element {
-  let { type, labelText, name, id, placeHolder, value, errorMessage, outerClassNames = [] } = props;
-  const [hasError, setHasError] = useState<boolean>(false);
-  let pattern: RegExp;
+  const { type, labelText, name, id, placeHolder, value } = props;
+  const { parentClassName, className } = props;
+  let { showErrorMessage, errorMessage } = props;
+  const [hasError, setHasError] = useState(false);
+  let valid: RegExp;
 
-  outerClassNames.push('flex', 'flex-col');
-
-  if (type === 'email') pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (type === 'tel') pattern = /[0-9]*/;
+  if (type === 'email') valid = InputHelper.validator.email;
+  if (type === 'tel') valid = InputHelper.validator.tel;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = {
@@ -19,51 +20,72 @@ export default function Input(props: InputProps): JSX.Element {
     }
 
     if (type === 'email') {
-      !pattern.test(event.target.value) ? setHasError(true) : setHasError(false);
+      valid.test(event.target.value) ? setHasError(false) : setHasError(true);
       props.onChange(target);
     } else {
       event.target.value === '' ? setHasError(true) : setHasError(false);
       props.onChange(target);
     }
-  }
-
-  const onBlur = () => {
-    setHasError(false);
   }
 
   const onFocus = (event: FocusEvent<HTMLInputElement>) => {
     if (type === 'email') {
-      !pattern.test(event.target.value) ? setHasError(true) : setHasError(false);
+      valid.test(event.target.value) ? setHasError(false) : setHasError(true);
     } else {
       event.target.value === '' ? setHasError(true) : setHasError(false);
     }
   }
 
-  if (hasError && type === 'email' && labelText === 'Email') errorMessage = "Please enter email in a valid format";
-  if (hasError && type === 'text' && labelText === 'Name') errorMessage = "Name cannot be empty";
+  if (hasError && type === 'email' && labelText === 'Email') errorMessage = InputHelper.errorMessage.email;
+  if (hasError && type === 'text' && labelText === 'Name') errorMessage = InputHelper.errorMessage.text(labelText);
 
-  return (
-    <div className={`${outerClassNames.join(' ')}`}>
-      <label htmlFor={id} className="heading-4 mb-3">{labelText}</label>
+  if (labelText && showErrorMessage) {
+    return (
+      <div className={`${parentClassName}`}>
+        <label
+          htmlFor={id}
+          className='heading-4 mb-3'
+        >
+          {labelText}
+        </label>
 
-      <input type={type} name={name} id={id} placeholder={placeHolder} value={value} onChange={handleChange} onBlur={onBlur} onFocus={onFocus} className={`bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none ${hasError ? 'border-red-400' : 'border-none'} transition-all`} autoComplete="off" required />
+        <input
+          type={type}
+          name={name}
+          id={id}
+          placeholder={placeHolder}
+          value={value}
+          onChange={handleChange}
+          onBlur={() => setHasError(false)}
+          onFocus={onFocus}
+          className={`${className} ${hasError ? 'border-red-400' : 'border-none'}`}
+          autoComplete="off"
+          required
+        />
 
-      {hasError && (<small className="mt-2 font-light text-sm text-red-400">
-        {errorMessage}
-      </small>)}
-    </div>
-  )
+        {hasError && (<small className="mt-2 font-light text-sm text-red-400">
+          {errorMessage}
+        </small>)}
+      </div>
+    )
+  } else {
+    return (
+      <input type={type} name={name} id={id} onChange={handleChange} placeholder={placeHolder} value={value} className={`${className}`} autoComplete="off" required />
+    )
+  }
 }
 
 type InputProps = {
   type: InputTypes,
-  labelText: string,
+  labelText?: string,
   name: string,
   id: string,
   value: string,
   placeHolder?: string,
   errorMessage?: string,
-  outerClassNames?: string[],
+  className?: string,
+  showErrorMessage?: boolean,
+  parentClassName?: string,
   onChange?: (data: object) => void
 }
 

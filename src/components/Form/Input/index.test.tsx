@@ -14,7 +14,7 @@ function TestInput({ type }: { type: "text" | "email" }) {
 
   if (type === 'text') {
     return (
-      <Input labelText="Name" type="text" name="name" id="name" value={inputValue.name} onChange={onChange} placeHolder="Enter your name..." outerClassNames={["mb-8"]} />
+      <Input labelText="Name" type="text" name="name" id="name" value={inputValue.name} onChange={onChange} placeHolder="Enter your name..." parentClassName='mb-8 flex flex-col' />
     )
   } else {
     return (
