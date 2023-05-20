@@ -62,7 +62,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }): JSX
         <div className='flex flex-col justify-start items-start'>
           <h4 className='heading-4 mb-4'>Browse</h4>
           {menus.map((menu, index) => (
-            menu.name !== 'Services' &&
+            !menu.containSubMenu &&
             <Button
               key={index}
               type='link'
