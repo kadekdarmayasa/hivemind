@@ -1,8 +1,8 @@
 export type NavigationMenuProps = {
-  href: string,
+  path: string,
   name: string,
   containSubMenu?: boolean,
-  subMenu?: {
+  subMenus?: {
     name: string,
     path: string,
   }[],

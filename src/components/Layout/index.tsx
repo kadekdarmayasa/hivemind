@@ -17,17 +17,17 @@ export default function Layout({ children, title }: LayoutProps): JSX.Element | 
   if (isLoading) return false;
 
   const menus: NavigationMenuProps[] = [
-    { href: '/', name: 'Home' },
-    { href: '/about', name: 'About' },
+    { path: '/', name: 'Home' },
+    { path: '/about', name: 'About' },
     {
-      href: '/service',
+      path: '/service',
       name: 'Services',
       containSubMenu: true,
-      subMenu: data
+      subMenus: data
     },
-    { href: '/portfolio', name: 'Portfolio' },
-    { href: '/blog', name: 'Blog' },
-    { href: '/contact', name: 'Contact' },
+    { path: '/portfolio', name: 'Portfolio' },
+    { path: '/blog', name: 'Blog' },
+    { path: '/contact', name: 'Contact' },
   ];
 
 

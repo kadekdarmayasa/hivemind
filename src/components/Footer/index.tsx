@@ -66,7 +66,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }): JSX
             <Button
               key={index}
               type='link'
-              href={menu.href}
+              href={menu.path}
               className='transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue 
               focus:!text-palatinate-blue'
             >
@@ -78,11 +78,11 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }): JSX
         {menuWithSubMenus.map((menuWithSubMenu, index) => (
           <div key={index} className='flex flex-col justify-start items-start'>
             <h4 className='heading-4 mb-4'>{menuWithSubMenu.name}</h4>
-            {menuWithSubMenu.subMenu.map((subMenu, index) => (
+            {menuWithSubMenu.subMenus.map((subMenu, index) => (
               <Button
                 key={index}
                 type='link'
-                href={`${menuWithSubMenu.href}${subMenu.path}`}
+                href={`${menuWithSubMenu.path}${subMenu.path}`}
                 className='transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue 
               focus:!text-palatinate-blue'
               >
