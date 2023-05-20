@@ -9,8 +9,12 @@
     @apply text-palatinate-blue cursor-pointer;
   }
 
-  .nav-link:is(:hover, .active) .text-underline, 
-  .nav-link a:focus ~ .text-underline {
+  .custom-underline {
+    @apply h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all;
+  }
+
+  .nav-link:is(:hover, .active) .custom-underline, 
+  .nav-link a:focus ~ .custom-underline {
     @apply opacity-100 w-full;
   }
 
