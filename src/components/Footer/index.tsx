@@ -1,5 +1,5 @@
 import Brand from '../Brand';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { IconContext } from 'react-icons';
 import Button from 'components/Button';
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
@@ -7,13 +7,9 @@ import type { NavigationMenuProps } from 'types/NavigationMenu';
 import { Input } from 'components/Form';
 
 export default function Footer({ menus }: { menus: NavigationMenuProps[] }): JSX.Element {
+  // TODO: Input user email to Database
   const [email, setEmail] = useState('');
-  const [menuWithSubMenus, setMenuWithSubMenus] = useState<NavigationMenuProps[]>([]);
-
-  useEffect(() => {
-    const menuWithSubMenus = menus.filter((menu) => menu.containSubMenu);
-    setMenuWithSubMenus((prevSubMenus) => [...new Set([...prevSubMenus, ...menuWithSubMenus])]);
-  }, [menus]);
+  const menuWithSubMenus = menus.filter((menu) => menu.containSubMenu);
 
   // TODO: Using Framer Motion for Animation
   return (
