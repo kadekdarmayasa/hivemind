@@ -11,7 +11,7 @@ import type { OurValuesProps } from 'types/OurValues';
 import { fetcher } from 'utils/fetcher/get';
 import useSWR from 'swr';
 
-export default function HomePage(): JSX.Element | false {
+export default function HomePage() {
   const refOurValues = useRef<HTMLElement>(null);
   const { data, error, isLoading } = useSWR<HomepageProps, Error>('/api/homepage', fetcher);
 
