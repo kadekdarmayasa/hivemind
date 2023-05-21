@@ -8,7 +8,7 @@ import { useAppDispatch } from 'hooks/useAppDispatch';
 import { selectedState, toggle } from 'slices/dropdownSlice';
 import { AppDispatch } from 'store';
 
-export default function NavigationMenu({ path, name, containSubMenu, subMenus }: NavigationMenuProps): JSX.Element {
+export default function NavigationMenu({ path, name, containSubMenu, subMenus }: NavigationMenuProps) {
   const dropdownState = useAppSelector(selectedState);
   const dispatch = useAppDispatch();
   const router = useRouter();
