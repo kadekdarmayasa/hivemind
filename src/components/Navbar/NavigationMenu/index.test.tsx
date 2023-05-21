@@ -1,56 +1,59 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, getByRole, getByTestId, screen } from '@testing-library/react';
 import mockRouter from 'next-router-mock';
-import NavigationMenu from "./index";
+import NavigationMenu from './index';
 import { renderWithProviders } from 'utils/test-utils';
 
 jest.mock('next/router', () => require('next-router-mock'));
 
-test('li Element should has .active class when it clicked', () => {
+test(`li element should has .active class when it's child link clicked`, () => {
   mockRouter.push('/');
 
-  const { container } = renderWithProviders(<NavigationMenu href="/about" name="About" containSubMenu={false} />)
+  renderWithProviders(<NavigationMenu path='/about' name='About' containSubMenu={false} />);
 
-  expect(container.querySelector('li')).toBeInTheDocument();
-  expect(container.querySelector('li a')).toHaveTextContent('About');
+  const navMenuContainer = screen.getByRole('listitem');
+  const navMenuLink = getByRole(navMenuContainer, 'link');
 
-  fireEvent.click(container.querySelector('li a'));
+  expect(navMenuContainer).toBeInTheDocument();
+  expect(navMenuLink).toHaveTextContent('About');
 
-  expect(container.querySelector('li')).toHaveClass('active');
-  expect(mockRouter).toMatchObject({
-    asPath: '/about',
-  })
+  fireEvent.click(navMenuLink);
+
+  expect(navMenuContainer).toHaveClass('active');
+  expect(mockRouter).toMatchObject({ asPath: '/about' });
 });
 
-test('Li with service path should has .active class when mouse over and vice versa', () => {
+test('li with service path should has .active class when mouse over and vice versa', () => {
   mockRouter.push('/');
 
-  const subMenu = [
+  const subMenus = [
     {
-      "_id": "ass122jjjjoj033f",
-      "name": "Web Design",
-      "path": "/web-design"
+      '_id': 'ass122jjjjoj033f',
+      'name': 'Web Design',
+      'path': '/web-design'
     },
     {
-      "_id": "ass122jjjjoj033g",
-      "name": "Search Engine Optimization",
-      "path": "/seo"
+      '_id': 'ass122jjjjoj033g',
+      'name': 'Search Engine Optimization',
+      'path': '/seo'
     },
     {
-      "_id": "ass122jjjjoj033h",
-      "name": "Social Media Marketing",
-      "path": "/smm"
+      '_id': 'ass122jjjjoj033h',
+      'name': 'Social Media Marketing',
+      'path': '/smm'
     }
   ];
 
-  const { container } = renderWithProviders(<NavigationMenu href="/service" name="Service" containSubMenu subMenu={subMenu} />)
+  renderWithProviders(<NavigationMenu path='/service' name='Service' containSubMenu subMenus={subMenus} />)
 
-  expect(container.querySelector('li')).toBeInTheDocument();
-  expect(container.querySelector('li span')).toHaveTextContent('Service');
+  const navMenuContainer = screen.getAllByRole('listitem');
+  const navMenuText = getByTestId(navMenuContainer[0], 'nav-menu-text');
 
+  expect(navMenuContainer[0]).toBeInTheDocument();
+  expect(navMenuText).toHaveTextContent('Service');
 
-  fireEvent.mouseEnter(container.querySelector('li'));
-  expect(container.querySelector('li')).toHaveClass('active');
+  fireEvent.mouseEnter(navMenuContainer[0]);
+  expect(navMenuContainer[0]).toHaveClass('active');
 
-  fireEvent.mouseLeave(container.querySelector('li'));
-  expect(container.querySelector('li')).not.toHaveClass('active');
-})
+  fireEvent.mouseLeave(navMenuContainer[0]);
+  expect(navMenuContainer[0]).not.toHaveClass('active');
+});

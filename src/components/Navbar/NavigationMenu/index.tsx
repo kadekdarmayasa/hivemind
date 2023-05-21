@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { NextRouter, useRouter } from "next/router";
-import { IconContext } from "react-icons";
-import { IoChevronForwardOutline } from "react-icons/io5";
-import type { NavigationMenuProps } from "types/NavigationMenu";
-import { useAppSelector } from "hooks/useAppSelector";
-import { useAppDispatch } from "hooks/useAppDispatch";
+import Link from 'next/link';
+import { NextRouter, useRouter } from 'next/router';
+import { IconContext } from 'react-icons';
+import { IoChevronForwardOutline } from 'react-icons/io5';
+import type { NavigationMenuProps } from 'types/NavigationMenu';
+import { useAppSelector } from 'hooks/useAppSelector';
+import { useAppDispatch } from 'hooks/useAppDispatch';
 import { selectedState, toggle } from 'slices/dropdownSlice';
-import { AppDispatch } from "store";
+import { AppDispatch } from 'store';
 
 export default function NavigationMenu({ path, name, containSubMenu, subMenus }: NavigationMenuProps): JSX.Element {
   const dropdownState = useAppSelector(selectedState);
@@ -58,7 +58,7 @@ function MenuWithSubMenu({
       onMouseLeave={() => dispatch(toggle('close'))}
     >
       <div className='flex items-center'>
-        <span className='service-menu-name'>{menu.name}</span>
+        <span className='service-menu-name' data-testid='nav-menu-text'>{menu.name}</span>
         <div className='custom-underline'></div>
         <IconContext.Provider value={{ size: '1.2em', className: 'ms-1 mt-[2px]' }}>
           <IoChevronForwardOutline className="rotate-90" />
