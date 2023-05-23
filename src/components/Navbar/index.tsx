@@ -1,4 +1,4 @@
-import Brand from '../Brand';
+import Brand from '@components/Brand';
 import NavigationMenu from './NavigationMenu';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
 

@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import TeamItem from "../TeamItem";
+import TeamItem from "@components/Company/Team/TeamItem";
 import type { TeamProps } from "types/Team";
 import Fade from 'react-reveal/Fade';
 

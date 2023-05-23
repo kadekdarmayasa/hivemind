@@ -1,4 +1,4 @@
-import Button from 'components/Button';
+import Button from '@components/Button';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import type { BlogItemProps } from 'types/BlogItem';

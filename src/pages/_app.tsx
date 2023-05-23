@@ -1,23 +1,20 @@
-import { Outfit } from 'next/font/google';
-import type { AppProps } from 'next/app';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'styles/main.css';
+import localFont from 'next/font/local';
 import { Provider } from 'react-redux';
 import { setupStore } from 'store';
+import type { AppProps } from 'next/app';
 
-const outfit = Outfit({
+const outfitLocalFont = localFont({
   variable: '--font-outfit',
-  weight: ['200', '300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  preload: true,
-  display: 'swap'
+  src: '../../public/fonts/Outfit-VariableFont_wght.ttf',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={setupStore()}>
-      <main className={`${outfit.variable} font-sans`}>
+      <main className={`${outfitLocalFont.variable} font-sans`}>
         <Component {...pageProps} />
       </main>
     </Provider>

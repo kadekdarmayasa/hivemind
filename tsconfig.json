@@ -18,7 +18,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@utils/*": ["./utils/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@redux-slices/*": ["./slices/*"],
+      "@redux-store/*": ["./store/*"]
+    }
   },
   "include": [
     "next-env.d.ts",

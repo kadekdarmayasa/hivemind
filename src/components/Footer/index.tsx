@@ -1,10 +1,10 @@
-import Brand from '../Brand';
+import Brand from '@components/Brand';
 import { ChangeEvent, useState } from 'react';
 import { IconContext } from 'react-icons';
-import Button from 'components/Button';
+import Button from '@components/Button';
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
-import { Input } from 'components/Form';
+import { Input } from '@components/Form';
 
 export default function Footer({ menus }: { menus: NavigationMenuProps[] }): JSX.Element {
   // TODO: Input user email to Database

@@ -3,9 +3,9 @@ import { NextRouter, useRouter } from 'next/router';
 import { IconContext } from 'react-icons';
 import { IoChevronForwardOutline } from 'react-icons/io5';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
-import { useAppSelector } from 'hooks/useAppSelector';
-import { useAppDispatch } from 'hooks/useAppDispatch';
-import { selectedState, toggle } from 'slices/dropdownSlice';
+import { useAppSelector } from '@hooks/useAppSelector';
+import { useAppDispatch } from '@hooks/useAppDispatch';
+import { selectedState, toggle } from '@redux-slices/dropdownSlice';
 import { AppDispatch } from 'store';
 
 export default function NavigationMenu({ path, name, containSubMenu, subMenus }: NavigationMenuProps) {

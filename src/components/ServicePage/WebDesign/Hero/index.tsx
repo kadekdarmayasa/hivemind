@@ -1,11 +1,11 @@
 import parse from 'html-react-parser';
-import Button from 'components/Button';
+import Button from '@components/Button';
 import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { MutableRefObject } from 'react';
 import Fade from 'react-reveal/Fade';
-import { useAppSelector } from 'hooks/useAppSelector';
-import { selectedState } from 'slices/dropdownSlice';
+import { useAppSelector } from '@hooks/useAppSelector';
+import { selectedState } from '@redux-slices/dropdownSlice';
 
 export default function Hero({ hero, refServiceOffered }: { hero: any, refServiceOffered: MutableRefObject<HTMLElement> }) {
   const dropdownState = useAppSelector(selectedState);

@@ -1,5 +1,5 @@
 import type { ServiceProps } from 'types/Service';
-import { ServiceContainer } from 'components/Service';
+import { ServiceContainer } from '@components/Service';
 
 export default function Service({ services }: { services: ServiceProps[] }) {
   return (

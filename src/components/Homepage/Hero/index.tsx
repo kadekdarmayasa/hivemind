@@ -1,9 +1,9 @@
-import Button from '../../Button';
+import Button from '@components/Button';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import { MutableRefObject } from 'react';
-import { useAppSelector } from 'hooks/useAppSelector';
-import { selectedState } from 'slices/dropdownSlice';
+import { useAppSelector } from '@hooks/useAppSelector';
+import { selectedState } from '@redux-slices/dropdownSlice';
 import Image from 'next/image';
 
 export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }) {

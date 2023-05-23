@@ -1,16 +1,16 @@
-import ContactInformation from "components/ContactPage/ContactInformation"
+import ContactInformation from "../ContactInformation";
 import type { ContactInformationProps } from "types/ContactInformation";
-import { Input, Textarea } from "components/Form";
+import { Input, Textarea } from "@components/Form";
 import { ChangeEvent, FormEvent, useState } from "react";
-import Button from "components/Button";
+import Button from "@components/Button";
 import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from "react-icons/io5";
 import { IconContext } from "react-icons";
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Alert } from "@material-tailwind/react";
 import type { AlertProps } from "types/AlertProps";
 import Fade from 'react-reveal/Fade';
-import { useAppSelector } from "hooks/useAppSelector";
-import { selectedState } from "slices/dropdownSlice";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { selectedState } from "@redux-slices/dropdownSlice";
 
 export default function GetInTouch({ contactInformations }: { contactInformations: ContactInformationProps[] }): JSX.Element {
   const dropdownState = useAppSelector(selectedState);

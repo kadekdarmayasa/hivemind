@@ -3,8 +3,8 @@ import ServiceOffered from "./ServiceOffered";
 import Process from "./Process";
 import WorkSample from "./WorkSample";
 import PriceList from "./PriceList";
-import Testimony from "components/Testimony";
-import FAQ from "components/FAQ";
+import Testimony from "@components/Testimony";
+import FAQ from "@components/FAQ";
 import { useRef } from "react";
 
 export default function WebDesign({ data }) {

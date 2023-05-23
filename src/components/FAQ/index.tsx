@@ -1,4 +1,4 @@
-import Accordion from 'components/Accordion';
+import Accordion from '@components/Accordion';
 import type { FAQProps } from 'types/FAQProps';
 import Fade from 'react-reveal/Fade';
 

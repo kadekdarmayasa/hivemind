@@ -1,8 +1,8 @@
-import Button from 'components/Button';
+import Button from '@components/Button';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import type { PortfolioProps } from 'types/Portfolio';
-import { PortfolioContainer } from 'components/Portfolio';
+import { PortfolioContainer } from '@components/Portfolio';
 
 export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }) {
   return (

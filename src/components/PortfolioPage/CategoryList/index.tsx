@@ -1,4 +1,4 @@
-import Button from "components/Button"
+import Button from "@components/Button"
 import type { PortfolioProps } from 'types/Portfolio';
 
 export default function CategoryList({

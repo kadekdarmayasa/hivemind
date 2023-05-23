@@ -6,8 +6,8 @@ import WorkCulture from "./WorkCulture";
 import { TeamProps } from "types/Team";
 import { PhilosophyProps } from "types/Philosophy";
 import { WorkCultureProps } from "types/WorkCulture";
-import { useAppSelector } from "hooks/useAppSelector";
-import { selectedState } from "slices/dropdownSlice";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { selectedState } from "@redux-slices/dropdownSlice";
 
 export default function Company({ company }: { company: CompanyProps }): JSX.Element {
   const dropdownState = useAppSelector(selectedState);

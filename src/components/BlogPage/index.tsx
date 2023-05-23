@@ -1,10 +1,10 @@
 import type { BlogItemProps } from "types/BlogItem";
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
-import Button from "components/Button";
+import Button from "@components/Button";
 import Fade from 'react-reveal/Fade';
-import { useAppSelector } from "hooks/useAppSelector";
-import { selectedState } from "slices/dropdownSlice";
+import { useAppSelector } from "@hooks/useAppSelector";
+import { selectedState } from "@redux-slices/dropdownSlice";
 import Image from "next/image";
 
 export default function BlogPage({ blogs }: { blogs: BlogItemProps[] }): JSX.Element {

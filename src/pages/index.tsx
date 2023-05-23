@@ -1,15 +1,15 @@
+import Layout from '@components/Layout';
+import Testimony from '@components/Testimony';
+import Blog from '@components/Blog';
+import useSWR from 'swr';
 import { useRef } from 'react';
-import Layout from 'components/Layout';
-import { Hero, OurValues, Service, Portfolio } from 'components/Homepage';
-import Testimony from 'components/Testimony';
-import Blog from 'components/Blog';
+import { fetcher } from '@utils/fetcher/get';
+import { Hero, OurValues, Service, Portfolio } from '@components/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import type { BlogItemProps } from 'types/BlogItem';
 import type { PortfolioProps } from 'types/Portfolio';
 import type { ServiceProps } from 'types/Service';
 import type { OurValuesProps } from 'types/OurValues';
-import { fetcher } from 'utils/fetcher/get';
-import useSWR from 'swr';
 
 export default function HomePage() {
   const refOurValues = useRef<HTMLElement>(null);

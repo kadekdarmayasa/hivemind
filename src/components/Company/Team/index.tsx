@@ -1,4 +1,4 @@
-import TeamCarousel from "./TeamCarousel"
+import TeamCarousel from "@components/Company/Team/TeamCarousel"
 import type { TeamProps } from "types/Team"
 import Fade from 'react-reveal/Fade';
 

@@ -1,5 +1,5 @@
 import type { BlogItemProps } from 'types/BlogItem';
-import BlogCarousel from 'components/Blog/BlogCarousel';
+import BlogCarousel from '@components/Blog/BlogCarousel';
 
 export default function RelatedArticle({ relatedArticles }: { relatedArticles: BlogItemProps[] }): JSX.Element {
     return (

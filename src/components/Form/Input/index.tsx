@@ -1,5 +1,5 @@
 import { ChangeEvent, FocusEvent, useState } from "react";
-import { InputHelper } from "utils/input_helper";
+import { InputHelper } from "@utils/input_helper";
 
 export default function Input(props: InputProps): JSX.Element {
   const { type, labelText, name, id, placeHolder, value } = props;

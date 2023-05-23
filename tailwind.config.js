@@ -1,4 +1,4 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
+const withMT = require('@material-tailwind/react/utils/withMT');
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
@@ -12,12 +12,12 @@ module.exports = withMT({
   theme: {
     extend: {
       colors: {
-        "palatinate-blue": '#2B3BE5',
-        "coarse-wool": '#1D1A27',
-        "ghost-white": '#FBF8FF',
-        "pale-marigold": '#FFBE47',
-        "rare-wind": '#5BFBD8',
-        "brave-purple": '#968AB6'
+        'palatinate-blue': '#2B3BE5',
+        'coarse-wool': '#1D1A27',
+        'ghost-white': '#FBF8FF',
+        'pale-marigold': '#FFBE47',
+        'rare-wind': '#5BFBD8',
+        'brave-purple': '#968AB6'
       },
       boxShadow: {
         'purple-sm': '0px 2px 10px rgba(43, 59, 229, 0.2)',
@@ -33,6 +33,6 @@ module.exports = withMT({
       },
     },
   },
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require('tw-elements/dist/plugin.cjs')],
 });
 
