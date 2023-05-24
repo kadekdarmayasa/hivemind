@@ -2,9 +2,23 @@
   "extends": [
     "next/core-web-vitals", 
     "react-app", 
-    "react-app/jest"
+    "react-app/jest",
+    "airbnb"
   ],
   "rules": {
-    "testing-library/prefer-screen-queries": 0
+    "testing-library/prefer-screen-queries": 0,
+    "linebreak-style": 0,
+    "react/jsx-filename-extension": [
+      1, 
+      { "extensions": [".tsx", ".jsx"] }
+    ],
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": ["error", {
+      "functions": "ignore"
+    }],
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
   }
 }
