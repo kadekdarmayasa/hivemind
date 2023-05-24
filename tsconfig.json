@@ -24,8 +24,10 @@
       "@utils/*": ["./utils/*"],
       "@hooks/*": ["./hooks/*"],
       "@redux-slices/*": ["./slices/*"],
-      "@redux-store/*": ["./store/*"]
-    }
+      "@redux-store/*": ["./store/*"],
+      "@partials/*": ["./partials/*"]
+    },
+    "allowImportingTsExtensions": true
   },
   "include": [
     "next-env.d.ts",
