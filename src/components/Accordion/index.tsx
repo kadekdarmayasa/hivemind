@@ -25,7 +25,7 @@ export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
       {faqs.map((faq, index) => (
         // TODO: Add Framer Motion for Animation
         <Accordion
-          key={faq._id}
+          key={faq.id}
           open={multipleOpen.includes(++index)}
           data-testid={`accordion-item`}
           icon={

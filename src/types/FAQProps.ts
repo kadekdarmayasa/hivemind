@@ -1,5 +1,5 @@
 export type FAQProps = {
-  _id: number | string,
+  id: number | string,
   question: string,
   answer: string
 }

@@ -22,7 +22,7 @@ export default function TestimonyCarousel({ testimonies }: { testimonies: Testim
       <div className="h-auto my-4 mb-20">
         <Slider {...settings} className="bg-ghost-white h-auto">
           {testimonies.map(testimony => (
-            <TestimonyItem key={testimony._id} testimony={testimony} />
+            <TestimonyItem key={testimony.id} testimony={testimony} />
           ))}
         </Slider>
       </div>

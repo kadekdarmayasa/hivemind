@@ -16,8 +16,8 @@ export default function PriceList({ priceList }): JSX.Element {
         {priceList.lists.map((list, index: number) => {
           if (list.isPopular) {
             return (
-              <Fade up key={list._id} delay={index * 300}>
-                <div key={list._id} className='bg-white shadow-black-sm hover:shadow-black-md scale-[1.01] hover:scale-[1.02] transition-all w-[350px] h-auto px-8 py-14 flex flex-col items-start rounded-xl'>
+              <Fade up key={list.id} delay={index * 300}>
+                <div key={list.id} className='bg-white shadow-black-sm hover:shadow-black-md scale-[1.01] hover:scale-[1.02] transition-all w-[350px] h-auto px-8 py-14 flex flex-col items-start rounded-xl'>
                   <div className='flex items-center'>
                     <span className='text-base text-palatinate-blue'>{list.package} Package</span>
                     <span className='block text-base bg-[#E8EAFF] text-palatinate-blue px-8 py-2 rounded-full ms-3'>Popular</span>
@@ -30,8 +30,8 @@ export default function PriceList({ priceList }): JSX.Element {
             );
           } else {
             return (
-              <Fade up key={list._id} delay={index * 300}>
-                <div key={list._id} className='bg-white shadow-black-sm hover:shadow-black-md scale-[0.96] hover:scale-[0.98] transition-all w-[350px] h-auto px-8 py-14 flex flex-col items-start rounded-xl'>
+              <Fade up key={list.id} delay={index * 300}>
+                <div key={list.id} className='bg-white shadow-black-sm hover:shadow-black-md scale-[0.96] hover:scale-[0.98] transition-all w-[350px] h-auto px-8 py-14 flex flex-col items-start rounded-xl'>
                   <span className='text-base text-palatinate-blue'>{list.package} Package</span>
 
                   <Price price={list.price} time={list.time} />

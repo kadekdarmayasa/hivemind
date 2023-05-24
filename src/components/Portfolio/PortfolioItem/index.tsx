@@ -5,7 +5,7 @@ export default function PortfolioItem({ portfolio }: { portfolio: PortfolioProps
   // TODO: Add framer motion for animation
   return portfolio.orientation === 'potrait' ? (
     <div
-      key={portfolio._id}
+      key={portfolio.id}
       className={`rounded-lg relative col-span-4  row-span-4 overflow-hidden group`}
     >
       <Image
@@ -38,7 +38,7 @@ export default function PortfolioItem({ portfolio }: { portfolio: PortfolioProps
     </div>
   ) : (
     <div
-      key={portfolio._id}
+      key={portfolio.id}
       className={`rounded-lg col-span-4 relative row-span-2 overflow-hidden group`}
     >
       <Image

@@ -1,14 +1,18 @@
-import Layout from "components/Layout"
-import { GetInTouch } from "components/ContactPage"
+import React from 'react';
+import Layout from '@components/Layout';
+import FAQ from '@components/FAQ';
 import useSWR from 'swr';
-import axios from "axios";
-import type { ContactInformationProps } from "types/ContactInformation";
-import FAQ from "components/FAQ";
-import type { FAQProps } from "types/FAQProps";
+import type { ContactInformationProps } from 'types/ContactInformation';
+import type { FAQProps } from 'types/FAQProps';
+import { GetInTouch } from '@partials/ContactPage';
+import { fetcher } from '@utils/fetcher/get';
 
-const fetcher = (url: string) => axios.get(url).then(response => response.data);
+type ContactProps = {
+  contactInformations: ContactInformationProps[]
+  faqs: FAQProps[]
+}
 
-export default function Contact(): JSX.Element | false {
+export default function Contact() {
   const { data, isLoading, error } = useSWR<ContactProps, Error>('/api/contactpage', fetcher);
 
   if (isLoading || error) return false;
@@ -18,10 +22,5 @@ export default function Contact(): JSX.Element | false {
       <GetInTouch contactInformations={data.contactInformations} />
       <FAQ faqs={data.faqs} />
     </Layout>
-  )
-}
-
-type ContactProps = {
-  contactInformations: ContactInformationProps[]
-  faqs: FAQProps[]
+  );
 }

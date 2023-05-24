@@ -1,7 +1,5 @@
 @import '../components/Navbar/index.css';
-@import '../components/Homepage/OurValues/index.css';
 @import '../components/Star/index.css';
-@import '../components/BlogDetail/index.css';
 
 @tailwind base;
 @tailwind components;
@@ -14,6 +12,9 @@
 }
 
 @layer utilities {
+  /* 
+    General
+  */
   .label-text {
     @apply text-palatinate-blue text-lg font-medium;
   }
@@ -41,7 +42,51 @@
   .heading-6 {
     @apply text-base text-coarse-wool font-medium leading-snug;
   }
+
+  /* 
+    Our Values
+  */
+
+  .our-values-item {
+    @apply cursor-default w-[550px] rounded-lg bg-white px-12 py-14 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
+  }
+
+  .our-values-item__heading {
+    @apply heading-3 -mt-1 mr-2;
+  }
+
+  .our-values-item__description {
+    @apply text-brave-purple font-light text-lg leading-9 mt-5;
+  }
+
+  /* 
+    Blog Detail 
+  */
+
+  .blog-detail h2 {
+      @apply text-3xl text-coarse-wool font-semibold leading-snug mt-10;
+  }
+
+  .blog-detail h3 {
+      @apply text-2xl text-coarse-wool font-medium leading-snug;
+  }
+
+  .blog-detail h4 {
+      @apply text-xl text-coarse-wool font-medium leading-snug;
+  }
+
+  .blog-detail h5 {
+      @apply text-lg text-coarse-wool font-medium leading-snug;
+  }
+
+  .blog-detail__main-content p {
+      @apply text-brave-purple font-normal text-lg leading-10 mt-3;
+  }
 }
+
+/* 
+  Slick Slide
+*/
 
 .slick-slide > div > :is(.testimony-item) {
   margin: 3.5rem 10px auto;

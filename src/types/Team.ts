@@ -1,5 +1,5 @@
 export type TeamProps = {
-  _id: number,
+  id: number,
   imageId: string,
   name: string,
   title: string,

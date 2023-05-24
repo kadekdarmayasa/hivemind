@@ -20,8 +20,8 @@ export default function ServiceOffered({ servicesOffered, refServiceOffered }: {
       <div className='flex flex-wrap justify-center gap-8 mt-14'>
         {servicesOffered.options.map((option, index: number) => {
           return (
-            <Fade up delay={300 * index} key={option._id} >
-              <div key={option._id} className='bg-white shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all w-[350px] h-[550px] px-10 py-14 flex flex-col items-start rounded-xl'>
+            <Fade up delay={300 * index} key={option.id} >
+              <div key={option.id} className='bg-white shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all w-[350px] h-[550px] px-10 py-14 flex flex-col items-start rounded-xl'>
                 <div className='bg-palatinate-blue w-20 h-20 flex items-center justify-center rounded-lg mb-8'>
                   <Image src={option.imageId} height={30} width={30} alt={option.name} style={{ width: '40px' }} />
                 </div>

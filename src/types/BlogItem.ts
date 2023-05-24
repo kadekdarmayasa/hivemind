@@ -1,5 +1,5 @@
 export type BlogItemProps = {
-  _id: string | number,
+  id: string | number,
   imageId: string,
   publishedDate: string,
   imageOriginSource?: string,

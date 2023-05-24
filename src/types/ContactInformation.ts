@@ -1,5 +1,5 @@
 export type ContactInformationProps = {
-  _id: string | number,
+  id: string | number,
   imageId: string,
   name: string,
   value: string

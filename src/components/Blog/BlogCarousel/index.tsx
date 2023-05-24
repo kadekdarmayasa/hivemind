@@ -24,7 +24,7 @@ export default function BlogCarousel({ blogs }: { blogs: BlogItemProps[] }): JSX
         className={`bg-ghost-white h-auto`}
       >
         {blogs.map((blog) => (
-          <BlogItem key={blog._id} blog={blog} />
+          <BlogItem key={blog.id} blog={blog} />
         ))}
       </Slider>
     </div>

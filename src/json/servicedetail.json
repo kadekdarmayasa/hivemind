@@ -9,19 +9,19 @@
     "description": "When it comes to designing a website, different businesses have different needs and goals. At our digital agency, we offer a variety of website design services to meet those unique needs. Here are some of the types of websites we specialize in",
     "options": [
       {
-        "_id": "assjkjjjij23e23",
+        "id": "assjkjjjij23e23",
         "imageId": "/images/chart.svg",
         "title": "E-commerce websites",
         "description": "Our expert team can develop a user-friendly, visually-appealing, and SEO-optimized e-commerce website that is essential for businesses looking to sell their products or services online."
       },
       {
-        "_id": "assjkjjjij23e24",
+        "id": "assjkjjjij23e24",
         "imageId": "/images/globe.svg",
         "title": "Corporate Websites",
         "description": "Establish a strong online presence with our custom-designed corporate websites that accurately reflect your brand identity and effectively communicate your message to your target audience."
       },
       {
-        "_id": "assjkjjjij23e25",  
+        "id": "assjkjjjij23e25",  
         "imageId": "/images/targetted.svg",
         "title": "Landing Pages",
         "description": "Our professionally-crafted landing pages are designed to convert website visitors into leads or customers with clear messaging, strong calls-to-action, and optimization for high conversion rates."
@@ -34,43 +34,43 @@
     "description": "At our digital agency, we take a strategic approach to web design, ensuring that every website we create is both visually stunning and highly functional. Our web design process involves several key stages, each of which is essential to creating a website that meets the needs of our clients and their customers.",
     "steps": [
       {
-        "_id": "112k2jk2iknasdiknsdin",
+        "id": "112k2jk2iknasdiknsdin",
         "imageId": "/images/discovery.svg",
         "label": "STEP 01",
         "title": "Discovery"
       },
       {
-        "_id": "112k2jk2iknasdiknsdim",
+        "id": "112k2jk2iknasdiknsdim",
         "imageId": "/images/planning.svg",
         "label": "STEP 02",
         "title": "Planning"
       },
       {
-        "_id": "112k2jk2iknasdiknsdio",  
+        "id": "112k2jk2iknasdiknsdio",  
         "imageId": "/images/design.svg",
         "label": "STEP 03",
         "title": "Design"
       },
       {
-        "_id": "112k2jk2iknasdiknsdip",
+        "id": "112k2jk2iknasdiknsdip",
         "imageId": "/images/development.svg",
         "label": "STEP 04",
         "title": "Development"
       },
       {
-        "_id": "112k2jk2iknasdiknsdiq",
+        "id": "112k2jk2iknasdiknsdiq",
         "imageId": "/images/testing.svg",
         "label": "STEP 05",
         "title": "Testing"
       },
       {
-        "_id": "112k2jk2iknasdiknsdir",
+        "id": "112k2jk2iknasdiknsdir",
         "imageId": "/images/launch.svg",
         "label": "STEP 06",
         "title": "Launch"
       },
       {
-        "_id": "112k2jk2iknasdiknsdis",
+        "id": "112k2jk2iknasdiknsdis",
         "imageId": "/images/maintenance.svg",
         "label": "STEP 07",
         "title": "Maintenance"
@@ -83,17 +83,17 @@
     "description": "Take a look at our work samples below to see what we can do for you.",
     "samples": [
       {
-        "_id": "1221212jjjdfjsoikjd",
+        "id": "1221212jjjdfjsoikjd",
         "imageId": "/images/company-website-redesign.png",
         "title": "GREZZ Company Website Redesign"
       },
       {
-         "_id": "1221212jjjdfjsoikje",
+         "id": "1221212jjjdfjsoikje",
         "imageId": "/images/landing-page-opt.png",
         "title": "KLIPPLANET Landing Page Optimization"
       },
       {
-        "_id": "1221212jjjdfjsoikjf",
+        "id": "1221212jjjdfjsoikjf",
         "imageId": "/images/corporate-website.png",
         "title": "BIGMOVE Corporate Website"
       }
@@ -104,7 +104,7 @@
     "title": "Web Design PriceList",
     "lists": [
       {
-        "_id": "1221j2jisdfdfihef9a",
+        "id": "1221j2jisdfdfihef9a",
         "package": "Basic",
         "price": 12,
         "time": "month",
@@ -112,7 +112,7 @@
         "features": ["Ideal for small businesses", "Custom design for up to 5 pages", "Mobile-response design", "Basic SEO", "Contact form integration"]
       },
       { 
-        "_id": "1221j2jisdfdfihef9c",
+        "id": "1221j2jisdfdfihef9c",
         "package": "Premium",
         "price": 36,
         "time": "month",
@@ -120,7 +120,7 @@
         "features": ["Idel for large businesses and e-commerce websites", "Custom design for up to 15 pages", "Mobile-responsive design", "Advanced SEO with analytics tracking", "E-commerce integration with payment gateway setup", "Customize blog design and setup"]
       },
       {
-        "_id": "1221j2jisdfdfihef9b",
+        "id": "1221j2jisdfdfihef9b",
         "package": "Standard",
         "price": 24,
         "time": "month",
@@ -132,7 +132,7 @@
 
   "testimonies": [
     {
-      "_id": "1221j2jisdfdfihef9d",
+      "id": "1221j2jisdfdfihef9d",
       "imageId": "/images/testy-1.png",
       "name": "John Smith",
       "title": "Marketing Manager",
@@ -140,7 +140,7 @@
       "rate": 5
     },
     {
-      "_id": "1221j2jisdfdfihef9e",
+      "id": "1221j2jisdfdfihef9e",
       "imageId": "/images/testy-2.png",
       "name": "Max Robinzon",
       "title": "Entrepreneur",
@@ -148,7 +148,7 @@
       "rate": 5
     },
     {
-      "_id": "1221j2jisdfdfihef9f",
+      "id": "1221j2jisdfdfihef9f",
       "imageId": "/images/testy-3.png",
       "name": "Olivia Taylor",
       "title": "Creative Director",
@@ -156,7 +156,7 @@
       "rate": 5
     },
     {
-      "_id": 12337,
+      "id": 12337,
       "imageId": "/images/testy-4.jpg",
       "clientName": "Robert Johnson",
       "occupation": "CEO",
@@ -164,7 +164,7 @@
       "rate": 5
     },
     {
-      "_id": 12338,
+      "id": 12338,
       "imageId": "/images/testy-5.png",
       "clientName": "Sarah Lee",
       "occupation": "E-commerce Manager",
@@ -172,7 +172,7 @@
       "rate": 5
     },
     {
-      "_id": 12339,
+      "id": 12339,
       "imageId": "/images/testy-6.png",
       "clientName": "Maria Garcia",
       "occupation": "Real Estate Agent",
@@ -183,27 +183,27 @@
 
   "faqs": [
     {
-      "_id": "sakakasksq11212k",
+      "id": "sakakasksq11212k",
       "question": "Can you help with website hosting and domain registration?",
       "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting providers and help you choose the best domain name for your business."
     },
     {
-      "_id": "sakakasksq11212l",
+      "id": "sakakasksq11212l",
       "question": "Do you offer website maintenance and updates?",
       "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting providers and help you choose the best domain name for your business."
     },
     {
-      "_id": "sakakasksq11212m",
+      "id": "sakakasksq11212m",
       "question": "Do you provide content for my website?",
       "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting providers and help you choose the best domain name for your business."
     },
     {
-      "_id": "sakakasksq11212n",
+      "id": "sakakasksq11212n",
       "question": "Will my website be mobile-friendly?",
       "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting providers and help you choose the best domain name for your business."
     },
     {
-      "_id": "sakakasksq11212o",
+      "id": "sakakasksq11212o",
       "question": "What is the typical turnaround time for a website design project?",
       "answer": "Yes, we can assist with website hosting and domain registration. We can recommend hosting providers and help you choose the best domain name for your business."
     }

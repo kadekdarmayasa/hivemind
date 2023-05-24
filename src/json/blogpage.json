@@ -1,6 +1,6 @@
 [
   {
-    "_id": 1234214,
+    "id": 1234214,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
@@ -9,7 +9,7 @@
     "shortDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
   },
   {
-    "_id": 1234215,
+    "id": 1234215,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
@@ -18,7 +18,7 @@
     "shortDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
   },
   {
-    "_id": 1234216,
+    "id": 1234216,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
@@ -27,7 +27,7 @@
     "shortDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
   },
   {
-    "_id": 1234217,
+    "id": 1234217,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
@@ -36,7 +36,7 @@
     "shortDescription": "Get ahead of the curve with the latest trends in social media marketing and learn how to leverage them to grow your business."
   },
   {
-    "_id": 1234218,
+    "id": 1234218,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
@@ -45,7 +45,7 @@
     "shortDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
   },
   {
-    "_id": 1234219,
+    "id": 1234219,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",
@@ -54,7 +54,7 @@
     "shortDescription": "Learn about the benefits of putting user needs at the forefront of your web design strategy and discover best practices for creating engaging websites."
   },
   {
-    "_id": 1234220,
+    "id": 1234220,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": "true",
     "author": "Admin Hivemind",

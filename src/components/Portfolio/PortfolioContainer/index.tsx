@@ -5,7 +5,7 @@ export default function PortfolioContainer({ portfolios }: { portfolios: Portfol
   return (
     <div className={`grid grid-cols-12 grid-flow-dense gap-5 mt-14`}>
       {portfolios.map((portfolio) => (
-        <PortfolioItem key={portfolio._id} portfolio={portfolio} />
+        <PortfolioItem key={portfolio.id} portfolio={portfolio} />
       ))}
     </div>
   )

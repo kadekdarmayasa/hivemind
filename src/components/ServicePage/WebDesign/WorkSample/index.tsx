@@ -17,8 +17,8 @@ export default function WorkSample({ workSample }): JSX.Element {
       <div className='flex flex-wrap justify-center gap-8 mt-14'>
         {workSample.samples.map((sample, index) => {
           return (
-            <Fade up delay={300 * index} key={sample._id}>
-              <div key={sample._id} className='rounded-lg relative overflow-hidden group w-[350px] h-[550px]'>
+            <Fade up delay={300 * index} key={sample.id}>
+              <div key={sample.id} className='rounded-lg relative overflow-hidden group w-[350px] h-[550px]'>
                 <Image width={400} height={600} src={sample.imageId} alt={sample.title} className='object-cover w-full h-auto group-hover:scale-105 transition-all' />
 
                 <div className='absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-black to-gray-700 opacity-40 backdrop-blur-md'></div>

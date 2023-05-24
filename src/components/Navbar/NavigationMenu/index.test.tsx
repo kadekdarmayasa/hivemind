@@ -27,17 +27,17 @@ test('li with service path should has .active class when mouse over and vice ver
 
   const subMenus = [
     {
-      '_id': 'ass122jjjjoj033f',
+      'id': 'ass122jjjjoj033f',
       'name': 'Web Design',
       'path': '/web-design'
     },
     {
-      '_id': 'ass122jjjjoj033g',
+      'id': 'ass122jjjjoj033g',
       'name': 'Search Engine Optimization',
       'path': '/seo'
     },
     {
-      '_id': 'ass122jjjjoj033h',
+      'id': 'ass122jjjjoj033h',
       'name': 'Social Media Marketing',
       'path': '/smm'
     }

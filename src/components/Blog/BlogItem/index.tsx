@@ -35,7 +35,7 @@ export default function BlogItem({ blog }: { blog: BlogItemProps }): JSX.Element
 
         <Button
           type='link'
-          href={`/blog/${blog._id}`}
+          href={`/blog/${blog.id}`}
           className={`absolute bottom-8 group`}
         >
           <span className={`text-lg`}>Read more</span>

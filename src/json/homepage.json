@@ -1,37 +1,37 @@
 { 
   "services": [
     {
-      "_id": "ass122jjjjoj033f",
+      "id": "ass122jjjjoj033f",
       "imageId": "/images/desktop.svg",
       "name": "Web Design",
       "briefDescription": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
     },
     {
-      "_id": "ass122jjjjoj033g",
+      "id": "ass122jjjjoj033g",
       "imageId": "/images/chart.svg",
       "name": "Search Engine Optimization",
       "briefDescription": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
     },
     {
-      "_id": "ass122jjjjoj033h",
+      "id": "ass122jjjjoj033h",
       "imageId": "/images/megaphone.svg",
       "name": "Social Media Marketing",
       "briefDescription": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
     },
     {
-      "_id": "ass122jjjjoj033i",
+      "id": "ass122jjjjoj033i",
       "imageId": "/images/reader.svg",
       "name": "Content Creation",
       "briefDescription": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
     },
     {
-      "_id": "ass122jjjjoj033j",
+      "id": "ass122jjjjoj033j",
       "imageId": "/images/cart.svg",
       "name": "E-commerce Solutions",
       "briefDescription": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
     },
     {
-      "_id": "ass122jjjjoj033k",
+      "id": "ass122jjjjoj033k",
       "imageId": "/images/phone.svg", 
       "name": "Mobile App Development",
       "briefDescription": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
@@ -40,22 +40,22 @@
 
   "companyValues": [
     {
-      "_id": 122444,
+      "id": 122444,
       "value": "Experience",
       "description": "With years of experience in the digital marketing industry, we have the expertise and knowledge to develop and implement effective strategies that will help you reach your business goals."
     },
     {
-      "_id": 122445,
+      "id": 122445,
       "value": "Result-driven",
       "description": "Our focus is on delivering measurable results for our clients. We use data-driven insights to make informed decisions and constantly evaluate and adjust our strategies to ensure maximum <abbr title='Return On Investment'>ROI</abbr>."
     },
     {
-      "_id": 122446,
+      "id": 122446,
       "value": "Custom Solutions",
       "description": "We tailor our services to meet the specific needs and goals of each client. We work closely with our clients to develop custom digital solutions that are designed to deliver results"
     },
     {
-      "_id": 122447,
+      "id": 122447,
       "value": "Transparent communication",
       "description": " We believe in open and honest communication with our clients every step of the way. We provide regular updates and detailed reports, so you always know how your campaigns are performing."
     }
@@ -63,7 +63,7 @@
   
   "portfolios": [
     {
-      "_id": 122893,
+      "id": 122893,
       "imageId": "/images/e-commerce-web.png",
       "orientation": "potrait",
       "projectName": "E-commerce for Fashion",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "_id": 122894,
+      "id": 122894,
       "imageId": "/images/fitness-studio.png",
       "orientation": "landscape",
       "projectName": "Fitness Studio",
@@ -83,7 +83,7 @@
       }
     },
     {
-      "_id": 1228991,
+      "id": 1228991,
       "imageId": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "_id": 122896,
+      "id": 122896,
       "imageId": "/images/video-for-travel-agency.png",
       "orientation": "landscape",
       "projectName": "Video Production for Travel Agency",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "_id": 122897,
+      "id": 122897,
       "imageId": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
@@ -116,7 +116,7 @@
 
   "testimonies": [
     {
-      "_id": 12334,
+      "id": 12334,
       "imageId": "/images/testy-1.png",
       "clientName": "John Smith",
       "occupation": "Marketing Manager",
@@ -124,7 +124,7 @@
       "rate": 5
     }, 
     {
-      "_id": 12335,
+      "id": 12335,
       "imageId": "/images/testy-2.png",
       "clientName": "Max Robinson",
       "occupation": "Entrepreneur",
@@ -132,7 +132,7 @@
       "rate": 4
     }, 
     {
-      "_id": 12336,
+      "id": 12336,
       "imageId": "/images/testy-3.png",
       "clientName": "Olivia Taylor",
       "occupation": "Creative Director",
@@ -140,7 +140,7 @@
       "rate": 5
     },
     {
-      "_id": 12337,
+      "id": 12337,
       "imageId": "/images/testy-4.jpg",
       "clientName": "Robert Johnson",
       "occupation": "CEO",
@@ -148,7 +148,7 @@
       "rate": 5
     },
     {
-      "_id": 12338,
+      "id": 12338,
       "imageId": "/images/testy-5.png",
       "clientName": "Sarah Lee",
       "occupation": "E-commerce Manager",
@@ -156,7 +156,7 @@
       "rate": 5
     },
     {
-      "_id": 12339,
+      "id": 12339,
       "imageId": "/images/testy-6.png",
       "clientName": "Maria Garcia",
       "occupation": "Real Estate Agent",
@@ -167,7 +167,7 @@
 
   "blogs": [
     {
-      "_id": 1234214,
+      "id": 1234214,
       "publishedDate": "Sun, 20 Jan 2023",
       "isPublished": "true",
       "author": "Admin Hivemind",
@@ -176,7 +176,7 @@
       "shortDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
     },
     {
-      "_id": 1234215,
+      "id": 1234215,
       "publishedDate": "Wed, 22 Jan 2023",
       "isPublished": "true",
       "author": "Admin Hivemind",
@@ -185,7 +185,7 @@
       "shortDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
     },
     {
-      "_id": 1234216,
+      "id": 1234216,
       "publishedDate": "Sun, 10 Feb 2023",
       "isPublished": "true",
       "author": "Admin Hivemind",
@@ -194,7 +194,7 @@
       "shortDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
     },
     {
-      "_id": 1234217,
+      "id": 1234217,
       "publishedDate": "Fri, 14 Feb 2023",
       "isPublished": "true",
       "author": "Admin Hivemind",
@@ -203,7 +203,7 @@
       "shortDescription": "Get ahead of the curve with the latest trends in social media marketing and learn how to leverage them to grow your business."
     },
     {
-      "_id": 1234218,
+      "id": 1234218,
       "publishedDate": "Tue, 17 Feb 2023",
       "isPublished": "true",
       "author": "Admin Hivemind",
@@ -212,7 +212,7 @@
       "shortDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
     },
     {
-      "_id": 1234218,
+      "id": 1234218,
       "publishedDate": "Tue, 17 Feb 2023",
       "isPublished": "true",
       "author": "Admin Hivemind",

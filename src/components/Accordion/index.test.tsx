@@ -6,12 +6,12 @@ window.scrollTo = jest.fn();
 test('Accordion Item should has class .shadow-black-sm when the condition is open, none otherwise.', () => {
   const faqs = [
     {
-      _id: 1235,
+      id: 1235,
       question: "What is your name?",
       answer: "I Kadek Darmayasa Adi Putra"
     },
     {
-      _id: 1236,
+      id: 1236,
       question: "What is your job?",
       answer: "Web Developer"
     },

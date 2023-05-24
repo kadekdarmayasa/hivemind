@@ -17,7 +17,7 @@ export default function Process({ process }): JSX.Element {
       <div className='flex flex-wrap justify-center gap-8 mt-14'>
         {process.steps.map((step, index: number) => {
           return (
-            <Fade key={step._id} delay={300 * index} up>
+            <Fade key={step.id} delay={300 * index} up>
               <div className='w-60 h-72 bg-white shadow-black-sm flex flex-col items-center py-10 px-5 justify-center hover:scale-[1.02] transition-all hover:shadow-black-md'>
                 <div className='h-28 w-28 bg-[#E8EAFF] flex justify-center items-center rounded-full'>
                   <Image width={70} height={70} alt={step.title} src={step.imageId} />
