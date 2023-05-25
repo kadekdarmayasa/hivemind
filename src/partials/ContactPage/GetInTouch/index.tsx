@@ -111,9 +111,9 @@ export default function GetInTouch({
               {alert.message}
             </Alert>
 
-            <Input labelText="Name" type="text" name="name" id="name" value={inputValue.name} onChange={handleChange} placeHolder="Enter your name..." parentClassName="mb-8 flex flex-col" className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none transition-all" />
+            <Input labelText="Name" type="text" name="name" id="name" value={inputValue.name} onChange={handleChange} placeHolder="Enter your name..." showErrorMessage parentClassName="mb-8 flex flex-col" className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none transition-all" />
 
-            <Input labelText="Email" type="email" name="email" id="email" value={inputValue.email} onChange={handleChange} placeHolder="Enter your email..." />
+            <Input labelText="Email" type="email" name="email" id="email" value={inputValue.email} onChange={handleChange} placeHolder="Enter your email..." showErrorMessage parentClassName="mb-8 flex flex-col" className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg font-light border-2 outline-none transition-all" />
 
             <Textarea labelText="Message" name="message" id="message" value={inputValue.message} placeHolder="Enter your question..." outerClassNames={['mt-8']} onChange={handleChange} />
 

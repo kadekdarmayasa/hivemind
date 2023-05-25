@@ -1,7 +1,7 @@
 import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import 'styles/main.css';
+import 'styles/globals.css';
 import localFont from 'next/font/local';
 import { Provider } from 'react-redux';
 import { setupStore } from 'store';
