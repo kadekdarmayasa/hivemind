@@ -63,7 +63,7 @@ export default function Input(props: InputProps): JSX.Element {
           required
         />
 
-        {hasError && (<small className="mt-2 font-light text-sm text-red-400">
+        {hasError && (<small className="mt-2 font-light text-sm text-red-400" data-testid="errorMessage">
           {errorMessage}
         </small>)}
       </div>

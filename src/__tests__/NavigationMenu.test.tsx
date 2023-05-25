@@ -1,14 +1,21 @@
-import { fireEvent, getByRole, getByTestId, screen } from '@testing-library/react';
+import React from 'react';
+import {
+  fireEvent,
+  getByRole,
+  getByTestId,
+  screen,
+} from '@testing-library/react';
 import mockRouter from 'next-router-mock';
-import NavigationMenu from './index';
-import { renderWithProviders } from 'utils/test-utils';
+import NavigationMenu from '@components/Navbar/NavigationMenu';
+import { renderWithProviders } from '@utils/test-utils';
 
+// eslint-disable-next-line global-require
 jest.mock('next/router', () => require('next-router-mock'));
 
-test(`li element should has .active class when it's child link clicked`, () => {
+test("li element should has .active class when it's child link clicked", () => {
   mockRouter.push('/');
 
-  renderWithProviders(<NavigationMenu path='/about' name='About' containSubMenu={false} />);
+  renderWithProviders(<NavigationMenu path="/about" name="About" containSubMenu={false} />);
 
   const navMenuContainer = screen.getByRole('listitem');
   const navMenuLink = getByRole(navMenuContainer, 'link');
@@ -27,23 +34,23 @@ test('li with service path should has .active class when mouse over and vice ver
 
   const subMenus = [
     {
-      'id': 'ass122jjjjoj033f',
-      'name': 'Web Design',
-      'path': '/web-design'
+      id: 'ass122jjjjoj033f',
+      name: 'Web Design',
+      path: '/web-design',
     },
     {
-      'id': 'ass122jjjjoj033g',
-      'name': 'Search Engine Optimization',
-      'path': '/seo'
+      id: 'ass122jjjjoj033g',
+      name: 'Search Engine Optimization',
+      path: '/seo',
     },
     {
-      'id': 'ass122jjjjoj033h',
-      'name': 'Social Media Marketing',
-      'path': '/smm'
-    }
+      id: 'ass122jjjjoj033h',
+      name: 'Social Media Marketing',
+      path: '/smm',
+    },
   ];
 
-  renderWithProviders(<NavigationMenu path='/service' name='Service' containSubMenu subMenus={subMenus} />)
+  renderWithProviders(<NavigationMenu path="/service" name="Service" containSubMenu subMenus={subMenus} />);
 
   const navMenuContainer = screen.getAllByRole('listitem');
   const navMenuText = getByTestId(navMenuContainer[0], 'nav-menu-text');
