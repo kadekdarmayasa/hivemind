@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 import Link from 'next/link';
 
 type ButtonProps = {
@@ -10,39 +13,37 @@ type ButtonProps = {
   children?: React.ReactNode
 }
 
-export default function Button(props: ButtonProps): JSX.Element {
+export default function Button(props: ButtonProps) {
   const className = props.className ? [...props.className.split(' ')] : [];
 
   className.push('flex', 'justify-center', 'items-center');
 
-  props.isPrimary ?
-    className.push('bg-palatinate-blue shadow-purple-sm text-white') :
+  if (props.isPrimary) {
+    className.push('bg-palatinate-blue shadow-purple-sm text-white');
+  } else {
     className.push('bg-transparent text-palatinate-blue');
-
-
-  const onClick = () => {
-    props.onClick && props.onClick();
   }
 
   if (props.type === 'link') {
     if (props.isExternal) {
       return (
-        <a href={props.href} target='_blank' rel='noreferrer' className={className.join(' ')}>
+        <a href={props.href} target="_blank" rel="noreferrer" className={className.join(' ')}>
           {props.children}
         </a>
       );
-    } else {
-      return (
-        <Link tabIndex={0} href={props.href} className={className.join(' ')}>
-          {props.children}
-        </Link>
-      );
     }
+
+    return (
+      <Link tabIndex={0} href={props.href} className={className.join(' ')}>
+        {props.children}
+      </Link>
+    );
   }
 
   return (
-    <button type={props.type ? props.type : 'button'} onClick={onClick} className={className.join(' ')}>
+    // eslint-disable-next-line react/button-has-type
+    <button type={props.type ?? 'button'} onClick={() => props.onClick?.()} className={className.join(' ')}>
       {props.children}
     </button>
-  )
+  );
 }
