@@ -1,32 +1,55 @@
-export default function Star({ value, height, width }: StarProps): JSX.Element {
+import React from 'react';
+import type { StarProps } from 'types/Star';
+import StarItem from './StarItem.tsx';
+
+export default function Star({ value, height, width }: StarProps & {
+  value: number
+}) {
   const decimals = Number(value) % 1;
   const star = [];
   let leftPosition = 0;
   const starPlaceholder = [];
 
-  for (let index = 0; index < value - decimals; index++) {
+  for (let index = 0; index < value - decimals; index += 1) {
     leftPosition += width;
-    star.push(<div className="star" data-testid="yellowStar" key={`star-${index}`} style={{ left: index * width, height: height, width: width }}></div>)
+    star.push(
+      <StarItem
+        key={`yellowStar-${index}`}
+        width={width}
+        height={height}
+        leftPosition={index * width}
+        type="yellow"
+      />,
+    );
   }
 
-  if (decimals > 0 && value <= 5) star.push(<div className="star" data-testid="yellowStar" key={`starWithDecimal`} style={{ left: leftPosition, height: height, width: decimals * width }}></div>)
+  if (decimals > 0 && value <= 5) {
+    star.push(
+      <StarItem
+        width={decimals * width}
+        height={height}
+        leftPosition={leftPosition}
+        type="yellow"
+      />,
+    );
+  }
 
-  for (let index = 0; index < 5; index++) {
-    starPlaceholder.push(<div className="star placeholder" data-testid="starPlaceholder" key={`star-placeholder-${index}`} style={{ left: index * width, height: height, width: width }}></div>)
+  for (let index = 0; index < 5; index += 1) {
+    starPlaceholder.push(
+      <StarItem
+        key={`star-placeholder-${index}`}
+        height={height}
+        width={width}
+        leftPosition={index * width}
+        type="placeholder"
+      />,
+    );
   }
 
   return (
-    <>
-      <div className={'stars'} data-testid="stars" style={{ height: height }}>
-        {starPlaceholder}
-        {star}
-      </div>
-    </>
-  )
-}
-
-type StarProps = {
-  value: number,
-  height: number,
-  width: number
+    <div className="stars" data-testid="stars" style={{ height }}>
+      {starPlaceholder}
+      {star}
+    </div>
+  );
 }
