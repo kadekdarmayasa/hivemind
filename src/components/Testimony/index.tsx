@@ -1,30 +1,49 @@
-import TestimonyCarousel from './TestimonyCarousel';
-import type { TestimonyItemProps } from 'types/TestimonyItem';
-import Fade from 'react-reveal/Fade';
+import React from 'react';
+import type { TestimonyItemProps } from 'types/TestimonyItem.ts';
+import Slider from 'react-slick';
+import TestimonyItem from './TestimonyItem.tsx';
 
 export default function Testimony({
   testimonies,
   isContainLabel,
-  title
+  labelText,
+  title,
 }: {
   testimonies: TestimonyItemProps[],
+  labelText?: string,
   isContainLabel?: boolean,
   title: string
-}): JSX.Element {
+}) {
+  const settings = {
+    className: 'slider variable-width',
+    infinite: true,
+    speed: 500,
+    autoplaySpeed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    variableWidth: true,
+    pauseOnHover: true,
+    slidesPerRow: 1,
+    rows: 1,
+  };
+
+  // TODO : Using framer motion for animation
   return (
-    <section className='mt-32 2xl:mt-44'>
+    <section className="mt-32 2xl:mt-44">
       <div className="flex flex-col items-center text-center">
         {isContainLabel && (
-          <Fade bottom>
-            <small className='label-text'>Testimony</small>
-          </Fade>
+          <small className="label-text">{labelText}</small>
         )}
-        <Fade bottom delay={300}>
-          <h2 className="heading-2">{title}</h2>
-        </Fade>
+        <h2 className="heading-2">{title}</h2>
       </div>
 
-      <TestimonyCarousel testimonies={testimonies} />
+      <div className="h-auto my-4 mb-20">
+        <Slider {...settings} className="bg-ghost-white h-auto">
+          {testimonies.map((testimony) => (
+            <TestimonyItem key={testimony.id} testimony={testimony} />
+          ))}
+        </Slider>
+      </div>
     </section>
-  )
+  );
 }
