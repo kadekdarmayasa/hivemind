@@ -1,15 +1,18 @@
-import { useState } from 'react';
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
+import React, { useState, useMemo } from 'react';
 import {
   Accordion,
   AccordionHeader,
-  AccordionBody
+  AccordionBody,
 } from '@material-tailwind/react';
 import { IconContext } from 'react-icons';
 import { IoChevronDown } from 'react-icons/io5';
 import type { FAQProps } from 'types/FAQProps';
 
-export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
-  const [multipleOpen, setMultipleOpen] = useState<number[]>([1]);
+export default function Index({ faqs }: { faqs: FAQProps[] }) {
+  const [multipleOpen, setMultipleOpen] = useState([1]);
+  const iconProps = useMemo(() => ({ size: '0.8em' }), []);
 
   const handleMultipleOpen = (value: number): void => {
     if (multipleOpen.includes(value)) {
@@ -18,7 +21,7 @@ export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
     } else {
       setMultipleOpen([...new Set([...multipleOpen, value])]);
     }
-  }
+  };
 
   return (
     <>
@@ -27,14 +30,14 @@ export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
         <Accordion
           key={faq.id}
           open={multipleOpen.includes(++index)}
-          data-testid={`accordion-item`}
-          icon={
-            <IconContext.Provider value={{ size: '0.8em' }}>
+          data-testid="accordion-item"
+          icon={(
+            <IconContext.Provider value={iconProps}>
               <IoChevronDown
                 className={`${multipleOpen.includes(index) ? 'rotate-180' : ''}`}
               />
             </IconContext.Provider>
-          }
+          )}
           className={
             `bg-white px-6 py-2 mb-6 
             ${multipleOpen.includes(index) ? 'shadow-black-sm' : ''}`
@@ -51,13 +54,12 @@ export default function Index({ faqs }: { faqs: FAQProps[] }): JSX.Element {
             {faq.question}
           </AccordionHeader>
 
-          <AccordionBody className={`text-brave-purple !pt-2 pb-6 font-outfit font-light text-lg leading-9`}>
+          <AccordionBody className="text-brave-purple !pt-2 pb-6 font-outfit font-light text-lg leading-9">
             {faq.answer}
           </AccordionBody>
 
         </Accordion>
       ))}
     </>
-  )
+  );
 }
-
