@@ -1,3 +1,4 @@
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { NextRouter, useRouter } from 'next/router';
 import { IconContext } from 'react-icons';
@@ -7,27 +8,6 @@ import { useAppSelector } from '@hooks/useAppSelector';
 import { useAppDispatch } from '@hooks/useAppDispatch';
 import { selectedState, toggle } from '@redux-slices/dropdownSlice';
 import { AppDispatch } from 'store';
-
-export default function NavigationMenu({ path, name, containSubMenu, subMenus }: NavigationMenuProps) {
-  const dropdownState = useAppSelector(selectedState);
-  const dispatch = useAppDispatch();
-  const router = useRouter();
-
-  return containSubMenu ? (
-    <MenuWithSubMenu
-      menu={{ name, path }}
-      subMenus={subMenus}
-      dispatch={dispatch}
-      dropdownState={dropdownState}
-      router={router}
-    />
-  ) : (
-    <MenuWithoutSubMenu
-      menu={{ name, path }}
-      router={router}
-    />
-  );
-}
 
 function MenuWithSubMenu({
   menu,
@@ -45,31 +25,34 @@ function MenuWithSubMenu({
   dropdownState: 'open' | 'close',
   router: NextRouter
 }) {
+  const iconProps = useMemo(() => ({ size: '1.2em', className: 'ms-1 mt-[2px]' }), []);
+
   return (
     <li
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
       className={`
         z-50 text-base font-regular relative text-brave-purple ml-10 nav-link 
-        ${dropdownState === 'open' || router.asPath.split('/')[1] === 'service' ? 'active' : ''}`
-      }
+        ${dropdownState === 'open' || router.asPath.split('/')[1] === 'service' ? 'active' : ''}
+      `}
       onBlur={() => dispatch(toggle('close'))}
       onFocus={() => dispatch(toggle('open'))}
       onMouseEnter={() => dispatch(toggle('open'))}
       onMouseLeave={() => dispatch(toggle('close'))}
     >
-      <div className='flex items-center'>
-        <span className='service-menu-name' data-testid='nav-menu-text'>{menu.name}</span>
-        <div className='custom-underline'></div>
-        <IconContext.Provider value={{ size: '1.2em', className: 'ms-1 mt-[2px]' }}>
+      <div className="flex items-center">
+        <span className="service-menu-name" data-testid="nav-menu-text">{menu.name}</span>
+        <div className="custom-underline" />
+        <IconContext.Provider value={iconProps}>
           <IoChevronForwardOutline className="rotate-90" />
         </IconContext.Provider>
       </div>
 
       <ul
         className={`
-          font-light absolute z-50 w-80 bg-white rounded-lg shadow-black-md mt-4 px-4 py-5 right-2/4 translate-x-2/4 
-          transition-all origin-top ${dropdownState === 'open' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}
-        `}
+        font-light absolute z-50 w-80 bg-white rounded-lg shadow-black-md mt-4 px-4 py-5 right-2/4 translate-x-2/4 
+        transition-all origin-top ${dropdownState === 'open' ? 'scale-100 opacity-100' : 'scale-0 opacity-0'}
+      `}
       >
         {subMenus.map((subMenu, index) => {
           const path = `${menu.path}${subMenu.path}`;
@@ -82,15 +65,16 @@ function MenuWithSubMenu({
               <Link
                 href={path}
                 onClick={() => router.push(path)}
-                className='block px-3 py-3 w-full h-full'
+                className="block px-3 py-3 w-full h-full"
               >
                 {subMenu.name}
               </Link>
             </li>
-          )
+          );
         })}
       </ul>
-    </li>);
+    </li>
+  );
 }
 
 function MenuWithoutSubMenu({
@@ -114,12 +98,38 @@ function MenuWithoutSubMenu({
         <Link
           href={menu.path}
           onClick={() => router.push(menu.path)}
-          className='block'
+          className="block"
         >
           {menu.name}
         </Link>
-        <div className='custom-underline'></div>
+        <div className="custom-underline" />
       </div>
     </li>
+  );
+}
+
+export default function NavigationMenu({
+  path,
+  name,
+  containSubMenu,
+  subMenus,
+}: NavigationMenuProps) {
+  const dropdownState = useAppSelector(selectedState);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  return containSubMenu ? (
+    <MenuWithSubMenu
+      menu={{ name, path }}
+      subMenus={subMenus}
+      dispatch={dispatch}
+      dropdownState={dropdownState}
+      router={router}
+    />
+  ) : (
+    <MenuWithoutSubMenu
+      menu={{ name, path }}
+      router={router}
+    />
   );
 }
