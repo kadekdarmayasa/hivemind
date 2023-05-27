@@ -14,8 +14,6 @@ export default function Navbar({ menus }: { menus: NavigationMenuProps[] }) {
             key={index}
             path={menu.path}
             name={menu.name}
-            containSubMenu={menu.containSubMenu}
-            subMenus={menu.subMenus}
           />
         ))}
       </ul>
