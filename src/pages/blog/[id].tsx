@@ -8,6 +8,10 @@ import { fetcher } from '@utils/fetcher/get';
 
 type BlogDetailProps = BlogItemProps & {
   content: string,
+  image: {
+    path: string,
+    source: string,
+  },
   relatedArticles: BlogItemProps[]
 }
 
@@ -26,8 +30,8 @@ export default function BlogDetail() {
           publishedDate={data.publishedDate}
           author={data.author}
           title={data.title}
-          imageId={data.imageId}
-          imageOriginSource={data.imageOriginSource}
+          imageId={data.image.path}
+          imageOriginSource={data.image.source}
         />
         <MainContent content={data.content} />
         <RelatedArticle relatedArticles={data.relatedArticles} />
