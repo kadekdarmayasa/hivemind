@@ -1,12 +1,8 @@
 import React, { useRef } from 'react';
 import Layout from '@components/Layout';
-import Blog from '@components/Blog';
 import {
-  Hero,
-  OurValues,
-  Service,
-  Testimony,
-  Portfolio,
+  Hero, OurValues, Service,
+  Portfolio, Testimony, Blog,
 } from '@partials/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import type { BlogItemProps } from 'types/BlogItem';
