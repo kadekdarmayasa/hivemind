@@ -3,10 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
 
-export default function NavigationMenu({
-  path,
-  name,
-}: NavigationMenuProps) {
+export default function NavigationMenu({ path, name }: NavigationMenuProps) {
   const router = useRouter();
 
   return (
