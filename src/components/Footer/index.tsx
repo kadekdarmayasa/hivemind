@@ -21,8 +21,6 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
     color: '#2B3BE5',
   }), []);
 
-  const menuWithSubMenus = menus.filter((menu) => menu.containSubMenu);
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     // Mock database data email
     const userEmailDB = 'kadekdarmayasa@gmail.com';
@@ -86,12 +84,10 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
           </div>
         </div>
 
-        <div className="flex flex-col justify-start items-start">
-          <h4 className="heading-4 mb-4">Browse</h4>
-          {menus.map((menu) => {
-            if (menu.containSubMenu) return false;
-
-            return (
+        <div className="flex">
+          <div className="flex flex-col justify-start items-start">
+            <h4 className="heading-4 mb-4">Browse</h4>
+            {menus.map((menu) => (
               <Button
                 key={menu.name}
                 type="link"
@@ -101,67 +97,50 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
               >
                 {menu.name}
               </Button>
-            );
-          })}
-        </div>
-
-        {menuWithSubMenus.map((menuWithSubMenu) => (
-          <div key={menuWithSubMenu.name} className="flex flex-col justify-start items-start">
-            <h4 className="heading-4 mb-4">{menuWithSubMenu.name}</h4>
-            {menuWithSubMenu.subMenus.map((subMenu) => (
-              <Button
-                key={subMenu.name}
-                type="link"
-                href={`${menuWithSubMenu.path}${subMenu.path}`}
-                className="transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue
-              focus:!text-palatinate-blue"
-              >
-                {subMenu.name}
-              </Button>
             ))}
           </div>
-        ))}
 
-        <div className="flex flex-col justify-start items-start">
-          <h4 className="heading-4 mb-4">Subscribe to our newsteller</h4>
+          <div className="flex flex-col justify-start items-start ms-20">
+            <h4 className="heading-4 mb-4">Subscribe to our newsteller</h4>
 
-          <div>
-            <small className="text-brave-purple font-regular text-base">Subscribe to get latest updates</small>
-            <form
-              action=""
-              method="POST"
-              className="focus:outline-1 focus:outline focus:outline-blue-100 bg-white h-auto px-6 py-3 flex
+            <div>
+              <small className="text-brave-purple font-regular text-base">Subscribe to get latest updates</small>
+              <form
+                action=""
+                method="POST"
+                className="focus:outline-1 focus:outline focus:outline-blue-100 bg-white h-auto px-6 py-3 flex
               items-center rounded-full mt-2"
-              onSubmit={handleSubmit}
-            >
-              <Input
-                type="email"
-                name="email"
-                placeHolder="Your email..."
-                id="email"
-                value={email}
-                className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none
-                transition-all"
-                onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                  setEmail(event.target.value);
-                }}
-              />
-              <Button
-                type="submit"
-                isPrimary
-                className="!shadow-none py-2 px-4 rounded-full"
+                onSubmit={handleSubmit}
               >
-                Susbcribe
-              </Button>
-            </form>
+                <Input
+                  type="email"
+                  name="email"
+                  placeHolder="Your email..."
+                  id="email"
+                  value={email}
+                  className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none
+                transition-all"
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setEmail(event.target.value);
+                  }}
+                />
+                <Button
+                  type="submit"
+                  isPrimary
+                  className="!shadow-none py-2 px-4 rounded-full"
+                >
+                  Susbcribe
+                </Button>
+              </form>
 
-            {isAlreadySubcribed && (
-              <small className="text-red-400 block mt-2 font-medium text-base">User is already subscribed!</small>
-            )}
+              {isAlreadySubcribed && (
+                <small className="text-red-400 block mt-2 font-medium text-base">User is already subscribed!</small>
+              )}
 
-            {isSuccessSubcribed && (
-              <small className="text-green-400 block mt-2 font-medium text-base">Thank you for subscribing!</small>
-            )}
+              {isSuccessSubcribed && (
+                <small className="text-green-400 block mt-2 font-medium text-base">Thank you for subscribing!</small>
+              )}
+            </div>
           </div>
         </div>
       </div>
