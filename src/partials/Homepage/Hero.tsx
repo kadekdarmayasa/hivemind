@@ -21,7 +21,6 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
     // TODO: Add framer motion for animation
     <section className={`flex relative mt-16 2xl:mt-24 ${dropdownState === 'open' ? '-z-10' : 'z-0'}`}>
       <div className="flex-1 flex flex-col justify-center items-start">
-        <small className="label-text">A innovate digital agency</small>
         <h1 className="heading-1 mt-1">
           Transform Your Online Presence
           <br />
@@ -29,14 +28,14 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
           <br />
           Solutions
         </h1>
-        <p className="text-brave-purple font-normal text-xl leading-9 mt-3">
+        <p className="text-brave-purple font-normal text-xl leading-9 mt-4">
           We provide personalized strategies that are tailored to
           <br />
           your business goals, using cutting-edge technology
           <br />
           and industry best practices
         </p>
-        <div className="flex mt-12">
+        <div className="flex mt-14">
           <Button
             type="link"
             href="/contact"

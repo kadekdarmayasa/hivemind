@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ServiceProps } from 'types/Service';
-import { ServiceContainer } from '@components/Service';
+import ServiceItem from './ServiceItem.tsx';
 
 export default function Service({ services }: { services: ServiceProps[] }) {
   return (
@@ -11,7 +11,11 @@ export default function Service({ services }: { services: ServiceProps[] }) {
         <h2 className="heading-2">Services Provide By Us</h2>
       </div>
 
-      <ServiceContainer services={services} />
+      <div className="flex flex-wrap justify-center gap-8 mt-14">
+        {services.map((service) => (
+          <ServiceItem key={service.id} service={service} />
+        ))}
+      </div>
     </section>
   );
 }
