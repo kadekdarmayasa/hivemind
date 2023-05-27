@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import Layout from '@components/Layout';
-import Testimony from '@components/Testimony';
 import Blog from '@components/Blog';
 import {
   Hero,
   OurValues,
   Service,
+  Testimony,
   Portfolio,
 } from '@partials/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
@@ -36,7 +36,12 @@ export default function HomePage() {
       <OurValues refOurValues={refOurValues} ourValues={data.companyValues} />
       <Service services={data.services} />
       <Portfolio portfolios={data.portfolios} />
-      <Testimony testimonies={data.testimonies} title="What Client Says" isContainLabel />
+      <Testimony
+        testimonies={data.testimonies}
+        title="What Client Says"
+        isContainLabel
+        labelText="Testimony"
+      />
       <Blog blogs={data.blogs} />
     </Layout>
   );
