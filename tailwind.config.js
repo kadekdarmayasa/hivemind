@@ -23,12 +23,13 @@ module.exports = withMT({
       },
       boxShadow: {
         'purple-sm': '0px 2px 10px rgba(43, 59, 229, 0.2)',
-        'purple-md': '0px 10px 30px rgba(43, 59, 229, 0.3)',
-        'black-sm': '0px 2px 30px rgba(0, 0, 0, 0.04)',
-        'black-md': '0px 5px 50px rgba(0, 0, 0, 0.05)',
+        'purple-md': '0px 10px 25px rgba(43, 59, 229, 0.3)',
+        'black-sm': '0px 2px 10px rgba(0, 0, 0, 0.02)',
+        'black-md': '0px 5px 25px rgba(0, 0, 0, 0.05)',
+        'black-grey-md': '0 9px 25px 0 rgba(132, 128, 177, 0.28)',
       },
       dropShadow: {
-        'purple-sm': '0px 10px 50px rgba(43, 59, 229, 0.08)',
+        'purple-sm': '0px 10px 25px rgba(43, 59, 229, 0.08)',
       },
       fontFamily: {
         sans: ['var(--font-outfit)', ...fontFamily.sans],

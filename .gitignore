@@ -53,5 +53,8 @@ next-env.d.ts
 .history
 .ionide
 
+## CustomHooks ## 
 /hooks/useBookSearch.tsx
+
+## Custom Pages ##
 /pages/scrolling.tsx
