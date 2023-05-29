@@ -6,7 +6,11 @@ import { useAppSelector } from '@hooks/useAppSelector';
 import { selectedState } from '@redux-slices/dropdownSlice';
 import Image from 'next/image';
 
-export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }) {
+export default function Hero({
+  refOurValues,
+}: {
+  refOurValues: MutableRefObject<HTMLElement>;
+}) {
   const dropdownState = useAppSelector(selectedState);
   const iconProps = useMemo(() => ({ size: '1.6em', className: 'mr-2' }), []);
 
@@ -19,7 +23,11 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
 
   return (
     // TODO: Add framer motion for animation
-    <section className={`flex relative mt-16 2xl:mt-24 ${dropdownState === 'open' ? '-z-10' : 'z-0'}`}>
+    <section
+      className={`flex relative mt-16 2xl:mt-24 ${
+        dropdownState === 'open' ? '-z-10' : 'z-0'
+      }`}
+    >
       <div className="flex-1 flex flex-col justify-center items-start">
         <h1 className="heading-1 mt-1">
           Transform Your Online Presence
@@ -47,11 +55,16 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
             </IconContext.Provider>
             <span className="text-lg">Get in Touch</span>
           </Button>
-          <Button className="h-[60px] w-[210px] ml-6 relative group" onClick={showOurValues}>
+          <Button
+            className="h-[60px] w-[210px] ml-6 relative group"
+            onClick={showOurValues}
+          >
             <div className="rounded-xl h-8 w-5 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
               <span className="animate-bounce block w-1 h-2 rounded-lg top-2 bg-palatinate-blue absolute" />
             </div>
-            <span className="text-lg underline-offset-8">Scroll to read more</span>
+            <span className="text-lg underline-offset-8 text-palatinate-blue">
+              Scroll to read more
+            </span>
             <div className="absolute h-[2px] w-0 opacity-0 left-0 group-hover:opacity-100 group-hover:w-full transition-all bg-palatinate-blue bottom-1" />
           </Button>
         </div>
