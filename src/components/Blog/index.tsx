@@ -1,13 +1,18 @@
 import React from 'react';
 import type { BlogItemProps } from 'types/BlogItem';
 import Slider from 'react-slick';
+import useSlider from '@hooks/useSlider.tsx';
+import SliderArrow from '@components/SliderArrow.tsx';
 import BlogItem from './BlogItem.tsx';
 
 export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
+  const { handleNextSlide, handlePrevSlide, sliderRef } = useSlider();
+
   const settings = {
     className: 'slider variable-width',
-    infinite: false,
-    speed: 1000,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -18,20 +23,19 @@ export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
   };
 
   return (
-    // TODO: Add Framer Motion for Animation
-    <section className="mt-32 2xl:mt-44">
-      <div className="flex flex-col items-center text-center">
-        <small className="label-text">Our Blogs</small>
-        <h2 className="heading-2">Latest Blogs</h2>
-      </div>
+    <>
+      <SliderArrow
+        prevSlideHandler={handlePrevSlide}
+        nextSlideHandler={handleNextSlide}
+      />
 
-      <div className="h-auto mt-14 mb-20">
-        <Slider {...settings} className="bg-ghost-white h-auto">
+      <div className="h-auto mb-20">
+        <Slider ref={sliderRef} {...settings} className="bg-ghost-white h-auto">
           {blogs.map((blog) => (
             <BlogItem key={blog.id} blog={blog} />
           ))}
         </Slider>
       </div>
-    </section>
+    </>
   );
 }
