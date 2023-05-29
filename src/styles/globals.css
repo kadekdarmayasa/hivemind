@@ -1,3 +1,5 @@
+@import 'slick.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,8 +10,8 @@
   }
 }
 
-@layer components {
-   /* 
+@layer utilities {
+  /* 
     General
   */
   .label-text {
@@ -39,7 +41,9 @@
   .heading-6 {
     @apply text-base text-coarse-wool font-medium leading-snug;
   }
+}
 
+@layer components {
   /* 
     Navbar 
   */
@@ -56,24 +60,12 @@
     @apply h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all;
   }
 
-  .nav-link:is(:hover, .active) .custom-underline, 
+  .nav-link:is(:hover, .active) .custom-underline,
   .nav-link a:focus ~ .custom-underline {
     @apply opacity-100 w-full;
   }
 
-  .nav-link .sub-menu {
-    @apply rounded-md transition-all;
-  }
-
-  .nav-link .sub-menu:is(:hover, .active) {
-    @apply bg-palatinate-blue/90 text-white rounded-md transition-all;
-  }
-
-  .nav-link .sub-menu a:focus {
-    @apply bg-palatinate-blue/90 text-white rounded-md transition-all;
-  }
-
-   /* 
+  /* 
     Our Values
   */
 
@@ -94,62 +86,28 @@
   */
 
   .blog-detail h2 {
-      @apply text-3xl text-coarse-wool font-semibold leading-snug mt-10;
+    @apply text-3xl text-coarse-wool font-semibold leading-snug mt-10;
   }
 
   .blog-detail h3 {
-      @apply text-2xl text-coarse-wool font-medium leading-snug;
+    @apply text-2xl text-coarse-wool font-medium leading-snug;
   }
 
   .blog-detail h4 {
-      @apply text-xl text-coarse-wool font-medium leading-snug;
+    @apply text-xl text-coarse-wool font-medium leading-snug;
   }
 
   .blog-detail h5 {
-      @apply text-lg text-coarse-wool font-medium leading-snug;
+    @apply text-lg text-coarse-wool font-medium leading-snug;
   }
 
   .blog-detail__main-content p {
-      @apply text-brave-purple font-normal text-lg leading-10 mt-3;
+    @apply text-brave-purple font-normal text-lg leading-10 mt-3;
   }
-
-  /* 
-    Slick Slide
-  */
-
-  .slick-slide > div > :is(.testimony-item) {
-    margin: 3.5rem 10px auto;
-  }
-
-  .slick-slide > div > :is(.blog-item) {
-    margin: 1.5rem 10px auto;
-  }
-
-  .slick-track {
-    display: flex;
-  }
-
-  .slick-list {
-    margin: 0 -10px;
-    height: 100%;
-  }
-
-  .slick-arrow {
-    display: none !important;
-  }
-
-  .slick-dots li button:before {
-    font-size: 10px;
-  }
-
-  .slick-dots li.slick-active button::before {
-    color: #2B3BE5;
-  }
-
   /* 
     Star 
   */
-  
+
   .stars {
     @apply relative min-w-[200px] inline-flex;
   }

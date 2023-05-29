@@ -1,0 +1,24 @@
+/* 
+  Slick Slide
+*/
+
+.slick-slide > div > :is(.testimony-item) {
+  margin: 0 10px 0;
+}
+
+.slick-slide > div > :is(.blog-item) {
+  margin: 0 10px auto;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-list {
+  margin: 0 -10px;
+  height: 100%;
+}
+
+.slick-arrow {
+  display: none;
+}
