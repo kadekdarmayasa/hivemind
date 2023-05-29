@@ -6,8 +6,8 @@ export default function CategoryList({
   categoryList,
   onClick,
 }: {
-  categoryList: PortfolioProps['service'][],
-  onClick: (categoryId: string | number) => void
+  categoryList: PortfolioProps['service'][];
+  onClick: (categoryId: string | number) => void;
 }) {
   const uniqueCategorySet = new Set();
   const uniqueCategory: PortfolioProps['service'][] = [];
@@ -26,7 +26,7 @@ export default function CategoryList({
       <Button
         type="button"
         onClick={() => onClick(0)}
-        className="!bg-[#E8EAFF] h-10 px-8 !text-sm rounded-full cursor-pointer ms-0 hover:!bg-palatinate-blue hover:!text-white transition-all"
+        className="!bg-palatinate-blue h-10 px-8 !text-sm !text-white rounded-full cursor-pointer ms-0 transition-all"
       >
         All
       </Button>
@@ -36,7 +36,7 @@ export default function CategoryList({
           key={index}
           type="button"
           onClick={() => onClick(item.id)}
-          className="!bg-[#E8EAFF] h-10 px-8 !text-sm rounded-full cursor-pointer ms-5 hover:!bg-palatinate-blue hover:!text-white transition-all"
+          className="!bg-[#E8EAFF] h-10 px-8 !text-sm rounded-full cursor-pointer ms-5 !text-palatinate-blue hover:!bg-palatinate-blue hover:!text-white transition-all"
         >
           {item.category}
         </Button>
