@@ -1,8 +1,12 @@
 import React, { useRef } from 'react';
 import Layout from '@components/Layout';
 import {
-  Hero, OurValues, Service,
-  Portfolio, Testimony, Blog,
+  Hero,
+  OurValues,
+  Service,
+  Portfolio,
+  Testimony,
+  Blog,
 } from '@partials/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import type { BlogItemProps } from 'types/BlogItem';
@@ -13,16 +17,19 @@ import { fetcher } from '@utils/fetcher/get';
 import useSWR from 'swr';
 
 type HomepageProps = {
-  services: ServiceProps[],
-  companyValues: OurValuesProps[],
-  portfolios: PortfolioProps[],
-  testimonies: TestimonyItemProps[],
-  blogs: BlogItemProps[],
-}
+  services: ServiceProps[];
+  companyValues: OurValuesProps[];
+  portfolios: PortfolioProps[];
+  testimonies: TestimonyItemProps[];
+  blogs: BlogItemProps[];
+};
 
 export default function HomePage() {
   const refOurValues = useRef<HTMLElement>(null);
-  const { data, error, isLoading } = useSWR<HomepageProps, Error>('/api/homepage', fetcher);
+  const { data, error, isLoading } = useSWR<HomepageProps, Error>(
+    '/api/homepage',
+    fetcher,
+  );
 
   if (error || isLoading) return false;
 
