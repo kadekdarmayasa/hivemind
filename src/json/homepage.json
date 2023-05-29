@@ -57,13 +57,13 @@
     {
       "id": 122447,
       "value": "Transparent communication",
-      "description": " We believe in open and honest communication with our clients every step of the way. We provide regular updates and detailed reports, so you always know how your campaigns are performing."
+      "description": "We believe in open and honest communication with our clients every step of the way. We provide regular updates and detailed reports, so you always know how your campaigns are performing."
     }
   ],
   
   "portfolios": [
     {
-      "id": 122893,
+      "id": "122893",
       "imageId": "/images/e-commerce-web.png",
       "orientation": "potrait",
       "projectName": "E-commerce for Fashion",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "id": 122894,
+      "id": "122894",
       "imageId": "/images/fitness-studio.png",
       "orientation": "landscape",
       "projectName": "Fitness Studio",
@@ -83,7 +83,7 @@
       }
     },
     {
-      "id": 1228991,
+      "id": "1228991",
       "imageId": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "id": 122896,
+      "id": "122896",
       "imageId": "/images/video-for-travel-agency.png",
       "orientation": "landscape",
       "projectName": "Video Production for Travel Agency",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "id": 122897,
+      "id": "122897",
       "imageId": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
@@ -116,7 +116,7 @@
 
   "testimonies": [
     {
-      "id": 12334,
+      "id": "12334",
       "imageId": "/images/testy-1.png",
       "clientName": "John Smith",
       "occupation": "Marketing Manager",
@@ -124,7 +124,7 @@
       "rate": 5
     }, 
     {
-      "id": 12335,
+      "id": "12335",
       "imageId": "/images/testy-2.png",
       "clientName": "Max Robinson",
       "occupation": "Entrepreneur",
@@ -132,7 +132,7 @@
       "rate": 4
     }, 
     {
-      "id": 12336,
+      "id": "12336",
       "imageId": "/images/testy-3.png",
       "clientName": "Olivia Taylor",
       "occupation": "Creative Director",
@@ -140,7 +140,7 @@
       "rate": 5
     },
     {
-      "id": 12337,
+      "id": "12337",
       "imageId": "/images/testy-4.jpg",
       "clientName": "Robert Johnson",
       "occupation": "CEO",
@@ -148,7 +148,7 @@
       "rate": 5
     },
     {
-      "id": 12338,
+      "id": "12338",
       "imageId": "/images/testy-5.png",
       "clientName": "Sarah Lee",
       "occupation": "E-commerce Manager",
@@ -156,7 +156,7 @@
       "rate": 5
     },
     {
-      "id": 12339,
+      "id": "12339",
       "imageId": "/images/testy-6.png",
       "clientName": "Maria Garcia",
       "occupation": "Real Estate Agent",
@@ -167,58 +167,58 @@
 
   "blogs": [
     {
-      "id": 1234214,
+      "id": "1234214",
       "publishedDate": "Sun, 20 Jan 2023",
-      "isPublished": "true",
+      "isPublished": true,
       "author": "Admin Hivemind",
       "imageId": "/images/blog-1.jpg",
       "title": "How to Increase your Website's Conversion Rate",
-      "shortDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
+      "briefDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
     },
     {
-      "id": 1234215,
+      "id": "1234215",
       "publishedDate": "Wed, 22 Jan 2023",
-      "isPublished": "true",
+      "isPublished": true,
       "author": "Admin Hivemind",
       "imageId": "/images/blog-2.jpg",
       "title": "The Importance of SEO for Your Business",
-      "shortDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
+      "briefDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
     },
     {
-      "id": 1234216,
+      "id": "1234216",
       "publishedDate": "Sun, 10 Feb 2023",
-      "isPublished": "true",
+      "isPublished": true,
       "author": "Admin Hivemind",
       "imageId": "/images/blog-3.jpg",
       "title": "Maximizing Your Social Media Presence",
-      "shortDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
+      "briefDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
     },
     {
-      "id": 1234217,
+      "id": "1234217",
       "publishedDate": "Fri, 14 Feb 2023",
-      "isPublished": "true",
+      "isPublished": true,
       "author": "Admin Hivemind",
       "imageId": "/images/blog-4.jpg",
       "title": "The Top Social Media Trends for 2022 You Need to Know",
-      "shortDescription": "Get ahead of the curve with the latest trends in social media marketing and learn how to leverage them to grow your business."
+      "briefDescription": "Get ahead of the curve with the latest trends in social media marketing and learn how to leverage them to grow your business."
     },
     {
-      "id": 1234218,
+      "id": "1234218",
       "publishedDate": "Tue, 17 Feb 2023",
-      "isPublished": "true",
+      "isPublished": true,
       "author": "Admin Hivemind",
       "imageId": "/images/blog-5.jpg",
       "title": "The Importance of Responsive Web Design for Your Business",
-      "shortDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
+      "briefDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
     },
     {
-      "id": 1234218,
+      "id": "1234218",
       "publishedDate": "Tue, 17 Feb 2023",
-      "isPublished": "true",
+      "isPublished": true,
       "author": "Admin Hivemind",
       "imageId": "/images/blog-5.jpg",
       "title": "The Importance of Responsive Web Design for Your Business",
-      "shortDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
+      "briefDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
     }
   ]
 }

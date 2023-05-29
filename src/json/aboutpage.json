@@ -1,8 +1,7 @@
 {
   "company": {
     "philosophy": {
-      "text": 
-      "Hivemind philosophy is a concept that emphasizes the collective intelligence and creativity of a group of individuals working towards a common goal. It involves collaboration, communication, and the exchange of ideas in an open and respectful environment. In a work culture that promotes the hivemind philosophy, every member of the team is valued for their unique perspective and contributions, and there is a sense of shared ownership and responsibility for the success of the company.",
+      "text": "Hivemind philosophy is a concept that emphasizes the collective intelligence and creativity of a group of individuals working towards a common goal. It involves collaboration, communication, and the exchange of ideas in an open and respectful environment. In a work culture that promotes the hivemind philosophy, every member of the team is valued for their unique perspective and contributions, and there is a sense of shared ownership and responsibility for the success of the company.",
       "imageId": "/images/philosophy-image.png"
     },
 
@@ -19,78 +18,58 @@
 
     "teams": [
       {
-        "id": 12,
+        "id": "12",
         "imageId": "/images/team-1.png",
         "name": "Amanda Chen",
-        "title": "Digital Marketing Manager",
-        "socials": {
-          "facebook": "https://www.facebook.com/",
-          "twitter": "https://www.twitter.com/",
-          "linkedin": "https://www.linkedin.com/"
-        }
+        "title": "Digital Marketing Manager"
       },
       {
-        "id": 13,
+        "id": "13",
         "imageId": "/images/team-2.png",
         "name": "Daniel Wong",
-        "title": "Web Developer Expert",
-        "socials": {
-          "facebook": "https://www.facebook.com/",
-          "twitter": "https://www.twitter.com/",
-          "linkedin": "https://www.linkedin.com/"
-        }
+        "title": "Web Developer Expert"
       },
       {
-        "id": 13,
+        "id": "13",
         "imageId": "/images/team-3.png",
         "name": "Eric Nguyen",
-        "title": "Lead Developer",
-        "socials": {
-          "facebook": "https://www.facebook.com/",
-          "twitter": "https://www.twitter.com/",
-          "linkedin": "https://www.linkedin.com/"
-        }
+        "title": "Lead Developer"
       },
       {
-        "id": 14,
+        "id": "14",
         "imageId": "/images/team-4.png",
         "name": "Rachel Lee",
-        "title": "Sales Manager",
-        "socials": {
-          "facebook": "https://www.facebook.com/",
-          "twitter": "https://www.twitter.com/",
-          "linkedin": "https://www.linkedin.com/"
-        }
+        "title": "Sales Manager"
       }
     ],
 
     "workCulture": [
       {
-        "id": 2332,
+        "id": "2332",
         "imageId": "/images/work-culture-1.png",
         "headline": "Teamwork and Collaboration",
         "description": "We value teamwork and believe that every team member brings unique strengths and skills to the table. By working together, we can achieve more and create better results for our clients."
       },
       {
-        "id": 2333,
+        "id": "2333",
         "imageId": "/images/work-culture-2.png",
         "headline": "Continous Learning and Development",
         "description": "We're passionate about  staying up-to-date with the latest industry trends and technologies.  To support this, we offer opportunities for continuous learning and development, including training programs and attending conferences."
       },
       {
-        "id": 2334,
+        "id": "2334",
         "imageId": "/images/work-culture-3.png",
         "headline": "Work-Life Balance",
         "description": "We understand that maintaining a healthy work-life balance is important for our team members' wellbeing. We encourage and support our employees to take breaks, recharge, and prioritize their personal lives outside of work."
       },
       {
-        "id": 2335,
+        "id": "2335",
         "imageId": "/images/work-culture-4.png",
         "headline": "Open Communication",
         "description": "We value open communication and believe in creating a safe space for our team members to express their ideas, opinions and concerns. We encourage feedback and strive to create an environment where everyone feels heard and respected."
       },
       {
-        "id": 2336,
+        "id": "2336",
         "imageId": "/images/work-culture-5.png",
         "headline": "Fun and Positive Environment",
         "description": "We believe that having fun and enjoying your work is important. We promote a positive and fun work environment by organizing team-building activities and social events."

@@ -1,51 +1,51 @@
 [
   {
-    "id": 122893,
+    "id": "122893",
     "imageId": "/images/e-commerce-web.png",
     "orientation": "potrait",
     "projectName": "E-commerce for Fashion",
     "service": {
-      "id": 122893,
+      "id": "122893",
       "category": "Web Design"
     }
   },
   {
-    "id": 122894,
+    "id": "122894",
     "imageId": "/images/fitness-studio.png",
     "orientation": "landscape",
     "projectName": "Fitness Studio",
     "service": {
-      "id": 122894,
+      "id": "122894",
       "category": "Mobile App Development"
     }
   },
   {
-    "id": 1228991,
+    "id": "1228991",
     "imageId": "/images/seo-optimization.png",
     "orientation": "landscape",
     "projectName": "SEO Opimization for E-commerce Website",
     "service": {
-      "id": 1228991,
+      "id": "1228991",
       "category": "Search Engine Optimization"
     }
   },
   {
-    "id": 122896,
+    "id": "122896",
     "imageId": "/images/video-for-travel-agency.png",
     "orientation": "landscape",
     "projectName": "Video Production for Travel Agency",
     "service": {
-      "id": 122896,
+      "id": "122896",
       "category": "Content Creation"
     }
   },
   {
-    "id": 122897,
+    "id": "122897",
     "imageId": "/images/seo-optimization.png",
     "orientation": "landscape",
     "projectName": "SEO Opimization for E-commerce Website",
     "service": {
-      "id": 1228991,
+      "id": "1228991",
       "category": "Search Engine Optimization"
     }
   }
