@@ -3,14 +3,21 @@ import Button from '@components/Button';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import type { PortfolioProps } from 'types/Portfolio';
-import { PortfolioContainer } from '@components/Portfolio';
+import PortfolioItem from '@components/PortfolioItem';
 
-export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }) {
-  const iconProps = useMemo(() => ({
-    size: '1.3em',
-    className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all',
-    color: '#2B3BE5',
-  }), []);
+export default function Portfolio({
+  portfolios,
+}: {
+  portfolios: PortfolioProps[];
+}) {
+  const iconProps = useMemo(
+    () => ({
+      size: '1.3em',
+      className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all',
+      color: '#2B3BE5',
+    }),
+    [],
+  );
 
   return (
     // TODO: Add Framer Motion for Animation
@@ -20,7 +27,11 @@ export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[]
         <h2 className="heading-2">Our Work and Case Study</h2>
       </div>
 
-      <PortfolioContainer portfolios={portfolios} />
+      <div className="grid grid-cols-12 grid-flow-dense gap-5 mt-14">
+        {portfolios.map((portfolio) => (
+          <PortfolioItem key={portfolio.id} portfolio={portfolio} />
+        ))}
+      </div>
 
       <Button
         type="link"
