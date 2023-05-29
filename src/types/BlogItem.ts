@@ -6,6 +6,6 @@ export type BlogItemProps = {
   topic?: string,
   author: string,
   title: string,
-  shortDescription: string,
+  briefDescription: string,
   isPublished?: boolean,
 }
