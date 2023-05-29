@@ -6,11 +6,14 @@ import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 
 export default function ServiceItem({ service }: { service: ServiceProps }) {
-  const iconProps = useMemo(() => ({
-    size: '1.3em',
-    className: 'mt-[2px] ml-2 group-hover:ml-3 transition-all',
-    color: '#2B3BE5',
-  }), []);
+  const iconProps = useMemo(
+    () => ({
+      size: '1.3em',
+      className: 'mt-[2px] ml-2 group-hover:ml-3 transition-all',
+      color: '#2B3BE5',
+    }),
+    [],
+  );
 
   return (
     <div
@@ -27,7 +30,9 @@ export default function ServiceItem({ service }: { service: ServiceProps }) {
         />
       </div>
       <h3 className="heading-3 mb-3">{service.name}</h3>
-      <p className="text-brave-purple font-light text-lg leading-9 mb-5">{service.briefDescription}</p>
+      <p className="text-brave-purple font-light text-lg leading-9 mb-5">
+        {service.briefDescription}
+      </p>
       <Button
         type="link"
         href="/contact"

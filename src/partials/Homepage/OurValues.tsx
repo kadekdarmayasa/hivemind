@@ -8,10 +8,13 @@ export default function OurValues({
   refOurValues,
   ourValues,
 }: {
-  refOurValues: LegacyRef<HTMLElement>,
-  ourValues: OurValuesProps[]
+  refOurValues: LegacyRef<HTMLElement>;
+  ourValues: OurValuesProps[];
 }) {
-  const iconProps = useMemo(() => ({ size: '2em', color: '#5BFBD8', className: '-mt-1' }), []);
+  const iconProps = useMemo(
+    () => ({ size: '2em', color: '#5BFBD8', className: '-mt-1' }),
+    [],
+  );
 
   // TODO : Using framer motion for animation
   return (
@@ -30,7 +33,9 @@ export default function OurValues({
                 <IoCheckmarkCircleOutline />
               </IconContext.Provider>
             </div>
-            <p className="our-values-item__description">{parse(ourValue.description)}</p>
+            <p className="our-values-item__description">
+              {parse(ourValue.description)}
+            </p>
           </div>
         ))}
       </div>
