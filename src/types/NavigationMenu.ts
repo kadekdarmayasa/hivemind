@@ -1,4 +1,4 @@
 export type NavigationMenuProps = {
-  path: string,
-  name: string
-}
+  path: string;
+  name: string;
+};

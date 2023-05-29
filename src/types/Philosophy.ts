@@ -1,4 +1,4 @@
 export type PhilosophyProps = {
-  text: string,
-  imageId: string
+  text: string;
+  imageId: string;
 };

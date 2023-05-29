@@ -1,5 +1,5 @@
 export type OurValuesProps = {
-  id: number | string,
-  value: string,
-  description: string
-}
+  id: number | string;
+  value: string;
+  description: string;
+};

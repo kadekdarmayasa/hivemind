@@ -1,6 +1,6 @@
 export type ContactInformationProps = {
-  id: string | number,
-  imageId: string,
-  name: string,
-  value: string
-}
+  id: string | number;
+  imageId: string;
+  name: string;
+  value: string;
+};
