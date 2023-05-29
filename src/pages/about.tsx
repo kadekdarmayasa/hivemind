@@ -17,16 +17,19 @@ import { fetcher } from '@utils/fetcher/get';
 
 type AboutProps = {
   company: {
-    philosophy: PhilosophyProps,
-    missions: string[],
-    visions: string[],
-    teams: TeamProps[],
-    workCulture: WorkCultureProps[]
-  }
-}
+    philosophy: PhilosophyProps;
+    missions: string[];
+    visions: string[];
+    teams: TeamProps[];
+    workCulture: WorkCultureProps[];
+  };
+};
 
 export default function AboutPage() {
-  const { data, error, isLoading } = useSWR<AboutProps, Error>('/api/aboutpage', fetcher);
+  const { data, error, isLoading } = useSWR<AboutProps, Error>(
+    '/api/aboutpage',
+    fetcher,
+  );
   const dropdownState = useAppSelector(selectedState);
 
   if (error) return false;
@@ -34,7 +37,11 @@ export default function AboutPage() {
 
   return (
     <Layout title="Hivemind - About">
-      <section className={`relative ${dropdownState === 'open' ? '-z-10' : 'z-0'} mt-14`}>
+      <section
+        className={`relative ${
+          dropdownState === 'open' ? '-z-10' : 'z-0'
+        } mt-14`}
+      >
         <CompanyPhilosophy philosophy={data.company.philosophy} />
 
         <div className="flex mt-14 gap-10">
