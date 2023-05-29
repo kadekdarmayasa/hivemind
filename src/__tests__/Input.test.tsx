@@ -76,5 +76,7 @@ test('The error of input email should contains style of border red and error mes
   const errorMessageContainer = screen.getByTestId('errorMessage');
 
   expect(errorMessageContainer).toBeInTheDocument();
-  expect(errorMessageContainer).toHaveTextContent('Please enter email in a valid format');
+  expect(errorMessageContainer).toHaveTextContent(
+    'Please enter email in a valid format',
+  );
 });
