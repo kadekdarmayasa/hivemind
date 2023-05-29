@@ -1,6 +1,8 @@
 import React from 'react';
 import type { TestimonyItemProps } from 'types/TestimonyItem.ts';
 import Slider from 'react-slick';
+import useSlider from '@hooks/useSlider.tsx';
+import SliderArrow from '@components/SliderArrow.tsx';
 import TestimonyItem from './TestimonyItem.tsx';
 
 export default function Testimony({
@@ -9,15 +11,18 @@ export default function Testimony({
   labelText,
   title,
 }: {
-  testimonies: TestimonyItemProps[],
-  labelText?: string,
-  isContainLabel?: boolean,
-  title: string
+  testimonies: TestimonyItemProps[];
+  labelText?: string;
+  isContainLabel?: boolean;
+  title: string;
 }) {
+  const { handleNextSlide, handlePrevSlide, sliderRef } = useSlider();
+
   const settings = {
     className: 'slider variable-width',
     infinite: true,
     speed: 500,
+    autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -31,19 +36,20 @@ export default function Testimony({
   return (
     <section className="mt-32 2xl:mt-44">
       <div className="flex flex-col items-center text-center">
-        {isContainLabel && (
-          <small className="label-text">{labelText}</small>
-        )}
+        {isContainLabel && <small className="label-text">{labelText}</small>}
         <h2 className="heading-2">{title}</h2>
       </div>
 
-      <div className="h-auto my-4 mb-20">
-        <Slider {...settings} className="bg-ghost-white h-auto">
-          {testimonies.map((testimony) => (
-            <TestimonyItem key={testimony.id} testimony={testimony} />
-          ))}
-        </Slider>
-      </div>
+      <SliderArrow
+        prevSlideHandler={handlePrevSlide}
+        nextSlideHandler={handleNextSlide}
+      />
+
+      <Slider ref={sliderRef} {...settings} className="bg-transparent">
+        {testimonies.map((testimony) => (
+          <TestimonyItem key={testimony.id} testimony={testimony} />
+        ))}
+      </Slider>
     </section>
   );
 }
