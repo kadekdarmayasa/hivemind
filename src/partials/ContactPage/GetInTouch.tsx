@@ -23,6 +23,7 @@ export default function GetInTouch({
     email: '',
     message: '',
   });
+  const [isSending, setIsSending] = useState(false);
   const [alert, setAlert] = useState<AlertProps>({
     show: false,
     icon: null,
@@ -53,6 +54,8 @@ export default function GetInTouch({
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setIsSending(true);
+
     const response: EmailJSResponseStatus = await emailjs.sendForm(
       'service_2pnfp18',
       'template_ushp53d',
@@ -79,6 +82,7 @@ export default function GetInTouch({
     }
 
     setInputValue({ name: '', email: '', message: '' });
+    setIsSending(false);
   };
 
   return (
@@ -169,10 +173,21 @@ export default function GetInTouch({
             type="submit"
             className="h-14 mt-10 w-[230px] rounded-full hover:shadow-purple-md focus:shadow-purple-md"
           >
-            <small className="text-lg">Send message</small>
-            <IconContext.Provider value={sendIconProps}>
-              <IoSendOutline />
-            </IconContext.Provider>
+            {isSending ? (
+              <>
+                <div className="flex items-center justify-center mr-2">
+                  <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white" />
+                </div>
+                <small className="text-lg">Sending...</small>
+              </>
+            ) : (
+              <>
+                <small className="text-lg">Send message</small>
+                <IconContext.Provider value={sendIconProps}>
+                  <IoSendOutline />
+                </IconContext.Provider>
+              </>
+            )}
           </Button>
         </form>
       </div>
