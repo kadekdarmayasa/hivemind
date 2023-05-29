@@ -25,7 +25,7 @@ export default function BlogDetail() {
 
   return (
     <Layout title={data.title}>
-      <section className="mt-14 blog-detail mx-auto max-w-[1020px]">
+      <div className="mt-14 blog-detail mx-auto max-w-[1020px]">
         <Hero
           publishedDate={data.publishedDate}
           author={data.author}
@@ -35,7 +35,7 @@ export default function BlogDetail() {
         />
         <MainContent content={data.content} />
         <RelatedArticle relatedArticles={data.relatedArticles} />
-      </section>
+      </div>
     </Layout>
   );
 }
