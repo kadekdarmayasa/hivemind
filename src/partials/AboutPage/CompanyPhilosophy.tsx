@@ -1,28 +1,32 @@
 import React from 'react';
 import type { PhilosophyProps } from 'types/Philosophy';
-import Fade from 'react-reveal/Fade';
 import Image from 'next/image';
 
-export default function CompanyPhilosophy({ philosophy }: { philosophy: PhilosophyProps }) {
+export default function CompanyPhilosophy({
+  philosophy,
+}: {
+  philosophy: PhilosophyProps;
+}) {
+  // TODO: Using framer motion for animation
   return (
     <>
-      <Fade up>
-        <h1 className="heading-1 text-center">How We Are</h1>
-      </Fade>
+      <h1 className="heading-1 text-center">How We Are</h1>
 
       <div className="flex gap-5 mt-20 items-center justify-center">
         <div className="flex-1">
-          <Fade up>
-            <h2 className="heading-2">Hivemind&apos;s Philosophy</h2>
-          </Fade>
-          <Fade up delay={300}>
-            <p className="text-brave-purple font-normal text-lg leading-9 mt-6">{philosophy.text}</p>
-          </Fade>
+          <h2 className="heading-2">Hivemind&apos;s Philosophy</h2>
+          <p className="text-brave-purple font-normal text-lg leading-9 mt-6">
+            {philosophy.text}
+          </p>
         </div>
         <div className="flex-1 flex justify-end">
-          <Fade duration={3000}>
-            <Image width={500} height={400} src={philosophy.imageId} alt="Company Philosophy" className="shadow-black-lg w-[98%]" />
-          </Fade>
+          <Image
+            width={500}
+            height={400}
+            src={philosophy.imageId}
+            alt="Company Philosophy"
+            className="shadow-black-lg w-[98%]"
+          />
         </div>
       </div>
     </>
