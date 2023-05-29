@@ -2,7 +2,11 @@ import React from 'react';
 import type { PortfolioProps } from 'types/Portfolio';
 import Image from 'next/image';
 
-export default function PortfolioItem({ portfolio }: { portfolio: PortfolioProps }) {
+export default function PortfolioItem({
+  portfolio,
+}: {
+  portfolio: PortfolioProps;
+}) {
   // TODO: Add framer motion for animation
   return portfolio.orientation === 'potrait' ? (
     <div
@@ -17,7 +21,8 @@ export default function PortfolioItem({ portfolio }: { portfolio: PortfolioProps
         className="h-full w-full object-cover group-hover:scale-105 transition-all"
       />
 
-      <div className="absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-tfrom-black
+      <div
+        className="absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-tfrom-black
       to-blue-gray-800 opacity-40 backdrop-blur-md"
       />
 
@@ -49,7 +54,8 @@ export default function PortfolioItem({ portfolio }: { portfolio: PortfolioProps
         className="h-full w-full object-cover group-hover:scale-105 transition-all"
       />
 
-      <div className="absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-black
+      <div
+        className="absolute h-auto w-auto top-0 bottom-0 right-0 left-0 bg-gradient-to-t from-black
     to-blue-gray-800 opacity-40 backdrop-blur-md"
       />
 

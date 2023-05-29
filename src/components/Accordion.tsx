@@ -31,25 +31,26 @@ export default function Index({ faqs }: { faqs: FAQProps[] }) {
           key={faq.id}
           open={multipleOpen.includes(++index)}
           data-testid="accordion-item"
-          icon={(
+          icon={
             <IconContext.Provider value={iconProps}>
               <IoChevronDown
-                className={`${multipleOpen.includes(index) ? 'rotate-180' : ''}`}
+                className={`${
+                  multipleOpen.includes(index) ? 'rotate-180' : ''
+                }`}
               />
             </IconContext.Provider>
-          )}
-          className={
-            `bg-white px-6 py-2 mb-6 
-            ${multipleOpen.includes(index) ? 'shadow-black-sm' : ''}`
           }
+          className={`bg-white px-6 py-2 mb-6 
+            ${multipleOpen.includes(index) ? 'shadow-black-sm' : ''}`}
         >
-
           <AccordionHeader
             onClick={() => handleMultipleOpen(index)}
-            className={
-              `heading-3 font-outfit !font-medium !border-none 
-              ${multipleOpen.includes(index) ? '!text-palatinate-blue' : '!text-coarse-wool'}`
-            }
+            className={`heading-3 font-outfit !font-medium !border-none 
+              ${
+                multipleOpen.includes(index)
+                  ? '!text-palatinate-blue'
+                  : '!text-coarse-wool'
+              }`}
           >
             {faq.question}
           </AccordionHeader>
@@ -57,7 +58,6 @@ export default function Index({ faqs }: { faqs: FAQProps[] }) {
           <AccordionBody className="text-brave-purple !pt-2 pb-6 font-outfit font-light text-lg leading-9">
             {faq.answer}
           </AccordionBody>
-
         </Accordion>
       ))}
     </>

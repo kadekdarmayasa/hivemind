@@ -1,13 +1,12 @@
 import Brand from '@components/Brand';
-import React, {
-  ChangeEvent,
-  useState,
-  useMemo,
-  FormEvent,
-} from 'react';
+import React, { ChangeEvent, useState, useMemo, FormEvent } from 'react';
 import { IconContext } from 'react-icons';
 import Button from '@components/Button';
-import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
+import {
+  SlSocialLinkedin,
+  SlSocialTwitter,
+  SlSocialFacebook,
+} from 'react-icons/sl';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
 import { Input } from '@components/Form';
 
@@ -16,10 +15,13 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
   const [isAlreadySubcribed, setIsAlreadySubcribed] = useState(false);
   const [isSuccessSubcribed, setIsSuccessSubcribed] = useState(false);
 
-  const socialMediaIconProps = useMemo(() => ({
-    size: '1.3em',
-    color: '#2B3BE5',
-  }), []);
+  const socialMediaIconProps = useMemo(
+    () => ({
+      size: '1.3em',
+      color: '#2B3BE5',
+    }),
+    [],
+  );
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     // Mock database data email
@@ -104,7 +106,9 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
             <h4 className="heading-4 mb-4">Subscribe to our newsteller</h4>
 
             <div>
-              <small className="text-brave-purple font-regular text-base">Subscribe to get latest updates</small>
+              <small className="text-brave-purple font-regular text-base">
+                Subscribe to get latest updates
+              </small>
               <form
                 action=""
                 method="POST"
@@ -134,11 +138,15 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
               </form>
 
               {isAlreadySubcribed && (
-                <small className="text-red-400 block mt-2 font-medium text-base">User is already subscribed!</small>
+                <small className="text-red-400 block mt-2 font-medium text-base">
+                  User is already subscribed!
+                </small>
               )}
 
               {isSuccessSubcribed && (
-                <small className="text-green-400 block mt-2 font-medium text-base">Thank you for subscribing!</small>
+                <small className="text-green-400 block mt-2 font-medium text-base">
+                  Thank you for subscribing!
+                </small>
               )}
             </div>
           </div>
