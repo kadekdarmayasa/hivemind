@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function ContactInformation({
   contactInformation,
 }: {
-  contactInformation: ContactInformationProps
+  contactInformation: ContactInformationProps;
 }) {
   return (
     <div className="flex mt-5">
@@ -20,7 +20,9 @@ export default function ContactInformation({
 
       <div className="ms-5">
         <h4 className="heading-4">{contactInformation.name}</h4>
-        <p className="text-brave-purple font-light text-lg leading-9 mb-5">{contactInformation.value}</p>
+        <p className="text-brave-purple font-light text-lg leading-9 mb-5">
+          {contactInformation.value}
+        </p>
       </div>
     </div>
   );
