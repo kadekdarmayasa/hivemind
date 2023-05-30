@@ -2,8 +2,6 @@ import Layout from '@components/Layout';
 import useSWR from 'swr';
 import type { PortfolioProps } from 'types/Portfolio';
 import { CategoryList, PortfolioItems } from '@partials/PortfolioPage';
-import { selectedState } from '@redux-slices/dropdownSlice';
-import { useAppSelector } from '@hooks/useAppSelector';
 import React, { useEffect, useState } from 'react';
 import { fetcher } from '@utils/fetcher/get';
 
@@ -13,7 +11,6 @@ export default function PortfolioPage() {
     '/api/portfoliopage',
     fetcher,
   );
-  const dropdownState = useAppSelector(selectedState);
 
   useEffect(() => {
     console.log(categoryId);
@@ -24,12 +21,8 @@ export default function PortfolioPage() {
 
   return (
     <Layout title="Hivemind - Portfolio">
-      <section
-        className={`mt-14 relative ${
-          dropdownState === 'open' ? '-z-10' : 'z-0'
-        }`}
-      >
-        <h1 className="heading-1 text-center">Hivemind's Portfolios</h1>
+      <section className="mt-14 relative">
+        <h1 className="heading-1 text-center">Hivemind&apos;s Portfolios</h1>
         <CategoryList
           categoryList={categoryList}
           onClick={(id: string | number) => setCategoryId(id)}

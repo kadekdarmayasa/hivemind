@@ -3,8 +3,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'styles/globals.css';
 import localFont from 'next/font/local';
-import { Provider } from 'react-redux';
-import { setupStore } from 'store';
 import type { AppProps } from 'next/app';
 
 const outfitLocalFont = localFont({
@@ -14,10 +12,8 @@ const outfitLocalFont = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={setupStore()}>
-      <main className={`${outfitLocalFont.variable} font-sans`}>
-        <Component {...pageProps} />
-      </main>
-    </Provider>
+    <main className={`${outfitLocalFont.variable} font-sans`}>
+      <Component {...pageProps} />
+    </main>
   );
 }

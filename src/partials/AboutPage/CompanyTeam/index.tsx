@@ -1,9 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import type { TeamProps } from 'types/Team';
-import TeamItem from './TeamItem.tsx';
 import useSlider from '@hooks/useSlider.tsx';
 import SliderArrow from '@components/SliderArrow.tsx';
+import TeamItem from './TeamItem.tsx';
 
 export default function CompanyTeam({ teams }: { teams: TeamProps[] }) {
   const { handlePrevSlide, handleNextSlide, sliderRef } = useSlider();

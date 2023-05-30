@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  render,
-  fireEvent,
-  getByRole,
-  screen,
-} from '@testing-library/react';
+import { render, fireEvent, getByRole, screen } from '@testing-library/react';
 import Accordion from '@components/Accordion';
 
 window.scrollTo = jest.fn();

@@ -140,7 +140,7 @@ export default function GetInTouch({
             placeHolder="Enter your name..."
             showErrorMessage
             parentClassName="mb-8 flex flex-col"
-            className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg 
+            className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg
               font-light border-2 outline-none transition-all"
           />
 
@@ -154,7 +154,7 @@ export default function GetInTouch({
             placeHolder="Enter your email..."
             showErrorMessage
             parentClassName="mb-8 flex flex-col"
-            className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg 
+            className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg
               font-light border-2 outline-none transition-all"
           />
 

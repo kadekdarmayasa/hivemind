@@ -11,8 +11,6 @@ import useSWR from 'swr';
 import type { TeamProps } from 'types/Team';
 import type { PhilosophyProps } from 'types/Philosophy';
 import type { WorkCultureProps } from 'types/WorkCulture';
-import { useAppSelector } from '@hooks/useAppSelector';
-import { selectedState } from '@redux-slices/dropdownSlice';
 import { fetcher } from '@utils/fetcher/get';
 
 type AboutProps = {
@@ -30,18 +28,13 @@ export default function AboutPage() {
     '/api/aboutpage',
     fetcher,
   );
-  const dropdownState = useAppSelector(selectedState);
 
   if (error) return false;
   if (isLoading) return false;
 
   return (
     <Layout title="Hivemind - About">
-      <section
-        className={`relative ${
-          dropdownState === 'open' ? '-z-10' : 'z-0'
-        } mt-14`}
-      >
+      <section className="relative mt-14">
         <CompanyPhilosophy philosophy={data.company.philosophy} />
 
         <div className="flex mt-14 gap-10">

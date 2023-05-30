@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import axios, { Canceler } from "axios";
+import { useEffect, useState } from 'react';
+import axios, { Canceler } from 'axios';
 
 export default function useBookSearch(query: string, pageNumber: number) {
   const [isLoading, setIsLoading] = useState(true);
@@ -9,7 +9,7 @@ export default function useBookSearch(query: string, pageNumber: number) {
 
   useEffect(() => {
     setBooks([]);
-  }, [query])
+  }, [query]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -18,20 +18,24 @@ export default function useBookSearch(query: string, pageNumber: number) {
     let cancel: Canceler;
 
     axios({
-      method: "GET",
-      url: "http://openlibrary.org/search.json",
+      method: 'GET',
+      url: 'http://openlibrary.org/search.json',
       params: { q: query, page: pageNumber },
-      cancelToken: new axios.CancelToken(c => cancel = c)
-    }).then((response) => {
-      setBooks(prevBooks => {
-        return [...new Set([...prevBooks, ...response.data.docs.map(((b) => b.title))])]
-      })
-      setHasMore(response.data.docs.length > 0);
-      setIsLoading(false);
-    }).catch(e => {
-      if (axios.isCancel(e)) return;
-      setError(true);
+      cancelToken: new axios.CancelToken((c) => {
+        cancel = c;
+      }),
     })
+      .then((response) => {
+        setBooks((prevBooks) => [
+          ...new Set([...prevBooks, ...response.data.docs.map((b) => b.title)]),
+        ]);
+        setHasMore(response.data.docs.length > 0);
+        setIsLoading(false);
+      })
+      .catch((e) => {
+        if (axios.isCancel(e)) return;
+        setError(true);
+      });
 
     return () => cancel();
   }, [query, pageNumber]);

@@ -2,8 +2,6 @@ import Button from '@components/Button';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import React, { MutableRefObject, useMemo } from 'react';
-import { useAppSelector } from '@hooks/useAppSelector';
-import { selectedState } from '@redux-slices/dropdownSlice';
 import Image from 'next/image';
 
 export default function Hero({
@@ -11,7 +9,6 @@ export default function Hero({
 }: {
   refOurValues: MutableRefObject<HTMLElement>;
 }) {
-  const dropdownState = useAppSelector(selectedState);
   const iconProps = useMemo(() => ({ size: '1.6em', className: 'mr-2' }), []);
 
   const showOurValues = () => {
@@ -23,11 +20,7 @@ export default function Hero({
 
   return (
     // TODO: Add framer motion for animation
-    <section
-      className={`flex relative mt-16 2xl:mt-24 ${
-        dropdownState === 'open' ? '-z-10' : 'z-0'
-      }`}
-    >
+    <section className="flex relative mt-12 2xl:mt-24">
       <div className="flex-1 flex flex-col justify-center items-start">
         <h1 className="heading-1 mt-1">
           Transform Your Online Presence
