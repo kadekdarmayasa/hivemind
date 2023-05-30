@@ -9,7 +9,7 @@ export default function NavigationMenu({ path, name }: NavigationMenuProps) {
   return (
     <li
       className={`
-        z-50 text-base font-regular relative text-brave-purple ml-10 nav-link 
+        z-50 mb-10 md:mb-0 text-base max-sm:text-xl font-regular relative text-brave-purple md:ml-10 nav-link 
         ${router.asPath === path && 'active'}
       `}
     >
