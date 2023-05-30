@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import Layout from '@components/Layout';
 import {
   Hero,
+  Client,
   OurValues,
   Service,
   Portfolio,
@@ -13,12 +14,14 @@ import type { BlogItemProps } from 'types/BlogItem';
 import type { PortfolioProps } from 'types/Portfolio';
 import type { ServiceProps } from 'types/Service';
 import type { OurValuesProps } from 'types/OurValues';
+import type { ClientProps } from 'types/Client';
 import { fetcher } from '@utils/fetcher/get';
 import useSWR from 'swr';
 
 type HomepageProps = {
-  services: ServiceProps[];
+  clients: ClientProps[];
   companyValues: OurValuesProps[];
+  services: ServiceProps[];
   portfolios: PortfolioProps[];
   testimonies: TestimonyItemProps[];
   blogs: BlogItemProps[];
@@ -36,6 +39,7 @@ export default function HomePage() {
   return (
     <Layout title="Hivemind - Home">
       <Hero refOurValues={refOurValues} />
+      <Client clients={data.clients} />
       <OurValues refOurValues={refOurValues} ourValues={data.companyValues} />
       <Service services={data.services} />
       <Portfolio portfolios={data.portfolios} />

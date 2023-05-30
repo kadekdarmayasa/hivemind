@@ -18,7 +18,7 @@ export default function OurValues({
 
   // TODO : Using framer motion for animation
   return (
-    <section className="mt-44" ref={refOurValues}>
+    <section className="mt-32 2xl:mt-44" ref={refOurValues}>
       <div className="flex flex-col items-center text-center">
         <small className="label-text">Our Values</small>
         <h2 className="heading-2">What Sets Us Apart</h2>
