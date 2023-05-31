@@ -57,12 +57,12 @@
   }
 
   .custom-underline {
-    @apply h-[1.2px] w-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all;
+    @apply h-[2px] w-full scale-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all rounded-full origin-left duration-300;
   }
 
   .nav-link:is(:hover, .active) .custom-underline,
   .nav-link a:focus ~ .custom-underline {
-    @apply opacity-100 w-full;
+    @apply opacity-100 scale-100;
   }
 
   /* 

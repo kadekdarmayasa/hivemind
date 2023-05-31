@@ -6,7 +6,7 @@ export default function Brand() {
   return (
     <Link
       href="/"
-      className="text-palatinate-blue text-2xl font-bold flex items-center"
+      className="text-palatinate-blue text-3xl font-bold flex items-center"
     >
       <Image
         src="/images/hivemind-logo.svg"

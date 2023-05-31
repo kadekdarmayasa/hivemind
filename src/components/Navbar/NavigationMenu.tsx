@@ -9,16 +9,12 @@ export default function NavigationMenu({ path, name }: NavigationMenuProps) {
   return (
     <li
       className={`
-        z-50 mb-10 md:mb-0 text-base max-sm:text-xl font-regular relative text-brave-purple md:ml-10 nav-link 
+        z-50 mb-10 md:mb-0 text-white text-xl md:text-lg font-regular relative md:text-brave-purple md:ml-10 nav-link 
         ${router.asPath === path && 'active'}
       `}
     >
       <div>
-        <Link
-          href={path}
-          onClick={() => router.push(path)}
-          className="block"
-        >
+        <Link href={path} onClick={() => router.push(path)} className="block">
           {name}
         </Link>
         <div className="custom-underline" />
