@@ -19,7 +19,7 @@
   }
 
   .heading-1 {
-    @apply text-4xl text-coarse-wool font-bold leading-normal mt-4;
+    @apply text-5xl text-coarse-wool font-bold leading-normal mt-4;
   }
 
   .heading-2 {

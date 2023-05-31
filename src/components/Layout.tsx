@@ -57,7 +57,7 @@ export default function Layout({ children, title }: LayoutProps) {
 
         <title>{title}</title>
       </Head>
-      <div className="xl:container font-outfit mx-auto px-8 xl:px-0">
+      <div className="xl:container font-outfit mx-auto px-8 3xl:px-0">
         <Navbar menus={menus} />
         <main>
           {children}
