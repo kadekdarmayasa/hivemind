@@ -13,7 +13,7 @@ export default function SliderArrow({
   const iconProps = useMemo(() => ({ size: '1.2em' }), []);
 
   return (
-    <div className="flex justify-end mb-8">
+    <div className="flex justify-center xl:justify-end mb-8 mt-10 xl:mt-0">
       <Button
         type="button"
         className="bg-white h-11 w-11 rounded-full shadow-black-sm hover:shadow-black-md mr-4 trasition-all"
