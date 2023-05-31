@@ -25,7 +25,7 @@ export default function BlogItem({
 
   if (isGridItem && contentWidth === 'large') {
     return (
-      <div className="flex gap-10 w-full col-span-12">
+      <div className="flex flex-col lg:flex-row gap-10 w-full col-span-12">
         <div className="flex flex-1">
           <Image
             width={500}
@@ -70,7 +70,7 @@ export default function BlogItem({
   return (
     <div
       className={`h-[auto] bg-white rounded-xl relative blog-item ${
-        isGridItem ? 'col-span-4' : 'w-[360px]'
+        isGridItem ? 'lg:col-span-4 col-span-12' : 'w-[360px]'
       }`}
     >
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
