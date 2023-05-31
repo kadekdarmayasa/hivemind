@@ -45,7 +45,7 @@ export default function Index({ faqs }: { faqs: FAQProps[] }) {
         >
           <AccordionHeader
             onClick={() => handleMultipleOpen(index)}
-            className={`heading-3 font-outfit !font-medium !border-none 
+            className={`heading-3 font-outfit text-left !font-medium !border-none 
               ${
                 multipleOpen.includes(index)
                   ? '!text-palatinate-blue'

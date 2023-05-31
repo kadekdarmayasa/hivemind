@@ -97,8 +97,8 @@ export default function GetInTouch({
         </p>
       </div>
 
-      <div className="bg-white h-auto shadow-black-lg rounded-xl mt-10 px-10 py-12 overflow-hidden items-center flex">
-        <div className="flex-1 w-[50%] ">
+      <div className="bg-white h-auto shadow-black-lg rounded-xl mt-10 px-10 py-12 overflow-hidden items-center flex flex-col lg:flex-row">
+        <div className="flex-1 lg:w-[50%] w-full order-2 lg:order-1 pt-5 lg:pt-0">
           {contactInformations.map((contactInformation) => (
             <ContactInformation
               key={contactInformation.id}
@@ -108,7 +108,7 @@ export default function GetInTouch({
         </div>
 
         <form
-          className="flex-1 w-[50%] ps-10 border-l-2  border-l-[#E8EAFF]"
+          className="flex-1 lg:w-[50%] lg:order-2 w-full lg:ps-10 lg:border-l-2  lg:border-l-[#E8EAFF] border-b-2 border-b-[#E8EAFF] pb-10 lg:pb-0 lg:border-b-0 lg:border-b-transparent"
           onSubmit={handleSubmit}
         >
           <Alert
