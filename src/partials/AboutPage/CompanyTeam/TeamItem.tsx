@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function TeamCarouselItem({ team }: { team: TeamProps }) {
   return (
     <div className="h-auto w-[350px] px-5 group">
-      <div className="w-full h-[360px] rounded-lg overflow-hidden grayscale group-hover:grayscale-0 group transition-all">
+      <div className="w-full h-[360px] rounded-lg overflow-hidden group transition-all">
         <Image
           height={360}
           width={350}

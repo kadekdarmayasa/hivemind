@@ -37,7 +37,7 @@ export default function AboutPage() {
       <section className="relative mt-14">
         <CompanyPhilosophy philosophy={data.company.philosophy} />
 
-        <div className="flex mt-14 gap-10">
+        <div className="flex flex-col lg:flex-row mt-14 gap-10">
           <CompanyMission missions={data.company.missions} />
           <CompanyVision visions={data.company.visions} />
         </div>
