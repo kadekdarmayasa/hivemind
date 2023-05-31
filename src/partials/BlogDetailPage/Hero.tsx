@@ -17,7 +17,7 @@ export default function Hero({
   // TODO : Using framer motion for animation
   return (
     <section>
-      <div className="px-20 relative">
+      <div className="lg:px-20 relative">
         <div className="flex items-center">
           <span className="label-text mr-2">{author}</span>
           <span className="label-text mr-2">·</span>

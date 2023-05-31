@@ -6,14 +6,20 @@ import Button from './Button.tsx';
 export default function SliderArrow({
   prevSlideHandler,
   nextSlideHandler,
+  arrowPos = 'default',
 }: {
   prevSlideHandler: () => void;
   nextSlideHandler: () => void;
+  arrowPos?: 'default' | 'right';
 }) {
   const iconProps = useMemo(() => ({ size: '1.2em' }), []);
 
   return (
-    <div className="flex justify-center xl:justify-end mb-8 mt-10 xl:mt-0">
+    <div
+      className={`flex  xl:justify-end mb-8 mt-10 xl:mt-0 ${
+        arrowPos === 'right' ? 'justify-end' : 'justify-center'
+      }`}
+    >
       <Button
         type="button"
         className="bg-white h-11 w-11 rounded-full shadow-black-sm hover:shadow-black-md mr-4 trasition-all"

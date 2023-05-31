@@ -5,7 +5,13 @@ import useSlider from '@hooks/useSlider.tsx';
 import SliderArrow from '@components/SliderArrow.tsx';
 import BlogItem from './BlogItem.tsx';
 
-export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
+export default function Blog({
+  blogs,
+  arrowPos = 'default',
+}: {
+  blogs: BlogItemProps[];
+  arrowPos?: 'default' | 'right';
+}) {
   const { handleNextSlide, handlePrevSlide, sliderRef } = useSlider();
 
   const settings = {
@@ -27,6 +33,7 @@ export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
       <SliderArrow
         prevSlideHandler={handlePrevSlide}
         nextSlideHandler={handleNextSlide}
+        arrowPos={arrowPos}
       />
 
       <div className="h-auto mb-20">
