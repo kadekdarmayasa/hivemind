@@ -11,7 +11,7 @@ export default function PortfolioItem({
   return portfolio.orientation === 'potrait' ? (
     <div
       key={portfolio.id}
-      className="rounded-lg relative col-span-4  row-span-4 overflow-hidden group"
+      className="rounded-lg relative md:col-span-6 col-span-12 xl:col-span-4 row-span-4 overflow-hidden group"
     >
       <Image
         src={portfolio.imageId}
@@ -44,7 +44,7 @@ export default function PortfolioItem({
   ) : (
     <div
       key={portfolio.id}
-      className="rounded-lg col-span-4 relative row-span-2 overflow-hidden group"
+      className="rounded-lg md:col-span-6 col-span-12 xl:col-span-4 relative row-span-2 overflow-hidden group"
     >
       <Image
         src={portfolio.imageId}

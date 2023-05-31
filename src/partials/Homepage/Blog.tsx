@@ -8,7 +8,7 @@ export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
     <section className="mt-32 2xl:mt-44">
       <div className="flex flex-col items-center text-center">
         <small className="label-text">Our Blogs</small>
-        <h2 className="heading-2">Latest Blogs</h2>
+        <h2 className="heading-2">Latest Posts</h2>
       </div>
 
       <BlogCarousel blogs={blogs} />

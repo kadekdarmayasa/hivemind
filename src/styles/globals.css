@@ -23,7 +23,7 @@
   }
 
   .heading-2 {
-    @apply text-[2rem] text-coarse-wool font-semibold leading-snug mt-4;
+    @apply text-[2.5rem] text-coarse-wool font-semibold leading-snug mt-4;
   }
 
   .heading-3 {
@@ -70,7 +70,7 @@
   */
 
   .our-values-item {
-    @apply cursor-default w-full sm:w-[550px] xl:w-[48%] 2xl:w-[570px] rounded-lg bg-white sm:px-12 sm:py-14 px-8 py-10 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
+    @apply cursor-default w-full sm:w-[550px] xl:w-[48%] 2xl:w-[570px] rounded-lg bg-white sm:px-12 sm:py-14 px-8 py-12 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
   }
 
   .our-values-item__heading {
