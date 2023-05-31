@@ -70,11 +70,11 @@
   */
 
   .our-values-item {
-    @apply cursor-default w-[550px] rounded-lg bg-white px-12 py-14 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
+    @apply cursor-default w-full sm:w-[550px] xl:w-[48%] 2xl:w-[570px] rounded-lg bg-white sm:px-12 sm:py-14 px-8 py-10 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
   }
 
   .our-values-item__heading {
-    @apply heading-3 -mt-1 mr-2;
+    @apply heading-3 -mt-1 mr-2 w-auto;
   }
 
   .our-values-item__description {

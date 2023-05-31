@@ -24,10 +24,10 @@ export default function OurValues({
         <h2 className="heading-2">What Sets Us Apart</h2>
       </div>
 
-      <div className="flex justify-center mt-14 flex-wrap gap-10">
+      <div className="flex justify-center mt-14 flex-wrap gap-10 w-full">
         {ourValues.map((ourValue) => (
           <div key={ourValue.id} className="our-values-item">
-            <div className="flex items-center">
+            <div className="flex items-center justify-start">
               <h3 className="our-values-item__heading">{ourValue.value}</h3>
               <IconContext.Provider value={iconProps}>
                 <IoCheckmarkCircleOutline />
