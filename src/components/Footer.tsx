@@ -48,13 +48,11 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
   // TODO: Using Framer Motion for Animation
   return (
     <footer className="h-auto mt-32">
-      <div className="mb-16 flex justify-between">
+      <div className="mb-16 flex lg:flex-row flex-col justify-between">
         <div>
           <Brand />
-          <p className="text-brave-purple font-regular text-lg leading-9 mt-4">
-            Providing a best service for business
-            <br />
-            to grow on the digital market
+          <p className="text-brave-purple font-regular text-lg leading-9 mt-4 lg:w-[350px]">
+            Providing a best service for business to grow on the digital market
           </p>
           <div className="flex mt-5">
             <IconContext.Provider value={socialMediaIconProps}>
@@ -86,7 +84,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
           </div>
         </div>
 
-        <div className="flex">
+        <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
           <div className="flex flex-col justify-start items-start">
             <h4 className="heading-4 mb-4">Browse</h4>
             {menus.map((menu) => (
@@ -102,58 +100,53 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
             ))}
           </div>
 
-          <div className="flex flex-col justify-start items-start ms-20">
+          <div className="flex flex-col justify-start items-start lg:ms-20 mt-10 lg:mt-0">
             <h4 className="heading-4 mb-4">Subscribe to our newsteller</h4>
 
-            <div>
-              <small className="text-brave-purple font-regular text-base">
-                Subscribe to get latest updates
-              </small>
-              <form
-                action=""
-                method="POST"
-                className="focus:outline-1 focus:outline focus:outline-blue-100 bg-white h-auto px-6 py-3 flex
+            <form
+              action=""
+              method="POST"
+              className="focus:outline-1 focus:outline focus:outline-blue-100 bg-white h-auto px-6 py-3 flex
               items-center rounded-full mt-2"
-                onSubmit={handleSubmit}
-              >
-                <Input
-                  type="email"
-                  name="email"
-                  placeHolder="Your email..."
-                  id="email"
-                  value={email}
-                  className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none
+              onSubmit={handleSubmit}
+            >
+              <Input
+                type="email"
+                name="email"
+                placeHolder="Your email..."
+                id="email"
+                value={email}
+                className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none w-[80%]
                 transition-all"
-                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                    setEmail(event.target.value);
-                  }}
-                />
-                <Button
-                  type="submit"
-                  isPrimary
-                  className="!shadow-none py-2 px-4 rounded-full"
-                >
-                  Susbcribe
-                </Button>
-              </form>
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  setEmail(event.target.value);
+                }}
+              />
+              <Button
+                type="submit"
+                isPrimary
+                className="!shadow-none py-2 px-4 rounded-full"
+              >
+                Susbcribe
+              </Button>
+            </form>
 
-              {isAlreadySubcribed && (
-                <small className="text-red-400 block mt-2 font-medium text-base">
-                  User is already subscribed!
-                </small>
-              )}
+            {isAlreadySubcribed && (
+              <small className="text-red-400 block mt-2 font-medium text-base">
+                User is already subscribed!
+              </small>
+            )}
 
-              {isSuccessSubcribed && (
-                <small className="text-green-400 block mt-2 font-medium text-base">
-                  Thank you for subscribing!
-                </small>
-              )}
-            </div>
+            {isSuccessSubcribed && (
+              <small className="text-green-400 block mt-2 font-medium text-base">
+                Thank you for subscribing!
+              </small>
+            )}
           </div>
         </div>
       </div>
 
-      <p className="text-brave-purple font-regular text-lg leading-9 text-center mb-10">
+      <p className="text-brave-purple font-regular text-lg leading-9 lg:text-center mb-10">
         &copy; 2023 Hivemind. All Rights Reserved.
       </p>
     </footer>
