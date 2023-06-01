@@ -6,6 +6,7 @@ import ScrollToTop from 'react-scroll-to-top';
 import { IconContext } from 'react-icons';
 import { IoArrowUpOutline } from 'react-icons/io5';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
+import { motion, useScroll } from 'framer-motion';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ type LayoutProps = {
 
 export default function Layout({ children, title }: LayoutProps) {
   const iconProps = useMemo(() => ({ size: '1.2em' }), []);
+  const { scrollYProgress } = useScroll();
 
   const menus: NavigationMenuProps[] = [
     { path: '/', name: 'Home' },
@@ -31,11 +33,7 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta name="description" content="Digital Agency" />
         <meta name="author" content="Darma Yasa" />
 
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="/images/favicon_io/favicon.ico"
-        />
+        <link rel="icon" type="image/x-icon" href="/images/favicon_io/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -57,7 +55,10 @@ export default function Layout({ children, title }: LayoutProps) {
 
         <title>{title}</title>
       </Head>
-      <div className="xl:container font-outfit mx-auto px-8 xl:px-0">
+
+      <motion.div style={{ scaleX: scrollYProgress }} className="progress-bar" />
+
+      <div className="xl:container font-outfit mx-auto px-4 sm:px-8 xl:px-0">
         <Navbar menus={menus} />
         <main>
           {children}
