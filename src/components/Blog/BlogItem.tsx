@@ -41,9 +41,7 @@ export default function BlogItem({
             <small className="text-palatinate-blue text-sm mr-4 rounded-full">
               {blog.publishedDate}
             </small>
-            <small className="text-palatinate-blue text-sm rounded-full">
-              {blog.author}
-            </small>
+            <small className="text-palatinate-blue text-sm rounded-full">{blog.author}</small>
           </div>
 
           <h1 className="heading-1">{blog.title}</h1>
@@ -51,11 +49,7 @@ export default function BlogItem({
             {blog.briefDescription}
           </p>
 
-          <Button
-            type="link"
-            href={`/blog/${blog.id}`}
-            className="relative group mt-6"
-          >
+          <Button type="link" href={`/blog/${blog.id}`} className="relative group mt-6">
             <span className="text-lg">Read more</span>
             <IconContext.Provider value={iconProps}>
               <IoArrowForwardSharp />
@@ -99,11 +93,7 @@ export default function BlogItem({
           {blog.briefDescription}
         </p>
 
-        <Button
-          type="link"
-          href={`/blog/${blog.id}`}
-          className="absolute bottom-10 group"
-        >
+        <Button type="link" href={`/blog/${blog.id}`} className="absolute bottom-10 group">
           <span className="text-lg">Read more</span>
           <IconContext.Provider value={iconProps}>
             <IoArrowForwardSharp />
