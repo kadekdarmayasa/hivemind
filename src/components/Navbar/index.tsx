@@ -1,62 +1,35 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Brand from '@components/Brand';
 import type { NavigationMenuProps } from 'types/NavigationMenu.ts';
-import { IconContext } from 'react-icons';
-import { IoMenuOutline, IoCloseCircleOutline } from 'react-icons/io5';
-import Button from '@components/Button.tsx';
+import { motion } from 'framer-motion';
 import NavigationMenu from './NavigationMenu.tsx';
+import HamburgerMenu from './HamburgerMenu.tsx';
 
 export default function Navbar({ menus }: { menus: NavigationMenuProps[] }) {
-  const menuIconProps = useMemo(
-    () => ({
-      size: '2em',
-      className:
-        'text-brave-purple group-hover:text-palatinate-blue transition-all',
-    }),
-    [],
-  );
-  const closeIconProps = useMemo(
-    () => ({
-      size: '3em',
-      className: 'text-white group-hover:text-palatinate-blue transition-all',
-    }),
-    [],
-  );
-  const [isNavMenuShown, setIsNavMenuShown] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [screenSize, setScreenSize] = useState({ width: window.innerWidth });
 
-  // TODO: using framer motion for animation
+  const handleResize = () => {
+    setScreenSize((prevState) => ({ ...prevState, width: window.innerWidth }));
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    screenSize.width >= 720 ? setIsOpen(true) : setIsOpen(false);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [screenSize.width]);
+
   return (
-    <nav className="flex h-[80px] justify-between items-center relative overflow-hiddens">
-      <Brand />
-      <Button
-        type="button"
-        className="border w-11 h-11 md:hidden group hover:border-palatinate-blue transition-all rounded-md"
-        onClick={() => setIsNavMenuShown(true)}
-      >
-        <IconContext.Provider value={menuIconProps}>
-          <IoMenuOutline />
-        </IconContext.Provider>
-      </Button>
-      <ul
-        className={`flex justify-center items-center flex-col md:flex-row fixed md:static top-0 md:top-auto left-0 md:left-auto right-0 md:right-auto  ${
-          isNavMenuShown
-            ? 'bottom-0 md:bottom-auto opacity-100 md:opacity-100'
-            : 'bottom-full md:bottom-auto opacity-0 md:opacity-100'
-        } bg-coarse-wool/90 md:bg-transparent z-10 w-full md:w-auto px-12 md:px-0 overflow-hidden md:overflow-visible transition-all duration-300`}
-      >
-        {menus.map((menu, index) => (
-          <NavigationMenu key={index} path={menu.path} name={menu.name} />
-        ))}
-        <Button
-          type="button"
-          onClick={() => setIsNavMenuShown(false)}
-          className="group md:hidden"
-        >
-          <IconContext.Provider value={closeIconProps}>
-            <IoCloseCircleOutline />
-          </IconContext.Provider>
-        </Button>
-      </ul>
-    </nav>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+      <nav className="flex h-[80px] justify-between items-center relative overflow-hiddens">
+        <Brand />
+        <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
+        <NavigationMenu isOpen={isOpen} setIsOpen={setIsOpen} menus={menus} />
+      </nav>
+    </motion.div>
   );
 }
