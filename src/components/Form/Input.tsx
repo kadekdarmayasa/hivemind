@@ -2,29 +2,23 @@ import React, { ChangeEvent, FocusEvent, useState } from 'react';
 import { InputHelper } from '@utils/input_helper';
 
 type InputProps = {
-  type: 'text' | 'email' | 'tel',
-  labelText?: string,
-  name: string,
-  id: string,
-  value: string,
-  placeHolder?: string,
-  errorMessage?: string,
-  className?: string,
-  showErrorMessage?: boolean,
-  parentClassName?: string,
-  onChange?: (data: object) => void
-}
+  type: 'text' | 'email' | 'tel';
+  labelText?: string;
+  name: string;
+  id: string;
+  value: string;
+  placeHolder?: string;
+  errorMessage?: string;
+  className?: string;
+  showErrorMessage?: boolean;
+  parentClassName?: string;
+  onChange?: (data: object) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+};
 
 export default function Input(props: InputProps) {
-  const {
-    type,
-    labelText,
-    name,
-    id,
-    placeHolder,
-    value,
-    showErrorMessage,
-  } = props;
+  const { type, labelText, name, id, placeHolder, value, showErrorMessage } = props;
   const { parentClassName, className } = props;
   let { errorMessage } = props;
   const [hasError, setHasError] = useState(false);
@@ -52,24 +46,29 @@ export default function Input(props: InputProps) {
     }
   };
 
-  const onFocus = (event: FocusEvent<HTMLInputElement>) => {
-    if (type === 'email') {
-      valid.test(event.target.value) ? setHasError(false) : setHasError(true);
+  const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+    if (showErrorMessage) {
+      if (type === 'email') {
+        valid.test(event.target.value) ? setHasError(false) : setHasError(true);
+      } else {
+        event.target.value === '' ? setHasError(true) : setHasError(false);
+      }
     } else {
-      event.target.value === '' ? setHasError(true) : setHasError(false);
+      props.onFocus();
     }
   };
 
-  if (hasError && type === 'email' && labelText === 'Email') errorMessage = InputHelper.errorMessage.email;
-  if (hasError && type === 'text' && labelText === 'Name') errorMessage = InputHelper.errorMessage.text(labelText);
+  if (hasError && type === 'email' && labelText === 'Email') {
+    errorMessage = InputHelper.errorMessage.email;
+  }
+  if (hasError && type === 'text' && labelText === 'Name') {
+    errorMessage = InputHelper.errorMessage.text(labelText);
+  }
 
   if (labelText && showErrorMessage) {
     return (
       <div className={`${parentClassName}`}>
-        <label
-          htmlFor={id}
-          className="heading-4 mb-3"
-        >
+        <label htmlFor={id} className="heading-4 mb-3">
           {labelText}
         </label>
 
@@ -81,7 +80,7 @@ export default function Input(props: InputProps) {
           value={value}
           onChange={handleChange}
           onBlur={() => setHasError(false)}
-          onFocus={onFocus}
+          onFocus={handleFocus}
           className={`${className} ${hasError ? 'border-red-400' : 'border-none'}`}
           autoComplete="off"
           required
@@ -102,6 +101,8 @@ export default function Input(props: InputProps) {
       name={name}
       id={id}
       onChange={handleChange}
+      onFocus={handleFocus}
+      onBlur={() => props.onBlur()}
       placeholder={placeHolder}
       value={value}
       className={`${className}`}

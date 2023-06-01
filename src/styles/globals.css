@@ -126,6 +126,11 @@
   }
 }
 
+:-webkit-autofill {
+  filter: none; /* needed for firefox! */
+  box-shadow: 0 0 0 100px white inset;
+}
+
 #categoryList::-webkit-scrollbar {
   width: 0;
 }

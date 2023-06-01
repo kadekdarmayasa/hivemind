@@ -2,11 +2,7 @@ import type { ContactInformationProps } from 'types/ContactInformation';
 import { Input, Textarea } from '@components/Form';
 import React, { ChangeEvent, FormEvent, useState, useMemo } from 'react';
 import Button from '@components/Button';
-import {
-  IoSendOutline,
-  IoCheckmarkCircleOutline,
-  IoAlertCircleOutline,
-} from 'react-icons/io5';
+import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { Alert } from '@material-tailwind/react';
@@ -33,9 +29,7 @@ export default function GetInTouch({
   const alertIconProps = useMemo(
     () => ({
       size: '25px',
-      className: `${
-        alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'
-      }`,
+      className: `${alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'}`,
     }),
     [alert.type],
   );
@@ -113,11 +107,7 @@ export default function GetInTouch({
         >
           <Alert
             show={alert.show}
-            icon={
-              <IconContext.Provider value={alertIconProps}>
-                {alert.icon}
-              </IconContext.Provider>
-            }
+            icon={<IconContext.Provider value={alertIconProps}>{alert.icon}</IconContext.Provider>}
             dismissible={{
               onClose: () => setAlert({ ...alert, show: false }),
             }}

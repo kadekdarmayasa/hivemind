@@ -2,11 +2,7 @@ import Brand from '@components/Brand';
 import React, { ChangeEvent, useState, useMemo, FormEvent } from 'react';
 import { IconContext } from 'react-icons';
 import Button from '@components/Button';
-import {
-  SlSocialLinkedin,
-  SlSocialTwitter,
-  SlSocialFacebook,
-} from 'react-icons/sl';
+import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
 import { Input } from '@components/Form';
 
@@ -14,6 +10,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
   const [email, setEmail] = useState('');
   const [isAlreadySubcribed, setIsAlreadySubcribed] = useState(false);
   const [isSuccessSubcribed, setIsSuccessSubcribed] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   const socialMediaIconProps = useMemo(
     () => ({
@@ -54,34 +51,6 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
           <p className="text-brave-purple font-regular text-lg leading-9 mt-4 lg:w-[350px]">
             Providing a best service for business to grow on the digital market
           </p>
-          <div className="flex mt-5">
-            <IconContext.Provider value={socialMediaIconProps}>
-              <Button
-                type="link"
-                isExternal
-                href="https://www.facebook.com"
-                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
-              >
-                <SlSocialFacebook />
-              </Button>
-              <Button
-                type="link"
-                isExternal
-                href="https://www.twitter.com"
-                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
-              >
-                <SlSocialTwitter />
-              </Button>
-              <Button
-                type="link"
-                isExternal
-                href="https://www.linkedin.com"
-                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
-              >
-                <SlSocialLinkedin />
-              </Button>
-            </IconContext.Provider>
-          </div>
         </div>
 
         <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
@@ -102,12 +71,15 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
 
           <div className="flex flex-col justify-start items-start lg:ms-20 mt-10 lg:mt-0">
             <h4 className="heading-4 mb-4">Subscribe to our newsteller</h4>
+            <small className="text-brave-purple text-sm">Subscribe to get latest updates</small>
 
             <form
               action=""
               method="POST"
-              className="focus:outline-1 focus:outline focus:outline-blue-100 bg-white h-auto px-6 py-3 flex
-              items-center rounded-full mt-2"
+              className={`focus:outline-1 bg-white h-auto px-6 py-3 flex w-full
+              items-center rounded-full mt-3 ${
+                isInputFocused ? 'outline outline-2 outline-[#E8EAFF]' : ''
+              }`}
               onSubmit={handleSubmit}
             >
               <Input
@@ -116,17 +88,15 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
                 placeHolder="Your email..."
                 id="email"
                 value={email}
-                className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none w-[80%]
+                className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none w-full
                 transition-all"
                 onChange={(event: ChangeEvent<HTMLInputElement>) => {
                   setEmail(event.target.value);
                 }}
+                onFocus={() => setIsInputFocused(true)}
+                onBlur={() => setIsInputFocused(false)}
               />
-              <Button
-                type="submit"
-                isPrimary
-                className="!shadow-none py-2 px-4 rounded-full"
-              >
+              <Button type="submit" isPrimary className="!shadow-none py-2 px-4 rounded-full">
                 Susbcribe
               </Button>
             </form>
@@ -146,9 +116,39 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
         </div>
       </div>
 
-      <p className="text-brave-purple font-regular text-lg leading-9 lg:text-center mb-10">
-        &copy; 2023 Hivemind. All Rights Reserved.
-      </p>
+      <div className="flex justify-center flex-col items-center mb-10">
+        <p className="text-brave-purple font-regular text-lg leading-9 lg:text-center">
+          &copy; 2023 Hivemind. All Rights Reserved.
+        </p>
+        <div className="flex mt-4">
+          <IconContext.Provider value={socialMediaIconProps}>
+            <Button
+              type="link"
+              isExternal
+              href="https://www.facebook.com"
+              className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+            >
+              <SlSocialFacebook />
+            </Button>
+            <Button
+              type="link"
+              isExternal
+              href="https://www.twitter.com"
+              className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+            >
+              <SlSocialTwitter />
+            </Button>
+            <Button
+              type="link"
+              isExternal
+              href="https://www.linkedin.com"
+              className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+            >
+              <SlSocialLinkedin />
+            </Button>
+          </IconContext.Provider>
+        </div>
+      </div>
     </footer>
   );
 }
