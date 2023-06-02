@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export default function Brand() {
   return (
     <motion.div
-      initial={{ translateY: 100, opacity: 0 }}
+      initial={{ translateY: -50, opacity: 0 }}
       animate={{ translateY: 0, opacity: 1 }}
       transition={{ duration: 1.2 }}
     >
