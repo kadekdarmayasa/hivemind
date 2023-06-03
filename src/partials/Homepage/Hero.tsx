@@ -10,6 +10,7 @@ const heroVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
+      ease: 'linear',
       staggerChildren: 1,
     },
   },
@@ -21,7 +22,9 @@ const heroInnerVariants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.3,
+      delay: 0.3,
+      duration: 0.5,
+      ease: 'linear',
     },
   },
 };
@@ -41,26 +44,37 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
       initial="hidden"
       animate="visible"
       variants={heroVariants}
-      className="flex lg:flex-row flex-col relative mt-12 2xl:mt-24"
+      className="flex lg:flex-row flex-col relative mt-8 2xl:mt-24"
     >
       <div className="flex-1 order-2 lg:order-1 flex flex-col justify-center items-start">
         <motion.h1
+          initial="hidden"
+          whileInView="visible"
           className="heading-2 sm:heading-1 mt-1 lg:w-[400px] xl:w-[570px]"
           variants={heroInnerVariants}
+          viewport={{ once: true }}
         >
           Transform Your Online Presence with Our Innovate Digital Solutions
         </motion.h1>
 
         <motion.p
+          initial="hidden"
+          whileInView="visible"
           className="text-brave-purple font-normal text-xl leading-9 mt-4 lg:w-[400px] xl:w-[470px]"
           variants={heroInnerVariants}
+          viewport={{ once: true }}
         >
           We provide personalized strategies that are tailored to your business goals, using
           cutting-edge technology and industry best practices
         </motion.p>
 
-        <div className="flex flex-col md:flex-row w-full mt-14">
-          <motion.button variants={heroInnerVariants}>
+        <motion.div className="flex flex-col md:flex-row w-full mt-14">
+          <motion.div
+            variants={heroInnerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '56px' }}
+          >
             <Button
               type="link"
               href="/contact"
@@ -72,9 +86,14 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
               </IconContext.Provider>
               <span className="text-lg">Get in Touch</span>
             </Button>
-          </motion.button>
+          </motion.div>
 
-          <motion.button variants={heroInnerVariants}>
+          <motion.div
+            variants={heroInnerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '56px' }}
+          >
             <Button
               className="h-[60px] md:w-[210px] w-full md:ml-6 mt-5 md:mt-0 relative group"
               onClick={showOurValues}
@@ -87,14 +106,15 @@ export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<
               </span>
               <div className="absolute h-[2px] w-0 opacity-0 md:left-0 group-hover:opacity-100 md:group-hover:w-full group-hover:w-[210px] transition-all bg-palatinate-blue bottom-1" />
             </Button>
-          </motion.button>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: 'anticipate' }}
+        viewport={{ once: true }}
         className="flex-1 lg:order-2 flex lg:justify-end items-center"
       >
         <Image
