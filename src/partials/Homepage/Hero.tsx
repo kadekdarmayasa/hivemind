@@ -1,42 +1,44 @@
-import Button from '@components/Button';
-import { IoChatboxOutline } from 'react-icons/io5';
-import { IconContext } from 'react-icons';
-import React, { MutableRefObject, useMemo } from 'react';
-import Image from 'next/image';
+import React, { MutableRefObject } from 'react';
 import { motion, Variants } from 'framer-motion';
+import { IconContext } from 'react-icons';
+import { IoChatboxOutline } from 'react-icons/io5';
+import Image from 'next/image';
+import Button from '@components/Button';
 
-const heroVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      ease: 'linear',
-      staggerChildren: 1,
-    },
-  },
-};
+const iconProps = { size: '1.6em', className: 'mr-2' };
 
-const heroInnerVariants: Variants = {
-  hidden: { y: 120, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.3,
-      duration: 0.5,
-      ease: 'linear',
-    },
-  },
-};
-
-export default function Hero({ refOurValues }: { refOurValues: MutableRefObject<HTMLElement> }) {
-  const iconProps = useMemo(() => ({ size: '1.6em', className: 'mr-2' }), []);
+export default function Hero({ refClients }: { refClients: MutableRefObject<HTMLElement> }) {
+  const { current: refClientsCurrent } = refClients;
 
   const showOurValues = () => {
     window.scrollTo({
-      top: refOurValues.current.offsetTop - 50,
+      top: refClientsCurrent.offsetTop - 50,
       behavior: 'smooth',
     });
+  };
+
+  const heroVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        ease: 'linear',
+        staggerChildren: 1,
+      },
+    },
+  };
+
+  const heroInnerVariants: Variants = {
+    hidden: { y: 120, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.3,
+        duration: 0.5,
+        ease: 'linear',
+      },
+    },
   };
 
   return (
