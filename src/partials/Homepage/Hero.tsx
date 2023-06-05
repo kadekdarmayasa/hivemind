@@ -5,7 +5,7 @@ import { IoChatboxOutline } from 'react-icons/io5';
 import Image from 'next/image';
 import Button from '@components/Button';
 
-const iconProps = { size: '1.6em', className: 'mr-2' };
+const chatboxIconProps = { size: '1.6em', className: 'mr-2' };
 
 export default function Hero({ refClients }: { refClients: MutableRefObject<HTMLElement> }) {
   const { current: refClientsCurrent } = refClients;
@@ -83,7 +83,7 @@ export default function Hero({ refClients }: { refClients: MutableRefObject<HTML
               isPrimary
               className="h-[60px] md:w-[210px] w-full rounded-full hover:shadow-purple-md transition-all"
             >
-              <IconContext.Provider value={iconProps}>
+              <IconContext.Provider value={chatboxIconProps}>
                 <IoChatboxOutline className="h-10" />
               </IconContext.Provider>
               <span className="text-lg">Get in Touch</span>
