@@ -30,15 +30,15 @@ export default function Hero({ refClients }: { refClients: MutableRefObject<HTML
 
   const heroInnerVariants: Variants = {
     hidden: { y: 120, opacity: 0 },
-    visible: {
+    visible: (i) => ({
       y: 0,
       opacity: 1,
       transition: {
-        delay: 0.3,
-        duration: 0.5,
+        delay: i * 0.3,
+        duration: 0.3,
         ease: 'linear',
       },
-    },
+    }),
   };
 
   return (
@@ -50,6 +50,7 @@ export default function Hero({ refClients }: { refClients: MutableRefObject<HTML
     >
       <div className="flex-1 order-2 lg:order-1 flex flex-col justify-center items-start">
         <motion.h1
+          custom={0}
           initial="hidden"
           whileInView="visible"
           className="heading-2 sm:heading-1 mt-1 lg:w-[400px] xl:w-[570px]"
@@ -60,6 +61,7 @@ export default function Hero({ refClients }: { refClients: MutableRefObject<HTML
         </motion.h1>
 
         <motion.p
+          custom={1}
           initial="hidden"
           whileInView="visible"
           className="text-brave-purple font-normal text-xl leading-9 mt-4 lg:w-[400px] xl:w-[470px]"
@@ -72,6 +74,7 @@ export default function Hero({ refClients }: { refClients: MutableRefObject<HTML
 
         <motion.div className="flex flex-col md:flex-row w-full mt-14">
           <motion.div
+            custom={2}
             variants={heroInnerVariants}
             initial="hidden"
             whileInView="visible"
@@ -91,6 +94,7 @@ export default function Hero({ refClients }: { refClients: MutableRefObject<HTML
           </motion.div>
 
           <motion.div
+            custom={3}
             variants={heroInnerVariants}
             initial="hidden"
             whileInView="visible"
