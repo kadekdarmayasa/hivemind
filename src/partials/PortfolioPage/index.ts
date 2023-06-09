@@ -1,2 +1,2 @@
-export { default as CategoryList } from './CategoryList.tsx';
-export { default as PortfolioItems } from './PortfolioItems.tsx';
+export { default as CategoryList } from './CategoryList';
+export { default as PortfolioItems } from './PortfolioItems';
