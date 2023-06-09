@@ -1,4 +1,3 @@
-import React from 'react';
 import Layout from '@components/Layout';
 import useSWR from 'swr';
 import type { ContactInformationProps } from 'types/ContactInformation';

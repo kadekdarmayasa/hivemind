@@ -1,43 +1,58 @@
-import type { ContactInformationProps } from 'types/ContactInformation';
-import { Input, Textarea } from '@components/Form';
-import React, { ChangeEvent, FormEvent, useState, useMemo } from 'react';
-import Button from '@components/Button';
-import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
+import { ChangeEvent, FormEvent, useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import { IconContext } from 'react-icons';
+import {
+  IoSendOutline,
+  IoCheckmarkCircleOutline,
+  IoAlertCircleOutline,
+} from 'react-icons/io5';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import { Alert } from '@material-tailwind/react';
 import type { AlertProps } from 'types/AlertProps';
-import ContactInformation from './ContactInformation.tsx';
+import { Alert } from '@material-tailwind/react';
+import Button from '@components/Button';
+import { Input, Textarea } from '@components/Form';
+import type { ContactInformationProps } from 'types/ContactInformation';
+import ContactInformation from './ContactInformation';
 
 export default function GetInTouch({
   contactInformations,
 }: {
   contactInformations: ContactInformationProps[];
-}) {
+}): JSX.Element {
+  const commonMotionProps = {
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true },
+  };
+
   const [inputValue, setInputValue] = useState({
     name: '',
     email: '',
     message: '',
   });
+
   const [isSending, setIsSending] = useState(false);
+
   const [alert, setAlert] = useState<AlertProps>({
     show: false,
     icon: null,
     message: '',
     type: 'success',
   });
-  const alertIconProps = useMemo(
+
+  const alertIconProps: IconContext = useMemo(
     () => ({
       size: '25px',
-      className: `${alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'}`,
+      className: `${
+        alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'
+      }`,
     }),
     [alert.type],
   );
-  const sendIconProps = useMemo(
-    () => ({
-      size: '1.3em',
-      className: 'mt-[2px] ms-2',
-    }),
+
+  const sendIconProps: IconContext = useMemo(
+    () => ({ size: '1.3em', className: 'mt-[2px] ms-2' }),
     [],
   );
 
@@ -47,25 +62,34 @@ export default function GetInTouch({
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     setIsSending(true);
 
-    const response: EmailJSResponseStatus = await emailjs.sendForm(
-      'service_2pnfp18',
-      'template_ushp53d',
-      e.currentTarget,
-      'lqP46IkwDTQI1otnI',
-    );
+    try {
+      const response: EmailJSResponseStatus = await emailjs.sendForm(
+        'service_2pnfp18',
+        'template_ushp53d',
+        e.currentTarget,
+        'lqP46IkwDTQI1otnI',
+      );
 
-    if (response.status === 200) {
-      setAlert({
-        ...alert,
-        show: true,
-        icon: <IoCheckmarkCircleOutline />,
-        message: 'Your message has been sent successfully.',
-        type: 'success',
-      });
-    } else {
+      if (response.status === 200) {
+        setAlert({
+          ...alert,
+          show: true,
+          icon: <IoCheckmarkCircleOutline />,
+          message: 'Your message has been sent successfully.',
+          type: 'success',
+        });
+      } else {
+        setAlert({
+          ...alert,
+          show: true,
+          icon: <IoAlertCircleOutline />,
+          message: 'Oops! something went wrong. Try again later.',
+          type: 'failed',
+        });
+      }
+    } catch (_) {
       setAlert({
         ...alert,
         show: true,
@@ -80,34 +104,68 @@ export default function GetInTouch({
   };
 
   return (
-    <section className="mt-14">
-      <div className="text-center">
-        <h1 className="heading-1">Get In Touch With Us</h1>
+    <motion.section
+      {...commonMotionProps}
+      variants={fadeVariants('linear')}
+      className="mt-14"
+    >
+      <motion.div
+        {...commonMotionProps}
+        variants={fadeVariants('linear')}
+        className="text-center"
+      >
+        <motion.h1
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
+          className="heading-1"
+        >
+          Get In Touch With Us
+        </motion.h1>
 
-        <p className="text-brave-purple font-normal text-lg leading-9 mt-3">
+        <motion.p
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
+          custom={1}
+          className="text-brave-purple font-normal text-lg leading-9 mt-3"
+        >
           Have a question or comment? We&apos;re here to help!
           <br />
           Reach out to us using the contact information below.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="bg-white h-auto shadow-black-lg rounded-xl mt-10 px-10 py-12 overflow-hidden items-center flex flex-col lg:flex-row">
-        <div className="flex-1 lg:w-[50%] w-full order-2 lg:order-1 pt-5 lg:pt-0">
+      <motion.div
+        {...commonMotionProps}
+        variants={fadeVariants('linear')}
+        className="bg-white h-auto shadow-black-lg rounded-xl mt-10 px-10 py-12 overflow-hidden items-center flex flex-col lg:flex-row"
+      >
+        <motion.div
+          {...commonMotionProps}
+          variants={fadeVariants('linear')}
+          className="flex-1 lg:w-[50%] w-full order-2 lg:order-1 pt-5 lg:pt-0"
+        >
           {contactInformations.map((contactInformation) => (
             <ContactInformation
               key={contactInformation.id}
               contactInformation={contactInformation}
             />
           ))}
-        </div>
+        </motion.div>
 
-        <form
+        <motion.form
+          {...commonMotionProps}
+          variants={fadeVariants('linear')}
           className="flex-1 lg:w-[50%] lg:order-2 w-full lg:ps-10 lg:border-l-2  lg:border-l-[#E8EAFF] border-b-2 border-b-[#E8EAFF] pb-10 lg:pb-0 lg:border-b-0 lg:border-b-transparent"
           onSubmit={handleSubmit}
+          method="post"
         >
           <Alert
             show={alert.show}
-            icon={<IconContext.Provider value={alertIconProps}>{alert.icon}</IconContext.Provider>}
+            icon={
+              <IconContext.Provider value={alertIconProps}>
+                {alert.icon}
+              </IconContext.Provider>
+            }
             dismissible={{
               onClose: () => setAlert({ ...alert, show: false }),
             }}
@@ -131,7 +189,7 @@ export default function GetInTouch({
             showErrorMessage
             parentClassName="mb-8 flex flex-col"
             className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg
-              font-light border-2 outline-none transition-all"
+            font-light border-2 outline-none transition-all"
           />
 
           <Input
@@ -145,7 +203,7 @@ export default function GetInTouch({
             showErrorMessage
             parentClassName="mb-8 flex flex-col"
             className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg
-              font-light border-2 outline-none transition-all"
+            font-light border-2 outline-none transition-all"
           />
 
           <Textarea
@@ -171,16 +229,16 @@ export default function GetInTouch({
                 <small className="text-lg">Sending...</small>
               </>
             ) : (
-              <>
+              <Button>
                 <small className="text-lg">Send message</small>
                 <IconContext.Provider value={sendIconProps}>
                   <IoSendOutline />
                 </IconContext.Provider>
-              </>
+              </Button>
             )}
           </Button>
-        </form>
-      </div>
-    </section>
+        </motion.form>
+      </motion.div>
+    </motion.section>
   );
 }
