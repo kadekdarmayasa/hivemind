@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
-import type { ServiceItemProps } from 'types/ServiceItem';
-import { ServiceItem } from './ServiceItem';
+import { transformVariants, fadeVariants } from '@utils/motion/variants';
+import type { OurValuesProps } from 'types/OurValues';
+import { OurValueItem } from './OurValueItem';
 
-export default function Service({
-  services,
+export default function OurValues({
+  ourValues,
 }: {
-  services: ServiceItemProps[];
+  ourValues: OurValuesProps[];
 }): JSX.Element {
   const commonMotionProps = {
     initial: 'hidden',
@@ -27,25 +27,25 @@ export default function Service({
           variants={transformVariants('linear')}
           className="label-text"
         >
-          Our Services
+          Our Values
         </motion.small>
-        <motion.h2
+        <motion.div
           custom={1}
           {...commonMotionProps}
           variants={transformVariants('linear')}
           className="heading-2"
         >
-          Services Provide By Us
-        </motion.h2>
+          What Sets Us Apart
+        </motion.div>
       </motion.div>
 
       <motion.div
         {...commonMotionProps}
         variants={fadeVariants('linear')}
-        className="flex flex-wrap justify-center gap-8 mt-14"
+        className="flex justify-center mt-14 flex-wrap gap-10 w-full"
       >
-        {services.map((service, index) => (
-          <ServiceItem key={index} index={index} service={service} />
+        {ourValues.map((ourValue, index) => (
+          <OurValueItem key={index} index={index} ourValue={ourValue} />
         ))}
       </motion.div>
     </section>

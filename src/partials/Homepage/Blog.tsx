@@ -1,15 +1,43 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import type { BlogItemProps } from 'types/BlogItem';
 import BlogCarousel from '@components/Blog';
 
-export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
+export default function Blog({
+  blogs,
+}: {
+  blogs: BlogItemProps[];
+}): JSX.Element {
+  const commonMotionProps = {
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true },
+  };
+
   return (
-    // TODO: Add Framer Motion for Animation
     <section className="mt-32 2xl:mt-44">
-      <div className="flex flex-col items-center text-center">
-        <small className="label-text">Our Blogs</small>
-        <h2 className="heading-2">Latest Posts</h2>
-      </div>
+      <motion.div
+        {...commonMotionProps}
+        variants={fadeVariants('linear')}
+        className="flex flex-col items-center text-center"
+      >
+        <motion.small
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
+          custom={0}
+          className="label-text"
+        >
+          Our Blogs
+        </motion.small>
+        <motion.h2
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
+          custom={1}
+          className="heading-2"
+        >
+          Latest Posts
+        </motion.h2>
+      </motion.div>
 
       <BlogCarousel blogs={blogs} />
     </section>
