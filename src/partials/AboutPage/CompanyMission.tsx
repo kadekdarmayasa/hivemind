@@ -1,66 +1,45 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { useMemo } from 'react';
+import { motion, MotionProps } from 'framer-motion';
+import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import { IoCheckmarkCircleOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 
-const checkmarkIconProps = { size: '30px', color: '#5BFBD8' };
+export default function CompanyMission({
+  missions,
+}: {
+  missions: string[];
+}): JSX.Element {
+  const checkmarkIconProps: IconContext = useMemo(
+    () => ({ size: '30px', color: '#5BFBD8' }),
+    [],
+  );
 
-export default function CompanyMission({ missions }: { missions: string[] }) {
-  const fadeVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        ease: 'linear',
-        staggerChildren: 1,
-      },
-    },
-  };
-
-  const transformVariants: Variants = {
-    hidden: { y: 120, opacity: 0 },
-    visible: (i = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.3,
-        duration: 0.3,
-        ease: 'linear',
-      },
-    }),
+  const commonMotionProps: MotionProps = {
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true },
   };
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      variants={fadeVariants}
-      viewport={{ once: true }}
+      {...commonMotionProps}
+      variants={fadeVariants('linear')}
       className="flex-1"
     >
       <motion.h2
-        initial="hidden"
-        whileInView="visible"
-        variants={transformVariants}
-        viewport={{ once: true }}
+        {...commonMotionProps}
+        variants={transformVariants('linear')}
         className="heading-2"
       >
         Our Missions
       </motion.h2>
 
-      <motion.ul
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeVariants}
-        viewport={{ once: true }}
-      >
+      <motion.ul {...commonMotionProps} variants={fadeVariants('linear')}>
         {missions.map((mission, index) => (
           <motion.li
             key={index}
-            initial="hidden"
-            whileInView="visible"
-            variants={transformVariants}
-            viewport={{ once: true }}
+            {...commonMotionProps}
+            variants={transformVariants('linear')}
             custom={index}
             className={`text-brave-purple font-normal text-lg leading-9 flex items-start ${
               index !== 0 ? 'mt-4' : 'mt-6'

@@ -1,36 +1,22 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion, MotionProps } from 'framer-motion';
+import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import Slider from 'react-slick';
 import type { TeamProps } from 'types/Team';
 import useSlider from '@hooks/useSlider.tsx';
 import SliderArrow from '@components/SliderArrow.tsx';
-import TeamItem from './TeamItem.tsx';
+import TeamItem from './TeamItem';
 
-export default function CompanyTeam({ teams }: { teams: TeamProps[] }) {
+export default function CompanyTeam({
+  teams,
+}: {
+  teams: TeamProps[];
+}): JSX.Element {
   const { handlePrevSlide, handleNextSlide, sliderRef } = useSlider();
 
-  const fadeVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        ease: 'linear',
-        staggerChildren: 1,
-      },
-    },
-  };
-
-  const transformVariants: Variants = {
-    hidden: { y: 120, opacity: 0 },
-    visible: (i = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.3,
-        duration: 0.3,
-        ease: 'linear',
-      },
-    }),
+  const commonMotionProps: MotionProps = {
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true },
   };
 
   const settings = {
@@ -50,26 +36,20 @@ export default function CompanyTeam({ teams }: { teams: TeamProps[] }) {
   return (
     <section className="mt-32">
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeVariants}
-        viewport={{ once: true }}
+        {...commonMotionProps}
+        variants={fadeVariants('linear')}
         className="flex flex-col justify-center text-center"
       >
         <motion.small
-          initial="hidden"
-          whileInView="visible"
-          variants={transformVariants}
-          viewport={{ once: true }}
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
           className="label-text"
         >
           Our Teams
         </motion.small>
         <motion.h2
-          initial="hidden"
-          whileInView="visible"
-          variants={transformVariants}
-          viewport={{ once: true }}
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
           custom={1}
           className="heading-2"
         >
@@ -83,10 +63,8 @@ export default function CompanyTeam({ teams }: { teams: TeamProps[] }) {
       />
 
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={fadeVariants}
-        viewport={{ once: true }}
+        {...commonMotionProps}
+        variants={fadeVariants('linear')}
         className="h-auto my-4"
       >
         <Slider ref={sliderRef} {...settings} className="h-auto">
