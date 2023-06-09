@@ -1,2 +1,2 @@
-export { default as GetInTouch } from './GetInTouch.tsx';
-export { default as FAQ } from './FAQ.tsx';
+export { default as GetInTouch } from './GetInTouch';
+export { default as FAQ } from './FAQ';
