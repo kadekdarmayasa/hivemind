@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRouter } from 'next/router';
 import Layout from '@components/Layout';
 import useSWR from 'swr';
@@ -7,19 +6,22 @@ import { Hero, MainContent, RelatedArticle } from '@partials/BlogDetailPage';
 import { fetcher } from '@utils/fetcher/get';
 
 type BlogDetailProps = BlogItemProps & {
-  content: string,
+  content: string;
   image: {
-    path: string,
-    source: string,
-  },
-  relatedArticles: BlogItemProps[]
-}
+    path: string;
+    source: string;
+  };
+  relatedArticles: BlogItemProps[];
+};
 
 export default function BlogDetail() {
   const router = useRouter();
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const { id } = router.query; // will use for getting data when work with API
-  const { data, error, isLoading } = useSWR<BlogDetailProps, Error>('/api/blogdetail', fetcher);
+  const { data, error, isLoading } = useSWR<BlogDetailProps, Error>(
+    '/api/blogdetail',
+    fetcher,
+  );
 
   if (error || isLoading) return false;
 
@@ -33,7 +35,7 @@ export default function BlogDetail() {
           imageId={data.image.path}
           imageOriginSource={data.image.source}
         />
-        <MainContent content={data.content} />
+        <MainContent htmlString={data.content} />
         <RelatedArticle relatedArticles={data.relatedArticles} />
       </div>
     </Layout>
