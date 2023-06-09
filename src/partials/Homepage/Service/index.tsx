@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import type { ServiceItemProps } from 'types/ServiceItem';
 import { ServiceItem } from './ServiceItem';
@@ -8,7 +8,7 @@ export default function Service({
 }: {
   services: ServiceItemProps[];
 }): JSX.Element {
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

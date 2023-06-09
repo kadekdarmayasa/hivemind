@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import { IconContext } from 'react-icons';
 import {
@@ -20,7 +20,7 @@ export default function GetInTouch({
 }: {
   contactInformations: ContactInformationProps[];
 }): JSX.Element {
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

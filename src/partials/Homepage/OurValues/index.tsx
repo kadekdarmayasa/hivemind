@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { transformVariants, fadeVariants } from '@utils/motion/variants';
 import type { OurValuesProps } from 'types/OurValues';
 import { OurValueItem } from './OurValueItem';
@@ -8,7 +8,7 @@ export default function OurValues({
 }: {
   ourValues: OurValuesProps[];
 }): JSX.Element {
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

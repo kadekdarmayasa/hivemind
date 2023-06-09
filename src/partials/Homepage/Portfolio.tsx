@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import type { PortfolioProps } from 'types/Portfolio';
 import Button from '@components/Button';
@@ -21,7 +21,7 @@ export default function Portfolio({
     [],
   );
 
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

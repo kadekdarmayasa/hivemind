@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, MotionProps } from 'framer-motion';
 import { fadeVariants } from '@utils/motion/variants';
 import type { PortfolioProps } from 'types/Portfolio';
 import Button from '@components/Button';
@@ -27,7 +27,7 @@ export default function CategoryList({
   onClick,
 }: CategoryListProps): JSX.Element {
   const uniqueCategories = filterUniqueCategories(categoryList);
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

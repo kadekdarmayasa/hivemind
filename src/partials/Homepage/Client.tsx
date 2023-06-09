@@ -1,6 +1,6 @@
 import { Ref } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import type { ClientProps } from 'types/Client';
 
@@ -11,7 +11,7 @@ export default function Client({
   clients: ClientProps[];
   refClients: Ref<HTMLElement>;
 }): JSX.Element {
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

@@ -1,5 +1,5 @@
 import { MutableRefObject, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
@@ -16,7 +16,7 @@ export default function Hero({
     [],
   );
 
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },

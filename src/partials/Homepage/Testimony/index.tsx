@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { MotionProps, motion } from 'framer-motion';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import Slider from 'react-slick';
@@ -33,7 +33,7 @@ export default function Testimony({
     rows: 1,
   };
 
-  const commonMotionProps = {
+  const commonMotionProps: MotionProps = {
     initial: 'hidden',
     whileInView: 'visible',
     viewport: { once: true },
