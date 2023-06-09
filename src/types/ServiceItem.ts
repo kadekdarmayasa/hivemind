@@ -1,6 +1,6 @@
-export type WorkCultureProps = {
+export type ServiceItemProps = {
   id: string;
   imageId: string;
-  headline: string;
+  name: string;
   description: string;
 };

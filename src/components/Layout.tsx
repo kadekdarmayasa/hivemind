@@ -58,7 +58,7 @@ export default function Layout({ children, title }: LayoutProps) {
 
       <motion.div style={{ scaleX: scrollYProgress }} className="progress-bar" />
 
-      <div className="xl:container font-outfit mx-auto px-4 sm:px-8 xl:px-0">
+      <div className="xl:container font-outfit mx-auto px-4 sm:px-8 xl:px-0 overflow-x-hidden">
         <Navbar menus={menus} />
         <main>
           {children}

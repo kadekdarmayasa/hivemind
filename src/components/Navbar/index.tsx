@@ -24,12 +24,15 @@ export default function Navbar({ menus }: { menus: NavigationMenuProps[] }) {
   }, [screenSize.width]);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
-      <nav className="flex h-[80px] justify-between items-center relative overflow-hiddens">
-        <Brand />
-        <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
-        <NavigationMenu isOpen={isOpen} setIsOpen={setIsOpen} menus={menus} />
-      </nav>
-    </motion.div>
+    <motion.nav
+      className="flex h-[80px] justify-between items-center relative overflow-hiddens"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Brand />
+      <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
+      <NavigationMenu isOpen={isOpen} setIsOpen={setIsOpen} menus={menus} />
+    </motion.nav>
   );
 }

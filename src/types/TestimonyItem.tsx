@@ -1,5 +1,5 @@
 export type TestimonyItemProps = {
-  id: string | number;
+  id: string;
   imageId: string;
   clientName: string;
   occupation: string;

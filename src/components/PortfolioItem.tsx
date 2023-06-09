@@ -1,15 +1,35 @@
 import React from 'react';
+import { motion, Variants } from 'framer-motion';
 import type { PortfolioProps } from 'types/Portfolio';
 import Image from 'next/image';
 
 export default function PortfolioItem({
   portfolio,
+  index,
 }: {
   portfolio: PortfolioProps;
+  index?: number;
 }) {
-  // TODO: Add framer motion for animation
+  const portfolioItemVariants: Variants = {
+    hidden: { y: 120, opacity: 0 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.3,
+        duration: 0.3,
+        ease: 'linear',
+      },
+    }),
+  };
+
   return portfolio.orientation === 'potrait' ? (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      variants={portfolioItemVariants}
+      viewport={{ once: true }}
+      custom={index}
       key={portfolio.id}
       className="rounded-lg relative md:col-span-6 col-span-12 xl:col-span-4 row-span-4 overflow-hidden group"
     >
@@ -40,9 +60,14 @@ export default function PortfolioItem({
           {portfolio.service.category}
         </p>
       </div>
-    </div>
+    </motion.div>
   ) : (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      variants={portfolioItemVariants}
+      viewport={{ once: true }}
+      custom={index}
       key={portfolio.id}
       className="rounded-lg md:col-span-6 col-span-12 xl:col-span-4 relative row-span-2 overflow-hidden group"
     >
@@ -73,6 +98,6 @@ export default function PortfolioItem({
           {portfolio.service.category}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

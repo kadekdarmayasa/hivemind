@@ -4,6 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.input-subscribe:-webkit-autofill {
+  filter: none;
+  box-shadow: 0 0 0 100px white inset;
+}
+
+#categoryList::-webkit-scrollbar {
+  width: 0;
+}
+
+.overview-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 @layer base {
   body {
     @apply bg-ghost-white;
@@ -19,11 +45,11 @@
   }
 
   .heading-1 {
-    @apply text-5xl text-coarse-wool font-bold leading-normal mt-4;
+    @apply text-[2.875rem] text-coarse-wool font-bold leading-normal mt-4;
   }
 
   .heading-2 {
-    @apply text-[2.5rem] text-coarse-wool font-semibold leading-snug mt-4;
+    @apply text-[2.4rem] text-coarse-wool font-semibold leading-snug mt-4;
   }
 
   .heading-3 {
@@ -66,22 +92,6 @@
   }
 
   /* 
-    Our Values
-  */
-
-  .our-values-item {
-    @apply cursor-default w-full sm:w-[550px] xl:w-[48%] 2xl:w-[570px] rounded-lg bg-white sm:px-12 sm:py-14 px-8 py-12 shadow-black-sm hover:shadow-black-md hover:scale-[1.02] transition-all;
-  }
-
-  .our-values-item__heading {
-    @apply heading-3 -mt-1 mr-2 w-auto;
-  }
-
-  .our-values-item__description {
-    @apply text-brave-purple font-light text-lg leading-9 mt-5;
-  }
-
-  /* 
     Blog Detail 
   */
 
@@ -104,6 +114,7 @@
   .blog-detail__main-content p {
     @apply text-brave-purple font-normal text-lg leading-10 mt-3;
   }
+
   /* 
     Star 
   */
@@ -124,13 +135,8 @@
   .star.placeholder {
     @apply bg-gray-200 z-[8];
   }
-}
 
-:-webkit-autofill {
-  filter: none; /* needed for firefox! */
-  box-shadow: 0 0 0 100px white inset;
-}
-
-#categoryList::-webkit-scrollbar {
-  width: 0;
+  .progress-bar {
+    @apply fixed z-50 top-0 left-0 right-0 h-[5px] bg-palatinate-blue origin-left;
+  }
 }

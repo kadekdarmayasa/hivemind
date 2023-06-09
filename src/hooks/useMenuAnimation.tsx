@@ -9,14 +9,14 @@ export const useMenuAnimation = (isOpen: boolean) => {
   useEffect(() => {
     animate(
       '.close-menu-btn',
-      isLastMenuItemInView ? { y: 0, opacity: 1 } : { y: 150, opacity: 0 },
+      isLastMenuItemInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 },
       {
         duration: 0.3,
         delay: isOpen ? staggerMenuItems : 0,
       },
     );
 
-    animate('li', isOpen ? { y: 0, opacity: 1 } : { y: 150, opacity: 0 }, {
+    animate('li', isOpen ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }, {
       duration: 0.3,
       delay: isOpen ? staggerMenuItems : 0,
     });

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, Dispatch, SetStateAction } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMenuOutline } from 'react-icons/io5';
 import Button from '@components/Button';
@@ -8,12 +8,12 @@ export default function HamburgerMenu({
   setIsOpen,
 }: {
   isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   const iconProps = useMemo(
     () => ({
       size: '2em',
-      className: `text-brave-purple group-hover:text-palatinate-blue transition-all ${
+      className: `text-coarse-wool group-hover:text-palatinate-blue transition-all ${
         isOpen ? 'rotate-180' : 'rotate-0'
       }`,
     }),

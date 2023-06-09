@@ -1,7 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+import { motion, Variants } from 'framer-motion';
 import { IconContext } from 'react-icons';
-import { IoArrowBackOutline } from 'react-icons/io5';
+import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5';
 import Button from './Button.tsx';
+
+const arrowIconProps = { size: '1.2em' };
 
 export default function SliderArrow({
   prevSlideHandler,
@@ -12,10 +15,20 @@ export default function SliderArrow({
   nextSlideHandler: () => void;
   arrowPos?: 'default' | 'right';
 }) {
-  const iconProps = useMemo(() => ({ size: '1.2em' }), []);
+  const sliderArrowVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { ease: 'linear' },
+    },
+  };
 
   return (
-    <div
+    <motion.div
+      variants={sliderArrowVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       className={`flex  xl:justify-end mb-8 mt-10 xl:mt-0 ${
         arrowPos === 'right' ? 'justify-end' : 'justify-center'
       }`}
@@ -25,19 +38,19 @@ export default function SliderArrow({
         className="bg-white h-11 w-11 rounded-full shadow-black-sm hover:shadow-black-md mr-4 trasition-all"
         onClick={prevSlideHandler}
       >
-        <IconContext.Provider value={iconProps}>
+        <IconContext.Provider value={arrowIconProps}>
           <IoArrowBackOutline />
         </IconContext.Provider>
       </Button>
       <Button
         type="button"
-        className="bg-white h-11 w-11 rounded-full rotate-180 shadow-black-sm hover:shadow-black-md trasition-all"
+        className="bg-white h-11 w-11 rounded-full shadow-black-sm hover:shadow-black-md trasition-all"
         onClick={nextSlideHandler}
       >
-        <IconContext.Provider value={iconProps}>
-          <IoArrowBackOutline />
+        <IconContext.Provider value={arrowIconProps}>
+          <IoArrowForwardOutline />
         </IconContext.Provider>
       </Button>
-    </div>
+    </motion.div>
   );
 }

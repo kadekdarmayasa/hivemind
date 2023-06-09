@@ -1,10 +1,17 @@
-import Brand from '@components/Brand';
-import React, { ChangeEvent, useState, useMemo, FormEvent } from 'react';
+import React, { ChangeEvent, useState, FormEvent } from 'react';
+import { motion, Variants } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import Button from '@components/Button';
-import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
+import {
+  SlSocialLinkedin,
+  SlSocialTwitter,
+  SlSocialFacebook,
+} from 'react-icons/sl';
 import type { NavigationMenuProps } from 'types/NavigationMenu';
 import { Input } from '@components/Form';
+import Brand from '@components/Brand';
+
+const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
 
 export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
   const [email, setEmail] = useState('');
@@ -12,13 +19,41 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
   const [isSuccessSubcribed, setIsSuccessSubcribed] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
 
-  const socialMediaIconProps = useMemo(
-    () => ({
-      size: '1.3em',
-      color: '#2B3BE5',
+  const outerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: (i) => ({
+      opacity: 1,
+      transition: {
+        ease: 'linear',
+        delay: i * 0.3,
+        staggerChildren: 1,
+      },
     }),
-    [],
-  );
+  };
+
+  const innerVariants: Variants = {
+    hidden: { y: 120, opacity: 0 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.3,
+        duration: 0.3,
+        ease: 'linear',
+      },
+    }),
+  };
+
+  const hiddenMessageVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: 'anticipate',
+      },
+    },
+  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     // Mock database data email
@@ -42,38 +77,102 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
     event.preventDefault();
   };
 
-  // TODO: Using Framer Motion for Animation
   return (
     <footer className="h-auto mt-32">
       <div className="mb-16 flex lg:flex-row flex-col justify-between">
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={outerVariants}
+          custom={0}
+          viewport={{ once: true }}
+        >
           <Brand />
-          <p className="text-brave-purple font-regular text-lg leading-9 mt-4 lg:w-[350px]">
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            variants={innerVariants}
+            viewport={{ once: true }}
+            custom={1}
+            className="text-brave-purple font-regular text-lg leading-9 mt-4 lg:w-[350px]"
+          >
             Providing a best service for business to grow on the digital market
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
-          <div className="flex flex-col justify-start items-start">
-            <h4 className="heading-4 mb-4">Browse</h4>
-            {menus.map((menu) => (
-              <Button
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={outerVariants}
+            viewport={{ once: true }}
+            className="flex flex-col justify-start items-start"
+          >
+            <motion.h4
+              initial="hidden"
+              whileInView="visible"
+              variants={innerVariants}
+              viewport={{ once: true }}
+              custom={0}
+              className="heading-4 mb-4"
+            >
+              Browse
+            </motion.h4>
+            {menus.map((menu, index) => (
+              <motion.div
                 key={menu.name}
-                type="link"
-                href={menu.path}
-                className="transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue
-              focus:!text-palatinate-blue"
+                initial="hidden"
+                whileInView="visible"
+                variants={innerVariants}
+                viewport={{ once: true }}
+                custom={++index}
               >
-                {menu.name}
-              </Button>
+                <Button
+                  type="link"
+                  href={menu.path}
+                  className="transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue
+              focus:!text-palatinate-blue"
+                >
+                  {menu.name}
+                </Button>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col justify-start items-start lg:ms-20 mt-10 lg:mt-0">
-            <h4 className="heading-4 mb-4">Subscribe to our newsteller</h4>
-            <small className="text-brave-purple text-sm">Subscribe to get latest updates</small>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={outerVariants}
+            viewport={{ once: true }}
+            className="flex flex-col justify-start items-start lg:ms-20 mt-10 lg:mt-0"
+          >
+            <motion.h4
+              initial="hidden"
+              whileInView="visible"
+              variants={innerVariants}
+              viewport={{ once: true }}
+              custom={0}
+              className="heading-4 mb-4"
+            >
+              Subscribe to our newsteller
+            </motion.h4>
+            <motion.small
+              initial="hidden"
+              whileInView="visible"
+              variants={innerVariants}
+              viewport={{ once: true }}
+              custom={1}
+              className="text-brave-purple text-sm"
+            >
+              Subscribe to get latest updates
+            </motion.small>
 
-            <form
+            <motion.form
+              initial="hidden"
+              whileInView="visible"
+              variants={outerVariants}
+              viewport={{ once: true }}
+              custom={0}
               action=""
               method="POST"
               className={`focus:outline-1 bg-white h-auto px-6 py-3 flex w-full
@@ -89,66 +188,117 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
                 id="email"
                 value={email}
                 className="placeholder:text-brave-purple rounded-lg text-coarse-wool font-light outline-none w-full
-                transition-all"
+                transition-all input-subscribe"
                 onChange={(event: ChangeEvent<HTMLInputElement>) => {
                   setEmail(event.target.value);
                 }}
                 onFocus={() => setIsInputFocused(true)}
                 onBlur={() => setIsInputFocused(false)}
               />
-              <Button type="submit" isPrimary className="!shadow-none py-2 px-4 rounded-full">
-                Susbcribe
+              <Button
+                type="submit"
+                isPrimary
+                className="!shadow-none py-2 px-4 rounded-full"
+              >
+                Subscribe
               </Button>
-            </form>
+            </motion.form>
 
             {isAlreadySubcribed && (
-              <small className="text-red-400 block mt-2 font-medium text-base">
+              <motion.small
+                initial="hidden"
+                animate="visible"
+                variants={hiddenMessageVariants}
+                className="text-red-400 block mt-2 font-medium text-base"
+              >
                 User is already subscribed!
-              </small>
+              </motion.small>
             )}
 
             {isSuccessSubcribed && (
-              <small className="text-green-400 block mt-2 font-medium text-base">
+              <motion.small
+                initial="hidden"
+                animate="visible"
+                variants={hiddenMessageVariants}
+                className="text-green-400 block mt-2 font-medium text-base"
+              >
                 Thank you for subscribing!
-              </small>
+              </motion.small>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      <div className="flex justify-center flex-col items-center mb-10">
-        <p className="text-brave-purple font-regular text-lg leading-9 lg:text-center">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={outerVariants}
+        viewport={{ once: true }}
+        className="flex justify-center flex-col items-center mb-10"
+      >
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          variants={outerVariants}
+          viewport={{ once: true }}
+          custom={0}
+          className="text-brave-purple font-regular text-lg leading-9 lg:text-center"
+        >
           &copy; 2023 Hivemind. All Rights Reserved.
-        </p>
+        </motion.p>
         <div className="flex mt-4">
           <IconContext.Provider value={socialMediaIconProps}>
-            <Button
-              type="link"
-              isExternal
-              href="https://www.facebook.com"
-              className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={outerVariants}
+              viewport={{ once: true }}
+              custom={0}
             >
-              <SlSocialFacebook />
-            </Button>
-            <Button
-              type="link"
-              isExternal
-              href="https://www.twitter.com"
-              className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+              <Button
+                type="link"
+                isExternal
+                href="https://www.facebook.com"
+                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+              >
+                <SlSocialFacebook />
+              </Button>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={outerVariants}
+              viewport={{ once: true }}
+              custom={1}
             >
-              <SlSocialTwitter />
-            </Button>
-            <Button
-              type="link"
-              isExternal
-              href="https://www.linkedin.com"
-              className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+              <Button
+                type="link"
+                isExternal
+                href="https://www.twitter.com"
+                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+              >
+                <SlSocialTwitter />
+              </Button>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={outerVariants}
+              viewport={{ once: true }}
+              custom={2}
             >
-              <SlSocialLinkedin />
-            </Button>
+              <Button
+                type="link"
+                isExternal
+                href="https://www.linkedin.com"
+                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+              >
+                <SlSocialLinkedin />
+              </Button>
+            </motion.div>
           </IconContext.Provider>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }
