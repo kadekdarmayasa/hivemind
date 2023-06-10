@@ -1,29 +1,20 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { commonMotionProps, fadeVariants } from '@utils/motion/';
 import type { BlogItemProps } from 'types/BlogItem';
 import Slider from 'react-slick';
 import useSlider from '@hooks/useSlider.tsx';
 import SliderArrow from '@components/SliderArrow.tsx';
-import BlogItem from './BlogItem.tsx';
+import BlogItem from './BlogItem';
 
-export default function Blog({
-  blogs,
-  arrowPos = 'default',
-}: {
+type BlogProps = {
   blogs: BlogItemProps[];
   arrowPos?: 'default' | 'right';
-}) {
+};
+
+export default function Blog({ blogs, arrowPos = 'default' }: BlogProps) {
   const { handleNextSlide, handlePrevSlide, sliderRef } = useSlider();
 
-  const blogSliderVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { ease: 'linear' },
-    },
-  };
-
-  const settings = {
+  const sliderConfig = {
     className: 'slider variable-width',
     infinite: true,
     speed: 500,
@@ -45,14 +36,8 @@ export default function Blog({
         arrowPos={arrowPos}
       />
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={blogSliderVariants}
-        viewport={{ once: true }}
-        className="h-auto mb-20"
-      >
-        <Slider ref={sliderRef} {...settings} className="bg-ghost-white h-auto">
+      <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="h-auto mb-20">
+        <Slider ref={sliderRef} {...sliderConfig} className="bg-ghost-white h-auto">
           {blogs.map((blog) => (
             <BlogItem key={blog.id} blog={blog} />
           ))}
