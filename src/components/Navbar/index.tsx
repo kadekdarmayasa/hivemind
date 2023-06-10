@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import Brand from '@components/Brand';
-import type { NavigationMenuProps } from 'types/NavigationMenu.ts';
+import type { NavItemProps } from 'types/NavItem';
 import { motion } from 'framer-motion';
-import NavigationMenu from './NavigationMenu.tsx';
-import HamburgerMenu from './HamburgerMenu.tsx';
+import NavigationMenu from './NavigationMenu';
+import HamburgerMenuButton from './HamburgerMenuButton';
 
-export default function Navbar({ menus }: { menus: NavigationMenuProps[] }) {
+export default function Navbar({ menus }: { menus: NavItemProps[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: window.innerWidth });
 
-  const handleResize = () => {
-    setScreenSize((prevState) => ({ ...prevState, width: window.innerWidth }));
-  };
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setScreenSize({ width: window.innerWidth });
+    };
 
-  useEffect(() => {
     window.addEventListener('resize', handleResize);
-
-    screenSize.width >= 720 ? setIsOpen(true) : setIsOpen(false);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(screenSize.width >= 720);
   }, [screenSize.width]);
 
   return (
@@ -31,7 +33,7 @@ export default function Navbar({ menus }: { menus: NavigationMenuProps[] }) {
       transition={{ duration: 0.3 }}
     >
       <Brand />
-      <HamburgerMenu setIsOpen={setIsOpen} isOpen={isOpen} />
+      <HamburgerMenuButton setIsOpen={setIsOpen} isOpen={isOpen} />
       <NavigationMenu isOpen={isOpen} setIsOpen={setIsOpen} menus={menus} />
     </motion.nav>
   );

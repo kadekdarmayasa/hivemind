@@ -1,15 +1,14 @@
-import React, { useMemo, Dispatch, SetStateAction } from 'react';
+import { useMemo, Dispatch, SetStateAction } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMenuOutline } from 'react-icons/io5';
 import Button from '@components/Button';
 
-export default function HamburgerMenu({
-  isOpen,
-  setIsOpen,
-}: {
+type HamburgerMenuButtonProps = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-}) {
+};
+
+export default function HamburgerMenuButton({ isOpen, setIsOpen }: HamburgerMenuButtonProps) {
   const iconProps = useMemo(
     () => ({
       size: '2em',
