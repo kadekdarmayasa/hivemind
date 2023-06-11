@@ -1,7 +1,3 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
 import Link from 'next/link';
 
 type ButtonProps = {
@@ -14,51 +10,58 @@ type ButtonProps = {
   children?: React.ReactNode;
 };
 
-export default function Button(props: ButtonProps) {
-  const className = props.className ? [...props.className.split(' ')] : [];
+export default function Button({
+  className = '',
+  onClick,
+  type = 'button',
+  isExternal,
+  isPrimary,
+  href,
+  children,
+}: ButtonProps): JSX.Element {
+  const classNames = ['flex', 'justify-content-center', 'items-center'];
 
-  className.push('flex', 'justify-center', 'items-center');
-
-  if (props.isPrimary) {
-    className.push('bg-palatinate-blue shadow-purple-sm text-white');
+  if (isPrimary) {
+    classNames.push('bg-palatinate-blue', 'shadow-purple-sm', 'text-white');
   } else {
-    if (props.type === 'button') {
-      className.push('text-coarse-wool');
-    }
-
-    if (props.type === 'link') {
-      className.push('bg-transparent text-palatinate-blue');
+    switch (type) {
+      case 'button':
+        classNames.push('text-coarse-wool');
+        break;
+      case 'link':
+        classNames.push('bg-transparent', 'text-palatinate-blue');
+        break;
     }
   }
 
-  if (props.type === 'link') {
-    if (props.isExternal) {
+  if (type === 'link') {
+    if (isExternal) {
       return (
         <a
-          href={props.href}
+          href={href}
           target="_blank"
           rel="noreferrer"
-          className={className.join(' ')}
+          className={`${className} ${classNames.join(' ')}`}
         >
-          {props.children}
+          {children}
         </a>
       );
     }
 
     return (
-      <Link tabIndex={0} href={props.href} className={className.join(' ')}>
-        {props.children}
+      <Link tabIndex={0} href={href} className={`${className} ${classNames.join(' ')}`}>
+        {children}
       </Link>
     );
   }
 
   return (
     <button
-      type={props.type ?? 'button'}
-      onClick={() => props.onClick?.()}
-      className={className.join(' ')}
+      type={type === 'submit' ? 'submit' : 'button'}
+      onClick={() => onClick?.()}
+      className={`${className} ${classNames.join(' ')}`}
     >
-      {props.children}
+      {children}
     </button>
   );
 }
