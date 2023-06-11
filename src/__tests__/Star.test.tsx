@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Star from '@components/Star';
 
@@ -18,7 +17,10 @@ test("Star's style should have the values of the given width and height", () => 
   starPlaceholders.forEach((starPlaceholder) => {
     expect(starPlaceholder).toBeInTheDocument();
     expect(starPlaceholder).toHaveAttribute('style', expect.stringContaining(`width: ${width}px`));
-    expect(starPlaceholder).toHaveAttribute('style', expect.stringContaining(`height: ${height}px`));
+    expect(starPlaceholder).toHaveAttribute(
+      'style',
+      expect.stringContaining(`height: ${height}px`),
+    );
   });
 
   yellowStars.forEach((yellowStar) => {
