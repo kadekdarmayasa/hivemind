@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, useState } from 'react';
 import { InputHelper } from '@utils/input_helper';
 
 type InputProps = {
@@ -8,62 +8,79 @@ type InputProps = {
   id: string;
   value: string;
   placeHolder?: string;
-  errorMessage?: string;
   className?: string;
   showErrorMessage?: boolean;
   parentClassName?: string;
   onChange?: (data: object) => void;
-  onFocus?: () => void;
   onBlur?: () => void;
 };
 
-export default function Input(props: InputProps) {
-  const { type, labelText, name, id, placeHolder, value, showErrorMessage } = props;
-  const { parentClassName, className } = props;
-  let { errorMessage } = props;
-  const [hasError, setHasError] = useState(false);
-  let valid: RegExp;
+const validateInput = (inputType: string, inputValue: string): boolean => {
+  if (inputType === 'email') return InputHelper.validator.email.test(inputValue);
+  return inputValue !== '';
+};
 
-  if (type === 'email') valid = InputHelper.validator.email;
-  if (type === 'tel') valid = InputHelper.validator.tel;
+export default function Input(props: InputProps) {
+  const {
+    type,
+    labelText,
+    name,
+    id,
+    placeHolder,
+    value,
+    showErrorMessage,
+    parentClassName,
+    className,
+    onChange,
+    onBlur,
+  } = props;
+
+  const [hasError, setHasError] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const target = {
+    const isValid = validateInput(type, event.target.value);
+
+    setHasError(!isValid);
+    onChange?.({
       target: {
         name,
         value: event.target.value,
       },
-    };
-
-    /* eslint-disable react/destructuring-assignment */
-    /* eslint-disable no-unused-expressions */
-    if (type === 'email') {
-      valid.test(event.target.value) ? setHasError(true) : setHasError(false);
-      props.onChange(target);
-    } else {
-      event.target.value === '' ? setHasError(true) : setHasError(false);
-      props.onChange(target);
-    }
+    });
   };
 
   const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
-    if (showErrorMessage) {
-      if (type === 'email') {
-        valid.test(event.target.value) ? setHasError(false) : setHasError(true);
-      } else {
-        event.target.value === '' ? setHasError(true) : setHasError(false);
-      }
-    } else {
-      props.onFocus();
+    const isValid = validateInput(type, event.target.value);
+
+    showErrorMessage && setHasError(!isValid);
+  };
+
+  const getErrorMessage = () => {
+    if (hasError && type === 'email' && labelText === 'Email') {
+      return InputHelper.errorMessage.email;
+    }
+
+    if (hasError && type === 'text' && labelText === 'Name') {
+      return InputHelper.errorMessage.text(labelText);
     }
   };
 
-  if (hasError && type === 'email' && labelText === 'Email') {
-    errorMessage = InputHelper.errorMessage.email;
-  }
-  if (hasError && type === 'text' && labelText === 'Name') {
-    errorMessage = InputHelper.errorMessage.text(labelText);
-  }
+  const showError = showErrorMessage && hasError;
+  const errorMessage = showError ? getErrorMessage() : undefined;
+
+  const commonInputProps = {
+    type,
+    name,
+    id,
+    placeholder: placeHolder,
+    value,
+    className,
+    onChange: handleChange,
+    onFocus: handleFocus,
+    onBlur: () => onBlur(),
+    autoComplete: 'off',
+    required: true,
+  };
 
   if (labelText && showErrorMessage) {
     return (
@@ -73,17 +90,9 @@ export default function Input(props: InputProps) {
         </label>
 
         <input
-          type={type}
-          name={name}
-          id={id}
-          placeholder={placeHolder}
-          value={value}
-          onChange={handleChange}
+          {...commonInputProps}
           onBlur={() => setHasError(false)}
-          onFocus={handleFocus}
           className={`${className} ${hasError ? 'border-red-400' : 'border-none'}`}
-          autoComplete="off"
-          required
         />
 
         {hasError && (
@@ -95,19 +104,5 @@ export default function Input(props: InputProps) {
     );
   }
 
-  return (
-    <input
-      type={type}
-      name={name}
-      id={id}
-      onChange={handleChange}
-      onFocus={handleFocus}
-      onBlur={() => props.onBlur()}
-      placeholder={placeHolder}
-      value={value}
-      className={`${className}`}
-      autoComplete="off"
-      required
-    />
-  );
+  return <input {...commonInputProps} />;
 }

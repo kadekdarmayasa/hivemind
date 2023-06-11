@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Input } from '@components/Form';
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 function TestInput({ type }: { type: 'text' | 'email' }) {
   const [inputValue, setInputValue] = useState({ name: '', email: '' });
@@ -76,7 +76,5 @@ test('The error of input email should contains style of border red and error mes
   const errorMessageContainer = screen.getByTestId('errorMessage');
 
   expect(errorMessageContainer).toBeInTheDocument();
-  expect(errorMessageContainer).toHaveTextContent(
-    'Please enter email in a valid format',
-  );
+  expect(errorMessageContainer).toHaveTextContent('Please enter email in a valid format');
 });

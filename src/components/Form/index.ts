@@ -1,2 +1,2 @@
-export { default as Textarea } from './Textarea.tsx';
-export { default as Input } from './Input.tsx';
+export { default as Textarea } from './Textarea';
+export { default as Input } from './Input';
