@@ -2,11 +2,7 @@ import { ChangeEvent, FormEvent, useState, useMemo } from 'react';
 import { MotionProps, motion } from 'framer-motion';
 import { fadeVariants, transformVariants } from '@utils/motion/variants';
 import { IconContext } from 'react-icons';
-import {
-  IoSendOutline,
-  IoCheckmarkCircleOutline,
-  IoAlertCircleOutline,
-} from 'react-icons/io5';
+import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import type { AlertProps } from 'types/AlertProps';
 import { Alert } from '@material-tailwind/react';
@@ -44,9 +40,7 @@ export default function GetInTouch({
   const alertIconProps: IconContext = useMemo(
     () => ({
       size: '25px',
-      className: `${
-        alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'
-      }`,
+      className: `${alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'}`,
     }),
     [alert.type],
   );
@@ -104,16 +98,8 @@ export default function GetInTouch({
   };
 
   return (
-    <motion.section
-      {...commonMotionProps}
-      variants={fadeVariants('linear')}
-      className="mt-14"
-    >
-      <motion.div
-        {...commonMotionProps}
-        variants={fadeVariants('linear')}
-        className="text-center"
-      >
+    <motion.section {...commonMotionProps} variants={fadeVariants('linear')} className="mt-14">
+      <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="text-center">
         <motion.h1
           {...commonMotionProps}
           variants={transformVariants('linear')}
@@ -161,11 +147,7 @@ export default function GetInTouch({
         >
           <Alert
             show={alert.show}
-            icon={
-              <IconContext.Provider value={alertIconProps}>
-                {alert.icon}
-              </IconContext.Provider>
-            }
+            icon={<IconContext.Provider value={alertIconProps}>{alert.icon}</IconContext.Provider>}
             dismissible={{
               onClose: () => setAlert({ ...alert, show: false }),
             }}
@@ -212,7 +194,7 @@ export default function GetInTouch({
             id="message"
             value={inputValue.message}
             placeHolder="Enter your question..."
-            outerClassNames={['mt-8']}
+            parentClassName="mt-8"
             onChange={handleChange}
           />
 

@@ -1,8 +1,9 @@
 import { ChangeEvent, FocusEvent, useState } from 'react';
 import { InputHelper } from '@utils/input_helper';
+import type { InputType } from 'types/InputType';
 
 type InputProps = {
-  type: 'text' | 'email' | 'tel';
+  type: InputType;
   labelText?: string;
   name: string;
   id: string;
@@ -15,27 +16,21 @@ type InputProps = {
   onBlur?: () => void;
 };
 
-const validateInput = (inputType: string, inputValue: string): boolean => {
-  if (inputType === 'email') return InputHelper.validator.email.test(inputValue);
-  return inputValue !== '';
-};
-
-export default function Input(props: InputProps) {
-  const {
-    type,
-    labelText,
-    name,
-    id,
-    placeHolder,
-    value,
-    showErrorMessage,
-    parentClassName,
-    className,
-    onChange,
-    onBlur,
-  } = props;
-
+export default function Input({
+  type,
+  labelText,
+  name,
+  id,
+  placeHolder,
+  value,
+  showErrorMessage,
+  parentClassName,
+  className,
+  onChange,
+  onBlur,
+}: InputProps): JSX.Element {
   const [hasError, setHasError] = useState(false);
+  const { validateInput, errorMessage } = InputHelper;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const isValid = validateInput(type, event.target.value);
@@ -57,16 +52,13 @@ export default function Input(props: InputProps) {
 
   const getErrorMessage = () => {
     if (hasError && type === 'email' && labelText === 'Email') {
-      return InputHelper.errorMessage.email;
+      return errorMessage.email;
     }
 
     if (hasError && type === 'text' && labelText === 'Name') {
-      return InputHelper.errorMessage.text(labelText);
+      return errorMessage.text(labelText);
     }
   };
-
-  const showError = showErrorMessage && hasError;
-  const errorMessage = showError ? getErrorMessage() : undefined;
 
   const commonInputProps = {
     type,
@@ -97,7 +89,7 @@ export default function Input(props: InputProps) {
 
         {hasError && (
           <small className="mt-2 font-light text-sm text-red-400" data-testid="errorMessage">
-            {errorMessage}
+            {getErrorMessage()}
           </small>
         )}
       </div>
