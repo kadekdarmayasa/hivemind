@@ -1,23 +1,38 @@
-import React, { useMemo } from 'react';
+import { ReactNode } from 'react';
 import Head from 'next/head';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 import ScrollToTop from 'react-scroll-to-top';
 import { IconContext } from 'react-icons';
 import { IoArrowUpOutline } from 'react-icons/io5';
-import type { NavigationMenuProps } from 'types/NavigationMenu';
+import type { NavItemProps } from 'types/NavItem';
 import { motion, useScroll } from 'framer-motion';
 
 type LayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   title: string;
 };
 
+const metaTags = {
+  charset: 'UTF-8',
+  viewport: 'width=device-width, initial-scale=1.0',
+  description: 'Digital Agency',
+  author: 'Darma Yasa',
+};
+
+const faviconLinks = [
+  { rel: 'icon', type: 'image/x-icon', href: '/images/favicon_io/favicon.ico' },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicon_io/apple-touch-icon.png' },
+  { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon_io/favicon-32x32.png' },
+  { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicon_io/favicon-16x16.png' },
+];
+
+const arrowUpIconProps: IconContext = { size: '1.2em' };
+
 export default function Layout({ children, title }: LayoutProps) {
-  const iconProps = useMemo(() => ({ size: '1.2em' }), []);
   const { scrollYProgress } = useScroll();
 
-  const menus: NavigationMenuProps[] = [
+  const menus: NavItemProps[] = [
     { path: '/', name: 'Home' },
     { path: '/about', name: 'About' },
     { path: '/portfolio', name: 'Portfolio' },
@@ -28,31 +43,15 @@ export default function Layout({ children, title }: LayoutProps) {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Digital Agency" />
-        <meta name="author" content="Darma Yasa" />
+        {Object.entries(metaTags).map(([name, content]) => (
+          <meta key={name} name={name} content={content} />
+        ))}
 
-        <link rel="icon" type="image/x-icon" href="/images/favicon_io/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/images/favicon_io/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/images/favicon_io/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/images/favicon_io/favicon-16x16.png"
-        />
+        {faviconLinks.map(({ rel, type, sizes, href }) => (
+          <link key={href} rel={rel} type={type} sizes={sizes} href={href} />
+        ))}
+
         <link rel="manifest" href="/site.webmanifest" />
-
         <title>{title}</title>
       </Head>
 
@@ -65,7 +64,7 @@ export default function Layout({ children, title }: LayoutProps) {
           <ScrollToTop
             smooth
             component={
-              <IconContext.Provider value={iconProps}>
+              <IconContext.Provider value={arrowUpIconProps}>
                 <IoArrowUpOutline />
               </IconContext.Provider>
             }
