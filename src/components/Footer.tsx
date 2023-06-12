@@ -1,59 +1,20 @@
-import React, { ChangeEvent, useState, FormEvent } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { ChangeEvent, useState, FormEvent } from 'react';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import { IconContext } from 'react-icons';
 import Button from '@components/Button';
-import {
-  SlSocialLinkedin,
-  SlSocialTwitter,
-  SlSocialFacebook,
-} from 'react-icons/sl';
-import type { NavigationMenuProps } from 'types/NavigationMenu';
+import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
+import type { NavItemProps } from 'types/NavItem';
 import { Input } from '@components/Form';
 import Brand from '@components/Brand';
 
 const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
 
-export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
+export default function Footer({ menus }: { menus: NavItemProps[] }) {
   const [email, setEmail] = useState('');
   const [isAlreadySubcribed, setIsAlreadySubcribed] = useState(false);
   const [isSuccessSubcribed, setIsSuccessSubcribed] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
-
-  const outerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: (i) => ({
-      opacity: 1,
-      transition: {
-        ease: 'linear',
-        delay: i * 0.3,
-        staggerChildren: 1,
-      },
-    }),
-  };
-
-  const innerVariants: Variants = {
-    hidden: { y: 120, opacity: 0 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.3,
-        duration: 0.3,
-        ease: 'linear',
-      },
-    }),
-  };
-
-  const hiddenMessageVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: 'anticipate',
-      },
-    },
-  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     // Mock database data email
@@ -80,19 +41,11 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
   return (
     <footer className="h-auto mt-32">
       <div className="mb-16 flex lg:flex-row flex-col justify-between">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={outerVariants}
-          custom={0}
-          viewport={{ once: true }}
-        >
+        <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={0}>
           <Brand />
           <motion.p
-            initial="hidden"
-            whileInView="visible"
-            variants={innerVariants}
-            viewport={{ once: true }}
+            {...commonMotionProps}
+            variants={transformVariants('linear')}
             custom={1}
             className="text-brave-purple font-regular text-lg leading-9 mt-4 lg:w-[350px]"
           >
@@ -102,17 +55,13 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
 
         <div className="flex lg:flex-row flex-col mt-10 lg:mt-0">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={outerVariants}
-            viewport={{ once: true }}
+            {...commonMotionProps}
+            variants={fadeVariants('linear')}
             className="flex flex-col justify-start items-start"
           >
             <motion.h4
-              initial="hidden"
-              whileInView="visible"
-              variants={innerVariants}
-              viewport={{ once: true }}
+              {...commonMotionProps}
+              variants={transformVariants('linear')}
               custom={0}
               className="heading-4 mb-4"
             >
@@ -121,10 +70,8 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
             {menus.map((menu, index) => (
               <motion.div
                 key={menu.name}
-                initial="hidden"
-                whileInView="visible"
-                variants={innerVariants}
-                viewport={{ once: true }}
+                {...commonMotionProps}
+                variants={transformVariants('linear')}
                 custom={++index}
               >
                 <Button
@@ -140,27 +87,21 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={outerVariants}
-            viewport={{ once: true }}
+            {...commonMotionProps}
+            variants={fadeVariants('linear')}
             className="flex flex-col justify-start items-start lg:ms-20 mt-10 lg:mt-0"
           >
             <motion.h4
-              initial="hidden"
-              whileInView="visible"
-              variants={innerVariants}
-              viewport={{ once: true }}
+              {...commonMotionProps}
+              variants={transformVariants('linear')}
               custom={0}
               className="heading-4 mb-4"
             >
               Subscribe to our newsteller
             </motion.h4>
             <motion.small
-              initial="hidden"
-              whileInView="visible"
-              variants={innerVariants}
-              viewport={{ once: true }}
+              {...commonMotionProps}
+              variants={transformVariants('linear')}
               custom={1}
               className="text-brave-purple text-sm"
             >
@@ -168,10 +109,8 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
             </motion.small>
 
             <motion.form
-              initial="hidden"
-              whileInView="visible"
-              variants={outerVariants}
-              viewport={{ once: true }}
+              {...commonMotionProps}
+              variants={fadeVariants('linear')}
               custom={0}
               action=""
               method="POST"
@@ -195,11 +134,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
                 onFocus={() => setIsInputFocused(true)}
                 onBlur={() => setIsInputFocused(false)}
               />
-              <Button
-                type="submit"
-                isPrimary
-                className="!shadow-none py-2 px-4 rounded-full"
-              >
+              <Button type="submit" isPrimary className="!shadow-none py-2 px-4 rounded-full">
                 Subscribe
               </Button>
             </motion.form>
@@ -208,7 +143,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
               <motion.small
                 initial="hidden"
                 animate="visible"
-                variants={hiddenMessageVariants}
+                variants={fadeVariants('anticipate')}
                 className="text-red-400 block mt-2 font-medium text-base"
               >
                 User is already subscribed!
@@ -219,7 +154,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
               <motion.small
                 initial="hidden"
                 animate="visible"
-                variants={hiddenMessageVariants}
+                variants={fadeVariants('anticipate')}
                 className="text-green-400 block mt-2 font-medium text-base"
               >
                 Thank you for subscribing!
@@ -230,17 +165,13 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
       </div>
 
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={outerVariants}
-        viewport={{ once: true }}
+        {...commonMotionProps}
+        variants={fadeVariants('linear')}
         className="flex justify-center flex-col items-center mb-10"
       >
         <motion.p
-          initial="hidden"
-          whileInView="visible"
-          variants={outerVariants}
-          viewport={{ once: true }}
+          {...commonMotionProps}
+          variants={fadeVariants('linear')}
           custom={0}
           className="text-brave-purple font-regular text-lg leading-9 lg:text-center"
         >
@@ -248,13 +179,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
         </motion.p>
         <div className="flex mt-4">
           <IconContext.Provider value={socialMediaIconProps}>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={outerVariants}
-              viewport={{ once: true }}
-              custom={0}
-            >
+            <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={0}>
               <Button
                 type="link"
                 isExternal
@@ -264,13 +189,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
                 <SlSocialFacebook />
               </Button>
             </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={outerVariants}
-              viewport={{ once: true }}
-              custom={1}
-            >
+            <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={1}>
               <Button
                 type="link"
                 isExternal
@@ -280,13 +199,7 @@ export default function Footer({ menus }: { menus: NavigationMenuProps[] }) {
                 <SlSocialTwitter />
               </Button>
             </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={outerVariants}
-              viewport={{ once: true }}
-              custom={2}
-            >
+            <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={2}>
               <Button
                 type="link"
                 isExternal
