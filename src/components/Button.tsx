@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import classNames from 'classnames';
 
 type ButtonProps = {
   className?: string;
@@ -19,37 +20,24 @@ export default function Button({
   href,
   children,
 }: ButtonProps): JSX.Element {
-  const classNames = ['flex', 'justify-content-center', 'items-center'];
+  const buttonClassNames = classNames(className, {
+    'flex justify-center items-center': true,
+    'bg-palatinate-blue shadow-purple-sm text-white': isPrimary,
+    'text-coarse-wool': !isPrimary && type === 'button',
+    'bg-transparent text-palatinate-blue': !isPrimary && type === 'link',
+  });
 
-  if (isPrimary) {
-    classNames.push('bg-palatinate-blue', 'shadow-purple-sm', 'text-white');
-  } else {
-    switch (type) {
-      case 'button':
-        classNames.push('text-coarse-wool');
-        break;
-      case 'link':
-        classNames.push('bg-transparent', 'text-palatinate-blue');
-        break;
-    }
+  if (type === 'link' && isExternal) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className={`${buttonClassNames}`}>
+        {children}
+      </a>
+    );
   }
 
-  if (type === 'link') {
-    if (isExternal) {
-      return (
-        <a
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-          className={`${className} ${classNames.join(' ')}`}
-        >
-          {children}
-        </a>
-      );
-    }
-
+  if (type === 'link' && !isExternal) {
     return (
-      <Link tabIndex={0} href={href} className={`${className} ${classNames.join(' ')}`}>
+      <Link tabIndex={0} href={href} className={`${buttonClassNames}`}>
         {children}
       </Link>
     );
@@ -59,7 +47,7 @@ export default function Button({
     <button
       type={type === 'submit' ? 'submit' : 'button'}
       onClick={() => onClick?.()}
-      className={`${className} ${classNames.join(' ')}`}
+      className={`${buttonClassNames}`}
     >
       {children}
     </button>
