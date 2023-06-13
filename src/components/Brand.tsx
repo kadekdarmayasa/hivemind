@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -14,9 +13,10 @@ export default function Brand() {
         <Image
           src="/images/hivemind-logo.svg"
           alt="Hivemind Logo"
-          height={40}
-          width={40}
-          className="mr-2"
+          height={35}
+          width={35}
+          className="mr-2 h-[35px] w-[35px]"
+          priority
         />
         <span>Hivemind</span>
       </Link>
