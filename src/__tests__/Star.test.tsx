@@ -12,20 +12,17 @@ test("Star's style should have the values of the given width and height", () => 
   const starPlaceholders = screen.getAllByTestId('starPlaceholder');
 
   expect(starsContainer).toBeInTheDocument();
-  expect(starsContainer).toHaveAttribute('style', expect.stringContaining(`height: ${height}px`));
+  expect(starsContainer).toHaveStyle(`height: ${height}px`);
 
   starPlaceholders.forEach((starPlaceholder) => {
     expect(starPlaceholder).toBeInTheDocument();
-    expect(starPlaceholder).toHaveAttribute('style', expect.stringContaining(`width: ${width}px`));
-    expect(starPlaceholder).toHaveAttribute(
-      'style',
-      expect.stringContaining(`height: ${height}px`),
-    );
+    expect(starPlaceholder).toHaveStyle(`width: ${width}px`);
+    expect(starPlaceholder).toHaveStyle(`height: ${height}px`);
   });
 
   yellowStars.forEach((yellowStar) => {
     expect(yellowStar).toBeInTheDocument();
-    expect(yellowStar).toHaveAttribute('style', expect.stringContaining(`width: ${width}px`));
-    expect(yellowStar).toHaveAttribute('style', expect.stringContaining(`height: ${height}px`));
+    expect(yellowStar).toHaveStyle(`width: ${width}px`);
+    expect(yellowStar).toHaveStyle(`height: ${height}px`);
   });
 });
