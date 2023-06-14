@@ -4,37 +4,17 @@ import Accordion from '@components/Accordion';
 
 window.scrollTo = jest.fn();
 
-class IntersectionObserverMock implements IntersectionObserver {
-  callback: IntersectionObserverCallback;
-
-  options?: IntersectionObserverInit;
-
-  constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
-    this.callback = callback;
-    this.options = options;
-  }
-
-  observe = jest.fn();
-
-  unobserve = jest.fn();
-
-  disconnect = jest.fn();
-
-  takeRecords = jest.fn();
-
-  root: Element | null = null;
-
-  rootMargin: string;
-
-  thresholds: number[] = [];
-}
-
-const intersectionObserverMock = IntersectionObserverMock as jest.Mock;
-
-Object.defineProperty(window, 'IntersectionObserver', {
-  writable: true,
-  value: intersectionObserverMock,
-});
+window.IntersectionObserver = jest.fn((callback, options) => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+  takeRecords: jest.fn(),
+  root: null,
+  rootMargin: '',
+  thresholds: [],
+  callback,
+  options,
+}));
 
 function TestAccordion() {
   const faqs: FAQProps[] = [
@@ -53,7 +33,7 @@ function TestAccordion() {
   return <Accordion faqs={faqs} />;
 }
 
-test('Accordion Item should has class .shadow-black-sm when the condition is open', () => {
+test('accordion item should has class "shadow-black-sm" when the condition is open', () => {
   render(<TestAccordion />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');
@@ -70,7 +50,7 @@ test('Accordion Item should has class .shadow-black-sm when the condition is ope
   expect(accordionItems[1]).not.toHaveClass('shadow-black-sm');
 });
 
-test('All accordion items should not have class .shadow-black-sm when the first render', () => {
+test('all accordion items should not have class "shadow-black-sm" on the first render', () => {
   render(<TestAccordion />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');
