@@ -5,7 +5,7 @@ import NavigationMenu from '@components/Navbar/NavigationMenuItem';
 // eslint-disable-next-line global-require
 jest.mock('next/router', () => require('next-router-mock'));
 
-test("li element should has .active class when it's child link clicked", () => {
+test('li element should have class "active" when its child link is clicked', () => {
   mockRouter.push('/');
 
   render(<NavigationMenu path="/about" name="About" />);
