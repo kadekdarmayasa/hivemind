@@ -1,8 +1,14 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { fadeVariants, commonMotionProps } from '@utils/motion';
 import { IconContext } from 'react-icons';
 import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5';
-import Button from './Button.tsx';
+import Button from './Button';
+
+type SliderArrowProps = {
+  prevSlideHandler: () => void;
+  nextSlideHandler: () => void;
+  arrowPos?: 'default' | 'right';
+};
 
 const arrowIconProps = { size: '1.2em' };
 
@@ -10,28 +16,14 @@ export default function SliderArrow({
   prevSlideHandler,
   nextSlideHandler,
   arrowPos = 'default',
-}: {
-  prevSlideHandler: () => void;
-  nextSlideHandler: () => void;
-  arrowPos?: 'default' | 'right';
-}) {
-  const sliderArrowVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { ease: 'linear' },
-    },
-  };
+}: SliderArrowProps): JSX.Element {
+  const arrowAlignment = arrowPos === 'right' ? 'justify-end' : 'justify-center';
 
   return (
     <motion.div
-      variants={sliderArrowVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className={`flex  xl:justify-end mb-8 mt-10 xl:mt-0 ${
-        arrowPos === 'right' ? 'justify-end' : 'justify-center'
-      }`}
+      {...commonMotionProps}
+      variants={fadeVariants('linear')}
+      className={`flex xl:justify-end mb-8 mt-10 xl:mt-0 ${arrowAlignment}`}
     >
       <Button
         type="button"
