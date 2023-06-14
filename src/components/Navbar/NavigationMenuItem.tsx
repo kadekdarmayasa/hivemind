@@ -7,11 +7,8 @@ type NavigationMenuItemProps = NavItemProps & {
   lastMenuItemRef?: LegacyRef<HTMLLIElement>;
 };
 
-export default function NavigationMenuItem({
-  path,
-  name,
-  lastMenuItemRef,
-}: NavigationMenuItemProps) {
+export default function NavigationMenuItem(props: NavigationMenuItemProps) {
+  const { path, name, lastMenuItemRef } = props;
   const router = useRouter();
   const isNavActive = router.asPath === path;
 
