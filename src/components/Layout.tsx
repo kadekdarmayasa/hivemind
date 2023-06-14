@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
-import Head from 'next/head';
-import Navbar from '@components/Navbar';
-import Footer from '@components/Footer';
 import ScrollToTop from 'react-scroll-to-top';
 import { IconContext } from 'react-icons';
 import { IoArrowUpOutline } from 'react-icons/io5';
-import type { NavItemProps } from 'types/NavItem';
 import { motion, useScroll } from 'framer-motion';
+import type { NavItemProps } from 'types/NavItem';
+import Head from 'next/head';
+import Navbar from '@components/Navbar';
+import Footer from '@components/Footer';
 
 type LayoutProps = {
   children: ReactNode;

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { fadeVariants, commonMotionProps } from '@utils/motion';
 import { IconContext } from 'react-icons';
 import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5';
+import { fadeVariants, commonMotionProps } from '@utils/motion';
 import Button from './Button';
 
 type SliderArrowProps = {
