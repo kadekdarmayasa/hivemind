@@ -1,11 +1,15 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
-import Brand from '@components/Brand';
-import type { NavItemProps } from 'types/NavItem';
 import { motion } from 'framer-motion';
+import type { NavItemProps } from 'types/NavItem';
+import Brand from '@components/Brand';
 import NavigationMenu from './NavigationMenu';
 import HamburgerMenuButton from './HamburgerMenuButton';
 
-export default function Navbar({ menus }: { menus: NavItemProps[] }) {
+type NavbarProps = {
+  menus: NavItemProps[];
+};
+
+export default function Navbar({ menus }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [screenSize, setScreenSize] = useState({ width: window.innerWidth });
 
