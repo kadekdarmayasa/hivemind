@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { transformVariants, commonMotionProps } from '@utils/motion';
-import { Accordion as RCAccordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
 import { IconContext } from 'react-icons';
 import { IoChevronDown } from 'react-icons/io5';
+import { Accordion as RCAccordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
+import { transformVariants, commonMotionProps } from '@utils/motion';
 import type { FAQProps } from 'types/FAQProps';
 
 const iconChevronDownProps: IconContext = { size: '0.8em' };
