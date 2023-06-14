@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, getByRole, render, screen } from '@testing-library/react';
 import mockRouter from 'next-router-mock';
 import NavigationMenu from '@components/Navbar/NavigationMenuItem';
