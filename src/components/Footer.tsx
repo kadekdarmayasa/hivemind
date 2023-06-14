@@ -1,10 +1,10 @@
 import { ChangeEvent, useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import { IconContext } from 'react-icons';
-import Button from '@components/Button';
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { NavItemProps } from 'types/NavItem';
+import Button from '@components/Button';
 import { Input } from '@components/Form';
 import Brand from '@components/Brand';
 
@@ -12,8 +12,8 @@ const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
 
 export default function Footer({ menus }: { menus: NavItemProps[] }) {
   const [email, setEmail] = useState('');
-  const [isAlreadySubcribed, setIsAlreadySubcribed] = useState(false);
-  const [isSuccessSubcribed, setIsSuccessSubcribed] = useState(false);
+  const [isAlreadySubscribed, setIsAlreadySubscribed] = useState(false);
+  const [isSuccessSubscribed, setIsSuccessSubscribed] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -21,18 +21,18 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
     const userEmailDB = 'kadekdarmayasa@gmail.com';
 
     if (email === userEmailDB) {
-      setIsAlreadySubcribed(true);
-      setIsSuccessSubcribed(false);
+      setIsAlreadySubscribed(true);
+      setIsSuccessSubscribed(false);
     } else {
       // TODO: Input user email to Database
-      setIsAlreadySubcribed(false);
-      setIsSuccessSubcribed(true);
+      setIsAlreadySubscribed(false);
+      setIsSuccessSubscribed(true);
       setEmail('');
     }
 
     setTimeout(() => {
-      setIsAlreadySubcribed(false);
-      setIsSuccessSubcribed(false);
+      setIsAlreadySubscribed(false);
+      setIsSuccessSubscribed(false);
     }, 5000);
 
     event.preventDefault();
@@ -72,7 +72,7 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
                 key={menu.name}
                 {...commonMotionProps}
                 variants={transformVariants('linear')}
-                custom={++index}
+                custom={index + 1}
               >
                 <Button
                   type="link"
@@ -139,7 +139,7 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
               </Button>
             </motion.form>
 
-            {isAlreadySubcribed && (
+            {isAlreadySubscribed && (
               <motion.small
                 initial="hidden"
                 animate="visible"
@@ -150,7 +150,7 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
               </motion.small>
             )}
 
-            {isSuccessSubcribed && (
+            {isSuccessSubscribed && (
               <motion.small
                 initial="hidden"
                 animate="visible"
