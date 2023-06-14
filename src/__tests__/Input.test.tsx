@@ -2,14 +2,18 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Input } from '@components/Form';
 import { ChangeEvent, useState } from 'react';
 
-function TestInput({ type }: { type: 'text' | 'email' }) {
+type TestInputProps = {
+  type: 'text' | 'email';
+};
+
+function TestInput({ type }: TestInputProps) {
   const [inputValue, setInputValue] = useState({ name: '', email: '' });
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue({
-      ...inputValue,
+    setInputValue((prevInputValue) => ({
+      ...prevInputValue,
       [event.target.name]: event.target.value,
-    });
+    }));
   };
 
   if (type === 'text') {
@@ -42,7 +46,7 @@ function TestInput({ type }: { type: 'text' | 'email' }) {
   );
 }
 
-test('The error of input text should contains style of border red and error message', () => {
+test('the error of input text should contain a red border and an error message', () => {
   render(<TestInput type="text" />);
 
   const textInput = screen.getByRole('textbox');
@@ -61,7 +65,7 @@ test('The error of input text should contains style of border red and error mess
   expect(errorMessageContainer).toHaveTextContent('Name cannot be empty');
 });
 
-test('The error of input email should contains style of border red and error message', () => {
+test('the error of input email should contain a red border and an error message', () => {
   render(<TestInput type="email" />);
 
   const emailInput = screen.getByRole('textbox');
