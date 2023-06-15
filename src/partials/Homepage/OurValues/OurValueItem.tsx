@@ -10,7 +10,7 @@ type OurValueItemProps = {
   index: number;
 };
 
-const checkMarkIconProps = {
+const checkMarkIconProps: IconContext = {
   size: '2em',
   color: '#5BFBD8',
   className: '-mt-1',
