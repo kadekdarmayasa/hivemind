@@ -1,22 +1,14 @@
 import { useRef } from 'react';
+import useSWR from 'swr';
+import { fetcher } from '@utils/fetcher/get';
+import Layout from '@components/Layout';
+import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@partials/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import type { BlogItemProps } from 'types/BlogItem';
 import type { PortfolioProps } from 'types/Portfolio';
 import type { ServiceItemProps } from 'types/ServiceItem';
 import type { OurValuesProps } from 'types/OurValues';
 import type { ClientProps } from 'types/Client';
-import { fetcher } from '@utils/fetcher/get';
-import useSWR from 'swr';
-import Layout from '@components/Layout';
-import {
-  Hero,
-  Client,
-  OurValues,
-  Service,
-  Portfolio,
-  Testimony,
-  Blog,
-} from '@partials/Homepage';
 
 type HomepageProps = {
   clients: ClientProps[];
@@ -29,10 +21,7 @@ type HomepageProps = {
 
 export default function HomePage() {
   const refClients = useRef<HTMLElement>(null);
-  const { data, error, isLoading } = useSWR<HomepageProps, Error>(
-    '/api/homepage',
-    fetcher,
-  );
+  const { data, error, isLoading } = useSWR<HomepageProps, Error>('/api/homepage', fetcher);
 
   if (error || isLoading) return false;
 
@@ -43,11 +32,7 @@ export default function HomePage() {
       <OurValues ourValues={data.companyValues} />
       <Service services={data.services} />
       <Portfolio portfolios={data.portfolios} />
-      <Testimony
-        testimonies={data.testimonies}
-        title="What Client Says"
-        labelText="Testimony"
-      />
+      <Testimony testimonies={data.testimonies} title="What Client Says" labelText="Testimony" />
       <Blog blogs={data.blogs} />
     </Layout>
   );
