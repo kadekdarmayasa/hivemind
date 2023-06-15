@@ -7,7 +7,7 @@ type OurValuesProps = {
   ourValues: OVProps[];
 };
 
-export default function OurValues({ ourValues }: OurValuesProps): JSX.Element {
+export default function OurValues({ ourValues }: OurValuesProps) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
