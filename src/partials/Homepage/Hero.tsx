@@ -1,27 +1,22 @@
-import { MutableRefObject, useMemo } from 'react';
-import { MotionProps, motion } from 'framer-motion';
+import { MutableRefObject } from 'react';
+import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import Image from 'next/image';
 import Button from '@components/Button';
+import heroImage from '../../../public/images/hero-image-1.png';
 
-export default function Hero({
-  refClients,
-}: {
+type HeroProps = {
   refClients: MutableRefObject<HTMLElement>;
-}): JSX.Element {
-  const chatboxIconProps: IconContext = useMemo(
-    () => ({ size: '1.6em', className: 'mr-2' }),
-    [],
-  );
+};
 
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+const chatboxIconProps: IconContext = {
+  size: '1.6em',
+  className: 'mr-2',
+};
 
+export default function Hero({ refClients }: HeroProps) {
   const scrollToClients = () => {
     window.scrollTo({
       top: refClients.current.offsetTop - 50,
@@ -35,14 +30,22 @@ export default function Hero({
       variants={fadeVariants('linear')}
       className="flex lg:flex-row flex-col relative mt-8 2xl:mt-24"
     >
-      <div className="flex-1 order-2 lg:order-1 flex flex-col justify-center items-start">
-        <motion.h1
+      <div className="flex-1 flex flex-col justify-center items-start">
+        <motion.small
           custom={0}
           {...commonMotionProps}
           variants={transformVariants('linear')}
-          className="heading-1 mt-1 lg:w-[400px] xl:w-[570px]"
+          className="label-text"
         >
-          Transform Your Online Presence with Our Innovate Digital Solutions
+          A innovate digital agency
+        </motion.small>
+        <motion.h1
+          custom={1}
+          {...commonMotionProps}
+          variants={transformVariants('linear')}
+          className="heading-1 lg:w-[400px] xl:w-[570px]"
+        >
+          Transform Your Online Presence with Us
         </motion.h1>
 
         <motion.p
@@ -51,22 +54,22 @@ export default function Hero({
           variants={transformVariants('linear')}
           className="text-brave-purple font-normal text-xl leading-9 mt-4 lg:w-[400px] xl:w-[470px]"
         >
-          We provide personalized strategies that are tailored to your business
-          goals, using cutting-edge technology and industry best practices
+          We provide personalized strategies that are tailored to your business goals, using
+          cutting-edge technology and industry best practices
         </motion.p>
 
         <motion.div className="flex flex-col md:flex-row w-full mt-14">
           <motion.div
+            className="h-[60px] md:w-[210px] w-full rounded-full hover:shadow-purple-md transition-all overflow-hidden"
             custom={2}
-            {...commonMotionProps}
+            {...{
+              ...commonMotionProps,
+              viewport: { ...commonMotionProps.viewport, margin: '56px' },
+            }}
+            viewport={{ once: true, margin: '56px' }}
             variants={transformVariants('linear')}
           >
-            <Button
-              type="link"
-              href="/contact"
-              isPrimary
-              className="h-[60px] md:w-[210px] w-full rounded-full hover:shadow-purple-md transition-all"
-            >
+            <Button type="link" href="/contact" isPrimary className="w-full h-full">
               <IconContext.Provider value={chatboxIconProps}>
                 <IoChatboxOutline className="h-10" />
               </IconContext.Provider>
@@ -76,7 +79,10 @@ export default function Hero({
 
           <motion.div
             custom={3}
-            {...commonMotionProps}
+            {...{
+              ...commonMotionProps,
+              viewport: { ...commonMotionProps.viewport, margin: '56px' },
+            }}
             variants={transformVariants('linear')}
           >
             <Button
@@ -98,14 +104,13 @@ export default function Hero({
       <motion.div
         {...commonMotionProps}
         variants={fadeVariants('anticipate')}
-        className="flex-1 lg:order-2 flex lg:justify-end items-center"
+        className="flex-1 flex lg:justify-end items-center"
       >
         <Image
-          src="/images/hero-image-1.png"
+          src={heroImage}
           alt="Our Team meeting With Client"
-          width={600}
-          height={500}
           className="w-[98%] shadow-black-md"
+          priority
         />
       </motion.div>
     </motion.section>
