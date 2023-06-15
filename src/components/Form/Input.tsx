@@ -13,22 +13,26 @@ type InputProps = {
   showErrorMessage?: boolean;
   parentClassName?: string;
   onChange?: (data: object) => void;
+  onFocus?: () => void;
   onBlur?: () => void;
 };
 
-export default function Input({
-  type,
-  labelText,
-  name,
-  id,
-  placeHolder,
-  value,
-  showErrorMessage,
-  parentClassName,
-  className,
-  onChange,
-  onBlur,
-}: InputProps): JSX.Element {
+export default function Input(props: InputProps) {
+  const {
+    type,
+    labelText,
+    name,
+    id,
+    value,
+    placeHolder,
+    className,
+    showErrorMessage,
+    parentClassName,
+    onChange,
+    onFocus,
+    onBlur,
+  } = props;
+
   const [hasError, setHasError] = useState(false);
   const { validateInput, errorMessage } = InputHelper;
 
@@ -46,8 +50,7 @@ export default function Input({
 
   const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
     const isValid = validateInput(type, event.target.value);
-
-    showErrorMessage && setHasError(!isValid);
+    setHasError(!isValid);
   };
 
   const getErrorMessage = () => {
@@ -68,7 +71,6 @@ export default function Input({
     value,
     className,
     onChange: handleChange,
-    onFocus: handleFocus,
     onBlur: () => onBlur(),
     autoComplete: 'off',
     required: true,
@@ -84,6 +86,7 @@ export default function Input({
         <input
           {...commonInputProps}
           onBlur={() => setHasError(false)}
+          onFocus={handleFocus}
           className={`${className} ${hasError ? 'border-red-400' : 'border-none'}`}
         />
 
@@ -96,5 +99,5 @@ export default function Input({
     );
   }
 
-  return <input {...commonInputProps} />;
+  return <input {...commonInputProps} onFocus={onFocus} />;
 }
