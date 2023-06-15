@@ -11,15 +11,9 @@ type ButtonProps = {
   children?: React.ReactNode;
 };
 
-export default function Button({
-  className = '',
-  onClick,
-  type = 'button',
-  isExternal,
-  isPrimary,
-  href,
-  children,
-}: ButtonProps): JSX.Element {
+export default function Button(props: ButtonProps) {
+  const { className, onClick, type = 'button', isExternal, isPrimary, href, children } = props;
+
   const buttonClassNames = classNames(className, {
     'flex justify-center items-center': true,
     'bg-palatinate-blue shadow-purple-sm text-white': isPrimary,

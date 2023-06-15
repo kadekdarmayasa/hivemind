@@ -12,11 +12,8 @@ type SliderArrowProps = {
 
 const arrowIconProps = { size: '1.2em' };
 
-export default function SliderArrow({
-  prevSlideHandler,
-  nextSlideHandler,
-  arrowPos = 'default',
-}: SliderArrowProps): JSX.Element {
+export default function SliderArrow(props: SliderArrowProps): JSX.Element {
+  const { prevSlideHandler, nextSlideHandler, arrowPos = 'default' } = props;
   const arrowAlignment = arrowPos === 'right' ? 'justify-end' : 'justify-center';
 
   return (

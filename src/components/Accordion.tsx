@@ -8,7 +8,7 @@ import type { FAQProps } from 'types/FAQProps';
 
 const iconChevronDownProps: IconContext = { size: '0.8em' };
 
-export default function Accordion({ faqs }: { faqs: FAQProps[] }): JSX.Element {
+export default function Accordion({ faqs }: { faqs: FAQProps[] }) {
   const [openStates, setOpenStates] = useState<boolean[]>(faqs.map(() => false));
 
   const handleToggleOpen = (index: number): void => {
