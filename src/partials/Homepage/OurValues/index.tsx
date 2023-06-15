@@ -1,19 +1,13 @@
-import { MotionProps, motion } from 'framer-motion';
-import { transformVariants, fadeVariants } from '@utils/motion/variants';
-import type { OurValuesProps } from 'types/OurValues';
+import { motion } from 'framer-motion';
+import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motion';
+import type { OurValuesProps as OVProps } from 'types/OurValues';
 import { OurValueItem } from './OurValueItem';
 
-export default function OurValues({
-  ourValues,
-}: {
-  ourValues: OurValuesProps[];
-}): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+type OurValuesProps = {
+  ourValues: OVProps[];
+};
 
+export default function OurValues({ ourValues }: OurValuesProps): JSX.Element {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
