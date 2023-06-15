@@ -1,9 +1,9 @@
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
-import type { TestimonyItemProps } from 'types/TestimonyItem';
+import { motion } from 'framer-motion';
 import Slider from 'react-slick';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import useSlider from '@hooks/useSlider';
 import SliderArrow from '@components/SliderArrow';
+import type { TestimonyItemProps } from 'types/TestimonyItem';
 import TestimonyItem from './TestimonyItem';
 
 type TestimonyProps = {
@@ -12,32 +12,9 @@ type TestimonyProps = {
   labelText?: string;
 };
 
-export default function Testimony({
-  testimonies,
-  labelText,
-  title,
-}: TestimonyProps): JSX.Element {
-  const { handleNextSlide, handlePrevSlide, sliderRef } = useSlider();
-
-  const sliderConfig = {
-    className: 'slider variable-width',
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    variableWidth: true,
-    pauseOnHover: true,
-    slidesPerRow: 1,
-    rows: 1,
-  };
-
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+export default function Testimony(props: TestimonyProps) {
+  const { title, testimonies, labelText = 'Testimony' } = props;
+  const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
 
   return (
     <section className="mt-32 2xl:mt-44">
@@ -64,10 +41,7 @@ export default function Testimony({
         </motion.h2>
       </motion.div>
 
-      <SliderArrow
-        prevSlideHandler={handlePrevSlide}
-        nextSlideHandler={handleNextSlide}
-      />
+      <SliderArrow prevSlideHandler={handlePrevSlide} nextSlideHandler={handleNextSlide} />
 
       <motion.div variants={fadeVariants('linear')} {...commonMotionProps}>
         <Slider ref={sliderRef} {...sliderConfig} className="bg-transparent">

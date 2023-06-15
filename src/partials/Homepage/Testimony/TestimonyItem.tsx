@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Star from '@components/Star';
-import type { TestimonyItemProps } from 'types/TestimonyItem';
+import type { TestimonyItemProps as TIProps } from 'types/TestimonyItem';
 
-export default function TestimonyItem({
-  testimony,
-}: {
-  testimony: TestimonyItemProps;
-}): JSX.Element {
+type TestimonyItemProps = {
+  testimony: TIProps;
+};
+
+export default function TestimonyItem({ testimony }: TestimonyItemProps) {
   const { imageId, clientName, occupation, message, rate } = testimony;
 
   return (
@@ -18,7 +18,8 @@ export default function TestimonyItem({
             width={50}
             height={50}
             alt={clientName}
-            className="rounded-full"
+            className="rounded-full w-[50px] h-[50px]"
+            priority
           />
         </div>
 
@@ -29,9 +30,7 @@ export default function TestimonyItem({
       </div>
 
       <div className="my-6">
-        <p className="text-coarse-wool text-base font-normal leading-7">
-          {message}
-        </p>
+        <p className="text-coarse-wool text-base font-normal leading-7">{message}</p>
       </div>
 
       <div className="mt-2">
