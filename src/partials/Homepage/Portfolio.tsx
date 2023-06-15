@@ -1,32 +1,22 @@
-import { useMemo } from 'react';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
-import type { PortfolioProps } from 'types/Portfolio';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
+import type { PortfolioProps as PfProps } from 'types/Portfolio';
 import Button from '@components/Button';
 import PortfolioItem from '@components/PortfolioItem';
 
-export default function Portfolio({
-  portfolios,
-}: {
-  portfolios: PortfolioProps[];
-}): JSX.Element {
-  const arrowForwardIconProps: IconContext = useMemo(
-    () => ({
-      size: '1.3em',
-      className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all',
-      color: '#2B3BE5',
-    }),
-    [],
-  );
+type PortfolioProps = {
+  portfolios: PfProps[];
+};
 
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+const arrowForwardIconProps: IconContext = {
+  size: '1.3em',
+  className: 'mt-[2px] ml-1 group-hover:ml-2 transition-all',
+  color: '#2B3BE5',
+};
 
+export default function Portfolio({ portfolios }: PortfolioProps) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
@@ -58,20 +48,12 @@ export default function Portfolio({
         className="grid grid-cols-12 grid-flow-dense gap-5 mt-14"
       >
         {portfolios.map((portfolio, index) => (
-          <PortfolioItem
-            key={portfolio.id}
-            index={index}
-            portfolio={portfolio}
-          />
+          <PortfolioItem key={portfolio.id} index={index} portfolio={portfolio} />
         ))}
       </motion.div>
 
       <motion.div {...commonMotionProps} variants={transformVariants('linear')}>
-        <Button
-          type="link"
-          href="/portolio"
-          className="mt-8 mx-auto relative group w-[170px]"
-        >
+        <Button type="link" href="/portolio" className="mt-8 mx-auto relative group w-[170px]">
           <span className="text-lg">See all portfolios</span>
           <IconContext.Provider value={arrowForwardIconProps}>
             <IoArrowForwardSharp />
