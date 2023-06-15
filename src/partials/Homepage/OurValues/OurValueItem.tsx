@@ -20,6 +20,7 @@ export function OurValueItem({ ourValue, index }: OurValueItemProps) {
   const { value, description } = ourValue;
 
   const motionProps = {
+    ...commonMotionProps,
     custom: index,
     whileHover: 'hover',
     variants: {
@@ -30,7 +31,6 @@ export function OurValueItem({ ourValue, index }: OurValueItemProps) {
 
   return (
     <motion.div
-      {...commonMotionProps}
       {...motionProps}
       className="cursor-default w-full sm:w-[550px] xl:w-[48%] 2xl:w-[570px] rounded-lg
       bg-white sm:px-12 sm:py-14 px-8 py-12 shadow-black-sm transition-all"
