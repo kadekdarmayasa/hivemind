@@ -1,19 +1,13 @@
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { BlogItemProps } from 'types/BlogItem';
 import BlogCarousel from '@components/Blog';
 
-export default function Blog({
-  blogs,
-}: {
+type BlogProps = {
   blogs: BlogItemProps[];
-}): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+};
 
+export default function Blog({ blogs }: BlogProps) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
