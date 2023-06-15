@@ -1,22 +1,15 @@
 import { Ref } from 'react';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
+import type { ClientProps as Clprops } from 'types/Client';
 import Image from 'next/image';
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
-import type { ClientProps } from 'types/Client';
 
-export default function Client({
-  clients,
-  refClients,
-}: {
-  clients: ClientProps[];
+type ClientProps = {
+  clients: Clprops[];
   refClients: Ref<HTMLElement>;
-}): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+};
 
+export default function Client({ clients, refClients }: ClientProps) {
   return (
     <motion.section
       ref={refClients}
@@ -24,15 +17,13 @@ export default function Client({
       variants={fadeVariants('linear')}
       className="mt-32 2xl:mt-44"
     >
-      <motion.h2
+      <motion.small
         {...commonMotionProps}
         variants={transformVariants('linear')}
-        className="heading-2 text-center"
+        className="flex text-center justify-center text-sm font-medium text-brave-purple uppercase tracking-widest"
       >
-        Trusted by&nbsp;
-        <span className="text-palatinate-blue">4K+</span>
-        &nbsp;Clients and Leading Brands
-      </motion.h2>
+        Trusted by top companies and organizations
+      </motion.small>
 
       <div className="flex relative flex-wrap justify-center gap-10 mt-14">
         {clients.map((client, i) => (
@@ -43,12 +34,7 @@ export default function Client({
             variants={transformVariants('easeInOut')}
             className="w-[80px] h-[80px]"
           >
-            <Image
-              src={client.imagePath}
-              alt={client.name}
-              width={80}
-              height={80}
-            />
+            <Image src={client.imagePath} alt={client.name} width={80} height={80} />
           </motion.div>
         ))}
       </div>
