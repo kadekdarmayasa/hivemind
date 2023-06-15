@@ -11,15 +11,9 @@ type TextAreaProps = {
   onChange?: (data: object) => void;
 };
 
-export default function Textarea({
-  labelText,
-  name,
-  id,
-  value,
-  parentClassName,
-  placeHolder,
-  onChange,
-}: TextAreaProps): JSX.Element {
+export default function Textarea(props: TextAreaProps) {
+  const { labelText, name, id, value, placeHolder, parentClassName, onChange } = props;
+
   const [hasError, setHasError] = useState<boolean>(false);
   const { validateInput, errorMessage } = InputHelper;
 
@@ -37,7 +31,6 @@ export default function Textarea({
 
   const handleFocus = (event: FocusEvent<HTMLTextAreaElement>) => {
     const isValid = validateInput('textarea', event.target.value);
-
     setHasError(!isValid);
   };
 
