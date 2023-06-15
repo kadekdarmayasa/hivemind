@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { commonMotionProps, fadeVariants } from '@utils/motion/';
-import type { BlogItemProps } from 'types/BlogItem';
 import Slider from 'react-slick';
+import type { BlogItemProps } from 'types/BlogItem';
 import useSlider from '@hooks/useSlider.tsx';
+import { commonMotionProps, fadeVariants } from '@utils/motion/';
 import SliderArrow from '@components/SliderArrow.tsx';
 import BlogItem from './BlogItem';
 
@@ -12,21 +12,7 @@ type BlogProps = {
 };
 
 export default function Blog({ blogs, arrowPos = 'default' }: BlogProps) {
-  const { handleNextSlide, handlePrevSlide, sliderRef } = useSlider();
-
-  const sliderConfig = {
-    className: 'slider variable-width',
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    variableWidth: true,
-    pauseOnHover: true,
-    slidesPerRow: 1,
-    rows: 1,
-  };
+  const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
 
   return (
     <>
