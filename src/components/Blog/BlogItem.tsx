@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { commonMotionProps, fadeVariants, transformVariants } from '@utils/motion';
-import Button from '@components/Button';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import type { BlogItemProps as BIProps } from 'types/BlogItem';
+import { commonMotionProps, fadeVariants, transformVariants } from '@utils/motion';
+import Button from '@components/Button';
 import Image from 'next/image';
 
 type BlogItemProps = {
@@ -19,12 +19,9 @@ const arrowForwardIconProps: IconContext = {
   color: '#2B3BE5',
 };
 
-export default function BlogItem({
-  blog,
-  contentWidth = 'default',
-  isGridItem = false,
-  index = 0,
-}: BlogItemProps): JSX.Element {
+export default function BlogItem(props: BlogItemProps) {
+  const { blog, contentWidth = 'default', isGridItem = false, index = 0 } = props;
+
   const renderDefault = () => (
     <div className="h-[auto] bg-white rounded-xl relative blog-item w-[360px]">
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
