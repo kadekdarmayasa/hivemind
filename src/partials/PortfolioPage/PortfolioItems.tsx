@@ -1,19 +1,17 @@
 import { motion } from 'framer-motion';
-import { fadeVariants } from '@utils/motion/variants';
+import { fadeVariants, commonMotionProps } from '@utils/motion';
 import PortfolioItem from '@components/PortfolioItem';
 import type { PortfolioProps } from 'types/Portfolio';
 
-export default function PortfolioItems({
-  portfolios,
-}: {
+type PortfolioItemsProps = {
   portfolios: PortfolioProps[];
-}): JSX.Element {
+};
+
+export default function PortfolioItems({ portfolios }: PortfolioItemsProps) {
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
+      {...commonMotionProps}
       variants={fadeVariants('linear')}
-      viewport={{ once: true }}
       className="grid grid-cols-12 grid-flow-dense gap-5 mt-14"
     >
       {portfolios.map((portfolio) => (
