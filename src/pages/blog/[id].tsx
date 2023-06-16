@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
-import Layout from '@components/Layout';
 import useSWR from 'swr';
-import type { BlogItemProps } from 'types/BlogItem';
+import { useRouter } from 'next/router';
+import Loading from '@components/Loading';
+import Layout from '@components/Layout';
 import { Hero, MainContent, RelatedArticle } from '@partials/BlogDetailPage';
 import { fetcher } from '@utils/fetcher/get';
-import Loading from '@components/Loading';
+import type { BlogItemProps } from 'types/BlogItem';
 
 type BlogDetailProps = BlogItemProps & {
   content: string;

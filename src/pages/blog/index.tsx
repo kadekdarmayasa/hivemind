@@ -1,26 +1,14 @@
-import { useState, useLayoutEffect } from 'react';
-import Layout from '@components/Layout';
 import useSWR from 'swr';
+import Layout from '@components/Layout';
 import BlogItem from '@components/Blog/BlogItem';
-import type { BlogItemProps } from 'types/BlogItem';
-import { fetcher } from '@utils/fetcher/get';
 import Loading from '@components/Loading';
+import { fetcher } from '@utils/fetcher/get';
+import { useScreenSize } from '@hooks/useScreenSize';
+import type { BlogItemProps } from 'types/BlogItem';
 
 export default function BlogPage() {
   const { data, error, isLoading } = useSWR<BlogItemProps[], Error>('/api/blogpage', fetcher);
-  const [screenSize, setScreenSize] = useState({ width: 0 });
-
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      setScreenSize({ width: window.innerWidth });
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
+  const [screenSize] = useScreenSize();
 
   if (error) return false;
   if (isLoading) return <Loading />;
