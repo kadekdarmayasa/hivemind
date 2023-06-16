@@ -1,19 +1,13 @@
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { WorkCultureProps } from 'types/WorkCulture';
 import Image from 'next/image';
 
-export default function CompanyWorkCulture({
-  workCultures,
-}: {
+type CompanyWorkCultureProps = {
   workCultures: WorkCultureProps[];
-}): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+};
 
+export default function CompanyWorkCulture({ workCultures }: CompanyWorkCultureProps) {
   return (
     <section className="mt-32">
       <motion.div
@@ -29,10 +23,10 @@ export default function CompanyWorkCulture({
           Work Culture
         </motion.small>
         <motion.h2
+          custom={1}
           {...commonMotionProps}
           variants={transformVariants('linear')}
-          custom={1}
-          className="heading-2 mb-24"
+          className="heading-2 mb-10"
         >
           Our Work Culture
         </motion.h2>
@@ -45,17 +39,17 @@ export default function CompanyWorkCulture({
 
         return (
           <motion.div
+            key={workCulture.id}
             {...commonMotionProps}
             variants={fadeVariants('linear')}
-            key={index}
             className={`flex flex-col lg:flex-row gap-12 items-center ${
-              isEvenIndex ? 'my-14' : ''
+              isEvenIndex ? 'my-16' : ''
             }`}
           >
             <motion.div
               {...commonMotionProps}
               variants={fadeVariants('linear')}
-              className={`flex-1 lg:order-${contentOrder} order-${imageOrder}`}
+              className={`flex-1 lg:order-${contentOrder} order-${2}`}
             >
               <motion.h3
                 {...commonMotionProps}
@@ -76,8 +70,8 @@ export default function CompanyWorkCulture({
 
             <motion.div
               {...commonMotionProps}
-              variants={fadeVariants('linear')}
-              className={`flex-1 w-full lg:order-${imageOrder} order-${contentOrder} flex justify-end shadow-black-md`}
+              variants={transformVariants('linear')}
+              className={`flex-1 w-full lg:order-${imageOrder} order-${1} flex justify-end shadow-black-md`}
             >
               <Image
                 width={400}
@@ -85,6 +79,7 @@ export default function CompanyWorkCulture({
                 src={workCulture.imageId}
                 alt={workCulture.headline}
                 className="w-full"
+                priority
               />
             </motion.div>
           </motion.div>

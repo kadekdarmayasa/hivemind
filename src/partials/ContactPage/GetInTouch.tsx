@@ -211,12 +211,12 @@ export default function GetInTouch({
                 <small className="text-lg">Sending...</small>
               </>
             ) : (
-              <Button>
+              <>
                 <small className="text-lg">Send message</small>
                 <IconContext.Provider value={sendIconProps}>
                   <IoSendOutline />
                 </IconContext.Provider>
-              </Button>
+              </>
             )}
           </Button>
         </motion.form>

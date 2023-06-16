@@ -1,31 +1,17 @@
-import { useMemo } from 'react';
-import { motion, MotionProps } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
-import { IoCheckmarkCircleOutline } from 'react-icons/io5';
+import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
+import { IoCheckmarkCircleOutline } from 'react-icons/io5';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 
-export default function CompanyMission({
-  missions,
-}: {
+type CompanyMissionProps = {
   missions: string[];
-}): JSX.Element {
-  const checkmarkIconProps: IconContext = useMemo(
-    () => ({ size: '30px', color: '#5BFBD8' }),
-    [],
-  );
+};
 
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+const checkmarkIconProps = { size: '30px', color: '#5BFBD8' };
 
+export default function CompanyMission({ missions }: CompanyMissionProps) {
   return (
-    <motion.div
-      {...commonMotionProps}
-      variants={fadeVariants('linear')}
-      className="flex-1"
-    >
+    <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="flex-1">
       <motion.h2
         {...commonMotionProps}
         variants={transformVariants('linear')}

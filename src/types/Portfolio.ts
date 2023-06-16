@@ -1,7 +1,7 @@
 export type PortfolioProps = {
   id: string;
   imageId: string;
-  orientation: 'potrait' | 'landscape';
+  orientation: 'portrait' | 'landscape';
   projectName: string;
   service: {
     id: string;

@@ -22,10 +22,7 @@ function filterUniqueCategories(
   return uniqueCategories;
 }
 
-export default function CategoryList({
-  categoryList,
-  onClick,
-}: CategoryListProps): JSX.Element {
+export default function CategoryList({ categoryList, onClick }: CategoryListProps): JSX.Element {
   const uniqueCategories = filterUniqueCategories(categoryList);
   const commonMotionProps: MotionProps = {
     initial: 'hidden',
@@ -34,10 +31,7 @@ export default function CategoryList({
   };
 
   return (
-    <div
-      className="flex lg:justify-center mt-8 overflow-auto whitespace-nowrap"
-      id="categoryList"
-    >
+    <div className="flex lg:justify-center mt-8 overflow-auto whitespace-nowrap" id="categoryList">
       <motion.div {...commonMotionProps} variants={fadeVariants('linear')}>
         <Button
           type="button"
@@ -48,8 +42,9 @@ export default function CategoryList({
         </Button>
       </motion.div>
 
-      {uniqueCategories.map((uniqueCategory, index) => (
+      {uniqueCategories.map(({ id, name }, index) => (
         <motion.div
+          key={id}
           {...commonMotionProps}
           variants={fadeVariants('linear')}
           custom={index}
@@ -57,10 +52,10 @@ export default function CategoryList({
           <Button
             key={index}
             type="button"
-            onClick={() => onClick(uniqueCategory.id)}
+            onClick={() => onClick(id)}
             className="!bg-[#E8EAFF] h-10 px-8 !text-sm rounded-full cursor-pointer ms-5 !text-palatinate-blue hover:!bg-palatinate-blue hover:!text-white transition-all w-auto"
           >
-            {uniqueCategory.name}
+            {name}
           </Button>
         </motion.div>
       ))}

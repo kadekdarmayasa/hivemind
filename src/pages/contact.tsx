@@ -4,6 +4,7 @@ import type { ContactInformationProps } from 'types/ContactInformation';
 import type { FAQProps } from 'types/FAQProps';
 import { GetInTouch, FAQ } from '@partials/ContactPage';
 import { fetcher } from '@utils/fetcher/get';
+import Loading from '@components/Loading';
 
 type ContactProps = {
   contactInformations: ContactInformationProps[];
@@ -11,12 +12,10 @@ type ContactProps = {
 };
 
 export default function ContactPage() {
-  const { data, isLoading, error } = useSWR<ContactProps, Error>(
-    '/api/contactpage',
-    fetcher,
-  );
+  const { data, isLoading, error } = useSWR<ContactProps, Error>('/api/contactpage', fetcher);
 
-  if (isLoading || error) return false;
+  if (error) return false;
+  if (isLoading) return <Loading />;
 
   return (
     <Layout title="Hivemind - Contact">

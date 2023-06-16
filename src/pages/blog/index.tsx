@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import BlogItem from '@components/Blog/BlogItem';
 import type { BlogItemProps } from 'types/BlogItem';
 import { fetcher } from '@utils/fetcher/get';
+import Loading from '@components/Loading';
 
 export default function BlogPage() {
   const { data, error, isLoading } = useSWR<BlogItemProps[], Error>('/api/blogpage', fetcher);
@@ -21,7 +22,8 @@ export default function BlogPage() {
     };
   });
 
-  if (error || isLoading) return false;
+  if (error) return false;
+  if (isLoading) return <Loading />;
 
   return (
     <Layout title="Hivemind - Blog">

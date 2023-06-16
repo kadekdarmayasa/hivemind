@@ -13,6 +13,7 @@
   "rules": {
     "testing-library/prefer-screen-queries": 0,
     "linebreak-style": 0,
+    "object-curly-newline": 0,
     "import/no-unresolved": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
     "import/prefer-default-export": 0,
@@ -28,25 +29,13 @@
       }
     ],
     "react/jsx-wrap-multilines": ["error", { "prop": "ignore" }],
-    "no-unused-vars": [
-      "error",
-      { "vars": "all", "args": "none", "ignoreRestSiblings": false }
-    ],
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
     "comma-dangle": ["error", "always-multiline"],
-    "object-curly-newline": [
-      "error",
-      {
-        "ImportDeclaration": {
-          "multiline": true,
-          "minProperties": 5,
-          "consistent": true
-        }
-      }
-    ],
     "no-unused-expressions": [
       "error",
       {
-        "allowTernary": true
+        "allowTernary": true,
+        "allowShortCircuit": true
       }
     ],
     "arrow-body-style": ["error", "as-needed"],
@@ -56,9 +45,12 @@
       {
         "ignorePackages": true,
         "pattern": {
-          "tsx": "never"
+          "tsx": "never",
+          "ts": "never",
+          "json": "never"
         }
       }
-    ]
+    ],
+    "consistent-return": 0
   }
 }

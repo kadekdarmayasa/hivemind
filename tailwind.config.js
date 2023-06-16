@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withMT = require('@material-tailwind/react/utils/withMT');
 const TailwindElement = require('tw-elements/dist/plugin.cjs');
 const { fontFamily } = require('tailwindcss/defaultTheme');
@@ -23,7 +24,7 @@ module.exports = withMT({
       },
       boxShadow: {
         'purple-sm': '0px 2px 10px rgba(43, 59, 229, 0.2)',
-        'purple-md': '0px 10px 25px rgba(43, 59, 229, 0.3)',
+        'purple-md': '10px 5px 25px rgba(43, 59, 229, 0.3)',
         'black-sm': '0px 2px 10px rgba(0, 0, 0, 0.02)',
         'black-md': '0px 5px 25px rgba(0, 0, 0, 0.05)',
         'black-grey-md': '0 9px 25px 0 rgba(132, 128, 177, 0.28)',

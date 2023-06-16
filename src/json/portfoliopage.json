@@ -2,11 +2,11 @@
   {
     "id": "122893",
     "imageId": "/images/e-commerce-web.png",
-    "orientation": "potrait",
+    "orientation": "portrait",
     "projectName": "E-commerce for Fashion",
     "service": {
       "id": "122893",
-      "category": "Web Design"
+      "name": "Web Design"
     }
   },
   {
@@ -16,7 +16,7 @@
     "projectName": "Fitness Studio",
     "service": {
       "id": "122894",
-      "category": "Mobile App Development"
+      "name": "Mobile App Development"
     }
   },
   {
@@ -26,7 +26,7 @@
     "projectName": "SEO Opimization for E-commerce Website",
     "service": {
       "id": "1228991",
-      "category": "Search Engine Optimization"
+      "name": "Search Engine Optimization"
     }
   },
   {
@@ -36,7 +36,7 @@
     "projectName": "Video Production for Travel Agency",
     "service": {
       "id": "122896",
-      "category": "Content Creation"
+      "name": "Content Creation"
     }
   },
   {
@@ -46,7 +46,7 @@
     "projectName": "SEO Opimization for E-commerce Website",
     "service": {
       "id": "1228991",
-      "category": "Search Engine Optimization"
+      "name": "Search Engine Optimization"
     }
   }
 ]

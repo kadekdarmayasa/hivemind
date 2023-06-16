@@ -1,31 +1,17 @@
-import { useMemo } from 'react';
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
-import { IoCheckmarkCircleOutline } from 'react-icons/io5';
+import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
+import { IoCheckmarkCircleOutline } from 'react-icons/io5';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 
-export default function CompanyVision({
-  visions,
-}: {
+type CompanyVisionProps = {
   visions: string[];
-}): JSX.Element {
-  const checkmarkIconProps = useMemo(
-    () => ({ size: '30px', color: '#5BFBD8' }),
-    [],
-  );
+};
 
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+const checkMarkIconProps = { size: '30px', color: '#5BFBD8' };
 
+export default function CompanyVision({ visions }: CompanyVisionProps) {
   return (
-    <motion.div
-      {...commonMotionProps}
-      variants={fadeVariants('linear')}
-      className="flex-1"
-    >
+    <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="flex-1">
       <motion.h2
         {...commonMotionProps}
         variants={transformVariants('linear')}
@@ -46,7 +32,7 @@ export default function CompanyVision({
             }`}
           >
             <div className="mr-2 mt-2">
-              <IconContext.Provider value={checkmarkIconProps}>
+              <IconContext.Provider value={checkMarkIconProps}>
                 <IoCheckmarkCircleOutline />
               </IconContext.Provider>
             </div>

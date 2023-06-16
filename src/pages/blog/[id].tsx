@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import type { BlogItemProps } from 'types/BlogItem';
 import { Hero, MainContent, RelatedArticle } from '@partials/BlogDetailPage';
 import { fetcher } from '@utils/fetcher/get';
+import Loading from '@components/Loading';
 
 type BlogDetailProps = BlogItemProps & {
   content: string;
@@ -18,12 +19,10 @@ export default function BlogDetail() {
   const router = useRouter();
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const { id } = router.query; // will use for getting data when work with API
-  const { data, error, isLoading } = useSWR<BlogDetailProps, Error>(
-    '/api/blogdetail',
-    fetcher,
-  );
+  const { data, error, isLoading } = useSWR<BlogDetailProps, Error>('/api/blogdetail', fetcher);
 
-  if (error || isLoading) return false;
+  if (error) return false;
+  if (isLoading) return <Loading />;
 
   return (
     <Layout title={data.title}>

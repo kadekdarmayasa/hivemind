@@ -3,42 +3,42 @@
     {
       "id": "122144",
       "name": "Amazon",
-      "imagePath": "/images/logo-amazon.png"
+      "imagePath": "/images/logo-amazon-gray.png"
     },
     {
       "id": "122145",
       "name": "Apple",
-      "imagePath": "/images/logo-apple.png"
+      "imagePath": "/images/logo-apple-gray.png"
     },
     {
       "id": "122146",
       "name": "Behance",
-      "imagePath": "/images/logo-behance.png"
+      "imagePath": "/images/logo-behance-gray.png"
     },
     {
       "id": "122147",
       "name": "Dribble",
-      "imagePath": "/images/logo-dribbble.png"
+      "imagePath": "/images/logo-dribbble-gray.png"
     },
     {
       "id": "122148",
       "name": "Dropbox",
-      "imagePath": "/images/logo-dropbox.png"
+      "imagePath": "/images/logo-dropbox-gray.png"
     },
     {
       "id": "122149",
       "name": "Google",
-      "imagePath": "/images/logo-google.png"
+      "imagePath": "/images/logo-google-gray.png"
     },
     {
       "id": "122150",
       "name": "Paypal",
-      "imagePath": "/images/logo-paypal.png"
+      "imagePath": "/images/logo-paypal-gray.png"
     },
     {
       "id": "122151",
       "name": "Slack",
-      "imagePath": "/images/logo-slack.png"
+      "imagePath": "/images/logo-slack-gray.png"
     }
   ],
 
@@ -70,37 +70,37 @@
       "id": "ass122jjjjoj033f",
       "imageId": "/images/desktop.svg",
       "name": "Web Design",
-      "briefDescription": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
+      "description": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
     },
     {
       "id": "ass122jjjjoj033g",
       "imageId": "/images/chart.svg",
       "name": "Search Engine Optimization",
-      "briefDescription": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
+      "description": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
     },
     {
       "id": "ass122jjjjoj033h",
       "imageId": "/images/megaphone.svg",
       "name": "Social Media Marketing",
-      "briefDescription": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
+      "description": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
     },
     {
       "id": "ass122jjjjoj033i",
       "imageId": "/images/reader.svg",
       "name": "Content Creation",
-      "briefDescription": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
+      "description": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
     },
     {
       "id": "ass122jjjjoj033j",
       "imageId": "/images/cart.svg",
       "name": "E-commerce Solutions",
-      "briefDescription": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
+      "description": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
     },
     {
       "id": "ass122jjjjoj033k",
       "imageId": "/images/phone.svg",
       "name": "Mobile App Development",
-      "briefDescription": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
+      "description": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
     }
   ],
 
@@ -108,11 +108,11 @@
     {
       "id": "122893",
       "imageId": "/images/e-commerce-web.png",
-      "orientation": "potrait",
+      "orientation": "portrait",
       "projectName": "E-commerce for Fashion",
       "service": {
         "id": "ass122jjjjoj033f",
-        "category": "Web Design"
+        "name": "Web Design"
       }
     },
     {
@@ -122,7 +122,7 @@
       "projectName": "Fitness Studio",
       "service": {
         "id": "ass122jjjjoj033k",
-        "category": "Mobile App Development"
+        "name": "Mobile App Development"
       }
     },
     {
@@ -132,7 +132,7 @@
       "projectName": "SEO Opimization for E-commerce Website",
       "service": {
         "id": "ass122jjjjoj033g",
-        "category": "Search Engine Optimization"
+        "name": "Search Engine Optimization"
       }
     },
     {
@@ -142,7 +142,7 @@
       "projectName": "Video Production for Travel Agency",
       "service": {
         "id": "ass122jjjjoj033i",
-        "category": "Content Creation"
+        "name": "Content Creation"
       }
     },
     {
@@ -152,7 +152,7 @@
       "projectName": "SEO Opimization for E-commerce Website",
       "service": {
         "id": "ass122jjjjoj033g",
-        "category": "Seach Engine Optimization"
+        "name": "Seach Engine Optimization"
       }
     }
   ],
@@ -164,7 +164,7 @@
       "clientName": "John Smith",
       "occupation": "Marketing Manager",
       "message": "I am very impressed with the quality of service and attention to detail provided by this company. They helped us increase our online presence and attract more customers. Highly recommended!",
-      "rate": 5
+      "rate": 4.2
     },
     {
       "id": "12335",

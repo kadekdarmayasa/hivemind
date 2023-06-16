@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
 import Layout from '@components/Layout';
+import Loading from '@components/Loading';
 import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@partials/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import type { BlogItemProps } from 'types/BlogItem';
@@ -23,7 +24,8 @@ export default function HomePage() {
   const refClients = useRef<HTMLElement>(null);
   const { data, error, isLoading } = useSWR<HomepageProps, Error>('/api/homepage', fetcher);
 
-  if (error || isLoading) return false;
+  if (error) return false;
+  if (isLoading) return <Loading />;
 
   return (
     <Layout title="Hivemind - Home">

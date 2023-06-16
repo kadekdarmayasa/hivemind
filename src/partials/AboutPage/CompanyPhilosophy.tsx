@@ -1,19 +1,13 @@
-import { motion, MotionProps } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { motion } from 'framer-motion';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { PhilosophyProps } from 'types/Philosophy';
 import Image from 'next/image';
 
-export default function CompanyPhilosophy({
-  philosophy,
-}: {
+type CompanyPhilosophyProps = {
   philosophy: PhilosophyProps;
-}): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+};
 
+export default function CompanyPhilosophy({ philosophy }: CompanyPhilosophyProps) {
   return (
     <>
       <motion.h1
@@ -25,11 +19,7 @@ export default function CompanyPhilosophy({
       </motion.h1>
 
       <div className="flex flex-col lg:flex-row gap-5 mt-14 sm:mt-20 items-center justify-center">
-        <motion.div
-          {...commonMotionProps}
-          variants={fadeVariants('linear')}
-          className="flex-1"
-        >
+        <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="flex-1">
           <motion.h2
             {...commonMotionProps}
             variants={transformVariants('linear')}
@@ -48,7 +38,7 @@ export default function CompanyPhilosophy({
         </motion.div>
         <motion.div
           {...commonMotionProps}
-          variants={fadeVariants('linear')}
+          variants={transformVariants('linear')}
           className="flex-1 w-full flex justify-end"
         >
           <Image
@@ -57,6 +47,7 @@ export default function CompanyPhilosophy({
             src={philosophy.imageId}
             alt="Company Philosophy"
             className="shadow-black-lg xl:w-[98%] w-[100%]"
+            priority
           />
         </motion.div>
       </div>

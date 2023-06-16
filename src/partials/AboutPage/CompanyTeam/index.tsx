@@ -1,37 +1,17 @@
-import { motion, MotionProps } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { motion } from 'framer-motion';
 import Slider from 'react-slick';
-import type { TeamProps } from 'types/Team';
-import useSlider from '@hooks/useSlider.tsx';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import SliderArrow from '@components/SliderArrow.tsx';
+import useSlider from '@hooks/useSlider.tsx';
+import type { TeamProps } from 'types/Team';
 import TeamItem from './TeamItem';
 
-export default function CompanyTeam({
-  teams,
-}: {
+type CompanyTeamProps = {
   teams: TeamProps[];
-}): JSX.Element {
-  const { handlePrevSlide, handleNextSlide, sliderRef } = useSlider();
+};
 
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
-
-  const settings = {
-    className: 'slider variable-width',
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    variableWidth: true,
-    pauseOnHover: true,
-    slidesPerRow: 1,
-    rows: 1,
-  };
+export default function CompanyTeam({ teams }: CompanyTeamProps) {
+  const { handlePrevSlide, handleNextSlide, sliderRef, sliderConfig } = useSlider();
 
   return (
     <section className="mt-32">
@@ -57,17 +37,10 @@ export default function CompanyTeam({
         </motion.h2>
       </motion.div>
 
-      <SliderArrow
-        prevSlideHandler={handlePrevSlide}
-        nextSlideHandler={handleNextSlide}
-      />
+      <SliderArrow prevSlideHandler={handlePrevSlide} nextSlideHandler={handleNextSlide} />
 
-      <motion.div
-        {...commonMotionProps}
-        variants={fadeVariants('linear')}
-        className="h-auto my-4"
-      >
-        <Slider ref={sliderRef} {...settings} className="h-auto">
+      <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="h-auto my-4">
+        <Slider ref={sliderRef} {...sliderConfig} className="h-auto">
           {teams.map((team, index) => (
             <TeamItem team={team} key={index} />
           ))}

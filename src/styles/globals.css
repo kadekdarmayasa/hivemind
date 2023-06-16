@@ -1,4 +1,5 @@
 @import 'slick.css';
+@import 'loading.css';
 
 @tailwind base;
 @tailwind components;
@@ -60,11 +61,11 @@ html {
     @apply text-xl text-coarse-wool font-medium leading-snug;
   }
 
-  .heading-5 {
+  .body-1 {
     @apply text-lg text-coarse-wool font-medium leading-snug;
   }
 
-  .heading-6 {
+  .body-2 {
     @apply text-base text-coarse-wool font-medium leading-snug;
   }
 }
@@ -74,7 +75,7 @@ html {
     Navbar 
   */
 
-  .nav-link:is(:hover, .active) div > * {
+  .nav-link:is(:hover, .active) > * {
     @apply text-palatinate-blue cursor-pointer;
   }
 
