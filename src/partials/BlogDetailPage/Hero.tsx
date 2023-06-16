@@ -1,6 +1,6 @@
-import { motion, MotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 
 type BlogDetailHeroProps = {
   publishedDate: string;
@@ -13,14 +13,9 @@ type BlogDetailHeroProps = {
 type SmallMotionProps = {
   innerText: string;
   custom: number;
-  isLastElement?: boolean;
 };
 
-function SmallMotion({
-  innerText,
-  custom,
-  isLastElement,
-}: SmallMotionProps): JSX.Element {
+function SmallMotion({ innerText, custom }: SmallMotionProps) {
   return (
     <motion.small
       initial="hidden"
@@ -28,25 +23,15 @@ function SmallMotion({
       viewport={{ once: true }}
       variants={transformVariants('linear')}
       custom={custom}
-      className={`label-text ${isLastElement ? '' : 'mr-2'}`}
+      className="label-text mr-2"
     >
       {innerText}
     </motion.small>
   );
 }
 
-export default function Hero({
-  publishedDate,
-  author,
-  title,
-  imageId,
-  imageOriginSource,
-}: BlogDetailHeroProps): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+export default function Hero(props: BlogDetailHeroProps) {
+  const { publishedDate, author, title, imageId, imageOriginSource } = props;
 
   return (
     <section>
@@ -54,7 +39,7 @@ export default function Hero({
         <div className="flex items-center">
           <SmallMotion innerText={author} custom={0} />
           <SmallMotion innerText="." custom={1} />
-          <SmallMotion innerText={publishedDate} custom={2} isLastElement />
+          <SmallMotion innerText={publishedDate} custom={2} />
         </div>
         <motion.h1
           {...commonMotionProps}
