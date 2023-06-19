@@ -1,26 +1,24 @@
 import { ChangeEvent, FormEvent, useState, useMemo } from 'react';
-import { MotionProps, motion } from 'framer-motion';
-import { fadeVariants, transformVariants } from '@utils/motion/variants';
+import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import type { AlertProps } from 'types/AlertProps';
 import { Alert } from '@material-tailwind/react';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
+import { AlertProps } from 'types/AlertProps';
+import type { ContactInformationProps } from 'types/ContactInformation';
 import Button from '@components/Button';
 import { Input, Textarea } from '@components/Form';
-import type { ContactInformationProps } from 'types/ContactInformation';
 import ContactInformation from './ContactInformation';
 
-export default function GetInTouch({
-  contactInformations,
-}: {
+type GetInTouchProps = {
   contactInformations: ContactInformationProps[];
-}): JSX.Element {
-  const commonMotionProps: MotionProps = {
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true },
-  };
+};
+
+const sendIconProps = { size: '1.3em', className: 'mt-[2px] ms-2' };
+
+export default function GetInTouch({ contactInformations }: GetInTouchProps) {
+  const [isSending, setIsSending] = useState(false);
 
   const [inputValue, setInputValue] = useState({
     name: '',
@@ -28,14 +26,28 @@ export default function GetInTouch({
     message: '',
   });
 
-  const [isSending, setIsSending] = useState(false);
-
   const [alert, setAlert] = useState<AlertProps>({
     show: false,
     icon: null,
     message: '',
     type: 'success',
   });
+
+  const setAlertState = (isSuccessful: boolean) => {
+    const message = isSuccessful
+      ? 'Your message has been sent successfully.'
+      : 'Oops! something went wrong. Try again later.';
+    const icon = isSuccessful ? <IoCheckmarkCircleOutline /> : <IoAlertCircleOutline />;
+    const type = isSuccessful ? 'success' : 'failed';
+
+    setAlert((prevState) => ({
+      ...prevState,
+      show: true,
+      icon,
+      message,
+      type,
+    }));
+  };
 
   const alertIconProps: IconContext = useMemo(
     () => ({
@@ -45,55 +57,31 @@ export default function GetInTouch({
     [alert.type],
   );
 
-  const sendIconProps: IconContext = useMemo(
-    () => ({ size: '1.3em', className: 'mt-[2px] ms-2' }),
-    [],
-  );
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputValue((prevProps) => ({ ...prevProps, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
 
     try {
+      const { currentTarget } = e;
+
       const response: EmailJSResponseStatus = await emailjs.sendForm(
         'service_2pnfp18',
         'template_ushp53d',
-        e.currentTarget,
+        currentTarget,
         'lqP46IkwDTQI1otnI',
       );
 
-      if (response.status === 200) {
-        setAlert({
-          ...alert,
-          show: true,
-          icon: <IoCheckmarkCircleOutline />,
-          message: 'Your message has been sent successfully.',
-          type: 'success',
-        });
-      } else {
-        setAlert({
-          ...alert,
-          show: true,
-          icon: <IoAlertCircleOutline />,
-          message: 'Oops! something went wrong. Try again later.',
-          type: 'failed',
-        });
-      }
+      const isSuccessful = response?.status === 200;
+      setAlertState(isSuccessful);
     } catch (_) {
-      setAlert({
-        ...alert,
-        show: true,
-        icon: <IoAlertCircleOutline />,
-        message: 'Oops! something went wrong. Try again later.',
-        type: 'failed',
-      });
+      setAlertState(false);
     }
 
-    setInputValue({ name: '', email: '', message: '' });
+    setInputValue((prevProps) => ({ ...prevProps, name: '', email: '', message: '' }));
     setIsSending(false);
   };
 
@@ -142,7 +130,7 @@ export default function GetInTouch({
           {...commonMotionProps}
           variants={fadeVariants('linear')}
           className="flex-1 lg:w-[50%] lg:order-2 w-full lg:ps-10 lg:border-l-2  lg:border-l-[#E8EAFF] border-b-2 border-b-[#E8EAFF] pb-10 lg:pb-0 lg:border-b-0 lg:border-b-transparent"
-          onSubmit={handleSubmit}
+          onSubmit={handleFormSubmit}
           method="post"
         >
           <Alert
@@ -166,7 +154,7 @@ export default function GetInTouch({
             name="name"
             id="name"
             value={inputValue.name}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeHolder="Enter your name..."
             showErrorMessage
             parentClassName="mb-8 flex flex-col"
@@ -180,7 +168,7 @@ export default function GetInTouch({
             name="email"
             id="email"
             value={inputValue.email}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeHolder="Enter your email..."
             showErrorMessage
             parentClassName="mb-8 flex flex-col"
@@ -195,30 +183,28 @@ export default function GetInTouch({
             value={inputValue.message}
             placeHolder="Enter your question..."
             parentClassName="mt-8"
-            onChange={handleChange}
+            onChange={handleInputChange}
           />
 
-          <Button
-            isPrimary
-            type="submit"
-            className="h-14 mt-10 w-[230px] rounded-full hover:shadow-purple-md focus:shadow-purple-md"
-          >
-            {isSending ? (
-              <>
-                <div className="flex items-center justify-center mr-2">
-                  <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white" />
-                </div>
-                <small className="text-lg">Sending...</small>
-              </>
-            ) : (
-              <>
-                <small className="text-lg">Send message</small>
-                <IconContext.Provider value={sendIconProps}>
-                  <IoSendOutline />
-                </IconContext.Provider>
-              </>
-            )}
-          </Button>
+          {isSending ? (
+            <Button disabled type="button" className="h-14 mt-10 w-[230px] rounded-full">
+              <div className="flex items-center justify-center mr-2">
+                <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white" />
+              </div>
+              <small className="text-lg">Sending...</small>
+            </Button>
+          ) : (
+            <Button
+              isPrimary
+              type="submit"
+              className="h-14 mt-10 w-[230px] rounded-full hover:shadow-purple-md focus:shadow-purple-md"
+            >
+              <small className="text-lg">Send message</small>
+              <IconContext.Provider value={sendIconProps}>
+                <IoSendOutline />
+              </IconContext.Provider>
+            </Button>
+          )}
         </motion.form>
       </motion.div>
     </motion.section>

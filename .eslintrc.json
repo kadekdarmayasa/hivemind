@@ -31,13 +31,8 @@
     "react/jsx-wrap-multilines": ["error", { "prop": "ignore" }],
     "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
     "comma-dangle": ["error", "always-multiline"],
-    "no-unused-expressions": [
-      "error",
-      {
-        "allowTernary": true,
-        "allowShortCircuit": true
-      }
-    ],
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
     "arrow-body-style": ["error", "as-needed"],
     "import/extensions": [
       "error",

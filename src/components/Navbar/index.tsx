@@ -1,13 +1,15 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
-import type { NavItemProps } from 'types/NavItem';
 import Brand from '@components/Brand';
+import type { NavItemProps } from 'types/NavItem';
 import NavigationMenu from './NavigationMenu';
 import HamburgerMenuButton from './HamburgerMenuButton';
 
 type NavbarProps = {
   menus: NavItemProps[];
 };
+
+// Todo: add useScrennSize hook
 
 export default function Navbar({ menus }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
