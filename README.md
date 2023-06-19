@@ -8,7 +8,3 @@ Hivemind is a digital agency platform that assists businesses in succeeding in d
 
 **Client:** NextJs, TailwindCSS
 
-**Server:** Node, Express
-
-**Database:** MongoDB
-
