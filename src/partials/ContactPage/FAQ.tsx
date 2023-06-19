@@ -4,7 +4,7 @@ import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motio
 import Accordion from '@components/Accordion';
 import type { FAQProps } from 'types/FAQProps';
 
-export default function FAQ({ faqs }: { faqs: FAQProps[] }): JSX.Element {
+export default function FAQ({ faqs }: { faqs: FAQProps[] }) {
   const FAQContainerRef = useRef<HTMLElement>(null);
 
   return (

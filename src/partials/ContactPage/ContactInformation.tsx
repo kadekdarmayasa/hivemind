@@ -5,7 +5,7 @@ export default function ContactInformation({
   contactInformation,
 }: {
   contactInformation: ContactInformationProps;
-}): JSX.Element {
+}) {
   const { imageId, name, value } = contactInformation;
 
   return (
