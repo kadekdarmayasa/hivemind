@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion';
 import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motion';
-import type { OurValuesProps as OVProps } from 'types/OurValues';
+import type { OurValuesProps } from 'types/OurValues';
 import { OurValueItem } from './OurValueItem';
 
-type OurValuesProps = {
-  ourValues: OVProps[];
-};
-
-export default function OurValues({ ourValues }: OurValuesProps) {
+export default function OurValues({ ourValues }: { ourValues: OurValuesProps[] }) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div

@@ -1,12 +1,8 @@
 import Image from 'next/image';
 import Star from '@components/Star';
-import type { TestimonyItemProps as TIProps } from 'types/TestimonyItem';
+import type { TestimonyItemProps } from 'types/TestimonyItem';
 
-type TestimonyItemProps = {
-  testimony: TIProps;
-};
-
-export default function TestimonyItem({ testimony }: TestimonyItemProps) {
+export default function TestimonyItem({ testimony }: { testimony: TestimonyItemProps }) {
   const { imageId, clientName, occupation, message, rate } = testimony;
 
   return (

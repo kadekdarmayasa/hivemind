@@ -2,13 +2,9 @@ import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { PortfolioProps as PfProps } from 'types/Portfolio';
+import type { PortfolioProps } from 'types/Portfolio';
 import Button from '@components/Button';
 import PortfolioItem from '@components/PortfolioItem';
-
-type PortfolioProps = {
-  portfolios: PfProps[];
-};
 
 const arrowForwardIconProps: IconContext = {
   size: '1.3em',
@@ -16,7 +12,7 @@ const arrowForwardIconProps: IconContext = {
   color: '#2B3BE5',
 };
 
-export default function Portfolio({ portfolios }: PortfolioProps) {
+export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div

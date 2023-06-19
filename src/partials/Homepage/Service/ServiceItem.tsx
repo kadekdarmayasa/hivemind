@@ -2,14 +2,9 @@ import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 import { transformVariants, hoverVariants, commonMotionProps } from '@utils/motion';
-import type { ServiceItemProps as SIProps } from 'types/ServiceItem';
+import type { ServiceItemProps } from 'types/ServiceItem';
 import Image from 'next/image';
 import Button from '@components/Button';
-
-type ServiceItemProps = {
-  service: SIProps;
-  index: number;
-};
 
 const arrowForwardIconProps: IconContext = {
   size: '1.3em',
@@ -17,7 +12,7 @@ const arrowForwardIconProps: IconContext = {
   color: '#2B3BE5',
 };
 
-export function ServiceItem({ service, index }: ServiceItemProps) {
+export function ServiceItem({ service, index }: { service: ServiceItemProps; index: number }) {
   const motionProps = {
     ...commonMotionProps,
     custom: index,
