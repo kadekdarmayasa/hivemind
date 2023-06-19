@@ -1,8 +1,8 @@
-import Layout from '@components/Layout';
 import useSWR from 'swr';
+import { GetInTouch, FAQ } from '@partials/ContactPage';
 import type { ContactInformationProps } from 'types/ContactInformation';
 import type { FAQProps } from 'types/FAQProps';
-import { GetInTouch, FAQ } from '@partials/ContactPage';
+import Layout from '@components/Layout';
 import { fetcher } from '@utils/fetcher/get';
 import Loading from '@components/Loading';
 

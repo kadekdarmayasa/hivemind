@@ -1,5 +1,8 @@
-import Layout from '@components/Layout';
 import useSWR from 'swr';
+import type { TeamProps } from 'types/Team';
+import type { PhilosophyProps } from 'types/Philosophy';
+import type { WorkCultureProps } from 'types/WorkCulture';
+import Layout from '@components/Layout';
 import { fetcher } from '@utils/fetcher/get';
 import Loading from '@components/Loading';
 import {
@@ -9,9 +12,6 @@ import {
   CompanyTeam,
   CompanyWorkCulture,
 } from '@partials/AboutPage';
-import type { TeamProps } from 'types/Team';
-import type { PhilosophyProps } from 'types/Philosophy';
-import type { WorkCultureProps } from 'types/WorkCulture';
 
 type AboutProps = {
   company: {

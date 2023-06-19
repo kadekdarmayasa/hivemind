@@ -42,7 +42,8 @@
         "pattern": {
           "tsx": "never",
           "ts": "never",
-          "json": "never"
+          "json": "never",
+          "css": "always"
         }
       }
     ],

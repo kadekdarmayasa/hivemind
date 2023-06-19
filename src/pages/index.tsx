@@ -1,15 +1,15 @@
 import { useRef } from 'react';
 import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
-import Layout from '@components/Layout';
-import Loading from '@components/Loading';
-import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@partials/Homepage';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import type { BlogItemProps } from 'types/BlogItem';
 import type { PortfolioProps } from 'types/Portfolio';
 import type { ServiceItemProps } from 'types/ServiceItem';
 import type { OurValuesProps } from 'types/OurValues';
 import type { ClientProps } from 'types/Client';
+import Layout from '@components/Layout';
+import Loading from '@components/Loading';
+import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@partials/Homepage';
 
 type HomepageProps = {
   clients: ClientProps[];

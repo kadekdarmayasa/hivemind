@@ -14,7 +14,7 @@ type TestimonyProps = {
 
 export default function Testimony(props: TestimonyProps) {
   const { title, testimonies, labelText = 'Testimony' } = props;
-  const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
+  const [handleNextSlide, handlePrevSlide, sliderRef, sliderConfig] = useSlider();
 
   return (
     <section className="mt-32 2xl:mt-44">

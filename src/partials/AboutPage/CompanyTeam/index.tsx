@@ -11,7 +11,7 @@ type CompanyTeamProps = {
 };
 
 export default function CompanyTeam({ teams }: CompanyTeamProps) {
-  const { handlePrevSlide, handleNextSlide, sliderRef, sliderConfig } = useSlider();
+  const [handleNextSlide, handlePrevSlide, sliderRef, sliderConfig] = useSlider();
 
   return (
     <section className="mt-32">

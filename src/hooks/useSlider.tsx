@@ -1,10 +1,31 @@
-import { useRef } from 'react';
+import { useRef, MutableRefObject } from 'react';
 import Slider from 'react-slick';
 
-export const useSlider = () => {
+type sliderConfigProps = {
+  className: string;
+  infinite: boolean;
+  speed: number;
+  autoplay: boolean;
+  autoplaySpeed: number;
+  slidesToShow: number;
+  slidesToScroll: number;
+  variableWidth: boolean;
+  pauseOnHover: boolean;
+  slidesPerRow: number;
+  rows: number;
+};
+
+type SliderReturnType = [
+  () => void,
+  () => void,
+  MutableRefObject<Slider | null>,
+  sliderConfigProps,
+];
+
+export const useSlider = (): SliderReturnType => {
   const sliderRef = useRef<Slider | null>(null);
 
-  const sliderConfig = {
+  const sliderConfig: sliderConfigProps = {
     className: 'slider variable-width',
     infinite: true,
     speed: 500,
@@ -26,5 +47,5 @@ export const useSlider = () => {
     sliderRef.current?.slickPrev();
   };
 
-  return { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig };
+  return [handleNextSlide, handlePrevSlide, sliderRef, sliderConfig];
 };
