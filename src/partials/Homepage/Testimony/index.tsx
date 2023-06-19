@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import useSlider from '@hooks/useSlider';
+import { useSlider } from '@hooks/useSlider';
 import SliderArrow from '@components/SliderArrow';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import TestimonyItem from './TestimonyItem';

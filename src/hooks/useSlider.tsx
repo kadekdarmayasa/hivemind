@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Slider from 'react-slick';
 
-export default function useSlider() {
+export const useSlider = () => {
   const sliderRef = useRef<Slider | null>(null);
 
   const sliderConfig = {
@@ -27,4 +27,4 @@ export default function useSlider() {
   };
 
   return { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig };
-}
+};
