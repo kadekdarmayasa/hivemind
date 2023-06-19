@@ -1,6 +1,7 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Brand from '@components/Brand';
+import { useScreenSize } from '@hooks/useScreenSize';
 import type { NavItemProps } from 'types/NavItem';
 import NavigationMenu from './NavigationMenu';
 import HamburgerMenuButton from './HamburgerMenuButton';
@@ -9,26 +10,18 @@ type NavbarProps = {
   menus: NavItemProps[];
 };
 
-// Todo: add useScrennSize hook
+const TABLET_VIEWPORT_SIZE = 720;
 
 export default function Navbar({ menus }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [screenSize, setScreenSize] = useState({ width: window.innerWidth });
-
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      setScreenSize({ width: window.innerWidth });
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const [screenSize] = useScreenSize();
 
   useEffect(() => {
-    setIsOpen(screenSize.width >= 720);
+    setIsOpen(
+      screenSize.width
+        ? screenSize.width >= TABLET_VIEWPORT_SIZE
+        : window.innerWidth >= TABLET_VIEWPORT_SIZE,
+    );
   }, [screenSize.width]);
 
   return (
