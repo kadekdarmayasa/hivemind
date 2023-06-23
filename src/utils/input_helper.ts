@@ -1,6 +1,8 @@
 import type { InputType } from 'types/InputType';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const START_WITH_SPACE_REGEX = /^\s/;
+const END_WITH_SPACE_REGEX = /\s$/;
 
 type ErrorMessage = {
   email: string;
@@ -16,7 +18,7 @@ type InputHelperProps = {
 export const InputHelper: InputHelperProps = {
   errorMessage: {
     email: 'Please enter email in a valid format',
-    text: (name: string) => `${name} cannot be empty`,
+    text: (name: string) => `Please enter a valid ${name.toLocaleLowerCase()}`,
     default: 'The field cannot be empty',
   },
 
@@ -24,6 +26,11 @@ export const InputHelper: InputHelperProps = {
     if (type === 'email') {
       return EMAIL_REGEX.test(value);
     }
-    return value !== '';
+
+    if (type === 'text' || type === 'textarea') {
+      return (
+        !START_WITH_SPACE_REGEX.test(value) && !END_WITH_SPACE_REGEX.test(value) && value.length > 0
+      );
+    }
   },
 };
