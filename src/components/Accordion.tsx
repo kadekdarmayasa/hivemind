@@ -9,9 +9,14 @@ import type { FAQProps } from 'types/FAQProps';
 const iconChevronDownProps: IconContext = { size: '0.8em' };
 
 export default function Accordion({ faqs }: { faqs: FAQProps[] }) {
-  const [openStates, setOpenStates] = useState<boolean[]>(faqs.map(() => false));
+  const [openStates, setOpenStates] = useState<boolean[]>(
+    faqs.map((_, index) => {
+      if (index === 0) return true;
+      return false;
+    }),
+  );
 
-  const handleToggleOpen = (index: number): void => {
+  const handleOpenStates = (index: number): void => {
     const updatedOpenStates = [...openStates];
     updatedOpenStates[index] = !updatedOpenStates[index];
     setOpenStates(updatedOpenStates);
@@ -34,7 +39,7 @@ export default function Accordion({ faqs }: { faqs: FAQProps[] }) {
             ${openStates[index] ? 'shadow-black-sm' : ''}`}
           >
             <AccordionHeader
-              onClick={() => handleToggleOpen(index)}
+              onClick={() => handleOpenStates(index)}
               className={`heading-3 font-outfit text-left !font-medium !border-none 
               ${openStates[index] ? '!text-palatinate-blue' : '!text-coarse-wool'}`}
             >

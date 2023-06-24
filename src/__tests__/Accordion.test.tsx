@@ -16,7 +16,7 @@ window.IntersectionObserver = jest.fn((callback, options) => ({
   options,
 }));
 
-function TestAccordion() {
+function AccordionComponent() {
   const faqs: FAQProps[] = [
     {
       id: 1235,
@@ -33,29 +33,25 @@ function TestAccordion() {
   return <Accordion faqs={faqs} />;
 }
 
-test('accordion item should has class "shadow-black-sm" when the condition is open', () => {
-  render(<TestAccordion />);
+it('the first accordion item should has classname "shadow-black-sm" when the first render', () => {
+  render(<AccordionComponent />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');
-
-  accordionItems.forEach((accordionItem) => {
-    expect(getByRole(accordionItem, 'button')).toBeInTheDocument();
-  });
-
-  fireEvent.click(getByRole(accordionItems[1], 'button'));
-
-  expect(accordionItems[1]).toHaveClass('shadow-black-sm');
-
-  fireEvent.click(getByRole(accordionItems[1], 'button'));
-  expect(accordionItems[1]).not.toHaveClass('shadow-black-sm');
+  expect(accordionItems[0]).toHaveClass('shadow-black-sm');
 });
 
-test('all accordion items should not have class "shadow-black-sm" on the first render', () => {
-  render(<TestAccordion />);
+it('accordion item should has classname "shadow-black-sm" when the state is open', () => {
+  render(<AccordionComponent />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');
+  fireEvent.click(getByRole(accordionItems[1], 'button'));
+  expect(accordionItems[1]).toHaveClass('shadow-black-sm');
+});
 
-  accordionItems.forEach((accordionItem) => {
-    expect(accordionItem).not.toHaveClass('shadow-black-sm');
-  });
+it('accordion item should not has classname "shadow-black-sm" when the state is closed', () => {
+  render(<AccordionComponent />);
+
+  const accordionItems = screen.getAllByTestId('accordion-item');
+  fireEvent.click(getByRole(accordionItems[0], 'button'));
+  expect(accordionItems[0]).not.toHaveClass('shadow-black-sm');
 });
