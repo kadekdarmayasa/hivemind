@@ -16,6 +16,7 @@ export default function TestimonyItem({ testimony }: { testimony: TestimonyItemP
             alt={clientName}
             className="rounded-full w-[50px] h-[50px]"
             priority
+            crossOrigin="anonymous"
           />
         </div>
 

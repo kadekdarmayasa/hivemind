@@ -1,13 +1,9 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { PhilosophyProps } from 'types/Philosophy';
 import Image from 'next/image';
+import philosophyImage from '../../../public/images/philosophy-image.png';
 
-type CompanyPhilosophyProps = {
-  philosophy: PhilosophyProps;
-};
-
-export default function CompanyPhilosophy({ philosophy }: CompanyPhilosophyProps) {
+export default function CompanyPhilosophy() {
   return (
     <>
       <motion.h1
@@ -33,7 +29,12 @@ export default function CompanyPhilosophy({ philosophy }: CompanyPhilosophyProps
             custom={1}
             className="text-brave-purple font-normal text-lg leading-9 mt-6"
           >
-            {philosophy.text}
+            Hivemind philosophy is a concept that emphasizes the collective intelligence and
+            creativity of a group of individuals working towards a common goal. It involves
+            collaboration, communication, and the exchange of ideas in an open and respectful
+            environment. In a work culture that promotes the hivemind philosophy, every member of
+            the team is valued for their unique perspective and contributions, and there is a sense
+            of shared ownership and responsibility for the success of the company.
           </motion.p>
         </motion.div>
         <motion.div
@@ -44,8 +45,8 @@ export default function CompanyPhilosophy({ philosophy }: CompanyPhilosophyProps
           <Image
             width={500}
             height={400}
-            src={philosophy.imageId}
-            alt="Company Philosophy"
+            src={philosophyImage}
+            alt="Collective of intelligent people working together"
             className="shadow-black-lg xl:w-[98%] w-[100%]"
             priority
           />

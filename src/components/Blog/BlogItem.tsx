@@ -31,6 +31,7 @@ export default function BlogItem(props: BlogItemProps) {
           width={300}
           height={200}
           className="h-full w-full object-cover"
+          crossOrigin="anonymous"
         />
       </div>
 
@@ -82,6 +83,7 @@ export default function BlogItem(props: BlogItemProps) {
           src={blog.imageId}
           alt={blog.title}
           className="w-full h-full rounded-lg"
+          crossOrigin="anonymous"
         />
       </motion.div>
 
@@ -152,6 +154,7 @@ export default function BlogItem(props: BlogItemProps) {
           width={300}
           height={200}
           className="h-full w-full object-cover"
+          crossOrigin="anonymous"
         />
       </div>
 

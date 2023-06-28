@@ -1,6 +1,6 @@
 export type ContactInformationProps = {
-  id: string;
-  imageId: string;
+  id: number;
+  icon: JSX.Element;
   name: string;
   value: string;
 };

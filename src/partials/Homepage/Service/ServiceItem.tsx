@@ -35,6 +35,7 @@ export function ServiceItem({ service, index }: { service: ServiceItemProps; ind
           height={30}
           width={30}
           style={{ width: '40px' }}
+          crossOrigin="anonymous"
         />
       </div>
       <h3 className="heading-3 mb-3">{service.name}</h3>

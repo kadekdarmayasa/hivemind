@@ -1,17 +1,22 @@
 import type { ContactInformationProps } from 'types/ContactInformation';
-import Image from 'next/image';
+import { IconContext } from 'react-icons';
+
+const contactInformationIconProps: IconContext = {
+  size: '1.8em',
+  className: 'text-palatinate-blue',
+};
 
 export default function ContactInformation({
   contactInformation,
 }: {
   contactInformation: ContactInformationProps;
 }) {
-  const { imageId, name, value } = contactInformation;
+  const { icon, name, value } = contactInformation;
 
   return (
     <div className="flex mt-5 flex-col sm:flex-row">
       <div className="bg-[#E8EAFF] h-16 w-16 flex items-center justify-center rounded-md">
-        <Image src={imageId} width={32} height={32} alt={name} priority />
+        <IconContext.Provider value={contactInformationIconProps}>{icon}</IconContext.Provider>
       </div>
 
       <div className="mt-4 sm:mt-0 sm:ms-5">

@@ -33,6 +33,7 @@ export default function PortfolioItem({ portfolio, index }: PortfolioItemProps) 
         width={400}
         height={isPortrait ? 600 : 400}
         className="h-full w-full object-cover group-hover:scale-105 transition-all"
+        crossOrigin="anonymous"
       />
 
       <div

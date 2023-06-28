@@ -1,7 +1,15 @@
 import { ChangeEvent, FormEvent, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
-import { IoSendOutline, IoCheckmarkCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
+import {
+  IoSendOutline,
+  IoCheckmarkCircleOutline,
+  IoAlertCircleOutline,
+  IoMailOutline,
+  IoCallOutline,
+  IoTimeOutline,
+  IoLocationOutline,
+} from 'react-icons/io5';
 import { Alert } from '@material-tailwind/react';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
@@ -11,13 +19,36 @@ import Button from '@components/Button';
 import { Input, Textarea } from '@components/Form';
 import ContactInformation from './ContactInformation';
 
-type GetInTouchProps = {
-  contactInformations: ContactInformationProps[];
-};
+const contactInformations: ContactInformationProps[] = [
+  {
+    id: 12212,
+    icon: <IoMailOutline />,
+    name: 'Email',
+    value: 'info@hivemind.com',
+  },
+  {
+    id: 12213,
+    icon: <IoCallOutline />,
+    name: 'Telp',
+    value: '(555) 123-4567',
+  },
+  {
+    id: 12214,
+    icon: <IoTimeOutline />,
+    name: 'Business Hours',
+    value: 'Monday - Friday, 9.00am - 5.00pm WITA',
+  },
+  {
+    id: 12215,
+    icon: <IoLocationOutline />,
+    name: 'Address',
+    value: '123 Main st, Suite 500, Bali, Indonesia',
+  },
+];
 
-const sendIconProps = { size: '1.3em', className: 'mt-[2px] ms-2' };
+const sendIconProps: IconContext = { size: '1.3em', className: 'mt-[2px] ms-2' };
 
-export default function GetInTouch({ contactInformations }: GetInTouchProps) {
+export default function GetInTouch() {
   const [isSending, setIsSending] = useState(false);
 
   const [inputValue, setInputValue] = useState({

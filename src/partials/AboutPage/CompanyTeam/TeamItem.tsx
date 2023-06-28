@@ -17,6 +17,7 @@ export default function TeamCarouselItem({ team }: TeamCarouselItemProps) {
           src={imageId}
           alt={name}
           className="w-full object-cover group-hover:scale-[1.02] transition-all"
+          crossOrigin="anonymous"
           priority
         />
       </div>

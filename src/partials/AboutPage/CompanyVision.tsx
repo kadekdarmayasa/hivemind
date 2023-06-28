@@ -3,13 +3,14 @@ import { IconContext } from 'react-icons';
 import { IoCheckmarkCircleOutline } from 'react-icons/io5';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 
-type CompanyVisionProps = {
-  visions: string[];
-};
+const companyVisions: string[] = [
+  'To become the leading provider of innovative and cutting-edge digital solutions for businesses of all sizes and industries.',
+  'To establish long-lasting relationships with our clients, partners, and stakeholders by consistently exceeding their expectations.',
+];
 
 const checkMarkIconProps = { size: '30px', color: '#5BFBD8' };
 
-export default function CompanyVision({ visions }: CompanyVisionProps) {
+export default function CompanyVision() {
   return (
     <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="flex-1">
       <motion.h2
@@ -21,7 +22,7 @@ export default function CompanyVision({ visions }: CompanyVisionProps) {
       </motion.h2>
 
       <motion.ul {...commonMotionProps} variants={fadeVariants('linear')}>
-        {visions.map((vision, index) => (
+        {companyVisions.map((companyVision, index) => (
           <motion.li
             key={index}
             {...commonMotionProps}
@@ -36,7 +37,7 @@ export default function CompanyVision({ visions }: CompanyVisionProps) {
                 <IoCheckmarkCircleOutline />
               </IconContext.Provider>
             </div>
-            <span>{vision}</span>
+            <span>{companyVision}</span>
           </motion.li>
         ))}
       </motion.ul>

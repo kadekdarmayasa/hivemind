@@ -182,6 +182,8 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
               <Link
                 href="https://www.facebook.com"
                 className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+                rel="noreferrer"
+                target="_blank"
               >
                 {' '}
                 <SlSocialFacebook />
@@ -189,8 +191,10 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
             </motion.div>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={1}>
               <Link
-                href="https://www.facebook.com"
+                href="https://www.twitter.com"
                 className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+                rel="noreferrer"
+                target="_blank"
               >
                 {' '}
                 <SlSocialTwitter />
@@ -198,8 +202,10 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
             </motion.div>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={2}>
               <Link
-                href="https://www.facebook.com"
+                href="https://www.linkedin.com"
                 className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+                rel="noreferrer"
+                target="_blank"
               >
                 {' '}
                 <SlSocialLinkedin />
