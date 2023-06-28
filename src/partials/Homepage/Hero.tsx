@@ -18,7 +18,7 @@ const chatboxIconProps: IconContext = {
 };
 
 export default function Hero({ refClients }: HeroProps) {
-  const scrollToClients = () => {
+  const scrollToClientSection = () => {
     window.scrollTo({
       top: refClients.current.offsetTop - 50,
       behavior: 'smooth',
@@ -91,7 +91,7 @@ export default function Hero({ refClients }: HeroProps) {
           >
             <Button
               className="h-[60px] md:w-[210px] w-full md:ml-6 mt-5 md:mt-0 relative group"
-              onClick={scrollToClients}
+              onClick={scrollToClientSection}
             >
               <div className="rounded-xl h-8 w-5 border-palatinate-blue border-[2px] relative flex justify-center mr-4">
                 <span className="animate-bounce block w-1 h-2 rounded-lg top-2 bg-palatinate-blue absolute" />

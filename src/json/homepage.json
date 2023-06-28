@@ -3,65 +3,42 @@
     {
       "id": "122144",
       "name": "Amazon",
-      "imagePath": "/images/logo-amazon-gray.png"
+      "logo": "/images/logo-amazon-gray.png"
     },
     {
       "id": "122145",
       "name": "Apple",
-      "imagePath": "/images/logo-apple-gray.png"
+      "logo": "/images/logo-apple-gray.png"
     },
     {
       "id": "122146",
       "name": "Behance",
-      "imagePath": "/images/logo-behance-gray.png"
+      "logo": "/images/logo-behance-gray.png"
     },
     {
       "id": "122147",
       "name": "Dribble",
-      "imagePath": "/images/logo-dribbble-gray.png"
+      "logo": "/images/logo-dribbble-gray.png"
     },
     {
       "id": "122148",
       "name": "Dropbox",
-      "imagePath": "/images/logo-dropbox-gray.png"
+      "logo": "/images/logo-dropbox-gray.png"
     },
     {
       "id": "122149",
       "name": "Google",
-      "imagePath": "/images/logo-google-gray.png"
+      "logo": "/images/logo-google-gray.png"
     },
     {
       "id": "122150",
       "name": "Paypal",
-      "imagePath": "/images/logo-paypal-gray.png"
+      "logo": "/images/logo-paypal-gray.png"
     },
     {
       "id": "122151",
       "name": "Slack",
-      "imagePath": "/images/logo-slack-gray.png"
-    }
-  ],
-
-  "companyValues": [
-    {
-      "id": 122444,
-      "value": "Experience",
-      "description": "With years of experience in the digital marketing industry, we have the expertise and knowledge to develop and implement effective strategies that will help you reach your business goals."
-    },
-    {
-      "id": 122445,
-      "value": "Result-driven",
-      "description": "Our focus is on delivering measurable results for our clients. We use data-driven insights to make informed decisions and constantly evaluate and adjust our strategies to ensure maximum <abbr title='Return On Investment'>ROI</abbr>."
-    },
-    {
-      "id": 122446,
-      "value": "Custom Solutions",
-      "description": "We tailor our services to meet the specific needs and goals of each client. We work closely with our clients to develop custom digital solutions that are designed to deliver results"
-    },
-    {
-      "id": 122447,
-      "value": "Transparent communication",
-      "description": "We believe in open and honest communication with our clients every step of the way. We provide regular updates and detailed reports, so you always know how your campaigns are performing."
+      "logo": "/images/logo-slack-gray.png"
     }
   ],
 

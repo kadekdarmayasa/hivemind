@@ -22,19 +22,19 @@ export default function Client({ clients, refClients }: ClientProps) {
         variants={transformVariants('linear')}
         className="flex text-center justify-center text-sm font-medium text-brave-purple uppercase tracking-widest"
       >
-        Trusted by top companies and organizations
+        Trusted by top companies and leading brands
       </motion.small>
 
       <div className="flex relative flex-wrap justify-center gap-10 mt-14">
-        {clients.map((client, i) => (
+        {clients.map(({ id, name, logo }, i) => (
           <motion.div
-            key={client.id}
+            key={id}
             custom={i}
             {...commonMotionProps}
             variants={transformVariants('easeInOut')}
             className="w-[80px] h-[80px]"
           >
-            <Image src={client.imagePath} alt={client.name} width={80} height={80} />
+            <Image src={logo} alt={name} width={80} height={80} />
           </motion.div>
         ))}
       </div>

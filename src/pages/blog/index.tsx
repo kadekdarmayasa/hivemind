@@ -8,7 +8,7 @@ import { useScreenSize } from '@hooks/useScreenSize';
 import type { BlogItemProps } from 'types/BlogItem';
 
 export default function BlogPage() {
-  const { data, error, isLoading } = useSWR<BlogItemProps[], Error>('/api/blogpage', fetcher);
+  const { data: blogs, error, isLoading } = useSWR<BlogItemProps[], Error>('/api/blog', fetcher);
   const [screenSize] = useScreenSize();
   const getScreenSizeWidth = () => screenSize.width || window.innerWidth;
   const customIndexs = [2, 0, 1];
@@ -19,7 +19,7 @@ export default function BlogPage() {
   return (
     <Layout title="Hivemind - Blog">
       <section className="relative mt-10 grid grid-cols-12 grid-flow-dense sm:gap-x-8 gap-y-10">
-        {data.map((blog, index) => (
+        {blogs.map((blog, index) => (
           <BlogItem
             key={blog.id}
             blog={blog}

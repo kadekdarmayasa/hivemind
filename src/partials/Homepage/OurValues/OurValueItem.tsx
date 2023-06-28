@@ -9,7 +9,7 @@ type OurValueItemProps = {
 };
 
 export function OurValueItem({ ourValue, index }: OurValueItemProps) {
-  const { value, description } = ourValue;
+  const { headline, description } = ourValue;
 
   const motionProps = {
     ...commonMotionProps,
@@ -26,7 +26,7 @@ export function OurValueItem({ ourValue, index }: OurValueItemProps) {
       {...motionProps}
       className="bg-white sm:w-[550px] w-full xl:w-[48%] 2xl:w-[570px] min-h-[300px] h-auto rounded-lg shadow-black-sm px-12 py-12"
     >
-      <h3 className="heading-3">{value}</h3>
+      <h3 className="heading-3">{headline}</h3>
       <p className="mt-4 text-brave-purple font-light text-lg leading-9">{parse(description)}</p>
     </motion.div>
   );
