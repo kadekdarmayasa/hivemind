@@ -48,7 +48,7 @@ export default function PortfolioItem({ portfolio, index }: PortfolioItemProps) 
           {projectName}
         </h3>
         <p
-          className={`!text-white font-normal ${isPortrait ? 'body-1' : 'body-2'}`}
+          className={`!text-white !font-light ${isPortrait ? 'body-1' : 'body-2'}`}
           style={{ textShadow: '0 5px 10px rgba(0, 0, 0, .2)' }}
         >
           {serviceName}

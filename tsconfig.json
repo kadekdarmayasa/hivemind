@@ -19,7 +19,8 @@
       "@components/*": ["./components/*"],
       "@utils/*": ["./utils/*"],
       "@hooks/*": ["./hooks/*"],
-      "@partials/*": ["./partials/*"]
+      "@partials/*": ["./partials/*"],
+      "@globals/*": ["./globals/*"]
     },
     "allowImportingTsExtensions": true
   },

@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import type { BlogItemProps as BIProps } from 'types/BlogItem';
 import { commonMotionProps, fadeVariants, transformVariants } from '@utils/motion';
-import Button from '@components/Button';
+import Link from 'next/link';
 import Image from 'next/image';
 
 type BlogItemProps = {
@@ -23,7 +23,7 @@ export default function BlogItem(props: BlogItemProps) {
   const { blog, contentWidth = 'default', isGridItem = false, index = 0 } = props;
 
   const renderDefault = () => (
-    <div className="h-[auto] bg-white rounded-xl relative blog-item w-[360px]">
+    <div className="h-[auto] bg-white rounded-xl relative blog-item w-[310px] sm:w-[360px] blog-item">
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
         <Image
           src={blog.imageId}
@@ -50,7 +50,11 @@ export default function BlogItem(props: BlogItemProps) {
           {blog.briefDescription}
         </p>
 
-        <Button type="link" href={`/blog/${blog.id}`} className="absolute bottom-10 group">
+        <Link
+          href={`/blog/${blog.id}`}
+          className="absolute bottom-10 group flex justify-center items-center text-palatinate-blue"
+        >
+          {' '}
           <span className="text-lg">Read more</span>
           <IconContext.Provider value={arrowForwardIconProps}>
             <IoArrowForwardSharp />
@@ -59,7 +63,7 @@ export default function BlogItem(props: BlogItemProps) {
             className="absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1
           opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue"
           />
-        </Button>
+        </Link>
       </div>
     </div>
   );
@@ -69,7 +73,7 @@ export default function BlogItem(props: BlogItemProps) {
       {...commonMotionProps}
       variants={fadeVariants('linear')}
       custom={index}
-      className="flex flex-col lg:flex-row gap-10 w-full col-span-12"
+      className="flex flex-col lg:flex-row gap-10 w-full col-span-12 blog-item"
     >
       <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="flex flex-1">
         <Image
@@ -103,7 +107,7 @@ export default function BlogItem(props: BlogItemProps) {
         <motion.h1
           {...commonMotionProps}
           variants={transformVariants('linear')}
-          className="heading-1"
+          className="heading-2 sm:heading-1"
         >
           {blog.title}
         </motion.h1>
@@ -116,15 +120,20 @@ export default function BlogItem(props: BlogItemProps) {
           {blog.briefDescription}
         </motion.p>
 
-        <motion.div {...commonMotionProps} variants={transformVariants('linear')}>
-          <Button type="link" href={`/blog/${blog.id}`} className="relative group mt-6">
-            <span className="text-lg">Read more</span>
-            <IconContext.Provider value={arrowForwardIconProps}>
-              <IoArrowForwardSharp />
-            </IconContext.Provider>
-            <div className="absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1 opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue" />
-          </Button>
-        </motion.div>
+        <Link
+          href={`/blog/${blog.id}`}
+          className="mt-5 group flex justify-center items-center text-palatinate-blue"
+        >
+          {' '}
+          <span className="text-lg">Read more</span>
+          <IconContext.Provider value={arrowForwardIconProps}>
+            <IoArrowForwardSharp />
+          </IconContext.Provider>
+          <div
+            className="absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1
+          opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue"
+          />
+        </Link>
       </div>
     </motion.div>
   );
@@ -134,7 +143,7 @@ export default function BlogItem(props: BlogItemProps) {
       {...commonMotionProps}
       variants={transformVariants('linear')}
       custom={index}
-      className="h-[auto] rounded-xl relative blog-item md:col-span-6 lg:col-span-4 col-span-12"
+      className="h-[auto] rounded-xl relative blog-item md:col-span-6 lg:col-span-4 col-span-12 blog-item"
     >
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
         <Image
@@ -162,16 +171,20 @@ export default function BlogItem(props: BlogItemProps) {
           {blog.briefDescription}
         </p>
 
-        <Button type="link" href={`/blog/${blog.id}`} className="absolute bottom-10 group">
+        <Link
+          href={`/blog/${blog.id}`}
+          className="absolute bottom-10 group flex justify-center items-center text-palatinate-blue"
+        >
+          {' '}
           <span className="text-lg">Read more</span>
           <IconContext.Provider value={arrowForwardIconProps}>
             <IoArrowForwardSharp />
           </IconContext.Provider>
           <div
             className="absolute h-[2px] rounded-lg w-0 left-0 group-hover:w-full -bottom-1
-        opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue"
+          opacity-0 group-hover:opacity-100 transition-all bg-palatinate-blue"
           />
-        </Button>
+        </Link>
       </div>
     </motion.div>
   );

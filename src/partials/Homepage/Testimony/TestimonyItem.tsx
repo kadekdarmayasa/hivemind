@@ -6,7 +6,7 @@ export default function TestimonyItem({ testimony }: { testimony: TestimonyItemP
   const { imageId, clientName, occupation, message, rate } = testimony;
 
   return (
-    <div className="h-auto bg-white  w-[430px] px-8 py-10 rounded-lg testimony-item">
+    <div className="h-auto bg-white w-[310px] sm:w-[430px] px-8 py-10 rounded-lg testimony-item">
       <div className="flex items-center">
         <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
           <Image

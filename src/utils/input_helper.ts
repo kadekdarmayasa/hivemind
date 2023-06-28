@@ -1,8 +1,6 @@
 import type { InputType } from 'types/InputType';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const START_WITH_SPACE_REGEX = /^\s/;
-const END_WITH_SPACE_REGEX = /\s$/;
 
 type ErrorMessage = {
   email: string;
@@ -23,14 +21,7 @@ export const InputHelper: InputHelperProps = {
   },
 
   validateInput(type: InputType, value: string) {
-    if (type === 'email') {
-      return EMAIL_REGEX.test(value);
-    }
-
-    if (type === 'text' || type === 'textarea') {
-      return (
-        !START_WITH_SPACE_REGEX.test(value) && !END_WITH_SPACE_REGEX.test(value) && value.length > 0
-      );
-    }
+    if (type === 'email') return EMAIL_REGEX.test(value);
+    if (type === 'text' || type === 'textarea') return !!value.trim();
   },
 };

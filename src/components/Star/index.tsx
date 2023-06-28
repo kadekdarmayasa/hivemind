@@ -49,7 +49,7 @@ export default function Star(props: StarProps) {
   };
 
   return (
-    <div className="stars" data-testid="stars" style={{ height }}>
+    <div className="star-container" data-testid="star-container" style={{ height }}>
       {renderStarPlaceholders()}
       {renderStars()}
     </div>

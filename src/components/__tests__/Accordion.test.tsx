@@ -33,14 +33,14 @@ function AccordionComponent() {
   return <Accordion faqs={faqs} />;
 }
 
-it('the first accordion item should has classname "shadow-black-sm" when the first render', () => {
+test('the first accordion item should has classname "shadow-black-sm" when the first render', () => {
   render(<AccordionComponent />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');
   expect(accordionItems[0]).toHaveClass('shadow-black-sm');
 });
 
-it('accordion item should has classname "shadow-black-sm" when the state is open', () => {
+test('accordion item should has classname "shadow-black-sm" when the state is open', () => {
   render(<AccordionComponent />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');
@@ -48,7 +48,7 @@ it('accordion item should has classname "shadow-black-sm" when the state is open
   expect(accordionItems[1]).toHaveClass('shadow-black-sm');
 });
 
-it('accordion item should not has classname "shadow-black-sm" when the state is closed', () => {
+test('accordion item should not has classname "shadow-black-sm" when the state is closed', () => {
   render(<AccordionComponent />);
 
   const accordionItems = screen.getAllByTestId('accordion-item');

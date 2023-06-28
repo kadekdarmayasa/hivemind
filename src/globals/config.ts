@@ -1,0 +1,6 @@
+const CONFIG = {
+  MOBILE_VIEWPORT_SIZE: 576,
+  TABLET_VIEWPORT_SIZE: 720,
+};
+
+export default CONFIG;

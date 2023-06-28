@@ -1,18 +1,15 @@
-import { useLayoutEffect, useState } from 'react';
-import { useIsSsr } from './useIsSsr';
+import { useEffect, useState } from 'react';
 
-export const useScreenSize = () => {
-  const [isSsr] = useIsSsr();
+export function useScreenSize() {
+  const [screenSize, setScreenSize] = useState({ width: 0 });
 
-  const [screenSize, setScreenSize] = useState({ width: isSsr && window.innerWidth });
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleResize = () => setScreenSize({ width: window.innerWidth });
 
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
-  });
+  }, []);
 
   return [screenSize];
-};
+}

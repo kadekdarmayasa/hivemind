@@ -9,7 +9,7 @@ export default function TeamCarouselItem({ team }: TeamCarouselItemProps) {
   const { imageId, name, title } = team;
 
   return (
-    <div className="h-auto w-[350px] px-5 group">
+    <div className="h-auto w-[330px] sm:w-[350px] px-5 group">
       <div className="w-full h-[360px] rounded-lg overflow-hidden group transition-all">
         <Image
           height={360}

@@ -26,7 +26,7 @@ export default function CompanyWorkCulture({ workCultures }: CompanyWorkCultureP
           custom={1}
           {...commonMotionProps}
           variants={transformVariants('linear')}
-          className="heading-2 mb-10"
+          className="heading-2 md:mb-10"
         >
           Our Work Culture
         </motion.h2>

@@ -5,6 +5,7 @@ import { IoChatboxOutline } from 'react-icons/io5';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import Image from 'next/image';
 import Button from '@components/Button';
+import Link from 'next/link';
 import heroImage from '../../../public/images/hero-image-1.png';
 
 type HeroProps = {
@@ -43,7 +44,7 @@ export default function Hero({ refClients }: HeroProps) {
           custom={1}
           {...commonMotionProps}
           variants={transformVariants('linear')}
-          className="heading-1 lg:w-[400px] xl:w-[570px]"
+          className="heading-2 sm:heading-1 lg:w-[400px] xl:w-[570px]"
         >
           Transform Your Online Presence with Us
         </motion.h1>
@@ -69,12 +70,15 @@ export default function Hero({ refClients }: HeroProps) {
             viewport={{ once: true, margin: '56px' }}
             variants={transformVariants('linear')}
           >
-            <Button type="link" href="/contact" isPrimary className="w-full h-full">
+            <Link
+              href="/contact"
+              className="flex justify-center items-center w-full h-full bg-palatinate-blue shadow-purple-sm text-white"
+            >
               <IconContext.Provider value={chatboxIconProps}>
                 <IoChatboxOutline className="h-10" />
               </IconContext.Provider>
               <span className="text-lg">Get in Touch</span>
-            </Button>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -95,7 +99,7 @@ export default function Hero({ refClients }: HeroProps) {
               <span className="text-lg underline-offset-8 text-palatinate-blue">
                 Scroll to read more
               </span>
-              <div className="absolute h-[2px] w-0 opacity-0 md:left-0 group-hover:opacity-100 md:group-hover:w-full group-hover:w-[210px] transition-all bg-palatinate-blue bottom-1" />
+              <div className="absolute h-[2px] w-0 opacity-0 md:left-0 group-hover:opacity-100 md:group-hover:w-full group-hover:w-[210px] transition-all bg-palatinate-blue  bottom-1" />
             </Button>
           </motion.div>
         </motion.div>
@@ -104,7 +108,7 @@ export default function Hero({ refClients }: HeroProps) {
       <motion.div
         {...commonMotionProps}
         variants={fadeVariants('anticipate')}
-        className="flex-1 flex lg:justify-end items-center"
+        className="mt-10 lg:mt-0 flex-1 flex justify-center lg:justify-end items-center"
       >
         <Image
           src={heroImage}

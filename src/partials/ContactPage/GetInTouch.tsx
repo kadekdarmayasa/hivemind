@@ -91,7 +91,7 @@ export default function GetInTouch({ contactInformations }: GetInTouchProps) {
         <motion.h1
           {...commonMotionProps}
           variants={transformVariants('linear')}
-          className="heading-1"
+          className="heading-2 sm:heading-1"
         >
           Get In Touch With Us
         </motion.h1>
@@ -100,18 +100,17 @@ export default function GetInTouch({ contactInformations }: GetInTouchProps) {
           {...commonMotionProps}
           variants={transformVariants('linear')}
           custom={1}
-          className="text-brave-purple font-normal text-lg leading-9 mt-3"
+          className="text-brave-purple font-normal text-lg leading-9 mt-3 w-full sm:w-[500px] mx-auto"
         >
-          Have a question or comment? We&apos;re here to help!
-          <br />
-          Reach out to us using the contact information below.
+          Have a question or comment? We&apos;re here to help! Reach out to us using the contact
+          information below.
         </motion.p>
       </motion.div>
 
       <motion.div
         {...commonMotionProps}
         variants={fadeVariants('linear')}
-        className="bg-white h-auto shadow-black-lg rounded-xl mt-10 px-10 py-12 overflow-hidden items-center flex flex-col lg:flex-row"
+        className="bg-white h-auto shadow-black-lg rounded-xl mt-10 px-8 sm:px-10 py-12 overflow-hidden items-center flex flex-col lg:flex-row"
       >
         <motion.div
           {...commonMotionProps}
@@ -157,7 +156,7 @@ export default function GetInTouch({ contactInformations }: GetInTouchProps) {
             onChange={handleInputChange}
             placeHolder="Enter your name..."
             showErrorMessage
-            parentClassName="mb-8 flex flex-col"
+            parentClassName="mb-8 flex flex-col w-full"
             className="bg-[#F2F3FF] placeholder:text-brave-purple h-14 px-5 rounded-lg text-coarse-wool text-lg
             font-light border-2 outline-none transition-all"
           />

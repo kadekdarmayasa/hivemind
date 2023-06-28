@@ -6,7 +6,7 @@ export default function StarItem(props: StarProps) {
   return (
     <div
       className={`star ${type === 'placeholder' && 'placeholder'}`}
-      data-testid={`${type === 'yellow' ? 'yellowStar' : 'starPlaceholder'} `}
+      data-testid={`${type === 'yellow' ? 'yellow-star' : 'star-placeholder'} `}
       style={{ left: leftPosition, height, width }}
     />
   );

@@ -9,7 +9,10 @@ export default function Brand() {
       animate={{ translateY: 0, opacity: 1 }}
       transition={{ duration: 1.2 }}
     >
-      <Link href="/" className="text-palatinate-blue text-3xl font-bold flex items-center">
+      <Link
+        href="/"
+        className="text-palatinate-blue text-2xl sm:text-3xl font-bold flex items-center"
+      >
         <Image
           src="/images/hivemind-logo.svg"
           alt="Hivemind Logo"

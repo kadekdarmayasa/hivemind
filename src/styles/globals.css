@@ -72,10 +72,17 @@ html {
 
 @layer components {
   /* 
+    Progress Bar
+  */
+  .progress-bar {
+    @apply fixed z-50 top-0 left-0 right-0 h-[5px] bg-palatinate-blue origin-left;
+  }
+
+  /* 
     Navbar 
   */
 
-  .nav-link:is(:hover, .active) > * {
+  .nav-link:is(:hover, .active) > a {
     @apply text-palatinate-blue cursor-pointer;
   }
 
@@ -92,9 +99,10 @@ html {
     @apply opacity-100 scale-100;
   }
 
-  /* 
-    Blog Detail 
-  */
+  /* Blog */
+  .blog-item small {
+    @apply text-palatinate-blue cursor-pointer;
+  }
 
   .blog-detail h2 {
     @apply text-3xl text-coarse-wool font-semibold leading-snug mt-10;
@@ -120,7 +128,7 @@ html {
     Star 
   */
 
-  .stars {
+  .star-container {
     @apply relative min-w-[200px] inline-flex;
   }
 
@@ -137,7 +145,18 @@ html {
     @apply bg-gray-200 z-[8];
   }
 
-  .progress-bar {
-    @apply fixed z-50 top-0 left-0 right-0 h-[5px] bg-palatinate-blue origin-left;
+  /*
+    Footer
+  */
+
+  .footer-nav-link {
+    @apply transition-all text-brave-purple text-lg mt-3 block;
+  }
+
+  .footer-nav-link:hover {
+    @apply bg-gradient-to-t from-cyan-600 to-palatinate-blue;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

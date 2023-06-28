@@ -7,6 +7,7 @@ import type { NavItemProps } from 'types/NavItem';
 import Button from '@components/Button';
 import { Input } from '@components/Form';
 import Brand from '@components/Brand';
+import Link from 'next/link';
 
 const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
 
@@ -74,14 +75,12 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
                 variants={transformVariants('linear')}
                 custom={index + 1}
               >
-                <Button
-                  type="link"
+                <Link
                   href={menu.path}
-                  className="transition-all !text-brave-purple !text-lg mt-3 hover:!text-palatinate-blue
-              focus:!text-palatinate-blue"
+                  className="transition-all text-brave-purple text-lg mt-3 block hover:text-palatinate-blue"
                 >
                   {menu.name}
-                </Button>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
@@ -173,41 +172,38 @@ export default function Footer({ menus }: { menus: NavItemProps[] }) {
           {...commonMotionProps}
           variants={fadeVariants('linear')}
           custom={0}
-          className="text-brave-purple font-regular text-lg leading-9 lg:text-center"
+          className="text-brave-purple font-regular text-lg leading-9 text-center"
         >
           &copy; 2023 Hivemind. All Rights Reserved.
         </motion.p>
-        <div className="flex mt-4">
+        <div className="flex mt-4 justify-center">
           <IconContext.Provider value={socialMediaIconProps}>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={0}>
-              <Button
-                type="link"
-                isExternal
+              <Link
                 href="https://www.facebook.com"
                 className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
               >
+                {' '}
                 <SlSocialFacebook />
-              </Button>
+              </Link>
             </motion.div>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={1}>
-              <Button
-                type="link"
-                isExternal
-                href="https://www.twitter.com"
+              <Link
+                href="https://www.facebook.com"
                 className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
               >
+                {' '}
                 <SlSocialTwitter />
-              </Button>
+              </Link>
             </motion.div>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={2}>
-              <Button
-                type="link"
-                isExternal
-                href="https://www.linkedin.com"
+              <Link
+                href="https://www.facebook.com"
                 className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
               >
+                {' '}
                 <SlSocialLinkedin />
-              </Button>
+              </Link>
             </motion.div>
           </IconContext.Provider>
         </div>
