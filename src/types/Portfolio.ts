@@ -1,10 +1,8 @@
 export type PortfolioProps = {
-  id: string;
-  imageId: string;
+  id: number;
+  image: string;
   orientation: 'portrait' | 'landscape';
   projectName: string;
-  service: {
-    id: string;
-    name: string;
-  };
+  serviceId: number;
+  serviceName: string;
 };

@@ -1,5 +1,5 @@
 export type ClientProps = {
-  id: string;
+  id: number;
   name: string;
   logo: string;
 };

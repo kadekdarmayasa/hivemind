@@ -1,6 +1,6 @@
 export type ServiceItemProps = {
-  id: string;
-  imageId: string;
+  id: number;
+  icon: string;
   name: string;
   description: string;
 };

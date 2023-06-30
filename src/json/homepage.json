@@ -1,42 +1,42 @@
 {
   "clients": [
     {
-      "id": "122144",
+      "id": 122144,
       "name": "Amazon",
       "logo": "/images/logo-amazon-gray.png"
     },
     {
-      "id": "122145",
+      "id": 122145,
       "name": "Apple",
       "logo": "/images/logo-apple-gray.png"
     },
     {
-      "id": "122146",
+      "id": 122146,
       "name": "Behance",
       "logo": "/images/logo-behance-gray.png"
     },
     {
-      "id": "122147",
+      "id": 122147,
       "name": "Dribble",
       "logo": "/images/logo-dribbble-gray.png"
     },
     {
-      "id": "122148",
+      "id": 122148,
       "name": "Dropbox",
       "logo": "/images/logo-dropbox-gray.png"
     },
     {
-      "id": "122149",
+      "id": 122149,
       "name": "Google",
       "logo": "/images/logo-google-gray.png"
     },
     {
-      "id": "122150",
+      "id": 122150,
       "name": "Paypal",
       "logo": "/images/logo-paypal-gray.png"
     },
     {
-      "id": "122151",
+      "id": 122151,
       "name": "Slack",
       "logo": "/images/logo-slack-gray.png"
     }
@@ -44,38 +44,38 @@
 
   "services": [
     {
-      "id": "ass122jjjjoj033f",
-      "imageId": "/images/desktop.svg",
+      "id": 12345,
+      "icon": "/images/desktop.svg",
       "name": "Web Design",
       "description": "Our team of expert designers creates visually stunning websites that are easy to navigate and optimized for conversion."
     },
     {
-      "id": "ass122jjjjoj033g",
-      "imageId": "/images/chart.svg",
+      "id": 12346,
+      "icon": "/images/chart.svg",
       "name": "Search Engine Optimization",
       "description": "Our SEO specialists help you climb the rankings and increase visibility with proven techniques that drive organic traffic."
     },
     {
-      "id": "ass122jjjjoj033h",
-      "imageId": "/images/megaphone.svg",
+      "id": 12347,
+      "icon": "/images/megaphone.svg",
       "name": "Social Media Marketing",
       "description": "We develop customized social media strategies that drive engagement, increase followers, and ultimately boost your business."
     },
     {
-      "id": "ass122jjjjoj033i",
-      "imageId": "/images/reader.svg",
+      "id": 12348,
+      "icon": "/images/reader.svg",
       "name": "Content Creation",
       "description": "We create compelling, informative content that engages your audience and establishes your brand as an authority."
     },
     {
-      "id": "ass122jjjjoj033j",
-      "imageId": "/images/cart.svg",
+      "id": 12349,
+      "icon": "/images/cart.svg",
       "name": "E-commerce Solutions",
       "description": "We help you develop and optimize your online store, making it easy for customers to browse, shop, and checkout with confidence."
     },
     {
-      "id": "ass122jjjjoj033k",
-      "imageId": "/images/phone.svg",
+      "id": 12350,
+      "icon": "/images/phone.svg",
       "name": "Mobile App Development",
       "description": "Our experienced team of developers creates user-friendly, responsive apps that take your business to the next level."
     }
@@ -83,101 +83,91 @@
 
   "portfolios": [
     {
-      "id": "122893",
-      "imageId": "/images/e-commerce-web.png",
+      "id": 122893,
+      "image": "/images/e-commerce-web.png",
       "orientation": "portrait",
       "projectName": "E-commerce for Fashion",
-      "service": {
-        "id": "ass122jjjjoj033f",
-        "name": "Web Design"
-      }
+      "serviceId": 122133,
+      "serviceName": "Web Design"
     },
     {
-      "id": "122894",
-      "imageId": "/images/fitness-studio.png",
+      "id": 122894,
+      "image": "/images/fitness-studio.png",
       "orientation": "landscape",
       "projectName": "Fitness Studio",
-      "service": {
-        "id": "ass122jjjjoj033k",
-        "name": "Mobile App Development"
-      }
+      "serviceId": 122134,
+      "serviceName": "Mobile App Development"
     },
     {
-      "id": "1228991",
-      "imageId": "/images/seo-optimization.png",
+      "id": 1228991,
+      "image": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
-      "service": {
-        "id": "ass122jjjjoj033g",
-        "name": "Search Engine Optimization"
-      }
+      "serviceId": 122135,
+      "serviceName": "Search Engine Optimization"
     },
     {
-      "id": "122896",
-      "imageId": "/images/video-for-travel-agency.png",
+      "id": 122896,
+      "image": "/images/video-for-travel-agency.png",
       "orientation": "landscape",
       "projectName": "Video Production for Travel Agency",
-      "service": {
-        "id": "ass122jjjjoj033i",
-        "name": "Content Creation"
-      }
+      "serviceId": 122136,
+      "serviceName": "Content Creation"
     },
     {
-      "id": "122897",
-      "imageId": "/images/seo-optimization.png",
+      "id": 122897,
+      "image": "/images/seo-optimization.png",
       "orientation": "landscape",
       "projectName": "SEO Opimization for E-commerce Website",
-      "service": {
-        "id": "ass122jjjjoj033g",
-        "name": "Seach Engine Optimization"
-      }
+      "serviceId": 122137,
+      "serviceName": "Seach Engine Optimization"
     }
   ],
 
   "testimonies": [
     {
-      "id": "12334",
-      "imageId": "/images/testy-1.png",
+      "id": 12334,
+      "clientProfile": "/images/testy-1.png",
       "clientName": "John Smith",
       "occupation": "Marketing Manager",
       "message": "I am very impressed with the quality of service and attention to detail provided by this company. They helped us increase our online presence and attract more customers. Highly recommended!",
       "rate": 4.2
     },
     {
-      "id": "12335",
-      "imageId": "/images/testy-2.png",
+      "id": 12335,
+      "clientProfile": "/images/testy-2.png",
       "clientName": "Max Robinson",
       "occupation": "Entrepreneur",
       "message": "The team at this company is truly professional and skilled. They created a beautiful website for my business and helped me improve my SEO ranking. I will definitely work with them again.",
       "rate": 4
     },
     {
-      "id": "12336",
-      "imageId": "/images/testy-3.png",
+      "id": 12336,
+      "clientProfile": "/images/testy-3.png",
       "clientName": "Olivia Taylor",
       "occupation": "Creative Director",
       "message": "Working with this company was a pleasure. They have a great eye for design and are able to execute projects quickly and efficiently. I would definitely recommend them to anyone looking for high-quality graphic design.",
       "rate": 5
     },
     {
-      "id": "12337",
-      "imageId": "/images/testy-4.jpg",
+      "id": 12337,
+      "clientProfile": "/images/testy-4.jpg",
       "clientName": "Robert Johnson",
       "occupation": "CEO",
       "message": "The results speak for themselves. Since partnering with Hivemind, we've seen a significant increase in website traffic and lead generation. Their team's expertise and creativity have been invaluable to our digital marketing efforts.",
       "rate": 5
     },
     {
-      "id": "12338",
-      "imageId": "/images/testy-5.png",
+      "id": 12338,
+      "clientProfile": "/images/testy-5.png",
       "clientName": "Sarah Lee",
       "occupation": "E-commerce Manager",
       "message": "Working with Hivemind has been a game-changer for our online store. Their e-commerce expertise has helped us streamline our sales process and optimize our website for maximum conversion. We couldn't be happier with the results.",
       "rate": 5
     },
     {
-      "id": "12339",
-      "imageId": "/images/testy-6.png",
+      "id": 12339,
+      "image": "/images/testy-6.png",
       "clientName": "Maria Garcia",
       "occupation": "Real Estate Agent",
       "message": "I've worked with several web design companies in the past, but none have delivered the same level of expertise and customer service as Hivemind. Their team took the time to understand my business and goals and created a website that truly reflects my brand. I would highly recommend their services.",
@@ -187,56 +177,56 @@
 
   "blogs": [
     {
-      "id": "1234214",
+      "id": 1234214,
       "publishedDate": "Sun, 20 Jan 2023",
       "isPublished": true,
       "author": "Admin Hivemind",
-      "imageId": "/images/blog-1.jpg",
+      "thumbnailImage": "/images/blog-1.jpg",
       "title": "How to Increase your Website's Conversion Rate",
       "briefDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
     },
     {
-      "id": "1234215",
+      "id": 1234215,
       "publishedDate": "Wed, 22 Jan 2023",
       "isPublished": true,
       "author": "Admin Hivemind",
-      "imageId": "/images/blog-2.jpg",
+      "thumbnailImage": "/images/blog-2.jpg",
       "title": "The Importance of SEO for Your Business",
       "briefDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
     },
     {
-      "id": "1234216",
+      "id": 1234216,
       "publishedDate": "Sun, 10 Feb 2023",
       "isPublished": true,
       "author": "Admin Hivemind",
-      "imageId": "/images/blog-3.jpg",
+      "thumbnailImage": "/images/blog-3.jpg",
       "title": "Maximizing Your Social Media Presence",
       "briefDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
     },
     {
-      "id": "1234217",
+      "id": 1234217,
       "publishedDate": "Fri, 14 Feb 2023",
       "isPublished": true,
       "author": "Admin Hivemind",
-      "imageId": "/images/blog-4.jpg",
+      "thumbnailImage": "/images/blog-4.jpg",
       "title": "The Top Social Media Trends for 2022 You Need to Know",
       "briefDescription": "Get ahead of the curve with the latest trends in social media marketing and learn how to leverage them to grow your business."
     },
     {
-      "id": "1234218",
+      "id": 1234218,
       "publishedDate": "Tue, 17 Feb 2023",
       "isPublished": true,
       "author": "Admin Hivemind",
-      "imageId": "/images/blog-5.jpg",
+      "thumbnailImage": "/images/blog-5.jpg",
       "title": "The Importance of Responsive Web Design for Your Business",
       "briefDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
     },
     {
-      "id": "1234218",
+      "id": 1234218,
       "publishedDate": "Tue, 17 Feb 2023",
       "isPublished": true,
       "author": "Admin Hivemind",
-      "imageId": "/images/blog-5.jpg",
+      "thumbnailImage": "/images/blog-5.jpg",
       "title": "The Importance of Responsive Web Design for Your Business",
       "briefDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
     }

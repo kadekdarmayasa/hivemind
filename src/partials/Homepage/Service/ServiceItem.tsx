@@ -30,7 +30,7 @@ export function ServiceItem({ service, index }: { service: ServiceItemProps; ind
     >
       <div className="bg-palatinate-blue w-20 h-20 flex items-center justify-center rounded-lg mb-8 2xl:mb-12">
         <Image
-          src={service.imageId}
+          src={service.icon}
           alt={service.name}
           height={30}
           width={30}

@@ -20,14 +20,19 @@ const arrowForwardIconProps: IconContext = {
 };
 
 export default function BlogItem(props: BlogItemProps) {
-  const { blog, contentWidth = 'default', isGridItem = false, index = 0 } = props;
+  const {
+    blog: { id, title, briefDescription, thumbnailImage, publishedDate, author },
+    contentWidth = 'default',
+    isGridItem = false,
+    index = 0,
+  } = props;
 
   const renderDefault = () => (
     <div className="h-[auto] bg-white rounded-xl relative blog-item w-[310px] sm:w-[360px] blog-item">
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
         <Image
-          src={blog.imageId}
-          alt={blog.title}
+          src={thumbnailImage}
+          alt={title}
           width={300}
           height={200}
           className="h-full w-full object-cover"
@@ -38,21 +43,19 @@ export default function BlogItem(props: BlogItemProps) {
       <div className="px-6 py-10">
         <div className="flex">
           <small className="text-palatinate-blue text-sm text-center mr-4 rounded-full">
-            {blog.publishedDate}
+            {publishedDate}
           </small>
-          <small className="text-palatinate-blue text-sm text-center rounded-full">
-            {blog.author}
-          </small>
+          <small className="text-palatinate-blue text-sm text-center rounded-full">{author}</small>
         </div>
 
-        <h3 className="heading-3 mt-6">{blog.title}</h3>
+        <h3 className="heading-3 mt-6">{title}</h3>
 
         <p className="text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-16 overview-text">
-          {blog.briefDescription}
+          {briefDescription}
         </p>
 
         <Link
-          href={`/blog/${blog.id}`}
+          href={`/blog/${id}`}
           className="absolute bottom-10 group flex justify-center items-center text-palatinate-blue"
         >
           {' '}
@@ -80,8 +83,8 @@ export default function BlogItem(props: BlogItemProps) {
         <Image
           width={500}
           height={350}
-          src={blog.imageId}
-          alt={blog.title}
+          src={thumbnailImage}
+          alt={title}
           className="w-full h-full rounded-lg"
           crossOrigin="anonymous"
         />
@@ -94,7 +97,7 @@ export default function BlogItem(props: BlogItemProps) {
             variants={transformVariants('linear')}
             className="text-palatinate-blue text-base mr-4 rounded-full"
           >
-            {blog.publishedDate}
+            {publishedDate}
           </motion.small>
           <motion.small
             {...commonMotionProps}
@@ -102,7 +105,7 @@ export default function BlogItem(props: BlogItemProps) {
             custom={1}
             className="text-palatinate-blue text-base rounded-full"
           >
-            {blog.author}
+            {author}
           </motion.small>
         </div>
 
@@ -111,7 +114,7 @@ export default function BlogItem(props: BlogItemProps) {
           variants={transformVariants('linear')}
           className="heading-2 sm:heading-1"
         >
-          {blog.title}
+          {title}
         </motion.h1>
         <motion.p
           {...commonMotionProps}
@@ -119,11 +122,11 @@ export default function BlogItem(props: BlogItemProps) {
           custom={1}
           className="text-brave-purple font-normal text-xl leading-9 mt-3"
         >
-          {blog.briefDescription}
+          {briefDescription}
         </motion.p>
 
         <Link
-          href={`/blog/${blog.id}`}
+          href={`/blog/${id}`}
           className="mt-5 group flex justify-center items-center text-palatinate-blue"
         >
           {' '}
@@ -149,8 +152,8 @@ export default function BlogItem(props: BlogItemProps) {
     >
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
         <Image
-          src={blog.imageId}
-          alt={blog.title}
+          src={thumbnailImage}
+          alt={title}
           width={300}
           height={200}
           className="h-full w-full object-cover"
@@ -161,21 +164,19 @@ export default function BlogItem(props: BlogItemProps) {
       <div className="px-2 py-6">
         <div className="flex">
           <small className="text-palatinate-blue text-sm text-center mr-4 rounded-full">
-            {blog.publishedDate}
+            {publishedDate}
           </small>
-          <small className="text-palatinate-blue text-sm text-center rounded-full">
-            {blog.author}
-          </small>
+          <small className="text-palatinate-blue text-sm text-center rounded-full">{author}</small>
         </div>
 
-        <h3 className="heading-3 mt-6">{blog.title}</h3>
+        <h3 className="heading-3 mt-6">{title}</h3>
 
         <p className="text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-16 overview-text">
-          {blog.briefDescription}
+          {briefDescription}
         </p>
 
         <Link
-          href={`/blog/${blog.id}`}
+          href={`/blog/${id}`}
           className="absolute bottom-10 group flex justify-center items-center text-palatinate-blue"
         >
           {' '}

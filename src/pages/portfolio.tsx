@@ -7,7 +7,7 @@ import Loading from '@components/Loading';
 import { CategoryList, PortfolioItems } from '@partials/PortfolioPage';
 
 export default function PortfolioPage() {
-  const [categoryId, setCategoryId] = useState<string>('0');
+  const [categoryId, setCategoryId] = useState<number>(0);
   const {
     data: portfolios,
     error,
@@ -21,13 +21,16 @@ export default function PortfolioPage() {
   if (error) return false;
   if (isLoading) return <Loading />;
 
-  const categoryList = portfolios.map((portfolio) => portfolio.service);
+  const categoryList = portfolios.map((portfolio) => ({
+    serviceId: portfolio.serviceId,
+    serviceName: portfolio.serviceName,
+  }));
 
   return (
     <Layout title="Hivemind - Portfolio">
       <section className="mt-14 relative">
         <h1 className="heading-1 text-center">Hivemind&apos;s Portfolios</h1>
-        <CategoryList categoryList={categoryList} onClick={(id: string) => setCategoryId(id)} />
+        <CategoryList categoryList={categoryList} onClick={(id: number) => setCategoryId(id)} />
         <PortfolioItems portfolios={portfolios} />
       </section>
     </Layout>

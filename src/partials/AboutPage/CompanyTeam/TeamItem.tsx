@@ -1,12 +1,8 @@
 import type { TeamProps } from 'types/Team';
 import Image from 'next/image';
 
-type TeamCarouselItemProps = {
-  team: TeamProps;
-};
-
-export default function TeamCarouselItem({ team }: TeamCarouselItemProps) {
-  const { imageId, name, title } = team;
+export default function TeamCarouselItem({ team }: { team: TeamProps }) {
+  const { profile, name, title } = team;
 
   return (
     <div className="h-auto w-[330px] sm:w-[350px] px-5 group">
@@ -14,7 +10,7 @@ export default function TeamCarouselItem({ team }: TeamCarouselItemProps) {
         <Image
           height={360}
           width={350}
-          src={imageId}
+          src={profile}
           alt={name}
           className="w-full object-cover group-hover:scale-[1.02] transition-all"
           crossOrigin="anonymous"

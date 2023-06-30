@@ -9,12 +9,7 @@ type PortfolioItemProps = {
 };
 
 export default function PortfolioItem({ portfolio, index }: PortfolioItemProps) {
-  const {
-    imageId,
-    orientation,
-    projectName,
-    service: { name: serviceName },
-  } = portfolio;
+  const { image, orientation, projectName, serviceName } = portfolio;
 
   const isPortrait = orientation === 'portrait';
 
@@ -28,7 +23,7 @@ export default function PortfolioItem({ portfolio, index }: PortfolioItemProps) 
       }`}
     >
       <Image
-        src={imageId}
+        src={image}
         alt={projectName}
         width={400}
         height={isPortrait ? 600 : 400}

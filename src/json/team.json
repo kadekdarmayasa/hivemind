@@ -1,25 +1,25 @@
 [
   {
-    "id": "12",
-    "imageId": "/images/team-1.png",
+    "id": 12,
+    "profile": "/images/team-1.png",
     "name": "Amanda Chen",
     "title": "Digital Marketing Manager"
   },
   {
-    "id": "13",
-    "imageId": "/images/team-2.png",
+    "id": 13,
+    "profile": "/images/team-2.png",
     "name": "Daniel Wong",
     "title": "Web Developer Expert"
   },
   {
-    "id": "13",
-    "imageId": "/images/team-3.png",
+    "id": 13,
+    "profile": "/images/team-3.png",
     "name": "Eric Nguyen",
     "title": "Lead Developer"
   },
   {
-    "id": "14",
-    "imageId": "/images/team-4.png",
+    "id": 14,
+    "profile": "/images/team-4.png",
     "name": "Rachel Lee",
     "title": "Sales Manager"
   }

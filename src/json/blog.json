@@ -1,65 +1,56 @@
 [
   {
-    "id": "1234214",
-    "publishedDate": "Tue, 17 Feb 2023",
+    "id": 1234214,
+    "publishedDate": "Sun, 20 Jan 2023",
     "isPublished": true,
     "author": "Admin Hivemind",
-    "imageId": "/images/blog-1.jpg",
+    "thumbnailImage": "/images/blog-1.jpg",
     "title": "How to Increase your Website's Conversion Rate",
     "briefDescription": "Learn valuable tips and tricks to optimize your website for increased conversion rates and drive more sales for your business."
   },
   {
-    "id": "1234215",
-    "publishedDate": "Tue, 17 Feb 2023",
+    "id": 1234215,
+    "publishedDate": "Wed, 22 Jan 2023",
     "isPublished": true,
     "author": "Admin Hivemind",
-    "imageId": "/images/blog-2.jpg",
+    "thumbnailImage": "/images/blog-2.jpg",
     "title": "The Importance of SEO for Your Business",
     "briefDescription": "Discover why SEO is a critical component of your digital marketing strategy and how to leverage it to improve your website."
   },
   {
-    "id": "1234216",
-    "publishedDate": "Tue, 17 Feb 2023",
+    "id": 1234216,
+    "publishedDate": "Sun, 10 Feb 2023",
     "isPublished": true,
     "author": "Admin Hivemind",
-    "imageId": "/images/blog-3.jpg",
+    "thumbnailImage": "/images/blog-3.jpg",
     "title": "Maximizing Your Social Media Presence",
     "briefDescription": "Get expert advice on how to make the most of your social media accounts and build a strong online presence for your brand."
   },
   {
-    "id": "1234217",
-    "publishedDate": "Tue, 17 Feb 2023",
+    "id": 1234217,
+    "publishedDate": "Fri, 14 Feb 2023",
     "isPublished": true,
     "author": "Admin Hivemind",
-    "imageId": "/images/blog-4.jpg",
+    "thumbnailImage": "/images/blog-4.jpg",
     "title": "The Top Social Media Trends for 2022 You Need to Know",
     "briefDescription": "Get ahead of the curve with the latest trends in social media marketing and learn how to leverage them to grow your business."
   },
   {
-    "id": "1234218",
+    "id": 1234218,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": true,
     "author": "Admin Hivemind",
-    "imageId": "/images/blog-5.jpg",
+    "thumbnailImage": "/images/blog-5.jpg",
     "title": "The Importance of Responsive Web Design for Your Business",
     "briefDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
   },
   {
-    "id": "1234219",
+    "id": 1234218,
     "publishedDate": "Tue, 17 Feb 2023",
     "isPublished": true,
     "author": "Admin Hivemind",
-    "imageId": "/images/blog-1.jpg",
-    "title": "The Importance of User-Centered Web Design",
-    "briefDescription": "Learn about the benefits of putting user needs at the forefront of your web design strategy and discover best practices for creating engaging websites."
-  },
-  {
-    "id": "1234220",
-    "publishedDate": "Tue, 17 Feb 2023",
-    "isPublished": true,
-    "author": "Admin Hivemind",
-    "imageId": "/images/blog-2.jpg",
-    "title": "The Power of Visual Content: Why Images and Videos Matter",
-    "briefDescription": "Discover the impact of using visual content in your marketing strategy and how it can boost your engagement rates."
+    "thumbnailImage": "/images/blog-5.jpg",
+    "title": "The Importance of Responsive Web Design for Your Business",
+    "briefDescription": "Discover why responsive design is essential for modern websites and how it can improve user experience and boost search engine rankings."
   }
 ]

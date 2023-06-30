@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { WorkCultureProps } from 'types/WorkCulture';
 import Image from 'next/image';
+
+type WorkCultureProps = {
+  id: string;
+  imageId: string;
+  headline: string;
+  description: string;
+};
 
 const companyWorkCultures: WorkCultureProps[] = [
   {

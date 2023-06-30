@@ -4,8 +4,11 @@ import type { PortfolioProps } from 'types/Portfolio';
 import Button from '@components/Button';
 
 type CategoryListProps = {
-  categoryList: PortfolioProps['service'][];
-  onClick: (categoryId: string) => void;
+  categoryList: {
+    serviceId: PortfolioProps['serviceId'];
+    serviceName: PortfolioProps['serviceName'];
+  }[];
+  onClick: (categoryId: number) => void;
 };
 
 function filterUniqueCategories(categoryList: CategoryListProps['categoryList']) {
@@ -29,16 +32,16 @@ export default function CategoryList({ categoryList, onClick }: CategoryListProp
         <Button
           isPrimary
           type="button"
-          onClick={() => onClick('0')}
+          onClick={() => onClick(0)}
           className=" h-10 px-8 !text-sm rounded-full cursor-pointer ms-0 transition-all !shadow-none"
         >
           All
         </Button>
       </motion.div>
 
-      {uniqueCategories.map(({ id, name }, index) => (
+      {uniqueCategories.map(({ serviceId, serviceName }, index) => (
         <motion.div
-          key={id}
+          key={serviceId}
           custom={index}
           {...commonMotionProps}
           variants={fadeVariants('linear')}
@@ -47,10 +50,10 @@ export default function CategoryList({ categoryList, onClick }: CategoryListProp
             key={index}
             isPrimary
             type="button"
-            onClick={() => onClick(id)}
+            onClick={() => onClick(serviceId)}
             className="!bg-[#E8EAFF] h-10 px-8 !text-sm rounded-full !shadow-none cursor-pointer ms-5 !text-palatinate-blue hover:!bg-palatinate-blue hover:!text-white transition-all w-auto"
           >
-            {name}
+            {serviceName}
           </Button>
         </motion.div>
       ))}
