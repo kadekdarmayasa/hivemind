@@ -4,7 +4,7 @@ import { fetcher } from '@utils/fetcher/get';
 import type { PortfolioProps } from 'types/Portfolio';
 import Layout from '@components/Layout';
 import Loading from '@components/Loading';
-import { CategoryList, PortfolioItems } from '@partials/PortfolioPage';
+import { PortfolioCatagoryList, PortfolioContent } from '@partials/PortfolioPage';
 
 export default function PortfolioPage() {
   const [categoryId, setCategoryId] = useState<number>(0);
@@ -30,8 +30,11 @@ export default function PortfolioPage() {
     <Layout title="Hivemind - Portfolio">
       <section className="mt-14 relative">
         <h1 className="heading-1 text-center">Hivemind&apos;s Portfolios</h1>
-        <CategoryList categoryList={categoryList} onClick={(id: number) => setCategoryId(id)} />
-        <PortfolioItems portfolios={portfolios} />
+        <PortfolioCatagoryList
+          categoryList={categoryList}
+          onClick={(id: number) => setCategoryId(id)}
+        />
+        <PortfolioContent portfolios={portfolios} />
       </section>
     </Layout>
   );

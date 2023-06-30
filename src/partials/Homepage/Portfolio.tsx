@@ -17,7 +17,6 @@ const arrowForwardIconProps: IconContext = {
 export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }) {
   const customIndexs = [2, 0, 1];
   const [screenSize] = useScreenSize();
-
   const getScreenWidth = () => screenSize.width || window.innerWidth;
 
   return (

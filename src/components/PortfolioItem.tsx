@@ -10,7 +10,6 @@ type PortfolioItemProps = {
 
 export default function PortfolioItem({ portfolio, index }: PortfolioItemProps) {
   const { image, orientation, projectName, serviceName } = portfolio;
-
   const isPortrait = orientation === 'portrait';
 
   return (

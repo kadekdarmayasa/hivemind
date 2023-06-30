@@ -3,11 +3,7 @@ import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motio
 import type { BlogItemProps } from 'types/BlogItem';
 import BlogCarousel from '@components/Blog';
 
-type BlogProps = {
-  blogs: BlogItemProps[];
-};
-
-export default function Blog({ blogs }: BlogProps) {
+export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div

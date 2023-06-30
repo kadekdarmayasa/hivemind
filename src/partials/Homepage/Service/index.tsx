@@ -5,11 +5,7 @@ import { useScreenSize } from '@hooks/useScreenSize';
 import type { ServiceItemProps } from 'types/ServiceItem';
 import { ServiceItem } from './ServiceItem';
 
-type ServiceProps = {
-  services: ServiceItemProps[];
-};
-
-export default function Service({ services }: ServiceProps) {
+export default function Service({ services }: { services: ServiceItemProps[] }) {
   const [screenSize] = useScreenSize();
   const getScreenWidth = () => screenSize.width || window.innerWidth;
   const customIndexs = [2, 0, 1];

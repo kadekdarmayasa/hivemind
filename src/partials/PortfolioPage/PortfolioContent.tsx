@@ -5,14 +5,9 @@ import { fadeVariants, commonMotionProps } from '@utils/motion';
 import PortfolioItem from '@components/PortfolioItem';
 import type { PortfolioProps } from 'types/Portfolio';
 
-type PortfolioItemsProps = {
-  portfolios: PortfolioProps[];
-};
-
-export default function PortfolioItems({ portfolios }: PortfolioItemsProps) {
+export default function PortfolioContent({ portfolios }: { portfolios: PortfolioProps[] }) {
   const customIndexs = [2, 0, 1];
   const [screenSize] = useScreenSize();
-
   const getScreenWidth = () => screenSize.width || window.innerWidth;
 
   return (

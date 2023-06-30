@@ -23,7 +23,7 @@ function filterUniqueCategories(categoryList: CategoryListProps['categoryList'])
   return uniqueCategories;
 }
 
-export default function CategoryList({ categoryList, onClick }: CategoryListProps) {
+export default function PortfolioCatagegoryList({ categoryList, onClick }: CategoryListProps) {
   const uniqueCategories = filterUniqueCategories(categoryList);
 
   return (
