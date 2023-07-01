@@ -22,7 +22,7 @@ type SliderReturnType = [
   sliderConfigProps,
 ];
 
-export const useSlider = (): SliderReturnType => {
+export function useSlider(): SliderReturnType {
   const sliderRef = useRef<Slider | null>(null);
 
   const sliderConfig: sliderConfigProps = {
@@ -48,4 +48,4 @@ export const useSlider = (): SliderReturnType => {
   };
 
   return [handleNextSlide, handlePrevSlide, sliderRef, sliderConfig];
-};
+}

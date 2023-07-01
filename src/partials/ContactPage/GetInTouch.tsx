@@ -1,10 +1,8 @@
-import { ChangeEvent, FormEvent, useState, useMemo } from 'react';
+import { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import {
   IoSendOutline,
-  IoCheckmarkCircleOutline,
-  IoAlertCircleOutline,
   IoMailOutline,
   IoCallOutline,
   IoTimeOutline,
@@ -12,8 +10,9 @@ import {
 } from 'react-icons/io5';
 import { Alert } from '@material-tailwind/react';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { useAlert } from '@hooks/useAlert';
+import { useForm } from '@hooks/useForm';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import { AlertProps } from 'types/AlertProps';
 import type { ContactInformationProps } from 'types/ContactInformation';
 import Button from '@components/Button';
 import { Input, Textarea } from '@components/Form';
@@ -49,69 +48,30 @@ const contactInformations: ContactInformationProps[] = [
 const sendIconProps: IconContext = { size: '1.3em', className: 'mt-[2px] ms-2' };
 
 export default function GetInTouch() {
+  const { inputValue, setInputValue, handleInputChange } = useForm();
+  const { alert, setAlert, setAlertState, alertIconProps } = useAlert();
   const [isSending, setIsSending] = useState(false);
 
-  const [inputValue, setInputValue] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const sendEmail = async ({ formElement }: { formElement: HTMLFormElement }) => {
+    try {
+      const response: EmailJSResponseStatus = await emailjs.sendForm(
+        'service_2pnfp18',
+        'template_ushp53d',
+        formElement,
+        'lqP46IkwDTQI1otnI',
+      );
 
-  const [alert, setAlert] = useState<AlertProps>({
-    show: false,
-    icon: null,
-    message: '',
-    type: 'success',
-  });
-
-  const setAlertState = (isSuccessful: boolean) => {
-    const message = isSuccessful
-      ? 'Your message has been sent successfully.'
-      : 'Oops! something went wrong. Try again later.';
-    const icon = isSuccessful ? <IoCheckmarkCircleOutline /> : <IoAlertCircleOutline />;
-    const type = isSuccessful ? 'success' : 'failed';
-
-    setAlert((prevState) => ({
-      ...prevState,
-      show: true,
-      icon,
-      message,
-      type,
-    }));
-  };
-
-  const alertIconProps: IconContext = useMemo(
-    () => ({
-      size: '25px',
-      className: `${alert.type === 'failed' ? 'text-red-600' : 'text-rare-wind'}`,
-    }),
-    [alert.type],
-  );
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue((prevProps) => ({ ...prevProps, [e.target.name]: e.target.value }));
+      const isSuccessful = response?.status === 200;
+      setAlertState(isSuccessful ? 'success' : 'failed');
+    } catch (_) {
+      setAlertState('failed');
+    }
   };
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
-
-    try {
-      const { currentTarget } = e;
-
-      const response: EmailJSResponseStatus = await emailjs.sendForm(
-        'service_2pnfp18',
-        'template_ushp53d',
-        currentTarget,
-        'lqP46IkwDTQI1otnI',
-      );
-
-      const isSuccessful = response?.status === 200;
-      setAlertState(isSuccessful);
-    } catch (_) {
-      setAlertState(false);
-    }
-
+    await sendEmail({ formElement: e.currentTarget });
     setInputValue((prevProps) => ({ ...prevProps, name: '', email: '', message: '' }));
     setIsSending(false);
   };
@@ -173,7 +133,7 @@ export default function GetInTouch() {
               alert.type === 'failed'
                 ? 'bg-red-600/10 border-l-red-600'
                 : 'bg-rare-wind/10 border-l-rare-wind'
-            } text-coarse-wool border-l-2  rounded-l-none`}
+            } text-coarse-wool border-l-2 rounded-l-none`}
           >
             {alert.message}
           </Alert>

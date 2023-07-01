@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAnimate, stagger } from 'framer-motion';
 
-export const useMenuAnimation = (isOpen: boolean) => {
+export function useMenuAnimation(isOpen: boolean) {
   const staggerMenuItems = stagger(0.1, { startDelay: 0.2 });
   const [scope, animate] = useAnimate();
   const [isLastMenuItemInView, setIsLastMenuItemInView] = useState(false);
@@ -23,4 +23,4 @@ export const useMenuAnimation = (isOpen: boolean) => {
   });
 
   return { scope, setIsLastMenuItemInView };
-};
+}
