@@ -33,7 +33,7 @@ const ourValues: OurValuesProps[] = [
 ];
 
 export default function OurValues() {
-  const [screenSize] = useScreenSize();
+  const { screenSize } = useScreenSize();
   const getScreenWidth = () => screenSize.width || window.innerWidth;
   const customIndexs = [1, 0];
 

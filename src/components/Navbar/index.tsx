@@ -13,7 +13,7 @@ type NavbarProps = {
 
 export default function Navbar({ menus }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [screenSize] = useScreenSize();
+  const { screenSize } = useScreenSize();
 
   useEffect(() => {
     setIsOpen(

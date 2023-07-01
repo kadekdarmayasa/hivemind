@@ -11,5 +11,5 @@ export function useScreenSize() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return [screenSize];
+  return { screenSize };
 }

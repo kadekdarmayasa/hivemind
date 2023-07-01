@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from 'react';
 
-export function useForm() {
+export function useInput() {
   const [inputValue, setInputValue] = useState({
     name: '',
     email: '',

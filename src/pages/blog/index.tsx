@@ -9,7 +9,7 @@ import type { BlogItemProps } from 'types/BlogItem';
 
 export default function BlogPage() {
   const { data: blogs, error, isLoading } = useSWR<BlogItemProps[], Error>('/api/blog', fetcher);
-  const [screenSize] = useScreenSize();
+  const { screenSize } = useScreenSize();
   const getScreenSizeWidth = () => screenSize.width || window.innerWidth;
   const customIndexs = [2, 0, 1];
 

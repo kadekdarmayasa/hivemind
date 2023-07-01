@@ -11,7 +11,7 @@ import {
 import { Alert } from '@material-tailwind/react';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { useAlert } from '@hooks/useAlert';
-import { useForm } from '@hooks/useForm';
+import { useInput } from '@hooks/useInput';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { ContactInformationProps } from 'types/ContactInformation';
 import Button from '@components/Button';
@@ -48,7 +48,7 @@ const contactInformations: ContactInformationProps[] = [
 const sendIconProps: IconContext = { size: '1.3em', className: 'mt-[2px] ms-2' };
 
 export default function GetInTouch() {
-  const { inputValue, setInputValue, handleInputChange } = useForm();
+  const { inputValue, setInputValue, handleInputChange } = useInput();
   const { alert, setAlert, setAlertState, alertIconProps } = useAlert();
   const [isSending, setIsSending] = useState(false);
 

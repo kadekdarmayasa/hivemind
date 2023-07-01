@@ -12,7 +12,7 @@ type BlogProps = {
 };
 
 export default function Blog({ blogs, arrowPos = 'default' }: BlogProps) {
-  const [handleNextSlide, handlePrevSlide, sliderRef, sliderConfig] = useSlider();
+  const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
 
   return (
     <>

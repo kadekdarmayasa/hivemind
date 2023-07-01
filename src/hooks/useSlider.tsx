@@ -1,4 +1,4 @@
-import { useRef, MutableRefObject } from 'react';
+import { useRef } from 'react';
 import Slider from 'react-slick';
 
 type sliderConfigProps = {
@@ -15,14 +15,7 @@ type sliderConfigProps = {
   rows: number;
 };
 
-type SliderReturnType = [
-  () => void,
-  () => void,
-  MutableRefObject<Slider | null>,
-  sliderConfigProps,
-];
-
-export function useSlider(): SliderReturnType {
+export function useSlider() {
   const sliderRef = useRef<Slider | null>(null);
 
   const sliderConfig: sliderConfigProps = {
@@ -47,5 +40,5 @@ export function useSlider(): SliderReturnType {
     sliderRef.current?.slickPrev();
   };
 
-  return [handleNextSlide, handlePrevSlide, sliderRef, sliderConfig];
+  return { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig };
 }

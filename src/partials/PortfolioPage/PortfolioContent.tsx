@@ -7,7 +7,7 @@ import type { PortfolioProps } from 'types/Portfolio';
 
 export default function PortfolioContent({ portfolios }: { portfolios: PortfolioProps[] }) {
   const customIndexs = [2, 0, 1];
-  const [screenSize] = useScreenSize();
+  const { screenSize } = useScreenSize();
   const getScreenWidth = () => screenSize.width || window.innerWidth;
 
   return (
