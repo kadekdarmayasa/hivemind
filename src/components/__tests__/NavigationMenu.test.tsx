@@ -1,6 +1,6 @@
 import { fireEvent, getByRole, render, screen } from '@testing-library/react';
 import mockRouter from 'next-router-mock';
-import NavigationMenu from '@components/Navbar/NavigationMenuItem';
+import NavigationMenu from '@components/common/Navbar/NavigationMenuItem';
 
 // eslint-disable-next-line global-require
 jest.mock('next/router', () => require('next-router-mock'));

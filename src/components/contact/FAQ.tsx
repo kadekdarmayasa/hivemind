@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motion';
-import Accordion from '@components/Accordion';
 import type { FAQProps } from 'types/FAQProps';
+import Accordion from '../common/Accordion';
 
 export default function FAQ({ faqs }: { faqs: FAQProps[] }) {
   const FAQContainerRef = useRef<HTMLElement>(null);

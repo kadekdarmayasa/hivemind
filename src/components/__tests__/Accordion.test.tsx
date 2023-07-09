@@ -1,6 +1,6 @@
 import { render, fireEvent, getByRole, screen } from '@testing-library/react';
 import type { FAQProps } from 'types/FAQProps';
-import Accordion from '@components/Accordion';
+import Accordion from '@components/common/Accordion';
 
 window.scrollTo = jest.fn();
 

@@ -1,10 +1,10 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
-import Layout from '@components/Layout';
-import { Hero, MainContent, RelatedArticle } from '@partials/BlogDetailPage';
 import type { BlogItemProps } from 'types/BlogItem';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import Loading from '@components/Loading';
-import axios from 'axios';
+import Layout from '@components/common/Layout';
+import Loading from '@components/common/Loading';
+import { Hero, MainContent, RelatedArticle } from '@components/blogdetail';
 
 type BlogDetailProps = BlogItemProps & {
   content: string;

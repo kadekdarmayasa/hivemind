@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import CONFIG from '@globals/config';
-import Brand from '@components/Brand';
 import { useScreenSize } from '@hooks/useScreenSize';
 import type { NavItemProps } from 'types/NavItem';
+import Brand from '../Brand';
 import NavigationMenu from './NavigationMenu';
 import HamburgerMenuButton from './HamburgerMenuButton';
 

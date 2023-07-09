@@ -4,8 +4,8 @@ import type { BlogItemProps } from 'types/BlogItem';
 import type { PortfolioProps } from 'types/Portfolio';
 import type { ServiceItemProps } from 'types/ServiceItem';
 import type { ClientProps } from 'types/Client';
-import Layout from '@components/Layout';
-import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@partials/Homepage';
+import Layout from '@components/common/Layout';
+import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@components/home';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import axios from 'axios';
 

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { PortfolioProps } from 'types/Portfolio';
 import Link from 'next/link';
-import PortfolioItem from '@components/PortfolioItem';
+import PortfolioItem from '../common/PortfolioItem';
 
 const arrowForwardIconProps: IconContext = {
   size: '1.3em',

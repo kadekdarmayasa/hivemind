@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import CONFIG from '@globals/config';
 import { useScreenSize } from '@hooks/useScreenSize';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
-import PortfolioItem from '@components/PortfolioItem';
 import type { PortfolioProps } from 'types/Portfolio';
+import PortfolioItem from '../common/PortfolioItem';
 
 export default function PortfolioContent({ portfolios }: { portfolios: PortfolioProps[] }) {
   const customIndexs = [2, 0, 1];

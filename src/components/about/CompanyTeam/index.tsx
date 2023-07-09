@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
-import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import SliderArrow from '@components/SliderArrow.tsx';
-import { useSlider } from '@hooks/useSlider.tsx';
 import type { TeamProps } from 'types/Team';
+import { useSlider } from '@hooks/useSlider.tsx';
+import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
+import SliderArrow from '@components/common/SliderArrow';
 import TeamItem from './TeamItem';
 
 type CompanyTeamProps = {

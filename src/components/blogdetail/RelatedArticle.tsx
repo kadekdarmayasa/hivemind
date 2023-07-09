@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { transformVariants, commonMotionProps } from '@utils/motion';
 import type { BlogItemProps } from 'types/BlogItem';
-import Blog from '@components/Blog';
+import Blog from '@components/common/Blog';
 
 type RelatedArticleProps = {
   relatedArticles: BlogItemProps[];

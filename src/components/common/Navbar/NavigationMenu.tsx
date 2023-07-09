@@ -4,7 +4,7 @@ import { useInView } from 'framer-motion';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import type { NavItemProps } from 'types/NavItem';
 import { useMenuAnimation } from '@hooks/useMenuAnimation';
-import Button from '@components/Button.tsx';
+import Button from '../Button';
 import NavigationMenuItem from './NavigationMenuItem';
 
 type NavigationMenuProps = {

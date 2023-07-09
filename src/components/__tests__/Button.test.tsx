@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Button from '@components/Button';
+import Button from '@components/common/Button';
 
 test('should have a classname of "bg-palatinate-blue" when it is primary', () => {
   render(<Button isPrimary />);

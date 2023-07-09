@@ -1,14 +1,14 @@
-import Layout from '@components/Layout';
+import { TeamProps } from 'types/Team';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import axios from 'axios';
+import Layout from '@components/common/Layout';
 import {
   CompanyPhilosophy,
   CompanyMission,
   CompanyVision,
   CompanyTeam,
   CompanyWorkCulture,
-} from '@partials/AboutPage';
-import { TeamProps } from 'types/Team';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import axios from 'axios';
+} from '@components/about';
 
 export const getStaticProps: GetStaticProps<{ teams: TeamProps[] }> = async () => {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/teams`);

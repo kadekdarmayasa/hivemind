@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Star from '@components/Star';
+import Star from '@components/common/Star';
 
 const STAR_PROPS = {
   HEIGHT: 40,

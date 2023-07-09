@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import type { BlogItemProps } from 'types/BlogItem';
 import { useSlider } from '@hooks/useSlider.tsx';
 import { commonMotionProps, fadeVariants } from '@utils/motion/';
-import SliderArrow from '@components/SliderArrow.tsx';
+import SliderArrow from '../SliderArrow';
 import BlogItem from './BlogItem';
 
 type BlogProps = {

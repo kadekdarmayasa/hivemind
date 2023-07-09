@@ -1,11 +1,11 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import Image from 'next/image';
-import Button from '@components/Button';
-import Link from 'next/link';
+import Button from '../common/Button';
 import heroImage from '../../../public/images/hero-image-1.png';
 
 type HeroProps = {

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Input } from '@components/Form';
+import { Input } from '@components/common/Form';
 import { ChangeEvent, useState } from 'react';
 
 type TestInputProps = {

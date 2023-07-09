@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
 import type { PortfolioProps } from 'types/Portfolio';
-import Layout from '@components/Layout';
-import { PortfolioCatagoryList, PortfolioContent } from '@partials/PortfolioPage';
-import Loading from '@components/Loading';
+import Layout from '@components/common/Layout';
+import Loading from '@components/common/Loading';
+import { PortfolioCatagoryList, PortfolioContent } from '@components/portfolio';
 
 export default function PortfolioPage() {
   const [categoryId, setCategoryId] = useState<number>(0);

@@ -1,13 +1,13 @@
+import Link from 'next/link';
 import { ChangeEvent, useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { NavItemProps } from 'types/NavItem';
-import Button from '@components/Button';
-import { Input } from '@components/Form';
-import Brand from '@components/Brand';
-import Link from 'next/link';
+import Button from './Button';
+import { Input } from './Form';
+import Brand from './Brand';
 
 const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
 

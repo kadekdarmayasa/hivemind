@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Star from '@components/Star';
+import Star from '@components/common/Star';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 
 export default function TestimonyItem({ testimony }: { testimony: TestimonyItemProps }) {

@@ -5,8 +5,8 @@ import { IoArrowUpOutline } from 'react-icons/io5';
 import { motion, useScroll } from 'framer-motion';
 import type { NavItemProps } from 'types/NavItem';
 import Head from 'next/head';
-import Navbar from '@components/Navbar';
-import Footer from '@components/Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 type LayoutProps = {
   children: ReactNode;

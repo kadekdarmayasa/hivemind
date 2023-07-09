@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
 import type { PortfolioProps } from 'types/Portfolio';
-import Button from '@components/Button';
+import Button from '../common/Button';
 
 type CategoryListProps = {
   categoryList: {

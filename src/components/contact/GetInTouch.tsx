@@ -14,8 +14,8 @@ import { useAlert } from '@hooks/useAlert';
 import { useInput } from '@hooks/useInput';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { ContactInformationProps } from 'types/ContactInformation';
-import Button from '@components/Button';
-import { Input, Textarea } from '@components/Form';
+import Button from '../common/Button';
+import { Input, Textarea } from '../common/Form';
 import ContactInformation from './ContactInformation';
 
 const contactInformations: ContactInformationProps[] = [

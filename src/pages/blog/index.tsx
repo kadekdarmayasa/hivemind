@@ -1,9 +1,9 @@
-import Layout from '@components/Layout';
-import BlogItem from '@components/Blog/BlogItem';
-import type { BlogItemProps } from 'types/BlogItem';
-import Loading from '@components/Loading';
 import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
+import BlogItem from '@components/common/Blog/BlogItem';
+import Layout from '@components/common/Layout';
+import type { BlogItemProps } from 'types/BlogItem';
+import Loading from '@components/common/Loading';
 
 export default function BlogPage() {
   const { data, isLoading } = useSWR<{ blogs: BlogItemProps[] }>('/api/blog', fetcher);

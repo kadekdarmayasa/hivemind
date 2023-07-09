@@ -1,7 +1,7 @@
 import { useMemo, Dispatch, SetStateAction } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMenuOutline } from 'react-icons/io5';
-import Button from '@components/Button';
+import Button from '../Button';
 
 type HamburgerMenuButtonProps = {
   isOpen: boolean;

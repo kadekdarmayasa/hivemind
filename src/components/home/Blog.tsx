@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type { BlogItemProps } from 'types/BlogItem';
-import BlogCarousel from '@components/Blog';
+import BlogCarousel from '../common/Blog';
 
 export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
   return (
