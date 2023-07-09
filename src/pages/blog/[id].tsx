@@ -1,10 +1,10 @@
-import useSWR from 'swr';
 import { useRouter } from 'next/router';
-import Loading from '@components/Loading';
 import Layout from '@components/Layout';
 import { Hero, MainContent, RelatedArticle } from '@partials/BlogDetailPage';
-import { fetcher } from '@utils/fetcher/get';
 import type { BlogItemProps } from 'types/BlogItem';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import Loading from '@components/Loading';
+import axios from 'axios';
 
 type BlogDetailProps = BlogItemProps & {
   content: string;
@@ -13,31 +13,37 @@ type BlogDetailProps = BlogItemProps & {
   relatedArticles: BlogItemProps[];
 };
 
-export default function BlogDetail() {
+export const getStaticProps: GetStaticProps<{
+  blogDetail: BlogDetailProps;
+}> = async ({ params }) => {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blogdetail/${params.id}`);
+  const blogDetail = await res.data;
+
+  if (!blogDetail) return { notFound: true };
+  return { props: { blogDetail }, revalidate: 1 };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [{ params: { id: '1' } }],
+  fallback: true,
+});
+
+export default function BlogDetail({ blogDetail }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-  const { id } = router.query; // will use for getting data when work with API
-  const {
-    data: { title, publishedDate, author, image, imageOriginSource, content, relatedArticles },
-    error,
-    isLoading,
-  } = useSWR<BlogDetailProps, Error>('/api/blogdetail', fetcher);
 
-  if (error) return false;
-  if (isLoading) return <Loading />;
-
+  if (router.isFallback) <Loading />;
   return (
-    <Layout title={title}>
+    <Layout title={blogDetail.title}>
       <div className="mt-14 blog-detail mx-auto max-w-[1020px]">
         <Hero
-          publishedDate={publishedDate}
-          author={author}
-          title={title}
-          imageId={image}
-          imageOriginSource={imageOriginSource}
+          publishedDate={blogDetail.publishedDate}
+          author={blogDetail.author}
+          title={blogDetail.title}
+          imageId={blogDetail.image}
+          imageOriginSource={blogDetail.imageOriginSource}
         />
-        <MainContent htmlString={content} />
-        <RelatedArticle relatedArticles={relatedArticles} />
+        <MainContent htmlString={blogDetail.content} />
+        <RelatedArticle relatedArticles={blogDetail.relatedArticles} />
       </div>
     </Layout>
   );

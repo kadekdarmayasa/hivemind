@@ -3,25 +3,23 @@ import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
 import type { PortfolioProps } from 'types/Portfolio';
 import Layout from '@components/Layout';
-import Loading from '@components/Loading';
 import { PortfolioCatagoryList, PortfolioContent } from '@partials/PortfolioPage';
+import Loading from '@components/Loading';
 
 export default function PortfolioPage() {
   const [categoryId, setCategoryId] = useState<number>(0);
-  const {
-    data: portfolios,
-    error,
-    isLoading,
-  } = useSWR<PortfolioProps[], Error>('/api/portfolio', fetcher);
+  const { data, isLoading } = useSWR<{ portfolios: PortfolioProps[] }, Error>(
+    '/api/portfolio',
+    fetcher,
+  );
 
   useEffect(() => {
-    console.log(categoryId);
+    // console.log(categoryId);
   }, [categoryId]);
 
-  if (error) return false;
   if (isLoading) return <Loading />;
 
-  const categoryList = portfolios.map((portfolio) => ({
+  const categoryList = data.portfolios.map((portfolio) => ({
     serviceId: portfolio.serviceId,
     serviceName: portfolio.serviceName,
   }));
@@ -34,7 +32,7 @@ export default function PortfolioPage() {
           categoryList={categoryList}
           onClick={(id: number) => setCategoryId(id)}
         />
-        <PortfolioContent portfolios={portfolios} />
+        <PortfolioContent portfolios={data.portfolios} />
       </section>
     </Layout>
   );

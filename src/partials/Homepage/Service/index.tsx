@@ -1,15 +1,9 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import CONFIG from '@globals/config';
-import { useScreenSize } from '@hooks/useScreenSize';
 import type { ServiceItemProps } from 'types/ServiceItem';
 import { ServiceItem } from './ServiceItem';
 
 export default function Service({ services }: { services: ServiceItemProps[] }) {
-  const { screenSize } = useScreenSize();
-  const getScreenWidth = () => screenSize.width || window.innerWidth;
-  const customIndexs = [2, 0, 1];
-
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
@@ -41,15 +35,7 @@ export default function Service({ services }: { services: ServiceItemProps[] }) 
         className="flex flex-wrap justify-center gap-8 mt-14"
       >
         {services.map((service, index) => (
-          <ServiceItem
-            key={index}
-            index={
-              !index || getScreenWidth() > CONFIG.MOBILE_VIEWPORT_SIZE
-                ? index
-                : customIndexs[index % 3]
-            }
-            service={service}
-          />
+          <ServiceItem key={index} index={[0, 1, 2][index % 3]} service={service} />
         ))}
       </motion.div>
     </section>

@@ -2,8 +2,6 @@ import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import CONFIG from '@globals/config';
-import { useScreenSize } from '@hooks/useScreenSize';
 import type { PortfolioProps } from 'types/Portfolio';
 import Link from 'next/link';
 import PortfolioItem from '@components/PortfolioItem';
@@ -15,10 +13,6 @@ const arrowForwardIconProps: IconContext = {
 };
 
 export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[] }) {
-  const customIndexs = [2, 0, 1];
-  const { screenSize } = useScreenSize();
-  const getScreenWidth = () => screenSize.width || window.innerWidth;
-
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
@@ -50,15 +44,7 @@ export default function Portfolio({ portfolios }: { portfolios: PortfolioProps[]
         className="grid grid-cols-12 grid-flow-dense gap-5 mt-14"
       >
         {portfolios.map((portfolio, index) => (
-          <PortfolioItem
-            key={portfolio.id}
-            index={
-              index === 0 || getScreenWidth() > CONFIG.MOBILE_VIEWPORT_SIZE
-                ? index
-                : customIndexs[index % 3]
-            }
-            portfolio={portfolio}
-          />
+          <PortfolioItem key={portfolio.id} index={[0, 1, 2][index % 3]} portfolio={portfolio} />
         ))}
       </motion.div>
 

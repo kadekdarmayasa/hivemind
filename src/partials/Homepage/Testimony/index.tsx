@@ -6,14 +6,7 @@ import SliderArrow from '@components/SliderArrow';
 import type { TestimonyItemProps } from 'types/TestimonyItem';
 import TestimonyItem from './TestimonyItem';
 
-type TestimonyProps = {
-  title: string;
-  testimonies: TestimonyItemProps[];
-  labelText?: string;
-};
-
-export default function Testimony(props: TestimonyProps) {
-  const { title, testimonies, labelText = 'Testimony' } = props;
+export default function Testimony({ testimonies }: { testimonies: TestimonyItemProps[] }) {
   const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
 
   return (
@@ -29,7 +22,7 @@ export default function Testimony(props: TestimonyProps) {
           custom={0}
           className="label-text"
         >
-          {labelText}
+          Testimony
         </motion.small>
         <motion.h2
           {...commonMotionProps}
@@ -37,7 +30,7 @@ export default function Testimony(props: TestimonyProps) {
           custom={1}
           className="heading-2"
         >
-          {title}
+          What Clients Says
         </motion.h2>
       </motion.div>
 

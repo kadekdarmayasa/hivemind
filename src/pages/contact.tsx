@@ -1,16 +1,17 @@
-import useSWR from 'swr';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { GetInTouch, FAQ } from '@partials/ContactPage';
 import type { FAQProps } from 'types/FAQProps';
 import Layout from '@components/Layout';
-import { fetcher } from '@utils/fetcher/get';
-import Loading from '@components/Loading';
 
-export default function ContactPage() {
-  const { data: faqs, isLoading, error } = useSWR<FAQProps[], Error>('/api/faq', fetcher);
+export const getStaticProps: GetStaticProps<{ faqs: FAQProps[] }> = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/faqs`);
+  const faqs = await res.json();
 
-  if (error) return false;
-  if (isLoading) return <Loading />;
+  if (!faqs) return { notFound: true };
+  return { props: { faqs }, revalidate: 10 };
+};
 
+export default function ContactPage({ faqs }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout title="Hivemind - Contact">
       <GetInTouch />

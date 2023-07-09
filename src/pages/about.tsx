@@ -1,8 +1,4 @@
-import useSWR from 'swr';
-import type { TeamProps } from 'types/Team';
 import Layout from '@components/Layout';
-import { fetcher } from '@utils/fetcher/get';
-import Loading from '@components/Loading';
 import {
   CompanyPhilosophy,
   CompanyMission,
@@ -10,13 +6,19 @@ import {
   CompanyTeam,
   CompanyWorkCulture,
 } from '@partials/AboutPage';
+import { TeamProps } from 'types/Team';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import axios from 'axios';
 
-export default function AboutPage() {
-  const { data: teams, error, isLoading } = useSWR<TeamProps[], Error>('/api/team', fetcher);
+export const getStaticProps: GetStaticProps<{ teams: TeamProps[] }> = async () => {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/teams`);
+  const teams = await res.data;
 
-  if (error) return false;
-  if (isLoading) return <Loading />;
+  if (!teams) return { notFound: true };
+  return { props: { teams }, revalidate: 1 };
+};
 
+export default function AboutPage({ teams }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout title="Hivemind - About">
       <section className="relative mt-14">

@@ -26,12 +26,12 @@ export default function Client({ clients, refClients }: ClientProps) {
       </motion.small>
 
       <div className="flex relative flex-wrap justify-center gap-10 mt-14">
-        {clients.map(({ id, name, logo }, i) => (
+        {clients.map(({ id, name, logo }) => (
           <motion.div
             key={id}
-            custom={i}
+            custom={0}
             {...commonMotionProps}
-            variants={transformVariants('easeInOut')}
+            variants={fadeVariants('linear')}
             className="w-[80px] h-[80px]"
           >
             <Image src={logo} alt={name} width={80} height={80} />
