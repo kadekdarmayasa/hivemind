@@ -2,14 +2,14 @@ import { useRef, useEffect, Dispatch, SetStateAction } from 'react';
 import { IconContext } from 'react-icons';
 import { useInView } from 'framer-motion';
 import { IoCloseCircleOutline } from 'react-icons/io5';
-import type { NavItemProps } from 'types/NavItem';
+import type NavItemType from 'types/NavItem';
 import { useMenuAnimation } from '@hooks/useMenuAnimation';
 import Button from '../Button';
 import NavigationMenuItem from './NavigationMenuItem';
 
 type NavigationMenuProps = {
   isOpen: boolean;
-  menus: NavItemProps[];
+  menus: NavItemType[];
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 

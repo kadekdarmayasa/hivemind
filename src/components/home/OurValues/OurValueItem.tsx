@@ -1,10 +1,10 @@
 import parse from 'html-react-parser';
 import { motion } from 'framer-motion';
 import { transformVariants, hoverVariants, commonMotionProps } from '@utils/motion';
-import type { OurValuesProps } from 'types/OurValues';
+import type OurValueType from 'types/OurValues';
 
 type OurValueItemProps = {
-  ourValue: OurValuesProps;
+  ourValue: OurValueType;
   index: number;
 };
 

@@ -1,4 +1,4 @@
-export type BlogItemProps = {
+type BlogItem = {
   id: number;
   thumbnailImage: string;
   publishedDate: string;
@@ -9,3 +9,5 @@ export type BlogItemProps = {
   briefDescription: string;
   isPublished?: boolean;
 };
+
+export default BlogItem;

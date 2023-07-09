@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motion';
-import type { FAQProps } from 'types/FAQProps';
+import type FAQItemType from 'types/FAQItem';
 import Accordion from '../common/Accordion';
 
-export default function FAQ({ faqs }: { faqs: FAQProps[] }) {
+export default function FAQ({ faqs }: { faqs: FAQItemType[] }) {
   const FAQContainerRef = useRef<HTMLElement>(null);
 
   return (

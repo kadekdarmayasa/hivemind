@@ -1,4 +1,4 @@
-export type TestimonyItemProps = {
+type TestimonyItem = {
   id: number;
   clientProfile: string;
   clientName: string;
@@ -6,3 +6,5 @@ export type TestimonyItemProps = {
   message: string;
   rate: number;
 };
+
+export default TestimonyItem;

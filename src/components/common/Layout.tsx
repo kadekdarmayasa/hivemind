@@ -3,7 +3,7 @@ import ScrollToTop from 'react-scroll-to-top';
 import { IconContext } from 'react-icons';
 import { IoArrowUpOutline } from 'react-icons/io5';
 import { motion, useScroll } from 'framer-motion';
-import type { NavItemProps } from 'types/NavItem';
+import type NavItemType from 'types/NavItem';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -32,7 +32,7 @@ const arrowUpIconProps: IconContext = { size: '1.2em' };
 export default function Layout({ children, title }: LayoutProps) {
   const { scrollYProgress } = useScroll();
 
-  const menus: NavItemProps[] = [
+  const menus: NavItemType[] = [
     { path: '/', name: 'Home' },
     { path: '/about', name: 'About' },
     { path: '/portfolio', name: 'Portfolio' },

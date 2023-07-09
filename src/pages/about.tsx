@@ -1,4 +1,4 @@
-import { TeamProps } from 'types/Team';
+import TeamType from 'types/Team';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import axios from 'axios';
 import Layout from '@components/common/Layout';
@@ -10,7 +10,7 @@ import {
   CompanyWorkCulture,
 } from '@components/about';
 
-export const getStaticProps: GetStaticProps<{ teams: TeamProps[] }> = async () => {
+export const getStaticProps: GetStaticProps<{ teams: TeamType[] }> = async () => {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/teams`);
   const teams = await res.data;
 

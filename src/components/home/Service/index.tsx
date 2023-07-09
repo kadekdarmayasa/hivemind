@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { ServiceItemProps } from 'types/ServiceItem';
+import type ServiceItemType from 'types/ServiceItem';
 import { ServiceItem } from './ServiceItem';
 
-export default function Service({ services }: { services: ServiceItemProps[] }) {
+export default function Service({ services }: { services: ServiceItemType[] }) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div

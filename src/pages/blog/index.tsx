@@ -2,11 +2,11 @@ import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
 import BlogItem from '@components/common/Blog/BlogItem';
 import Layout from '@components/common/Layout';
-import type { BlogItemProps } from 'types/BlogItem';
+import type BlogItemType from 'types/BlogItem';
 import Loading from '@components/common/Loading';
 
 export default function BlogPage() {
-  const { data, isLoading } = useSWR<{ blogs: BlogItemProps[] }>('/api/blog', fetcher);
+  const { data, isLoading } = useSWR<{ blogs: BlogItemType[] }>('/api/blog', fetcher);
 
   if (isLoading) return <Loading />;
   return (

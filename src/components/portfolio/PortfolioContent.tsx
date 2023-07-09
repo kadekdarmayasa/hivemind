@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import CONFIG from '@globals/config';
 import { useScreenSize } from '@hooks/useScreenSize';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
-import type { PortfolioProps } from 'types/Portfolio';
+import type PortfolioItemType from 'types/PortfolioItem';
 import PortfolioItem from '../common/PortfolioItem';
 
-export default function PortfolioContent({ portfolios }: { portfolios: PortfolioProps[] }) {
+export default function PortfolioContent({ portfolios }: { portfolios: PortfolioItemType[] }) {
   const customIndexs = [2, 0, 1];
   const { screenSize } = useScreenSize();
   const getScreenWidth = () => screenSize.width || window.innerWidth;

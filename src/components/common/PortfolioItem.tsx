@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { transformVariants, commonMotionProps } from '@utils/motion';
-import type { PortfolioProps } from 'types/Portfolio';
+import type { PortfolioProps } from 'types/PortfolioItem';
 import Image from 'next/image';
 
 type PortfolioItemProps = {

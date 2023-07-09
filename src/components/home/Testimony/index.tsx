@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import { useSlider } from '@hooks/useSlider';
-import type { TestimonyItemProps } from 'types/TestimonyItem';
+import type TestimonyItemType from 'types/TestimonyItem';
 import SliderArrow from '../../common/SliderArrow';
 import TestimonyItem from './TestimonyItem';
 
-export default function Testimony({ testimonies }: { testimonies: TestimonyItemProps[] }) {
+export default function Testimony({ testimonies }: { testimonies: TestimonyItemType[] }) {
   const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
 
   return (

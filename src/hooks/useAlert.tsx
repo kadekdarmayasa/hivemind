@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { AlertProps } from 'types/AlertProps';
+import type AlertType from 'types/Alert';
 import { IconContext } from 'react-icons';
 import { IoCheckmarkCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
 
 export function useAlert() {
   const alertIconProps: IconContext = { size: '25px' };
 
-  const [alert, setAlert] = useState<AlertProps>({
+  const [alert, setAlert] = useState<AlertType>({
     show: false,
     icon: null,
     message: '',
     type: 'success',
   });
 
-  const setAlertState = (state: AlertProps['type']) => {
+  const setAlertState = (state: AlertType['type']) => {
     const message =
       state === 'success'
         ? 'Your message has been sent successfully.'

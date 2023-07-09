@@ -1,9 +1,9 @@
 import { LegacyRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import type { NavItemProps } from 'types/NavItem';
+import type NavItemType from 'types/NavItem';
 
-type NavigationMenuItemProps = NavItemProps & {
+type NavigationMenuItemProps = NavItemType & {
   lastMenuItemRef?: LegacyRef<HTMLLIElement>;
 };
 

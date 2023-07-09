@@ -2,7 +2,7 @@ import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 import { transformVariants, hoverVariants, commonMotionProps } from '@utils/motion';
-import type { ServiceItemProps } from 'types/ServiceItem';
+import type ServiceItemType from 'types/ServiceItem';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,7 +12,7 @@ const arrowForwardIconProps: IconContext = {
   color: '#2B3BE5',
 };
 
-export function ServiceItem({ service, index }: { service: ServiceItemProps; index: number }) {
+export function ServiceItem({ service, index }: { service: ServiceItemType; index: number }) {
   const motionProps = {
     ...commonMotionProps,
     custom: index,

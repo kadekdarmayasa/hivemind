@@ -1,4 +1,4 @@
-export type PortfolioProps = {
+type PortfolioItem = {
   id: number;
   image: string;
   orientation: 'portrait' | 'landscape';
@@ -6,3 +6,5 @@ export type PortfolioProps = {
   serviceId: number;
   serviceName: string;
 };
+
+export default PortfolioItem;

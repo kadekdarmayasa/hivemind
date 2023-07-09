@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
-import type { PortfolioProps } from 'types/Portfolio';
+import type PortfolioItemType from 'types/PortfolioItem';
 import Button from '../common/Button';
 
 type CategoryListProps = {
   categoryList: {
-    serviceId: PortfolioProps['serviceId'];
-    serviceName: PortfolioProps['serviceName'];
+    serviceId: PortfolioItemType['serviceId'];
+    serviceName: PortfolioItemType['serviceName'];
   }[];
   onClick: (categoryId: number) => void;
 };

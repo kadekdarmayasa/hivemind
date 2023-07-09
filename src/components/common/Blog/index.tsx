@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
-import type { BlogItemProps } from 'types/BlogItem';
+import type BlogItemType from 'types/BlogItem';
 import { useSlider } from '@hooks/useSlider.tsx';
 import { commonMotionProps, fadeVariants } from '@utils/motion/';
 import SliderArrow from '../SliderArrow';
 import BlogItem from './BlogItem';
 
 type BlogProps = {
-  blogs: BlogItemProps[];
+  blogs: BlogItemType[];
   arrowPos?: 'default' | 'right';
 };
 

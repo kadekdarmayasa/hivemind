@@ -1,6 +1,6 @@
-import type { StarProps } from 'types/Star';
+import type StarType from 'types/Star';
 
-export default function StarItem(props: StarProps) {
+export default function StarItem(props: StarType) {
   const { type, leftPosition, height, width } = props;
 
   return (

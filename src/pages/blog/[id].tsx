@@ -1,16 +1,16 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import type { BlogItemProps } from 'types/BlogItem';
+import type BlogItemType from 'types/BlogItem';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Layout from '@components/common/Layout';
 import Loading from '@components/common/Loading';
 import { Hero, MainContent, RelatedArticle } from '@components/blogdetail';
 
-type BlogDetailProps = BlogItemProps & {
+type BlogDetailProps = BlogItemType & {
   content: string;
   image: string;
   imageOriginSource: string;
-  relatedArticles: BlogItemProps[];
+  relatedArticles: BlogItemType[];
 };
 
 export const getStaticProps: GetStaticProps<{

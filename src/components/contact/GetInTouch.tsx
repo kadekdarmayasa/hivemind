@@ -13,12 +13,12 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { useAlert } from '@hooks/useAlert';
 import { useInput } from '@hooks/useInput';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { ContactInformationProps } from 'types/ContactInformation';
+import type ContactInformationType from 'types/ContactInformation';
 import Button from '../common/Button';
 import { Input, Textarea } from '../common/Form';
 import ContactInformation from './ContactInformation';
 
-const contactInformations: ContactInformationProps[] = [
+const contactInformations: ContactInformationType[] = [
   {
     id: 12212,
     icon: <IoMailOutline />,

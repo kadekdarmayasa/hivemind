@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { BlogItemProps } from 'types/BlogItem';
+import type BlogItemType from 'types/BlogItem';
 import BlogCarousel from '../common/Blog';
 
-export default function Blog({ blogs }: { blogs: BlogItemProps[] }) {
+export default function Blog({ blogs }: { blogs: BlogItemType[] }) {
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div

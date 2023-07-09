@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
-import type { BlogItemProps as BIProps } from 'types/BlogItem';
+import type BlogItemType from 'types/BlogItem';
 import { commonMotionProps, fadeVariants, transformVariants } from '@utils/motion';
 import Link from 'next/link';
 import Image from 'next/image';
 
 type BlogItemProps = {
-  blog: BIProps;
+  blog: BlogItemType;
   contentWidth?: 'large' | 'default';
   isGridItem?: boolean;
   index?: number;

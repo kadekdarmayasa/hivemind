@@ -1,11 +1,11 @@
 import { Ref } from 'react';
 import { motion } from 'framer-motion';
-import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import type { ClientProps as Clprops } from 'types/Client';
+import { fadeVariants, commonMotionProps } from '@utils/motion';
+import type ClientType from 'types/Client';
 import Image from 'next/image';
 
 type ClientProps = {
-  clients: Clprops[];
+  clients: ClientType[];
   refClients: Ref<HTMLElement>;
 };
 
@@ -19,7 +19,7 @@ export default function Client({ clients, refClients }: ClientProps) {
     >
       <motion.small
         {...commonMotionProps}
-        variants={transformVariants('linear')}
+        variants={fadeVariants('linear')}
         className="flex text-center justify-center text-sm font-medium text-brave-purple uppercase tracking-widest"
       >
         Trusted by top companies and leading brands

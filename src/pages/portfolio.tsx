@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import { fetcher } from '@utils/fetcher/get';
-import type { PortfolioProps } from 'types/Portfolio';
+import type PortfolioItemType from 'types/PortfolioItem';
 import Layout from '@components/common/Layout';
 import Loading from '@components/common/Loading';
 import { PortfolioCatagoryList, PortfolioContent } from '@components/portfolio';
 
 export default function PortfolioPage() {
   const [categoryId, setCategoryId] = useState<number>(0);
-  const { data, isLoading } = useSWR<{ portfolios: PortfolioProps[] }, Error>(
+  const { data, isLoading } = useSWR<{ portfolios: PortfolioItemType[] }, Error>(
     '/api/portfolio',
     fetcher,
   );

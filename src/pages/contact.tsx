@@ -1,9 +1,9 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { GetInTouch, FAQ } from '@components/contact';
-import type { FAQProps } from 'types/FAQProps';
+import type FAQItemType from 'types/FAQItem';
 import Layout from '@components/common/Layout';
 
-export const getStaticProps: GetStaticProps<{ faqs: FAQProps[] }> = async () => {
+export const getStaticProps: GetStaticProps<{ faqs: FAQItemType[] }> = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/faqs`);
   const faqs = await res.json();
 

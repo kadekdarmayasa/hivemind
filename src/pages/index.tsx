@@ -1,20 +1,20 @@
 import { useRef } from 'react';
-import type { TestimonyItemProps } from 'types/TestimonyItem';
-import type { BlogItemProps } from 'types/BlogItem';
-import type { PortfolioProps } from 'types/Portfolio';
-import type { ServiceItemProps } from 'types/ServiceItem';
-import type { ClientProps } from 'types/Client';
+import type ClientType from 'types/Client';
+import type ServiceItemType from 'types/ServiceItem';
+import type PortfolioType from 'types/PortfolioItem';
+import type TestimonyItemType from 'types/TestimonyItem';
+import type BlogItemType from 'types/BlogItem';
 import Layout from '@components/common/Layout';
 import { Hero, Client, OurValues, Service, Portfolio, Testimony, Blog } from '@components/home';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import axios from 'axios';
 
 type HomepageProps = {
-  clients: ClientProps[];
-  services: ServiceItemProps[];
-  portfolios: PortfolioProps[];
-  testimonies: TestimonyItemProps[];
-  blogs: BlogItemProps[];
+  clients: ClientType[];
+  services: ServiceItemType[];
+  portfolios: PortfolioType[];
+  testimonies: TestimonyItemType[];
+  blogs: BlogItemType[];
 };
 
 export const getStaticProps: GetStaticProps<{ homepage: HomepageProps }> = async () => {

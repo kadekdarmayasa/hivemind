@@ -1,9 +1,9 @@
-import type { StarProps } from 'types/Star';
+import type StarType from 'types/Star';
 import StarItem from './StarItem';
 
 const DEFAULT_STAR_LENGTH = 5;
 
-export default function Star(props: StarProps) {
+export default function Star(props: StarType) {
   const { value, height, width } = props;
   const decimals = Number(value) % 1;
   const starCount = Math.floor(value);

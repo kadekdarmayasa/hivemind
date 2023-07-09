@@ -1,4 +1,4 @@
-import type { ContactInformationProps } from 'types/ContactInformation';
+import type ContactInformationType from 'types/ContactInformation';
 import { IconContext } from 'react-icons';
 
 const contactInformationIconProps: IconContext = {
@@ -9,7 +9,7 @@ const contactInformationIconProps: IconContext = {
 export default function ContactInformation({
   contactInformation,
 }: {
-  contactInformation: ContactInformationProps;
+  contactInformation: ContactInformationType;
 }) {
   const { icon, name, value } = contactInformation;
 

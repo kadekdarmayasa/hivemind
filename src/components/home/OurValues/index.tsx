@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motion';
-import type { OurValuesProps } from 'types/OurValues';
+import type OurValueType from 'types/OurValues';
 import { OurValueItem } from './OurValueItem';
 
-const ourValues: OurValuesProps[] = [
+const ourValues: OurValueType[] = [
   {
     id: 122444,
     headline: 'Experience',

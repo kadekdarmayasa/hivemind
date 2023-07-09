@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 import { IoChevronDown } from 'react-icons/io5';
 import { Accordion as RCAccordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
 import { transformVariants, commonMotionProps } from '@utils/motion';
-import type { FAQProps } from 'types/FAQProps';
+import type { FAQProps } from 'types/FAQItem';
 
 const iconChevronDownProps: IconContext = { size: '0.8em' };
 
