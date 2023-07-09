@@ -1,5 +1,4 @@
 @import 'slick.css';
-@import 'loading.css';
 
 @tailwind base;
 @tailwind components;
@@ -29,6 +28,19 @@ html {
   line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.logo-hivemind--animate {
+  animation: logo-hivemind--animate 2s linear infinite;
+}
+
+@keyframes logo-hivemind--animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @layer base {
@@ -81,7 +93,6 @@ html {
   /* 
     Navbar 
   */
-
   .nav-link:is(:hover, .active) > a {
     @apply text-palatinate-blue cursor-pointer;
   }
@@ -99,7 +110,10 @@ html {
     @apply opacity-100 scale-100;
   }
 
-  /* Blog */
+  /* 
+    Blog
+  */
+
   .blog-item small {
     @apply text-palatinate-blue cursor-pointer;
   }
