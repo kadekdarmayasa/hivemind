@@ -97,16 +97,11 @@ html {
     @apply text-palatinate-blue cursor-pointer;
   }
 
-  .nav-link a:focus {
-    @apply text-palatinate-blue cursor-pointer;
-  }
-
   .custom-underline {
     @apply h-[2px] w-full scale-0 bg-palatinate-blue absolute -bottom-1 left-0 opacity-0 transition-all rounded-full origin-left duration-300;
   }
 
-  .nav-link:is(:hover, .active) .custom-underline,
-  .nav-link a:focus ~ .custom-underline {
+  .nav-link:is(:hover, .active) .custom-underline {
     @apply opacity-100 scale-100;
   }
 

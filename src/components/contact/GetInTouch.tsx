@@ -1,13 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
-import {
-  IoSendOutline,
-  IoMailOutline,
-  IoCallOutline,
-  IoTimeOutline,
-  IoLocationOutline,
-} from 'react-icons/io5';
+import { IoSendOutline, IoMailOutline, IoTimeOutline, IoLocationOutline } from 'react-icons/io5';
 import { Alert } from '@material-tailwind/react';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { useAlert } from '@hooks/useAlert';
@@ -23,13 +17,7 @@ const contactInformations: ContactInformationType[] = [
     id: 12212,
     icon: <IoMailOutline />,
     name: 'Email',
-    value: 'info@hivemind.com',
-  },
-  {
-    id: 12213,
-    icon: <IoCallOutline />,
-    name: 'Telp',
-    value: '(555) 123-4567',
+    value: 'hivemindindonesia@gmail.com',
   },
   {
     id: 12214,

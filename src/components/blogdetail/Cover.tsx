@@ -30,7 +30,7 @@ function SmallMotion({ innerText, custom }: SmallMotionProps) {
   );
 }
 
-export default function Hero(props: BlogDetailHeroProps) {
+export default function Cover(props: BlogDetailHeroProps) {
   const { publishedDate, author, title, imageId, imageOriginSource } = props;
 
   return (

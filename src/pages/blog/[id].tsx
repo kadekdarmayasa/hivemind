@@ -4,7 +4,7 @@ import type BlogItemType from 'types/BlogItem';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Layout from '@components/common/Layout';
 import Loading from '@components/common/Loading';
-import { Hero, MainContent, RelatedArticle } from '@components/blogdetail';
+import { Cover, MainContent } from '@components/blogdetail';
 
 type BlogDetailProps = BlogItemType & {
   content: string;
@@ -35,7 +35,7 @@ export default function BlogDetail({ blogDetail }: InferGetStaticPropsType<typeo
   return (
     <Layout title={blogDetail.title}>
       <div className="mt-14 blog-detail mx-auto max-w-[1020px]">
-        <Hero
+        <Cover
           publishedDate={blogDetail.publishedDate}
           author={blogDetail.author}
           title={blogDetail.title}
@@ -43,7 +43,6 @@ export default function BlogDetail({ blogDetail }: InferGetStaticPropsType<typeo
           imageOriginSource={blogDetail.imageOriginSource}
         />
         <MainContent htmlString={blogDetail.content} />
-        <RelatedArticle relatedArticles={blogDetail.relatedArticles} />
       </div>
     </Layout>
   );
