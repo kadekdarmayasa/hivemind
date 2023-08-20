@@ -1,6 +1,6 @@
 type TestimonyItem = {
   id: number;
-  clientProfile: string;
+  clientPhoto: string;
   clientName: string;
   occupation: string;
   message: string;

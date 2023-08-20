@@ -1,2 +1,3 @@
-export { default as PortfolioCatagoryList } from './PortfolioCatagoryList';
-export { default as PortfolioContent } from './PortfolioContent';
+export { default as CategoryList } from './CategoryList';
+export { default as Items } from './Items';
+export { default as Skeleton } from './Skeleton';

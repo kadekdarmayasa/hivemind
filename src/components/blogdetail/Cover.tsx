@@ -31,7 +31,7 @@ function SmallMotion({ innerText, custom }: SmallMotionProps) {
 }
 
 export default function Cover(props: BlogDetailHeroProps) {
-  const { publishedDate, author, title, imageId, imageOriginSource } = props;
+  const { publishedDate, author, title, imageId } = props;
 
   return (
     <section>
@@ -57,21 +57,12 @@ export default function Cover(props: BlogDetailHeroProps) {
         className="mt-10 mb-10 relative"
       >
         <Image
-          src={imageId}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${imageId}`}
           alt={title}
           width={500}
           height={400}
           className="!w-full !h-auto rounded-xl"
         />
-        {imageOriginSource && (
-          <motion.figcaption
-            {...commonMotionProps}
-            variants={transformVariants('linear')}
-            className="text-center text-brave-purple font-light mt-2"
-          >
-            {imageOriginSource}
-          </motion.figcaption>
-        )}
       </motion.figure>
     </section>
   );

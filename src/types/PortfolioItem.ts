@@ -1,10 +1,12 @@
 type PortfolioItem = {
   id: number;
-  image: string;
+  thumbnail: string;
   orientation: 'portrait' | 'landscape';
-  projectName: string;
-  serviceId: number;
-  serviceName: string;
+  name: string;
+  service: {
+    id: string;
+    name: string;
+  }
 };
 
 export default PortfolioItem;

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
-import type { TeamProps } from 'types/Team';
+import TeamProps from 'types/Team';
 import { useSlider } from '@hooks/useSlider.tsx';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import SliderArrow from '@components/common/SliderArrow';

@@ -1,39 +1,64 @@
-import { useEffect, useState } from 'react';
-import useSWR from 'swr';
-import { fetcher } from '@utils/fetcher/get';
+import axios from 'axios';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import type PortfolioItemType from 'types/PortfolioItem';
+import { DEFAULT_SERVICE_ID } from '@constants/service';
 import Layout from '@components/common/Layout';
-import Loading from '@components/common/Loading';
-import { PortfolioCatagoryList, PortfolioContent } from '@components/portfolio';
+import { CategoryList, Items, Skeleton } from '@components/portfolio';
 
-export default function PortfolioPage() {
-  const [categoryId, setCategoryId] = useState<number>(0);
-  const { data, isLoading } = useSWR<{ portfolios: PortfolioItemType[] }, Error>(
-    '/api/portfolio',
-    fetcher,
+function PortfolioPage() {
+  const [serviceId, setServiceId] = useState<string>(DEFAULT_SERVICE_ID);
+  const [page, setPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasMore, setHasMore] = useState<boolean>(true);
+  const [portfolios, setPortfolios] = useState<PortfolioItemType[]>([]);
+  const observer = useRef<IntersectionObserver>(null);
+
+  const lastPortfolioElementRef = useCallback(
+    (node: HTMLElement) => {
+      observer.current?.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        entries[0].isIntersecting && hasMore && setPage((prevPage) => prevPage + 1);
+      });
+      node && observer.current.observe(node);
+    },
+    [hasMore],
   );
 
   useEffect(() => {
-    // console.log(categoryId);
-  }, [categoryId]);
+    setPage(1);
+    setIsLoading(true);
+    setHasMore(false);
+    setPortfolios([]);
+  }, [serviceId]);
 
-  if (isLoading) return <Loading />;
-
-  const categoryList = data.portfolios.map((portfolio) => ({
-    serviceId: portfolio.serviceId,
-    serviceName: portfolio.serviceName,
-  }));
+  useEffect(() => {
+    axios
+      .post('/api/portfolio', {
+        page,
+        serviceId,
+      })
+      .then((response) => {
+        if (response.data.portfolios.length > 0) {
+          setPortfolios((prevState) => [...prevState, ...response.data.portfolios]);
+        }
+        setHasMore(response.data.hasMore);
+        setIsLoading(false);
+      });
+  }, [page, serviceId]);
 
   return (
     <Layout title="Hivemind - Portfolio">
       <section className="mt-14 relative">
         <h1 className="heading-1 text-center">Hivemind&apos;s Portfolios</h1>
-        <PortfolioCatagoryList
-          categoryList={categoryList}
-          onClick={(id: number) => setCategoryId(id)}
-        />
-        <PortfolioContent portfolios={data.portfolios} />
+        <CategoryList onClick={(id: string) => setServiceId(id)} />
+        {isLoading ? (
+          <Skeleton />
+        ) : (
+          <Items ref={lastPortfolioElementRef} isLoading={isLoading} portfolios={portfolios} />
+        )}
       </section>
     </Layout>
   );
 }
+
+export default PortfolioPage;

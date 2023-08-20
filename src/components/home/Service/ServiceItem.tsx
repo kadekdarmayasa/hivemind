@@ -30,7 +30,7 @@ export function ServiceItem({ service, index }: { service: ServiceItemType; inde
     >
       <div className="bg-palatinate-blue w-20 h-20 flex items-center justify-center rounded-lg mb-8 2xl:mb-12">
         <Image
-          src={service.icon}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${service.thumbnail}`}
           alt={service.name}
           height={30}
           width={30}

@@ -21,7 +21,7 @@ const arrowForwardIconProps: IconContext = {
 
 export default function BlogItem(props: BlogItemProps) {
   const {
-    blog: { id, title, briefDescription, thumbnailImage, publishedDate, author },
+    blog: { id, title, description, thumbnail, publishedAt, author },
     contentWidth = 'default',
     isGridItem = false,
     index = 0,
@@ -31,7 +31,7 @@ export default function BlogItem(props: BlogItemProps) {
     <div className="h-[auto] bg-white rounded-xl relative blog-item w-[310px] sm:w-[360px] blog-item">
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
         <Image
-          src={thumbnailImage}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${thumbnail}`}
           alt={title}
           width={300}
           height={200}
@@ -43,15 +43,17 @@ export default function BlogItem(props: BlogItemProps) {
       <div className="px-6 py-10">
         <div className="flex">
           <small className="text-palatinate-blue text-sm text-center mr-4 rounded-full">
-            {publishedDate}
+            {publishedAt}
           </small>
-          <small className="text-palatinate-blue text-sm text-center rounded-full">{author}</small>
+          <small className="text-palatinate-blue text-sm text-center rounded-full">
+            {author.username}
+          </small>
         </div>
 
         <h3 className="heading-3 mt-6">{title}</h3>
 
         <p className="text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-16 overview-text">
-          {briefDescription}
+          {description}
         </p>
 
         <Link
@@ -83,7 +85,7 @@ export default function BlogItem(props: BlogItemProps) {
         <Image
           width={500}
           height={350}
-          src={thumbnailImage}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${thumbnail}`}
           alt={title}
           className="w-full h-full rounded-lg"
           crossOrigin="anonymous"
@@ -97,7 +99,7 @@ export default function BlogItem(props: BlogItemProps) {
             variants={transformVariants('linear')}
             className="text-palatinate-blue text-base mr-4 rounded-full"
           >
-            {publishedDate}
+            {publishedAt}
           </motion.small>
           <motion.small
             {...commonMotionProps}
@@ -105,7 +107,7 @@ export default function BlogItem(props: BlogItemProps) {
             custom={1}
             className="text-palatinate-blue text-base rounded-full"
           >
-            {author}
+            {author.username}
           </motion.small>
         </div>
 
@@ -122,7 +124,7 @@ export default function BlogItem(props: BlogItemProps) {
           custom={1}
           className="text-brave-purple font-normal text-xl leading-9 mt-3"
         >
-          {briefDescription}
+          {description}
         </motion.p>
 
         <Link
@@ -152,7 +154,7 @@ export default function BlogItem(props: BlogItemProps) {
     >
       <div className="h-[170px] w-full overflow-hidden rounded-t-xl">
         <Image
-          src={thumbnailImage}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${thumbnail}`}
           alt={title}
           width={300}
           height={200}
@@ -164,15 +166,17 @@ export default function BlogItem(props: BlogItemProps) {
       <div className="px-2 py-6">
         <div className="flex">
           <small className="text-palatinate-blue text-sm text-center mr-4 rounded-full">
-            {publishedDate}
+            {publishedAt}
           </small>
-          <small className="text-palatinate-blue text-sm text-center rounded-full">{author}</small>
+          <small className="text-palatinate-blue text-sm text-center rounded-full">
+            {author.username}
+          </small>
         </div>
 
         <h3 className="heading-3 mt-6">{title}</h3>
 
         <p className="text-brave-purple max-w-full font-light text-lg leading-8 mt-3 mb-16 overview-text">
-          {briefDescription}
+          {description}
         </p>
 
         <Link

@@ -3,14 +3,14 @@ import Star from '@components/common/Star';
 import type TestimonyItemType from 'types/TestimonyItem';
 
 export default function TestimonyItem({ testimony }: { testimony: TestimonyItemType }) {
-  const { clientProfile, clientName, occupation, message, rate } = testimony;
+  const { clientPhoto, clientName, occupation, message, rate } = testimony;
 
   return (
     <div className="h-auto bg-white w-[310px] sm:w-[430px] px-8 py-10 rounded-lg testimony-item">
       <div className="flex items-center">
         <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
           <Image
-            src={clientProfile}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/image/${clientPhoto}`}
             width={50}
             height={50}
             alt={clientName}

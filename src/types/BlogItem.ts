@@ -1,13 +1,10 @@
 type BlogItem = {
   id: number;
-  thumbnailImage: string;
-  publishedDate: string;
-  imageOriginSource?: string;
-  topic?: string;
-  author: string;
+  thumbnail: string;
+  publishedAt: string;
+  author: { username: string };
   title: string;
-  briefDescription: string;
-  isPublished?: boolean;
+  description: string;
 };
 
 export default BlogItem;

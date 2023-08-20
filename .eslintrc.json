@@ -8,7 +8,8 @@
     "plugin:jsx-a11y/recommended",
     "plugin:import/typescript",
     "plugin:@next/next/recommended",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "prettier"
   ],
   "rules": {
     "testing-library/prefer-screen-queries": 0,

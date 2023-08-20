@@ -1,8 +1,10 @@
 type Team = {
   id: number;
-  profile: string;
+  publicPhoto: string;
   name: string;
-  title: string;
+  role: {
+    name: string;
+  };
 };
 
 export default Team;

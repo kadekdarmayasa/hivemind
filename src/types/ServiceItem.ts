@@ -1,6 +1,6 @@
 type ServiceItem = {
   id: number;
-  icon: string;
+  thumbnail: string;
   name: string;
   description: string;
 };

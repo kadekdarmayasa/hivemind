@@ -8,16 +8,14 @@ import { Cover, MainContent } from '@components/blogdetail';
 
 type BlogDetailProps = BlogItemType & {
   content: string;
-  image: string;
-  imageOriginSource: string;
-  relatedArticles: BlogItemType[];
+  coverImage: string;
 };
 
 export const getStaticProps: GetStaticProps<{
   blogDetail: BlogDetailProps;
 }> = async ({ params }) => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blogdetail/${params.id}`);
-  const blogDetail = await res.data;
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blog/${params.id}`);
+  const blogDetail = await res.data.blog;
 
   if (!blogDetail) return { notFound: true };
   return { props: { blogDetail }, revalidate: 1 };
@@ -36,11 +34,10 @@ export default function BlogDetail({ blogDetail }: InferGetStaticPropsType<typeo
     <Layout title={blogDetail.title}>
       <div className="mt-14 blog-detail mx-auto max-w-[1020px]">
         <Cover
-          publishedDate={blogDetail.publishedDate}
-          author={blogDetail.author}
+          publishedDate={blogDetail.publishedAt}
+          author={blogDetail.author.username}
           title={blogDetail.title}
-          imageId={blogDetail.image}
-          imageOriginSource={blogDetail.imageOriginSource}
+          imageId={blogDetail.coverImage}
         />
         <MainContent htmlString={blogDetail.content} />
       </div>

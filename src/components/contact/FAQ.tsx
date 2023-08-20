@@ -2,10 +2,15 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { transformVariants, fadeVariants, commonMotionProps } from '@utils/motion';
 import type FAQItemType from 'types/FAQItem';
+import useSWR from 'swr';
+import axios from 'axios';
 import Accordion from '../common/Accordion';
 
-export default function FAQ({ faqs }: { faqs: FAQItemType[] }) {
+export default function FAQ() {
   const FAQContainerRef = useRef<HTMLElement>(null);
+  const { data: faqs } = useSWR<FAQItemType[]>('/api/faqs', (url) =>
+    axios.get(url).then((response) => response.data),
+  );
 
   return (
     <section className="mt-32" ref={FAQContainerRef}>

@@ -20,7 +20,8 @@
       "@utils/*": ["./utils/*"],
       "@hooks/*": ["./hooks/*"],
       "@partials/*": ["./partials/*"],
-      "@globals/*": ["./globals/*"]
+      "@globals/*": ["./globals/*"],
+      "@constants/*": ["./constants/*"]
     },
     "allowImportingTsExtensions": true
   },

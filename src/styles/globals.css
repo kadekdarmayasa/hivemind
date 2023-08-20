@@ -114,19 +114,11 @@ html {
   }
 
   .blog-detail h2 {
-    @apply text-3xl text-coarse-wool font-semibold leading-snug mt-10;
+    @apply text-3xl text-coarse-wool leading-snug;
   }
 
-  .blog-detail h3 {
-    @apply text-2xl text-coarse-wool font-medium leading-snug;
-  }
-
-  .blog-detail h4 {
-    @apply text-xl text-coarse-wool font-medium leading-snug;
-  }
-
-  .blog-detail h5 {
-    @apply text-lg text-coarse-wool font-medium leading-snug;
+  .blog-detail h2:not(:first-child) {
+    @apply mt-10;
   }
 
   .blog-detail__main-content p {

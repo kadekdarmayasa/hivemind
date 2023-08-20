@@ -34,7 +34,12 @@ export default function Client({ clients, refClients }: ClientProps) {
             variants={fadeVariants('linear')}
             className="w-[80px] h-[80px]"
           >
-            <Image src={logo} alt={name} width={80} height={80} />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_API_URL}/image/${logo}`}
+              alt={name}
+              width={80}
+              height={80}
+            />
           </motion.div>
         ))}
       </div>

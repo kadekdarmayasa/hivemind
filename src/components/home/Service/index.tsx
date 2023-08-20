@@ -4,6 +4,8 @@ import type ServiceItemType from 'types/ServiceItem';
 import { ServiceItem } from './ServiceItem';
 
 export default function Service({ services }: { services: ServiceItemType[] }) {
+  console.log(services);
+
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
