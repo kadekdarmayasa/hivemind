@@ -1,5 +1,6 @@
+import axios from 'axios';
 import Link from 'next/link';
-import { ChangeEvent, useState, FormEvent } from 'react';
+import { ChangeEvent, useState, FormEvent, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { SlSocialLinkedin, SlSocialTwitter, SlSocialFacebook } from 'react-icons/sl';
@@ -9,26 +10,43 @@ import Button from './Button';
 import { Input } from './Form';
 import Brand from './Brand';
 
+interface Subscriber {
+  email: string;
+}
+
 const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
 
-export default function Footer({ menus }: { menus: NavItemType[] }) {
-  const [email, setEmail] = useState('');
-  const [isAlreadySubscribed, setIsAlreadySubscribed] = useState(false);
-  const [isSuccessSubscribed, setIsSuccessSubscribed] = useState(false);
-  const [isInputFocused, setIsInputFocused] = useState(false);
+function Footer({ menus }: { menus: NavItemType[] }) {
+  const [email, setEmail] = useState<string>('');
+  const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
+  const [isAlreadySubscribed, setIsAlreadySubscribed] = useState<boolean>(false);
+  const [isSuccessSubscribed, setIsSuccessSubscribed] = useState<boolean>(false);
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
+
+  useEffect(() => {
+    axios.get('/api/subscriber').then((response) => setSubscribers(response.data.subscribers));
+    return () => setSubscribers([]);
+  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    // Mock database data email
-    const userEmailDB = 'kadekdarmayasa@gmail.com';
+    setIsProcessing(true);
+    const isEmailExist: boolean = subscribers.some((subscriber) => subscriber.email === email);
 
-    if (email === userEmailDB) {
+    if (isEmailExist) {
+      setIsProcessing(false);
       setIsAlreadySubscribed(true);
       setIsSuccessSubscribed(false);
     } else {
-      // TODO: Input user email to Database
-      setIsAlreadySubscribed(false);
-      setIsSuccessSubscribed(true);
-      setEmail('');
+      axios.post('/api/subscriber', { email }).then((response) => {
+        setIsProcessing(false);
+        setEmail('');
+
+        if (response.status === 201) {
+          setIsAlreadySubscribed(false);
+          setIsSuccessSubscribed(true);
+        }
+      });
     }
 
     setTimeout(() => {
@@ -133,9 +151,18 @@ export default function Footer({ menus }: { menus: NavItemType[] }) {
                 onFocus={() => setIsInputFocused(true)}
                 onBlur={() => setIsInputFocused(false)}
               />
-              <Button type="submit" isPrimary className="!shadow-none py-2 px-4 rounded-full">
-                Subscribe
-              </Button>
+              {isProcessing ? (
+                <Button disabled type="button" className="!shadow-none py-2 px-4 rounded-full">
+                  <div className="flex items-center justify-center mr-2">
+                    <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white" />
+                  </div>
+                  Processing...
+                </Button>
+              ) : (
+                <Button type="submit" isPrimary className="!shadow-none py-2 px-4 rounded-full">
+                  Subscribe
+                </Button>
+              )}
             </motion.form>
 
             {isAlreadySubscribed && (
@@ -145,7 +172,7 @@ export default function Footer({ menus }: { menus: NavItemType[] }) {
                 variants={fadeVariants('anticipate')}
                 className="text-red-400 block mt-2 font-medium text-base"
               >
-                User is already subscribed!
+                You are already subscribed!
               </motion.small>
             )}
 
@@ -217,3 +244,5 @@ export default function Footer({ menus }: { menus: NavItemType[] }) {
     </footer>
   );
 }
+
+export default Footer;

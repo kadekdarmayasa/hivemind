@@ -14,15 +14,15 @@ type BlogDetailProps = BlogItemType & {
 export const getStaticProps: GetStaticProps<{
   blogDetail: BlogDetailProps;
 }> = async ({ params }) => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blog/${params.id}`);
-  const blogDetail = await res.data.blog;
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blogs/${params.slug}`);
+  const blogDetail = await res.data;
 
   if (!blogDetail) return { notFound: true };
   return { props: { blogDetail }, revalidate: 1 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: [{ params: { id: '1' } }],
+  paths: [{ params: { slug: 'default-slug' } }],
   fallback: true,
 });
 

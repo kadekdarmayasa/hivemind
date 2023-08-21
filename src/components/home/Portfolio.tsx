@@ -50,7 +50,7 @@ export default function Portfolio({ portfolios }: { portfolios: PortfolioItemTyp
 
       <motion.div {...commonMotionProps} variants={transformVariants('linear')}>
         <Link
-          href="/portolio"
+          href="/portfolio"
           className="flex justify-center items-center mt-8 mx-auto relative group w-[170px] text-palatinate-blue"
         >
           <span className="text-lg">See all portfolios</span>

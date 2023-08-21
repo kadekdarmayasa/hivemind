@@ -17,7 +17,7 @@ const contactInformations: ContactInformationType[] = [
     id: 12212,
     icon: <IoMailOutline />,
     name: 'Email',
-    value: 'hivemindindonesia@gmail.com',
+    value: 'hivemindindonesia@outlook.com',
   },
   {
     id: 12214,

@@ -9,7 +9,7 @@ export const getStaticProps: GetStaticProps<{
   fallback: { [key: string]: FAQItemType[] };
 }> = async () => {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/faqs`);
-  const faqs = await res.data.faqs;
+  const faqs = await res.data;
 
   if (!faqs) return { notFound: true };
   return {

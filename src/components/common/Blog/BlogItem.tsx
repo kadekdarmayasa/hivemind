@@ -21,7 +21,7 @@ const arrowForwardIconProps: IconContext = {
 
 export default function BlogItem(props: BlogItemProps) {
   const {
-    blog: { id, title, description, thumbnail, publishedAt, author },
+    blog: { title, description, thumbnail, publishedAt, author, slug },
     contentWidth = 'default',
     isGridItem = false,
     index = 0,
@@ -57,7 +57,7 @@ export default function BlogItem(props: BlogItemProps) {
         </p>
 
         <Link
-          href={`/blog/${id}`}
+          href={`/blog/${slug}`}
           className="absolute bottom-10 group flex justify-center items-center text-palatinate-blue"
         >
           {' '}
@@ -128,7 +128,7 @@ export default function BlogItem(props: BlogItemProps) {
         </motion.p>
 
         <Link
-          href={`/blog/${id}`}
+          href={`/blog/${slug}`}
           className="mt-5 group flex justify-center items-center text-palatinate-blue"
         >
           {' '}
@@ -180,7 +180,7 @@ export default function BlogItem(props: BlogItemProps) {
         </p>
 
         <Link
-          href={`/blog/${id}`}
+          href={`/blog/${slug}`}
           className="absolute bottom-10 group flex justify-center items-center text-palatinate-blue"
         >
           {' '}
