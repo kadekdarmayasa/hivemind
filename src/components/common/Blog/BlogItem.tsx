@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Ref, forwardRef } from 'react';
 import { IconContext } from 'react-icons';
 import { IoArrowForwardSharp } from 'react-icons/io5';
 import type BlogItemType from 'types/BlogItem';
@@ -19,7 +20,7 @@ const arrowForwardIconProps: IconContext = {
   color: '#2B3BE5',
 };
 
-export default function BlogItem(props: BlogItemProps) {
+const BlogItem = forwardRef((props: BlogItemProps, ref: Ref<HTMLDivElement>) => {
   const {
     blog: { title, description, thumbnail, publishedAt, author, slug },
     contentWidth = 'default',
@@ -76,6 +77,7 @@ export default function BlogItem(props: BlogItemProps) {
 
   const renderGridLarge = () => (
     <motion.div
+      ref={ref}
       {...commonMotionProps}
       variants={fadeVariants('linear')}
       custom={index}
@@ -147,6 +149,7 @@ export default function BlogItem(props: BlogItemProps) {
 
   const renderGridDefault = () => (
     <motion.div
+      ref={ref}
       {...commonMotionProps}
       variants={transformVariants('linear')}
       custom={index}
@@ -200,4 +203,6 @@ export default function BlogItem(props: BlogItemProps) {
   if (isGridItem && contentWidth === 'large') return renderGridLarge();
   if (isGridItem && contentWidth === 'default') return renderGridDefault();
   return renderDefault();
-}
+});
+
+export default BlogItem;

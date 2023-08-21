@@ -51,11 +51,8 @@ function PortfolioPage() {
       <section className="mt-14 relative">
         <h1 className="heading-1 text-center">Hivemind&apos;s Portfolios</h1>
         <CategoryList onClick={(id: string) => setServiceId(id)} />
-        {isLoading ? (
-          <Skeleton />
-        ) : (
-          <Items ref={lastPortfolioElementRef} isLoading={isLoading} portfolios={portfolios} />
-        )}
+        <Items ref={lastPortfolioElementRef} isLoading={isLoading} portfolios={portfolios} />
+        {isLoading && <Skeleton />}
       </section>
     </Layout>
   );

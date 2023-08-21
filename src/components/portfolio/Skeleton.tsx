@@ -2,7 +2,7 @@ function Skeleton() {
   const skeletonCards = Array.from({ length: 5 }).map((_, index: number) => (
     <div
       key={index}
-      className={`rounded-lg relative  col-span-12 md:col-span-6 xl:col-span-4 overflow-hidden bg-gray-400 ${
+      className={`rounded-lg relative col-span-12 md:col-span-6 xl:col-span-4 overflow-hidden bg-gray-400 ${
         index === 0 ? `row-span-4 h-[500px]` : 'row-span-2 h-[240px]'
       }`}
     />
