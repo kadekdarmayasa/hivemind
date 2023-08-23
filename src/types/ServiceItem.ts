@@ -1,8 +1,6 @@
-type ServiceItem = {
+export default interface ServiceItem {
   id: number;
   thumbnail: string;
   name: string;
   description: string;
-};
-
-export default ServiceItem;
+}

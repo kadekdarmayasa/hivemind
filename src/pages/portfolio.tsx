@@ -3,12 +3,13 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import type PortfolioItemType from 'types/PortfolioItem';
 import { DEFAULT_SERVICE_ID } from '@constants/service';
 import Layout from '@components/common/Layout';
-import { CategoryList, Items, Skeleton } from '@components/portfolio';
+import Skeleton from '@components/common/Skeleton';
+import { CategoryList, Items } from '@components/portfolio';
 
 function PortfolioPage() {
   const [serviceId, setServiceId] = useState<string>(DEFAULT_SERVICE_ID);
   const [page, setPage] = useState<number>(1);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [portfolios, setPortfolios] = useState<PortfolioItemType[]>([]);
   const observer = useRef<IntersectionObserver>(null);
@@ -26,14 +27,15 @@ function PortfolioPage() {
 
   useEffect(() => {
     setPage(1);
-    setIsLoading(true);
     setHasMore(false);
     setPortfolios([]);
   }, [serviceId]);
 
   useEffect(() => {
+    setIsLoading(true);
+
     axios
-      .post('/api/portfolio', {
+      .post('/api/portfolios', {
         page,
         serviceId,
       })
@@ -52,7 +54,7 @@ function PortfolioPage() {
         <h1 className="heading-1 text-center">Hivemind&apos;s Portfolios</h1>
         <CategoryList onClick={(id: string) => setServiceId(id)} />
         <Items ref={lastPortfolioElementRef} isLoading={isLoading} portfolios={portfolios} />
-        {isLoading && <Skeleton />}
+        {isLoading && <Skeleton.PortfolioItem />}
       </section>
     </Layout>
   );

@@ -1,7 +1,5 @@
-type Client = {
+export default interface Client {
   id: number;
   name: string;
   logo: string;
-};
-
-export default Client;
+}

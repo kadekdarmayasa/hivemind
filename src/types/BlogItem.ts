@@ -1,4 +1,4 @@
-type BlogItem = {
+export default interface BlogItem {
   id: number;
   thumbnail: string;
   publishedAt: string;
@@ -6,6 +6,4 @@ type BlogItem = {
   author: { username: string };
   title: string;
   description: string;
-};
-
-export default BlogItem;
+}

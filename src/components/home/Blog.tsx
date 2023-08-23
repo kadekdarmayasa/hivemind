@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
 import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
 import type BlogItemType from 'types/BlogItem';
-import BlogCarousel from '../common/Blog';
+import { useSlider } from '@hooks/useSlider';
+import BlogItem from '@components/common/BlogItem';
+import SliderArrow from '@components/common/SliderArrow';
+import Slider from 'react-slick';
 
 export default function Blog({ blogs }: { blogs: BlogItemType[] }) {
+  const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
+
   return (
     <section className="mt-32 2xl:mt-44">
       <motion.div
@@ -29,7 +34,19 @@ export default function Blog({ blogs }: { blogs: BlogItemType[] }) {
         </motion.h2>
       </motion.div>
 
-      <BlogCarousel blogs={blogs} />
+      <SliderArrow
+        prevSlideHandler={handlePrevSlide}
+        nextSlideHandler={handleNextSlide}
+        arrowPos="default"
+      />
+
+      <motion.div {...commonMotionProps} variants={fadeVariants('linear')} className="h-auto mb-20">
+        <Slider ref={sliderRef} {...sliderConfig} className="bg-ghost-white h-auto">
+          {blogs.map((blog) => (
+            <BlogItem key={blog.id} blog={blog} />
+          ))}
+        </Slider>
+      </motion.div>
     </section>
   );
 }

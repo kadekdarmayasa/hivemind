@@ -30,8 +30,8 @@ export default function HomePage({ homepage }: InferGetStaticPropsType<typeof ge
 
   return (
     <Layout title="Hivemind - Home">
-      <Hero refClients={refClients} />
-      <Client clients={homepage.clients} refClients={refClients} />
+      <Hero ref={refClients} />
+      <Client clients={homepage.clients} ref={refClients} />
       <OurValues />
       <Service services={homepage.services} />
       <Portfolio portfolios={homepage.portfolios} />

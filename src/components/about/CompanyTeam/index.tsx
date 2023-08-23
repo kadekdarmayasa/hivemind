@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import TeamProps from 'types/Team';
@@ -6,12 +8,14 @@ import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motio
 import SliderArrow from '@components/common/SliderArrow';
 import TeamItem from './TeamItem';
 
-type CompanyTeamProps = {
-  teams: TeamProps[];
-};
-
-export default function CompanyTeam({ teams }: CompanyTeamProps) {
+export default function CompanyTeam() {
   const { handleNextSlide, handlePrevSlide, sliderRef, sliderConfig } = useSlider();
+  const [teams, setTeams] = useState<TeamProps[]>([]);
+
+  useEffect(() => {
+    axios.get('/api/teams').then((response) => setTeams(response.data.teams));
+    return () => setTeams([]);
+  }, []);
 
   return (
     <section className="mt-32">

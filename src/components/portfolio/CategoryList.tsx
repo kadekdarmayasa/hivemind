@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { DEFAULT_SERVICE_ID } from '@constants/service';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
+import Skeleton from '@components/common/Skeleton';
 import Button from '../common/Button';
 
 type CategoryListProps = {
@@ -14,10 +15,11 @@ export default function CategoryList({ onClick }: CategoryListProps) {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/services`).then((response) => {
-      setServices(response.data);
-    });
+    axios.get(`/api/services`).then((response) => setServices(response.data.services));
+    return () => setServices([]);
   }, []);
+
+  if (services.length === 0) return <Skeleton.CategoryListItem />;
 
   return (
     <div className="flex mt-14 overflow-auto whitespace-nowrap" id="categoryList">

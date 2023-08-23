@@ -18,7 +18,7 @@ const Items = forwardRef(({ portfolios, isLoading }: ItemsProps, ref: Ref<HTMLDi
   const { screenSize } = useScreenSize();
   const getScreenWidth = () => screenSize.width || window.innerWidth;
 
-  if (portfolios.length === 0 && !isLoading) {
+  if (!isLoading && portfolios.length === 0) {
     return (
       <div className="mt-20 text-lg flex flex-col items-center ">
         <Image

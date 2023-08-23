@@ -1,7 +1,7 @@
-import BlogItem from '@components/common/Blog/BlogItem';
+import BlogItem from '@components/common/BlogItem';
 import Layout from '@components/common/Layout';
 import type BlogItemType from 'types/BlogItem';
-import BlogSkeleton from '@components/common/Blog/BlogSkeleton';
+import Skeleton from '@components/common/Skeleton';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
@@ -28,7 +28,7 @@ export default function BlogPage() {
   useEffect(() => {
     setIsLoading(true);
 
-    axios.post('/api/blog', { page }).then((response) => {
+    axios.post('/api/blogs', { page }).then((response) => {
       setIsLoading(false);
       setHasMore(response.data.hasMore);
       setBlogs((prevBlogs) => [...prevBlogs, ...response.data.blogs]);
@@ -63,7 +63,8 @@ export default function BlogPage() {
           );
         })}
 
-        {isLoading && Array.from({ length: 3 }).map((_, index) => <BlogSkeleton key={index} />)}
+        {isLoading &&
+          Array.from({ length: 3 }).map((_, index) => <Skeleton.BlogItem key={index} />)}
       </section>
     </Layout>
   );

@@ -36,6 +36,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-namespace": "off",
     "arrow-body-style": ["error", "as-needed"],
     "import/extensions": [
       "error",

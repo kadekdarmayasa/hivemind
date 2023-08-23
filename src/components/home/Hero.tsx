@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MutableRefObject } from 'react';
+import { forwardRef, MutableRefObject } from 'react';
 import { motion } from 'framer-motion';
 import { IconContext } from 'react-icons';
 import { IoChatboxOutline } from 'react-icons/io5';
@@ -8,19 +8,15 @@ import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motio
 import Button from '../common/Button';
 import heroImage from '../../../public/images/hero-image-1.png';
 
-type HeroProps = {
-  refClients: MutableRefObject<HTMLElement>;
-};
-
 const chatboxIconProps: IconContext = {
   size: '1.6em',
   className: 'mr-2',
 };
 
-export default function Hero({ refClients }: HeroProps) {
+const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
   const scrollToClientSection = () => {
     window.scrollTo({
-      top: refClients.current.offsetTop - 50,
+      top: ref.current.offsetTop - 50,
       behavior: 'smooth',
     });
   };
@@ -119,4 +115,6 @@ export default function Hero({ refClients }: HeroProps) {
       </motion.div>
     </motion.section>
   );
-}
+});
+
+export default Hero;

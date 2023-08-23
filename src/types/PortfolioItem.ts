@@ -1,4 +1,4 @@
-type PortfolioItem = {
+export default interface PortfolioItem {
   id: number;
   thumbnail: string;
   orientation: 'portrait' | 'landscape';
@@ -6,7 +6,5 @@ type PortfolioItem = {
   service: {
     id: string;
     name: string;
-  }
-};
-
-export default PortfolioItem;
+  };
+}

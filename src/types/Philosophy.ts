@@ -1,6 +1,4 @@
-type Philosophy = {
+export default interface Philosophy {
   text: string;
   imageId: string;
-};
-
-export default Philosophy;
+}

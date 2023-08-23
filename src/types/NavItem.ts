@@ -1,6 +1,4 @@
-type NavItem = {
+export default interface NavItem {
   path: string;
   name: string;
-};
-
-export default NavItem;
+}

@@ -14,7 +14,7 @@ interface Subscriber {
   email: string;
 }
 
-const socialMediaIconProps = { size: '1.3em', color: '#2B3BE5' };
+const socialMediaIconProps = { size: '1.3em' };
 
 function Footer({ menus }: { menus: NavItemType[] }) {
   const [email, setEmail] = useState<string>('');
@@ -25,7 +25,7 @@ function Footer({ menus }: { menus: NavItemType[] }) {
   const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
 
   useEffect(() => {
-    axios.get('/api/subscriber').then((response) => setSubscribers(response.data.subscribers));
+    axios.get('/api/subscribers').then((response) => setSubscribers(response.data.subscribers));
     return () => setSubscribers([]);
   }, []);
 
@@ -38,7 +38,7 @@ function Footer({ menus }: { menus: NavItemType[] }) {
       setIsAlreadySubscribed(true);
       setIsSuccessSubscribed(false);
     } else {
-      axios.post('/api/subscriber', { email }).then((response) => {
+      axios.post('/api/subscribers', { email }).then((response) => {
         setIsProcessing(false);
         setEmail('');
 
@@ -208,34 +208,34 @@ function Footer({ menus }: { menus: NavItemType[] }) {
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={0}>
               <Link
                 href="https://www.facebook.com"
-                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+                className="bg-[#E8EAFF] hover:bg-palatinate-blue h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4 group transition-all"
                 rel="noreferrer"
                 target="_blank"
               >
                 {' '}
-                <SlSocialFacebook />
+                <SlSocialFacebook className="text-palatinate-blue group-hover:text-white transition-all" />
               </Link>
             </motion.div>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={1}>
               <Link
                 href="https://www.twitter.com"
-                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+                className="bg-[#E8EAFF] hover:bg-palatinate-blue h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4 group transition-all"
                 rel="noreferrer"
                 target="_blank"
               >
                 {' '}
-                <SlSocialTwitter />
+                <SlSocialTwitter className="text-palatinate-blue group-hover:text-white transition-all" />
               </Link>
             </motion.div>
             <motion.div {...commonMotionProps} variants={fadeVariants('linear')} custom={2}>
               <Link
                 href="https://www.linkedin.com"
-                className="!bg-[#E8EAFF] h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4"
+                className="bg-[#E8EAFF] hover:bg-palatinate-blue  h-[45px] w-[45px] flex items-center justify-center rounded-md mr-4 group transition-all"
                 rel="noreferrer"
                 target="_blank"
               >
                 {' '}
-                <SlSocialLinkedin />
+                <SlSocialLinkedin className="text-palatinate-blue group-hover:text-white transition-all" />
               </Link>
             </motion.div>
           </IconContext.Provider>

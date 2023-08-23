@@ -1,7 +1,5 @@
-type OurValue = {
+export default interface OurValue {
   id: number;
   headline: string;
   description: string;
-};
-
-export default OurValue;
+}
