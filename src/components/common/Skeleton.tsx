@@ -34,6 +34,17 @@ namespace Skeleton {
       </div>
     );
   }
+
+  export function FAQItem() {
+    const skeletons = Array.from({ length: 4 }).map((_, index: number) => (
+      <div
+        key={index}
+        className="h-16 max-w-[1080px] rounded-md mb-6 transition-all bg-gray-400 animate-pulse"
+      />
+    ));
+
+    return <div>{skeletons}</div>;
+  }
 }
 
 export default Skeleton;

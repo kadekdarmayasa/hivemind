@@ -73,7 +73,7 @@ const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
               <IconContext.Provider value={chatboxIconProps}>
                 <IoChatboxOutline className="h-10" />
               </IconContext.Provider>
-              <span className="text-lg">Get in Touch</span>
+              <span className="text-lg">Consultation</span>
             </Link>
           </motion.div>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import CONFIG from '@globals/config';
+import { VIEWPORT_SIZE } from '@constants/index';
 import { useScreenSize } from '@hooks/useScreenSize';
 import type NavItemType from 'types/NavItem';
 import Brand from '../Brand';
@@ -18,8 +18,8 @@ export default function Navbar({ menus }: NavbarProps) {
   useEffect(() => {
     setIsOpen(
       screenSize.width
-        ? screenSize.width >= CONFIG.TABLET_VIEWPORT_SIZE
-        : window.innerWidth >= CONFIG.TABLET_VIEWPORT_SIZE,
+        ? screenSize.width >= VIEWPORT_SIZE.TABLET
+        : window.innerWidth >= VIEWPORT_SIZE.TABLET,
     );
   }, [screenSize]);
 

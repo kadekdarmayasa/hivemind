@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps<{
   blogDetail: BlogDetailProps;
 }> = async ({ params }) => {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blogs/${params.slug}`);
-  const blogDetail = await res.data;
+  const blogDetail = await res.data.blog;
 
   if (!blogDetail) return { notFound: true };
   return { props: { blogDetail }, revalidate: 1 };

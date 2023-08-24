@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { DEFAULT_SERVICE_ID } from '@constants/service';
+import { DEFAULT_SERVICE_ID } from '@constants/index';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
 import Skeleton from '@components/common/Skeleton';
 import Button from '../common/Button';

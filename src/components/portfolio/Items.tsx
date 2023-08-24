@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { Ref, forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import CONFIG from '@globals/config';
 import { useScreenSize } from '@hooks/useScreenSize';
 import { fadeVariants, commonMotionProps } from '@utils/motion';
 import type PortfolioItemType from 'types/PortfolioItem';
+import { VIEWPORT_SIZE } from '@constants/index';
 import PortfolioItem from '../common/PortfolioItem';
 import emptyIllustration from '../../../public/images/empty-illustration.svg';
 
@@ -45,9 +45,7 @@ const Items = forwardRef(({ portfolios, isLoading }: ItemsProps, ref: Ref<HTMLDi
               ref={ref}
               key={portfolio.id}
               portfolio={portfolio}
-              index={
-                getScreenWidth() > CONFIG.MOBILE_VIEWPORT_SIZE ? customIndexs[(index + 1) % 3] : 0
-              }
+              index={getScreenWidth() > VIEWPORT_SIZE.MOBILE ? customIndexs[(index + 1) % 3] : 0}
             />
           );
         }
@@ -56,9 +54,7 @@ const Items = forwardRef(({ portfolios, isLoading }: ItemsProps, ref: Ref<HTMLDi
           <PortfolioItem
             key={portfolio.id}
             portfolio={portfolio}
-            index={
-              getScreenWidth() > CONFIG.MOBILE_VIEWPORT_SIZE ? customIndexs[(index + 1) % 3] : 0
-            }
+            index={getScreenWidth() > VIEWPORT_SIZE.MOBILE ? customIndexs[(index + 1) % 3] : 0}
           />
         );
       })}

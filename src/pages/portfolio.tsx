@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState, useCallback, useRef } from 'react';
 import type PortfolioItemType from 'types/PortfolioItem';
-import { DEFAULT_SERVICE_ID } from '@constants/service';
+import { DEFAULT_SERVICE_ID } from '@constants/index';
 import Layout from '@components/common/Layout';
 import Skeleton from '@components/common/Skeleton';
 import { CategoryList, Items } from '@components/portfolio';
