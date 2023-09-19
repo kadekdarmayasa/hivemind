@@ -54,13 +54,7 @@ If are all set. Then you are good to go ⬇️
 
 ## Screenshots 📸
 
-- Homepage Dekstop Version
-
 <img src="./public/images/screenshots/homepage-hivemind.png" />
-
-- Homepage Mobile Version
-
-<img src="./public/images/screenshots/mobile-homepage-hivemind.png">
 
 ## LET'S CONNECT AND DISCUSS YOUR NEXT PROJECT 🗨️
 
