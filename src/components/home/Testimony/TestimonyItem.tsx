@@ -1,8 +1,12 @@
-import Image from 'next/image';
-import Star from '@components/common/Star';
-import type TestimonyItemType from 'types/TestimonyItem';
+import Image from "next/image";
+import Star from "@components/common/Star";
+import type TestimonyItemType from "types/TestimonyItem";
 
-export default function TestimonyItem({ testimony }: { testimony: TestimonyItemType }) {
+export default function TestimonyItem({
+  testimony,
+}: {
+  testimony: TestimonyItemType;
+}) {
   const { clientPhoto, clientName, occupation, message, rate } = testimony;
 
   return (
@@ -10,7 +14,7 @@ export default function TestimonyItem({ testimony }: { testimony: TestimonyItemT
       <div className="flex items-center">
         <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}/image/${clientPhoto}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/images/${clientPhoto}`}
             width={50}
             height={50}
             alt={clientName}
@@ -27,7 +31,9 @@ export default function TestimonyItem({ testimony }: { testimony: TestimonyItemT
       </div>
 
       <div className="my-6">
-        <p className="text-coarse-wool text-base font-normal leading-7">{message}</p>
+        <p className="text-coarse-wool text-base font-normal leading-7">
+          {message}
+        </p>
       </div>
 
       <div className="mt-2">

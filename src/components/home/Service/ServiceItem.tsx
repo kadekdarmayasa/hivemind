@@ -1,25 +1,35 @@
-import { IconContext } from 'react-icons';
-import { IoArrowForwardSharp } from 'react-icons/io5';
-import { motion } from 'framer-motion';
-import { transformVariants, hoverVariants, commonMotionProps } from '@utils/motion';
-import type ServiceItemType from 'types/ServiceItem';
-import Image from 'next/image';
-import Link from 'next/link';
+import { IconContext } from "react-icons";
+import { IoArrowForwardSharp } from "react-icons/io5";
+import { motion } from "framer-motion";
+import {
+  transformVariants,
+  hoverVariants,
+  commonMotionProps,
+} from "@utils/motion";
+import type ServiceItemType from "types/ServiceItem";
+import Image from "next/image";
+import Link from "next/link";
 
 const arrowForwardIconProps: IconContext = {
-  size: '1.3em',
-  className: 'mt-[2px] ml-2 group-hover:ml-3 transition-all',
-  color: '#2B3BE5',
+  size: "1.3em",
+  className: "mt-[2px] ml-2 group-hover:ml-3 transition-all",
+  color: "#2B3BE5",
 };
 
-export function ServiceItem({ service, index }: { service: ServiceItemType; index: number }) {
+export function ServiceItem({
+  service,
+  index,
+}: {
+  service: ServiceItemType;
+  index: number;
+}) {
   const motionProps = {
     ...commonMotionProps,
     custom: index,
-    whileHover: 'hover',
+    whileHover: "hover",
     variants: {
-      ...transformVariants('linear'),
-      ...hoverVariants(1.02, '0px 5px 25px rgba(0, 0, 0, 0.05)'),
+      ...transformVariants("linear"),
+      ...hoverVariants(1.02, "0px 5px 25px rgba(0, 0, 0, 0.05)"),
     },
   };
 
@@ -30,21 +40,23 @@ export function ServiceItem({ service, index }: { service: ServiceItemType; inde
     >
       <div className="bg-palatinate-blue w-20 h-20 flex items-center justify-center rounded-lg mb-8 2xl:mb-12">
         <Image
-          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${service.thumbnail}`}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/images/${service.thumbnail}`}
           alt={service.name}
           height={30}
           width={30}
-          style={{ width: '40px' }}
+          style={{ width: "40px" }}
           crossOrigin="anonymous"
         />
       </div>
       <h3 className="heading-3 mb-3">{service.name}</h3>
-      <p className="text-brave-purple font-light text-lg leading-9 mb-5">{service.description}</p>
+      <p className="text-brave-purple font-light text-lg leading-9 mb-5">
+        {service.description}
+      </p>
       <Link
         href="/contact"
         className="flex justify-center items-center place-self-start mt-auto relative group text-palatinate-blue"
       >
-        {' '}
+        {" "}
         <span className="text-lg">Get a consultation</span>
         <IconContext.Provider value={arrowForwardIconProps}>
           <IoArrowForwardSharp />

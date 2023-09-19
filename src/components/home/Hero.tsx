@@ -1,37 +1,41 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { forwardRef, MutableRefObject } from 'react';
-import { motion } from 'framer-motion';
-import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
-import { IconContext } from 'react-icons';
-import { IoChatboxOutline } from 'react-icons/io5';
-import Button from '../common/Button';
-import heroImage from '../../../public/images/hero-image-1.png';
+import Link from "next/link";
+import Image from "next/image";
+import { forwardRef, MutableRefObject } from "react";
+import { motion } from "framer-motion";
+import {
+  fadeVariants,
+  transformVariants,
+  commonMotionProps,
+} from "@utils/motion";
+import { IconContext } from "react-icons";
+import { IoChatboxOutline } from "react-icons/io5";
+import Button from "../common/Button";
+import heroImage from "../../../public/images/hero-image-1.png";
 
 const chatboxIconProps: IconContext = {
-  size: '1.6em',
-  className: 'mr-2',
+  size: "1.6em",
+  className: "mr-2",
 };
 
 const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
   const scrollToClientSection = () => {
     window.scrollTo({
       top: ref.current.offsetTop - 50,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   return (
     <motion.section
       {...commonMotionProps}
-      variants={fadeVariants('linear')}
+      variants={fadeVariants("linear")}
       className="flex lg:flex-row flex-col relative mt-8 2xl:mt-24"
     >
       <div className="flex-1 flex flex-col justify-center items-start">
         <motion.small
           custom={0}
           {...commonMotionProps}
-          variants={transformVariants('linear')}
+          variants={transformVariants("linear")}
           className="label-text"
         >
           A innovate digital agency
@@ -39,7 +43,7 @@ const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
         <motion.h1
           custom={1}
           {...commonMotionProps}
-          variants={transformVariants('linear')}
+          variants={transformVariants("linear")}
           className="heading-2 sm:heading-1 lg:w-[400px] xl:w-[570px]"
         >
           Transform Your Online Presence with Us
@@ -48,11 +52,11 @@ const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
         <motion.p
           custom={1}
           {...commonMotionProps}
-          variants={transformVariants('linear')}
+          variants={transformVariants("linear")}
           className="text-brave-purple font-normal text-xl leading-9 mt-4 lg:w-[400px] xl:w-[470px]"
         >
-          We provide personalized strategies that are tailored to your business goals, using
-          cutting-edge technology and industry best practices
+          We provide personalized strategies that are tailored to your business
+          goals, using cutting-edge technology and industry best practices
         </motion.p>
 
         <motion.div className="flex flex-col md:flex-row w-full mt-14">
@@ -61,10 +65,10 @@ const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
             custom={2}
             {...{
               ...commonMotionProps,
-              viewport: { ...commonMotionProps.viewport, margin: '56px' },
+              viewport: { ...commonMotionProps.viewport, margin: "56px" },
             }}
-            viewport={{ once: true, margin: '56px' }}
-            variants={transformVariants('linear')}
+            viewport={{ once: true, margin: "56px" }}
+            variants={transformVariants("linear")}
           >
             <Link
               href="/contact"
@@ -81,9 +85,9 @@ const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
             custom={3}
             {...{
               ...commonMotionProps,
-              viewport: { ...commonMotionProps.viewport, margin: '56px' },
+              viewport: { ...commonMotionProps.viewport, margin: "56px" },
             }}
-            variants={transformVariants('linear')}
+            variants={transformVariants("linear")}
           >
             <Button
               className="h-[60px] md:w-[210px] w-full md:ml-6 mt-5 md:mt-0 relative group"
@@ -103,7 +107,7 @@ const Hero = forwardRef((_, ref?: MutableRefObject<HTMLElement>) => {
 
       <motion.div
         {...commonMotionProps}
-        variants={fadeVariants('anticipate')}
+        variants={fadeVariants("anticipate")}
         className="mt-10 lg:mt-0 flex-1 flex justify-center lg:justify-end items-center"
       >
         <Image

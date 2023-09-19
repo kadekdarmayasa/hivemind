@@ -1,6 +1,10 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { fadeVariants, transformVariants, commonMotionProps } from '@utils/motion';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  fadeVariants,
+  transformVariants,
+  commonMotionProps,
+} from "@utils/motion";
 
 type BlogDetailHeroProps = {
   publishedDate: string;
@@ -21,7 +25,7 @@ function SmallMotion({ innerText, custom }: SmallMotionProps) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={transformVariants('linear')}
+      variants={transformVariants("linear")}
       custom={custom}
       className="label-text mr-2"
     >
@@ -43,7 +47,7 @@ export default function Cover(props: BlogDetailHeroProps) {
         </div>
         <motion.h1
           {...commonMotionProps}
-          variants={transformVariants('linear')}
+          variants={transformVariants("linear")}
           custom={3}
           className="heading-1 !mt-2"
         >
@@ -53,11 +57,11 @@ export default function Cover(props: BlogDetailHeroProps) {
 
       <motion.figure
         {...commonMotionProps}
-        variants={fadeVariants('anticipate')}
+        variants={fadeVariants("anticipate")}
         className="mt-10 mb-10 relative"
       >
         <Image
-          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${imageId}`}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/images/${imageId}`}
           alt={title}
           width={500}
           height={400}

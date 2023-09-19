@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
+import { useRef } from "react";
+import Slider from "react-slick";
 
 type sliderConfigProps = {
   className: string;
@@ -19,7 +19,7 @@ export function useSlider() {
   const sliderRef = useRef<Slider | null>(null);
 
   const sliderConfig: sliderConfigProps = {
-    className: 'slider variable-width',
+    className: "slider variable-width",
     infinite: true,
     speed: 500,
     autoplay: true,

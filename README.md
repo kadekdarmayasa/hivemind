@@ -1,7 +1,3 @@
-<center>
-<img src="./public/images/hivemind-logo.svg" width="200" alt="Hivemind Logo" />
-</center>
-
 # Hivemind
 
 ## What is Hivemind ❔

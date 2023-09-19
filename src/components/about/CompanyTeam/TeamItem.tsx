@@ -1,10 +1,10 @@
-import TeamProps from 'types/Team';
-import Image from 'next/image';
-import { IconContext } from 'react-icons';
-import { SlSocialLinkedin, SlEnvolope } from 'react-icons/sl';
-import Link from 'next/link';
+import TeamProps from "types/Team";
+import Image from "next/image";
+import { IconContext } from "react-icons";
+import { SlSocialLinkedin, SlEnvolope } from "react-icons/sl";
+import Link from "next/link";
 
-const socialMediaIconProps = { size: '1.3em' };
+const socialMediaIconProps = { size: "1.3em" };
 
 export default function TeamCarouselItem({ team }: { team: TeamProps }) {
   const { publicPhoto, name, role } = team;
@@ -15,15 +15,16 @@ export default function TeamCarouselItem({ team }: { team: TeamProps }) {
         <Image
           height={360}
           width={350}
-          src={`${process.env.NEXT_PUBLIC_API_URL}/image/${publicPhoto}`}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/images/${publicPhoto}`}
           alt={name}
           className="w-full object-cover hover:scale-[1.02] transition-all"
           crossOrigin="anonymous"
-          priority
         />
       </div>
       <h3 className="heading-3 mt-4">{name}</h3>
-      <p className="text-brave-purple font-light text-lg leading-9">{role.name}</p>
+      <p className="text-brave-purple font-light text-lg leading-9">
+        {role.name}
+      </p>
       <div className="flex mt-4">
         <IconContext.Provider value={socialMediaIconProps}>
           <Link
@@ -32,7 +33,7 @@ export default function TeamCarouselItem({ team }: { team: TeamProps }) {
             rel="noreferrer"
             target="_blank"
           >
-            {' '}
+            {" "}
             <SlEnvolope className="text-palatinate-blue group-hover:text-white transition-all" />
           </Link>
           <Link
@@ -41,7 +42,7 @@ export default function TeamCarouselItem({ team }: { team: TeamProps }) {
             rel="noreferrer"
             target="_blank"
           >
-            {' '}
+            {" "}
             <SlSocialLinkedin className="text-palatinate-blue group-hover:text-white transition-all" />
           </Link>
         </IconContext.Provider>
