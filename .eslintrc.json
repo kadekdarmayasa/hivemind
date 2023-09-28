@@ -32,8 +32,11 @@
       }
     ],
     "react/jsx-wrap-multilines": ["error", { "prop": "ignore" }],
-    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
-    "comma-dangle": ["error", "always-multiline"],
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "none", "ignoreRestSiblings": false }
+    ],
+    "comma-dangle": "off",
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/no-namespace": "off",

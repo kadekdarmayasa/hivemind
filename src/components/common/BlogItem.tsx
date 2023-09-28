@@ -1,28 +1,28 @@
-import { motion } from "framer-motion";
-import { Ref, forwardRef } from "react";
-import { IconContext } from "react-icons";
-import { IoArrowForwardSharp } from "react-icons/io5";
-import type BlogItemType from "types/BlogItem";
+import { motion } from "framer-motion"
+import { Ref, forwardRef } from "react"
+import { IconContext } from "react-icons"
+import { IoArrowForwardSharp } from "react-icons/io5"
+import type BlogItemType from "types/BlogItem"
 import {
   commonMotionProps,
   fadeVariants,
   transformVariants,
-} from "@utils/motion";
-import Link from "next/link";
-import Image from "next/image";
+} from "@utils/motion"
+import Link from "next/link"
+import Image from "next/image"
 
 type BlogItemProps = {
-  blog: BlogItemType;
-  contentWidth?: "large" | "default";
-  isGridItem?: boolean;
-  index?: number;
-};
+  blog: BlogItemType
+  contentWidth?: "large" | "default"
+  isGridItem?: boolean
+  index?: number
+}
 
 const arrowForwardIconProps: IconContext = {
   size: "1.3em",
   className: "mt-[2px] ml-1 group-hover:ml-2 transition-all",
   color: "#2B3BE5",
-};
+}
 
 const BlogItem = forwardRef(
   (props: BlogItemProps, ref: Ref<HTMLDivElement>) => {
@@ -31,7 +31,7 @@ const BlogItem = forwardRef(
       contentWidth = "default",
       isGridItem = false,
       index = 0,
-    } = props;
+    } = props
 
     const renderDefault = () => (
       <div className="h-[auto] bg-white rounded-xl relative blog-item w-[310px] sm:w-[360px] blog-item">
@@ -78,7 +78,7 @@ const BlogItem = forwardRef(
           </Link>
         </div>
       </div>
-    );
+    )
 
     const renderGridLarge = () => (
       <motion.div
@@ -154,7 +154,7 @@ const BlogItem = forwardRef(
           </Link>
         </div>
       </motion.div>
-    );
+    )
 
     const renderGridDefault = () => (
       <motion.div
@@ -207,12 +207,12 @@ const BlogItem = forwardRef(
           </Link>
         </div>
       </motion.div>
-    );
+    )
 
-    if (isGridItem && contentWidth === "large") return renderGridLarge();
-    if (isGridItem && contentWidth === "default") return renderGridDefault();
-    return renderDefault();
-  }
-);
+    if (isGridItem && contentWidth === "large") return renderGridLarge()
+    if (isGridItem && contentWidth === "default") return renderGridDefault()
+    return renderDefault()
+  },
+)
 
-export default BlogItem;
+export default BlogItem
